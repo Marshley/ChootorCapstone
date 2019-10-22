@@ -26,6 +26,8 @@ Route::get('/logout', 'SessionController@destroy');
 Route::get('/tuteedashboard','TuteeController@index');
 // Tutor Routes
 Route::get('/tutordashboard','TutorController@index');
+Route::get('/tutorschedule','TutorController@create');
+Route::post('/addtutorschedule','TutorController@store');
 // Admin Routes
 Route::get('/admindashboard','AdminController@show');
 Route::get('/subject','AdminController@index');

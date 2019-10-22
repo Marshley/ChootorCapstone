@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\UserSchedule;
 
 class TuteeController extends Controller
 {
@@ -11,9 +13,11 @@ class TuteeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view ('tutee.dashboard');
+        $user = User::all();
+        $userschedule = UserSchedule::all();
+        return view('tutee.dashboard')->with(['user' => $user , 'userschedule' => $userschedule]);
     }
 
     /**
