@@ -25,9 +25,9 @@ Route::get('/logout', 'SessionController@destroy');
 // Tutee Routes
 Route::get('/tuteedashboard','TuteeController@index');
 // Tutor Routes
-Route::get('/tutordashboard','TutorController@index');
 Route::get('/tutorschedule','TutorController@create');
-Route::post('/addtutorschedule','TutorController@store');
+Route::post('/addtutorschedule/{user}','TutorController@store');
+Route::post('/addinfo','TutorController@store1');
 // Admin Routes
 Route::get('/admindashboard','AdminController@show');
 Route::get('/subject','AdminController@index');

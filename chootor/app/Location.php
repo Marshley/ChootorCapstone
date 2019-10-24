@@ -13,4 +13,8 @@ class Location extends Model
     public function schedules() {
         return $this->hasMany('App\UserSchedule', 'location_id');
     }
+
+    public function users() {
+        return $this->hasMany('App\User', 'location_id');
+    }
 }

@@ -17,7 +17,7 @@ class TutorController extends Controller
      */
     public function index()
     {
-        return view ('tutor.dashboard');
+        
     }
 
     /**
@@ -39,11 +39,18 @@ class TutorController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, User $user, UserSchedule $userschedule)
+    public function store(Request $request, User $user)
+    {
+        // return [$user, $request->toArray()];
+        // $user = User::find(auth()->user()->id);
+        Userschedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id]));  
+        return redirect('/tutorschedule');
+       
+    }
+    public function store1(Request $request, User $user)
     {
         $user = User::find(auth()->user()->id);
         $user->update($request->toArray());
-        $userschedule->create(array_merge($request->toArray(), ['tutor_id' => $user->id]));;   
         return redirect('/tutorschedule');
     }
 

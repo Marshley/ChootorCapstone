@@ -15,9 +15,23 @@ class TuteeController extends Controller
      */
     public function index(Request $request)
     {
-        $user = User::all();
-        $userschedule = UserSchedule::all();
-        return view('tutee.dashboard')->with(['user' => $user , 'userschedule' => $userschedule]);
+        $week_start = strtotime("monday this week");
+        $week_end = strtotime("sunday this week");
+        $tutor_list = User::where('user_type','tutor')->where('status', 'approved')->get();
+        // $tutors = [];
+        // foreach ($tutor_list as $tutor){
+        //     $schedules = UserSchedule::whereBetween('created_at',[$week_start,$week_end])->get();
+            // $tutor[] = [
+            //     'schedules' => $schedules,
+            // ];
+            // $tutors[] = [
+            //     'user' => $tutor,
+            //     'schedules' => $schedules,
+            // ];
+    //         echo $schedules;
+    //     }
+    //    return $tutor_list; 
+        return view('tutee.dashboard')->with('tutor_list', $tutor_list );
     }
 
     /**

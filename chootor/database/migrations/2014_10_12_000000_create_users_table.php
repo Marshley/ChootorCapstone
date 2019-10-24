@@ -19,11 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('school_id');
             $table->string('user_type');
             $table->string('status')->default('pending');
+            $table->unsignedBigInteger('location_id')->nullable();
             $table->double('rate')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
-        });
+            
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
+        });        
     }
 
     /**
