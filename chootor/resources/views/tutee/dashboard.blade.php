@@ -4,7 +4,8 @@
 @foreach ($tutor_list as $tutor)
     <div class="card">
         <div class="card-body">
-            <div class="card-title">       
+            <div class="card-title">   
+              {{$tutor->id}}    
                <h3>Name: {{$tutor->name}}</h3>
             </div>
             <div class="card-text">
@@ -12,18 +13,18 @@
                 <h4>Rate: {{$tutor->rate}}/hour</h4> <br />
                 <h4>Subject:  
                     @foreach ($tutor->schedules as $sched)
-                        {{$sched->subject->name}}, 
+                        {{$sched->subject->name}}
                     @endforeach</h4> 
                 <br /> 
-                <h4>Location: {{$tutor->schedules[0]->location->name}}</h4>
+                <h4>Location: {{$tutor->location->name}}</h4>
             </div>
             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$tutor->id}}">
     Book
   </button>
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal{{$tutor->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -33,13 +34,13 @@
           </button>
         </div>
         <div class="modal-body">
+          {{ $tutor->schedules }}
         <form method="post" action="/booking" >
             {{ csrf_field() }}
             @foreach ($tutor->schedules as $sched)
                 <div class="checkbox">
                 <label>
                 <input type="checkbox" name="schedules[]" value="{{$sched->id}}">  
-                      {{$sched->id}}  
                         {{$sched->day}}
                         {{$sched->start_time}} to 
                         {{$sched->end_time}} 

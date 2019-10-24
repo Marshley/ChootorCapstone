@@ -96,7 +96,7 @@
     </tr>
     </thead>
     <tbody>
-        @foreach ($tutorschedule as $schedules)
+        @foreach ($user->schedules as $schedules)
         <tr>
             <td>{{$schedules->id}}</td>
             <td>{{$schedules->day}}</td>

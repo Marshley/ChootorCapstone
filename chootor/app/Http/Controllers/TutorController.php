@@ -7,6 +7,7 @@ use App\User;
 use App\UserSchedule;
 use App\Subject;
 use App\Location;
+use App\Booking;
 
 class TutorController extends Controller
 {
@@ -30,10 +31,13 @@ class TutorController extends Controller
         $user = User::find(auth()->user()->id);
         $location = Location::all();
         $subject = Subject::all();
-        $tutorschedule = UserSchedule::all();
-        return view('tutor.tutorsched',compact('user','location','subject','tutorschedule'));
+        return view('tutor.tutorsched',compact('user','location','subject'));
     }
-
+    public function bookingrequest()
+    {
+        $bookings = Booking::all();
+        return view('tutor.request')->with('bookings', $bookings);
+    }
     /**
      * Store a newly created resource in storage.
      *

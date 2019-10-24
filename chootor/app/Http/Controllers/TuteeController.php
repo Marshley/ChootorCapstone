@@ -56,10 +56,11 @@ class TuteeController extends Controller
         $user = $request->user()->id;
         $schedules = $request->schedules;
         foreach ($schedules as $schedule){
+        // return $schedule;
             Booking::create(array_merge($request->toArray(), ['tutee_id' => $user, 
-            'schedule_id' => $schedule->id]));
+            'schedule_id' => $schedule]));
         } 
-        return redirect('tutee.dashboard');
+        return redirect('/tuteedashboard');
     }
 
     /**
