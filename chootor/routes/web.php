@@ -27,6 +27,7 @@ Route::get('/tuteedashboard','TuteeController@index');
 // Tutor Routes
 Route::get('/tutorschedule','TutorController@create');
 Route::get('/tutorprofile','TutorController@index');
+Route::get('/tutordashboard','TutorController@tutordashboard');
 Route::post('/addtutorschedule/{user}','TutorController@store');
 Route::post('/addinfo','TutorController@store1');
 // Admin Routes

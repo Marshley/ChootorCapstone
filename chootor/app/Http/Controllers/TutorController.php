@@ -19,6 +19,10 @@ class TutorController extends Controller
     {
         return view('tutor.profile');
     }
+    public function tutordashboard()
+    {
+        return view('tutor.dashboard');
+    }
 
     /**
      * Show the form for creating a new resource.
