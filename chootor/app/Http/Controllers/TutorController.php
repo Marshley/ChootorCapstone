@@ -17,7 +17,7 @@ class TutorController extends Controller
      */
     public function index()
     {
-        
+        return view('tutor.profile');
     }
 
     /**
@@ -30,7 +30,8 @@ class TutorController extends Controller
         $user = User::find(auth()->user()->id);
         $location = Location::all();
         $subject = Subject::all();
-        return view('tutor.tutorsched',compact('user','location','subject'));
+        $tutorschedule = UserSchedule::all();
+        return view('tutor.tutorsched',compact('user','location','subject','tutorschedule'));
     }
 
     /**

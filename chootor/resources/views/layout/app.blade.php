@@ -37,7 +37,7 @@
                   Settings
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="/tutorprofile">Profile</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="/tutorschedule">Schedule</a>
                 </div>
