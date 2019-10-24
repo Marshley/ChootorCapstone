@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\UserSchedule;
+use App\Booking;
 
 class TuteeController extends Controller
 {
@@ -50,9 +51,16 @@ class TuteeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, UserSchedule $userschedule)
     {
-        //
+        $user = $request->user()->id;
+        $schedules = $request->schedules;
+        foreach ($schedules as $schedule){
+        // return $schedule;
+            Booking::create(array_merge($request->toArray(), ['tutee_id' => $user, 
+            'schedule_id' => $schedule]));
+        } 
+        return redirect('/tuteedashboard');
     }
 
     /**

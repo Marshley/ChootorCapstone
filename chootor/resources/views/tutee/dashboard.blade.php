@@ -4,19 +4,59 @@
 @foreach ($tutor_list as $tutor)
     <div class="card">
         <div class="card-body">
-            <div class="card-title">       
-                {{$tutor->name}}
+            <div class="card-title">   
+              {{$tutor->id}}    
+               <h3>Name: {{$tutor->name}}</h3>
             </div>
             <div class="card-text">
-                schoolid  {{$tutor->school_id}} <br />
-                rate{{$tutor->rate}} <br />
-                subject 
+                <h4>School ID: {{$tutor->school_id}}</h4> <br />
+                <h4>Rate: {{$tutor->rate}}/hour</h4> <br />
+                <h4>Subject:  
                     @foreach ($tutor->schedules as $sched)
-                        {{$sched->subject->name}}, 
-                    @endforeach
-                <br /> location
-                {{-- {{$tutor->schedules[0]->location->name}},  --}}
+                        {{$sched->subject->name}}
+                    @endforeach</h4> 
+                <br /> 
+                <h4>Location: {{$tutor->location->name}}</h4>
             </div>
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$tutor->id}}">
+    Book
+  </button>
+  
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal{{$tutor->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{ $tutor->schedules }}
+        <form method="post" action="/booking" >
+            {{ csrf_field() }}
+            @foreach ($tutor->schedules as $sched)
+                <div class="checkbox">
+                <label>
+                <input type="checkbox" name="schedules[]" value="{{$sched->id}}">  
+                        {{$sched->day}}
+                        {{$sched->start_time}} to 
+                        {{$sched->end_time}} 
+                        SUBJECT: {{$sched->subject->name}}</label>
+                </div>
+            @endforeach</h4> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+            <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
         </div>
     </div>
     {{-- @foreach ( $tutor->schedules as $sched)
@@ -25,21 +65,4 @@
     {{$sched->subject->name}} --}}
     {{-- {{$tutor->schedules}} --}}
 @endforeach
-
-
-{{-- @foreach($user as $users)
-        @if($users->user_type == 'tutor')
-            @if($users->status == 'approved')
-            <div class="card">
-                <div class="card-body">
-                <h3>{{ $users->id }}</h3>
-                <h3>{{ $users->name }}</h3>
-                <h3>{{ $users->school_id }}</h3>    
-                <h3>{{ $users->email }}</h3>    
-                <h3>{{ $users->userschedule->day }}</h3> 
-                </div>
-            </div>
-            @endif
-        @endif
-    @endforeach --}}
 @endsection
