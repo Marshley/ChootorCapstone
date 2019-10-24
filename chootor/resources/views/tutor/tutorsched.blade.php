@@ -75,8 +75,36 @@
         <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
         </form>
       </div>
+
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Day</th>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Subject</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+        @foreach ($tutorschedule as $schedules)
+        <tr>
+            <td>{{$schedules->id}}</td>
+            <td>{{$schedules->day}}</td>
+            <td>{{$schedules->start_time}}</td>
+            <td>{{$schedules->end_time}}</td>
+            <td>{{$schedules->subject->name}}</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
 @endsection
