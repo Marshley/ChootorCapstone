@@ -14,7 +14,7 @@
     </thead>
     <tbody>
         @foreach ($user->schedules as $request)
-                {{$request->booking}}
+                @if ($request->booking)
             @if ($request->booking->status == 'pending')
             <tr>
                 <td>{{$request->booking->id}}</td>
@@ -39,6 +39,7 @@
                 </td>
             </tr>
 
+        @endif
         @endif
         @endforeach
     </tbody>

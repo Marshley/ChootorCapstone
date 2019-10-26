@@ -59,6 +59,7 @@ class TutorController extends Controller
     }
     public function store1(Request $request, User $user)
     {
+        // Update user rate and location
         $user = User::find(auth()->user()->id);
         $user->update($request->toArray());
         return redirect('/tutorschedule');
