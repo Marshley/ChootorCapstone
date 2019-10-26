@@ -6,7 +6,6 @@
     <table class="table table-hover table-dark">
             <thead>
               <tr>
-                {{-- <th scope="col">ID</th> --}}
                 <th scope="col">Name</th>
                 <th scope="col">School ID</th>
                 <th scope="col">Email</th>
@@ -18,11 +17,7 @@
               <tr>
                     @foreach ($users as $user)
                         @if($user->user_type == 'tutor')
-
-                        {{-- @if($user->status == 'pending') --}}
-                        
                         <tr>
-                            {{-- <td>{{$user->id}}</td> --}}
                             <td>{{$user->name}}</td>
                             <td>{{$user->school_id}}</td>
                             <td>{{$user->email}}</td>
@@ -46,7 +41,6 @@
                             </td>
                           </div>
                         </tr>
-                        {{-- @endif --}}
                         @endif
                     @endforeach
               </tr>

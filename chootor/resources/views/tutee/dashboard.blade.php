@@ -34,7 +34,7 @@
           </button>
         </div>
         <div class="modal-body">
-          {{ $tutor->schedules }}
+          {{-- {{ $tutor->schedules }} --}}
         <form method="post" action="/booking" >
             {{ csrf_field() }}
             @foreach ($tutor->schedules as $sched)

@@ -37,10 +37,11 @@ class TutorController extends Controller
         $subject = Subject::all();
         return view('tutor.tutorsched',compact('user','location','subject'));
     }
-    public function bookingrequest()
+    public function bookingrequest(Request $request)
     {
-        $bookings = Booking::all();
-        return view('tutor.request')->with('bookings', $bookings);
+        $user = User::find(auth()->user()->id);   
+        // return $user;
+        return view('tutor.request')->with('user', $user);
     }
     /**
      * Store a newly created resource in storage.
@@ -92,9 +93,11 @@ class TutorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Booking $booking)
     {
-        //
+        //Update of booking status
+        $booking->update($request->toArray());
+        return redirect('/request');
     }
 
     /**

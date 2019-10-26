@@ -43,11 +43,13 @@ class AdminController extends Controller
      */
     public function store(Request $request, Subject $subject)
     {   
+        // Create Subject
         $subject->create($request->toArray());
         return redirect('/subject');
     }
     public function store2(Request $request, Location $location)
     {   
+        // Create Location
         $location->create($request->toArray());
         return redirect('/location');
     }
@@ -84,6 +86,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, User $user)
     {
+        // Update of tutor status
         $user->update($request->toArray());
         return redirect('/admindashboard');
     }
