@@ -18,22 +18,22 @@
               Tutor
             </label>
           </div>
-
-        <div class="form-group">
+  <div class="row">
+        <div class="form-group col">
             <label for="firstname">First Name:</label>
             <input type="text" class="form-control" id="firstname" name="firstname">
         </div>
 
-        <div class="form-group">
+        <div class="form-group col">
           <label for="lastname">Last Name:</label>
           <input type="text" class="form-control" id="lastname" name="lastname">
       </div>
 
-      <div class="form-group">
+      <div class="form-group col-2">
         <label for="middleinitial">Middle Initial:</label>
         <input type="text" class="form-control" id="middleinitial" name="middleinitial">
     </div>
-
+  </div>
         <div class="form-group">
             <label for="school_id">School ID:</label>
             <input type="text" class="form-control" id="school_id" name="school_id">
