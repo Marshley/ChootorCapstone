@@ -18,7 +18,7 @@
                     @foreach ($users as $user)
                         @if($user->user_type == 'tutor')
                         <tr>
-                            <td>{{$user->name}}</td>
+                            <td>{{$user->firstname}} {{$user->lastname}} {{$user->middleinitial}}</td>
                             <td>{{$user->school_id}}</td>
                             <td>{{$user->email}}</td>
                             <td>{{$user->status}}</td>

@@ -5,8 +5,7 @@
     <div class="card">
         <div class="card-body">
             <div class="card-title">   
-              {{$tutor->id}}    
-               <h3>Name: {{$tutor->name}}</h3>
+            <h3>Name: {{$tutor->firstname}} {{$tutor->lastname}} {{$tutor->middleinitial}}</h3>
             </div>
             <div class="card-text">
                 <h4>School ID: {{$tutor->school_id}}</h4> <br />
@@ -34,7 +33,6 @@
           </button>
         </div>
         <div class="modal-body">
-          {{-- {{ $tutor->schedules }} --}}
         <form method="post" action="/booking" >
             {{ csrf_field() }}
             @foreach ($tutor->schedules as $sched)

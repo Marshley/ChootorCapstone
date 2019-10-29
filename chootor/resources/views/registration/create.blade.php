@@ -20,9 +20,19 @@
           </div>
 
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" class="form-control" id="name" name="name">
+            <label for="firstname">First Name:</label>
+            <input type="text" class="form-control" id="firstname" name="firstname">
         </div>
+
+        <div class="form-group">
+          <label for="lastname">Last Name:</label>
+          <input type="text" class="form-control" id="lastname" name="lastname">
+      </div>
+
+      <div class="form-group">
+        <label for="middleinitial">Middle Initial:</label>
+        <input type="text" class="form-control" id="middleinitial" name="middleinitial">
+    </div>
 
         <div class="form-group">
             <label for="school_id">School ID:</label>

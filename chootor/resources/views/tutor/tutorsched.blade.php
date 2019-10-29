@@ -13,8 +13,7 @@
               <label for="location_id">Location</label>
                   <select id="location_id" class="form-control" name="location_id" >
                       @foreach ($location as $locations)
-                      {{$locations->id}}
-                          <option selected value="{{$locations->id}}"> {{$locations->name }}</option>
+                          <option value="{{$locations->id}}"> {{$locations->name }}</option>
                       @endforeach                                
                   </select>
               </div>
@@ -84,10 +83,10 @@
 
 
 
-<table class="table table-dark">
+<table class="table table-light">
     <thead>
     <tr>
-        <th scope="col">#</th>
+        {{-- <th scope="col">#</th> --}}
         <th scope="col">Day</th>
         <th scope="col">From</th>
         <th scope="col">To</th>
@@ -98,7 +97,7 @@
     <tbody>
         @foreach ($user->schedules as $schedules)
         <tr>
-            <td>{{$schedules->id}}</td>
+            {{-- <td>{{$schedules->id}}</td> --}}
             <td>{{$schedules->day}}</td>
             <td>{{$schedules->start_time}}</td>
             <td>{{$schedules->end_time}}</td>

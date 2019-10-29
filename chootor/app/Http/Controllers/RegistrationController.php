@@ -36,7 +36,8 @@ class RegistrationController extends Controller
     public function store(Request $request, User $user)
     {
         $this->validate(request(),[
-            'name' => 'required',
+            'firstname' => 'required',
+            'lastname' => 'required',
             'school_id' => 'required',
             'user_type' => 'required',
             'email' => 'required|email',
@@ -44,7 +45,7 @@ class RegistrationController extends Controller
             'password' => 'required|confirmed',
         ]);
 
-        $user = User::create(request(['name','school_id','user_type','email','password', 'status']));
+        $user = User::create(request(['firstname', 'lastname', 'middleinitial','school_id','user_type','email','password', 'status']));
 
         auth()->login($user);
 
