@@ -29,10 +29,12 @@ Route::post('/booking','TuteeController@store');
 Route::get('/tutorschedule','TutorController@create');
 Route::get('/request','TutorController@bookingrequest');
 Route::get('/tutorprofile','TutorController@index');
+Route::get('/workhistory','TutorController@workhistory');
 Route::get('/tutordashboard','TutorController@tutordashboard');
 Route::post('/addtutorschedule/{user}','TutorController@store');
 Route::post('/addinfo','TutorController@store1');
 Route::post('/updaterequest/{booking}','TutorController@update');
+Route::post('/updaterequest/{booking}','TutorController@sessionstatus');
 // Admin Routes
 Route::get('/admindashboard','AdminController@show');
 Route::get('/subject','AdminController@index');
