@@ -2,6 +2,7 @@
 @section('content')
 <h1>TUTUEE</h1>
 @foreach ($tutor_list as $tutor)
+  @if ($tutor->schedules)
     <div class="card">
         <div class="card-body">
             <div class="card-title">   
@@ -62,5 +63,6 @@
     @endforeach
     {{$sched->subject->name}} --}}
     {{-- {{$tutor->schedules}} --}}
+    @endif
 @endforeach
 @endsection

@@ -88,7 +88,11 @@ class AdminController extends Controller
     {
         // Update of tutor status
         $user->update($request->toArray());
+
+        auth()->user()->notify(new BookingRequestNotif());
+
         return redirect('/admindashboard');
+        
     }
 
     /**
