@@ -10,13 +10,6 @@
     <link href="/css/sticky-footer.css" rel="stylesheet">
     <link rel="shortcut icon" href="../img/logo.png" type="image/png">
 
-    <style>
-        .full-width-div {
-            position: absolute;
-            width: 100%;
-            left: 0;
-        }
-    </style>
 </head>
  
 <body>

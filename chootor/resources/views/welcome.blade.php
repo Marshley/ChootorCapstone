@@ -18,23 +18,21 @@
             padding: 0px !important;
         }
 
-        img .profile{
+        img .profile {
             size: 5%;
             alignment: center;
         }
         
-        .title{
+        .title {
             font-size: 7em;
             font-family: "Century Gothic";
             font-weight: bold;
             color: #141945;
             bottom: 50%; 
             left: 10%;
-        }
+        }     
 
-        
-
-        .sub{
+        .sub {
             font-size: 2em;
             color: white;
             bottom: 48%; 
@@ -68,6 +66,11 @@
             font-size: 3em;
             font-weight: bold;
             color: #141945;
+        }
+
+        .name {
+            color: #141945;
+            left: 20%;
         }
 
         .butt-login {
@@ -155,28 +158,31 @@
                 <div class="row">
                     <div class="col-lg-4 col-xs-6">
                         <img src="/img/1-256.png" class="profile img-responsive rounded">
+                        <p>ERGIE CANILLAS</p>
                     </div>
                     <div class="col-lg-4" >
                         <img src="/img/2-256.png" class="profile img-responsive rounded">
+                        <p>MAHDA HARUN</p>
                     </div>
                     <div class="col-lg-4" >
                         <img src="/img/3-256.png" class="profile img-responsive rounded">
+                        <p>DAPHNIE REA MAGPANTAY</p>
                     </div>
                 </div>
             </div>
 
-            <div class="container inline-block" style="margin-top:300px">
+            <div class="container" style="margin-top:300px">
                 <div class="row">
-                    <div class="col-lg-12 col-xs-6 inline-block">
-                        <p class="text-left about-us inline-block">CONTACT US</p>
+                    <div class="col-lg-12 col-xs-6">
+                        <p class="text-left about-us">CONTACT US</p>
                     </div>
-                    <div class="col-lg-12 col-xs-6 inline-block">
+                    <div class="col-lg-12 col-xs-6">
                         <p class="text-right contact">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
                     </div>
-                    <div class="col-lg-12 col-xs-6 inline-block">
+                    <div class="col-lg-12 col-xs-6">
                         <p class="text-right contact">choochoochootor@gmail.com</p>
                     </div>
-                    <div class="col-lg-12 col-xs-6 inline-block">
+                    <div class="col-lg-12 col-xs-6">
                         <p class="text-right contact">(+63)9 12 3456 789</p>
                     </div>
                 </div>
