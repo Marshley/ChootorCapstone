@@ -20,9 +20,17 @@ class TutorController extends Controller
     {
         return view('tutor.profile');
     }
-    public function tutordashboard()
+    public function tutordashboard(Request $request)
     {
-        return view('tutor.dashboard');
+        // Tutor approved request | done tutor session
+        $user = User::find(auth()->user()->id); 
+        return view('tutor.dashboard')->with('user', $user);
+    }
+    public function workhistory(Request $request)
+    {
+        // Done tutor session
+        $user = User::find(auth()->user()->id); 
+        return view('tutor.workhistory')->with('user', $user);
     }
 
     /**
@@ -39,8 +47,8 @@ class TutorController extends Controller
     }
     public function bookingrequest(Request $request)
     {
-        $user = User::find(auth()->user()->id);   
-        // return $user;
+        // Tutor booking request | approved or disapproved
+        $user = User::find(auth()->user()->id); 
         return view('tutor.request')->with('user', $user);
     }
     /**
@@ -97,6 +105,13 @@ class TutorController extends Controller
     public function update(Request $request, Booking $booking)
     {
         //Update of booking status
+        $booking->update($request->toArray());
+        return redirect('/request');
+    }
+
+    public function sessionstatus(Request $request, Booking $booking)
+    {
+        //Update of tutor session status
         $booking->update($request->toArray());
         return redirect('/request');
     }

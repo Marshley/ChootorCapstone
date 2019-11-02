@@ -35,6 +35,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="/request">Requests</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/workhistory">Work History</a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Settings
