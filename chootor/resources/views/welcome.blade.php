@@ -103,8 +103,8 @@
             <div class="container justify-content-center" style="margin-top:80px">
                 <div class="col-lg-12 col-xs-12 justify-content-center">
                     <div class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-outline-primary btn-lg butt-login text-white" role="button" style="margin-right:10px">LOGIN</a>
-                        <a href="#" class="btn btn-outline-primary btn-lg butt-reg" role="button">REGISTER</a>  
+                        <a href="/login" class="btn btn-outline-primary btn-lg butt-login text-white" role="button" style="margin-right:10px">LOGIN</a>
+                        <a href="/register" class="btn btn-outline-primary btn-lg butt-reg" role="button">REGISTER</a>  
                     </div>       
                     <p class="company-head text-center" style="margin-top:200px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
                     <p class="company-desc text-center" >We'll be guiding you to easily look for </br> your desired peer tutor.</p>   
