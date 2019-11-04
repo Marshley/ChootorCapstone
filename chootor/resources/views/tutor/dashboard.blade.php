@@ -1,11 +1,11 @@
 @extends('layout.app')
 @section('content')
-<h1>TUTOR APPROVED BOOKING</h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTOR APPROVED BOOKING</h1>
 <table class="table table-light">
     <thead>
     <tr>
-        <th scope="col">Tutee ID</th>
-        <th scope="col">Schedule ID</th>
+        <th scope="col">Tutee Name</th>
+        <th scope="col">Time</th>
         <th scope="col">Status</th>
         <th scope="col">Action Buttons</th>
     </tr>
@@ -15,8 +15,8 @@
         @if ($show->booking)
         @if ($show->booking->status == 'approved')
             <tr>
-                <td>{{$show->booking->tutee_id}}</td>
-                <td>{{$show->booking->schedule_id}}</td>
+                <td>{{$show->booking->tutee->firstname}} {{$show->booking->tutee->lastname}}</td>
+                <td>{{$show->booking->schedule->start_time}} to {{$show->booking->schedule->end_time}}</td>
                 <td> {{$show->booking->status}}</td>
                 <td>
                 <div class="d-flex flex-row">
@@ -24,7 +24,7 @@
                           {{ csrf_field() }}
                         <button type="submit" class="btn btn-success " id="status" name="status" value="done">
                           <label class="form-check-label" for="status">
-                          ✓</button>
+                          DONE</button>
                         </form>
                 </td>
                 @endif

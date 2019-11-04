@@ -1,10 +1,10 @@
 @extends('layout.app')
 @section('content')
-<h1>WORK HISTORY</h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1>
 <table class="table table-light">
     <thead>
     <tr>
-        <th scope="col">Tutee ID</th>
+        <th scope="col">Tutee Name</th>
         <th scope="col">Time</th>
         <th scope="col">Day</th>
         <th scope="col">Status</th>
@@ -16,7 +16,7 @@
             @if ($sessiondone->booking->status == 'done')
             <tr> 
                 {{-- <td>{{$user->location->name}}</td> --}}
-                <td>{{$sessiondone->booking->tutee_id}}</td>
+                <td>{{$sessiondone->booking->tutee->firstname}} {{$sessiondone->booking->tutee->lastname}}</td>
                 <td>{{$sessiondone->start_time}} to: {{$sessiondone->end_time}} </td>
                 <td>{{$sessiondone->day}}</td>
                 <td>{{$sessiondone->booking->status}}</td>
