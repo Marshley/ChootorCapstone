@@ -48,7 +48,7 @@
             background-color: #141945;
             border-color: #141945;
             font-family: "century gothic";
-            text: #ffffff;
+            color: #ffffff;
         }
 
         .butt-reg {
