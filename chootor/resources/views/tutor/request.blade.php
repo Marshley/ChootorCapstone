@@ -1,23 +1,27 @@
 @extends('layout.app')
 @section('content')
-<h1> REQUESTS </h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> TUTEE REQUESTS </h1>
 
 <table class="table table-light">
     <thead>
     <tr>
-        <th scope="col">Tutee ID</th>
-        <th scope="col">Schedule ID</th>
+        <th scope="col">Tutee Name</th>
+        <th scope="col">Day</th>
+        <th scope="col">Start Time</th>
+        <th scope="col">End Time</th>
         <th scope="col">Status</th>
         <th scope="col">Action Buttons</th>
     </tr>
     </thead>
     <tbody>
-        @foreach ($user->schedules as $request)
+        @foreach ($scheds as $request)
                 @if ($request->booking)
             @if ($request->booking->status == 'pending')
             <tr>
-                <td>{{$request->booking->tutee_id}}</td>
-                <td>{{$request->booking->schedule_id}}</td>
+                <td>{{$request->booking->tutee->firstname}} {{$request->booking->tutee->lastname}}</td>
+                <td>{{$request->booking->schedule->day}}</td>
+                <td>{{$request->booking->schedule->start_time}}</td>
+                <td>{{$request->booking->schedule->end_time}}</td>
                 <td> {{$request->booking->status}}</td>
                 <td>
                 <div class="d-flex flex-row">
@@ -37,22 +41,28 @@
                 </td>
                 <td>
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$request->booking->tutee_id}}">
                     View 
-                  </button>
+                </button>
                   
                   <!-- Modal -->
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="exampleModal{{$request->booking->tutee_id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <h5 class="modal-title" id="exampleModalLabel">Tutee Profile</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                        
+                          <div class="container">
+                            <p class="text-center">[  PICTURE HERE  ] </p>
+                            <p class="text-center">School ID: {{$request->booking->tutee->school_id}} </p>
+                            <p class="text-center">Name: {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
+                            <p class="text-center">Email: {{$request->booking->tutee->email}} </p>
+                            <p class="text-center">Course: [  COURSE HERE  ]</p>
+                          </div>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -18,11 +18,6 @@
             padding: 0px !important;
         }
 
-        img .profile {
-            size: 5%;
-            alignment: center;
-        }
-        
         .title {
             font-size: 7em;
             font-family: "Century Gothic";
@@ -33,11 +28,35 @@
         }     
 
         .sub {
-            font-size: 2em;
+            font-size: 28px;
             color: white;
             bottom: 48%; 
-            left: 21%;
-            font-family: "Agency FB";
+            left: 11%;
+            font-family: "Century Gothic";
+        }
+
+        .butts {
+            font-size: 30px;
+            color: white;
+            bottom: 43%; 
+            left: 11%;
+            font-family: "Century Gothic";
+        }
+
+        .butt-login {
+            /* border-radius: 50px; */
+            background-color: #141945;
+            border-color: #141945;
+            font-family: "century gothic";
+            text: #ffffff;
+        }
+
+        .butt-reg {
+            /* border-radius: 50px; */
+            background-color: transparent;
+            border-color: #141945;
+            color: #141945;
+            font-family: "century gothic";
         }
 
         .bottom-left {
@@ -52,9 +71,10 @@
         }
 
         .company-desc {
-            font-size: 30px;
+            font-size: 25px;
             font-family: "century gothic";
             color: #141945;
+            margin-top: 100px;
         }
 
         .about-us {
@@ -62,31 +82,29 @@
             color: #141945;
         }
 
-        .about-chootor {
+        .about-chootor-alpha {
             font-size: 3em;
             font-weight: bold;
             color: #141945;
         }
 
-        .name {
+        .about-chootor-beta {
+            font-size: 2em;
             color: #141945;
-            left: 20%;
         }
 
-        .butt-login {
-            border-radius: 50px;
-            background-color: #141945;
-            border-color: #141945;
-            font-family: "century gothic";
+        .profile {
+            font-size: 20px;
+            font-family: "Century Gothic";
+            color: #141945;
         }
 
-        .butt-reg {
-            border-radius: 50px;
-            background-color: transparent;
-            border-color: #141945;
-            color: #141945;
-            font-family: "century gothic";
+        .contact {
+            font-size: 18px;
+            color: #ffffff;
+            font-style: "Century Gothic";
         }
+
     </style>
 </head>
  
@@ -97,54 +115,55 @@
             
             <div class="col-lg-12 col-xs-6">
                 <img src="/img/dashboard1.png" class="w-100  inline-block" alt="Responsive image">
-                <p class="bottom-left title">CHOOTOR </p> 
-                <p class="bottom-left sub">CHOOSE A TUTOR </p> 
+                <p class="bottom-left title">CHOOTOR</p> 
+                <p class="bottom-left sub">Choose a Tutor</p>
+                <p class="bottom-left butts">
+                    <a href="/login" class="btn btn-outline-primary text-white btn-lg butt-login" role="button" style="margin-right:15px">LOGIN</a>
+                    <a href="/register" class="btn btn-outline-primary btn-lg butt-reg" role="button">REGISTER</a> </p> 
+                    
             </div>
                 
             
 
             <div class="container justify-content-center" style="margin-top:80px">
                 <div class="col-lg-12 col-xs-12 justify-content-center">
-                    <div class="d-flex justify-content-center">
-                        <a href="/login" class="btn btn-outline-primary btn-lg butt-login text-white" role="button" style="margin-right:10px">LOGIN</a>
-                        <a href="/register" class="btn btn-outline-primary btn-lg butt-reg" role="button">REGISTER</a>  
-                    </div>       
-                    <p class="company-head text-center" style="margin-top:200px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
+                     <p class="company-head text-center" style="margin-top:300px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
                     <p class="company-desc text-center" >We'll be guiding you to easily look for </br> your desired peer tutor.</p>   
                 </div>
             </div>
 
-            <div class="container" style="margin-top:300px">
+            <div class="container" style="margin-top:300px;margin-bottom:100px">
                 <div class="row">
                     <div class="col-lg-12 col-xs-6">
-                        <p class="text-left about-chootor">BOOK A TUTOR</p>
+                        <p class="text-center about-chootor-alpha">BOOKING MADE EASY!</p>
                     </div>
                 </div>
             </div>
 
-            <div class="container" style="margin-top:300px">
+            <div class="container">
+                <div class="row" style="margin-top:100px">
+                    <div class="col-lg-4">
+                        <p class="text-center about-chootor-alpha">STEP 1:</p>
+                        <p class="text-center about-chootor-beta">Book your desired peer Tutor.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="text-center about-chootor-alpha">STEP 2:</p>
+                        <p class="text-center about-chootor-beta">Set your appointment. </br> Choose which schedule that you </br> and your  chosen Tutor is available.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p class="text-center about-chootor-alpha">STEP 3:</p>
+                        <p class="text-center about-chootor-beta">Meet your Tutor in person for the session!</p>
+                    </div>
+                </div>
                 <div class="row">
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-right about-chootor">SET APPOINTNMENT</p>
+                    <div class="col-lg-12 col-xs-12 text-center">
+                            <img src="/img/Logo.png" class="img-responsive rounded center-block" style="border-radius:50%;width:300px;height:300px">                       
                     </div>
                 </div>
             </div>
 
-            <div class="container" style="margin-top:300px">
-                <div class="row">
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-left about-chootor">MEET UP WITH YOUR TUTOR</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container" style="margin-top:300px">
-                <div class="row">
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-right about-chootor">REPEAT</p>
-                    </div>
-                </div>
-            </div>
+            
+           
 
             <div class="container" style="margin-top:300px">
                 <div class="row">
@@ -154,54 +173,61 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container center" style="margin-bottom:100px">
                 <div class="row">
-                    <div class="col-lg-4 col-xs-6">
-                        <img src="/img/1-256.png" class="profile img-responsive rounded">
-                        <p>ERGIE CANILLAS</p>
+                    <div class="col-lg-4 col-xs-4  text-center">
+                        <img src="/img/1-256.png" class="img-responsive rounded center-block" style="border-radius:50%">
+                        <p class="profile" style="margin-top:30px">ERGIE CANILLAS</p>
                     </div>
-                    <div class="col-lg-4" >
-                        <img src="/img/2-256.png" class="profile img-responsive rounded">
-                        <p>MAHDA HARUN</p>
+                    <div class="col-lg-4 col-xs-4  text-center" >
+                        <img src="/img/2-256.png" class="img-responsive rounded center-block">
+                        <p class="profile" style="margin-top:30px">MAHDA HARUN</p>
                     </div>
-                    <div class="col-lg-4" >
-                        <img src="/img/3-256.png" class="profile img-responsive rounded">
-                        <p>DAPHNIE REA MAGPANTAY</p>
+                    <div class="col-lg-4 col-xs-4  text-center" >
+                        <img src="/img/3-256.png" class="img-responsive rounded center-block">
+                        <p class="profile" style="margin-top:30px">DAPHNIE REA MAGPANTAY</p>
                     </div>
                 </div>
             </div>
 
-            <div class="container" style="margin-top:300px">
-                <div class="row">
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-left about-us">CONTACT US</p>
-                    </div>
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-right contact">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
-                    </div>
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-right contact">choochoochootor@gmail.com</p>
-                    </div>
-                    <div class="col-lg-12 col-xs-6">
-                        <p class="text-right contact">(+63)9 12 3456 789</p>
+            <footer id="sticky-footer" class="py-4 bg-dark text-white">
+                <div class="container" style="margin-top:50px">
+                    <div class="row">
+                        <div class="col-lg-4 col-xs-4 text-left">
+                            <!-- <p class="text-left contact-us">CONTACT US</p> -->
+                            <img src="/img/icon-facebook-256.png" class="img-responsive rounded center-block" style="width:50px;height:50px;">
+                            <img src="/img/icon-instagram-256.png" class="img-responsive rounded center-block" style="width:50px;height:50px;">
+                            <img src="/img/icon-google-256.png" class="img-responsive rounded center-block" style="width:50px;height:50px;">
+                            <img src="/img/icon-twitter-256.png" class="img-responsive rounded center-block" style="width:50px;height:50px;">
+                            </br>
+                            </br>
+                            <img src="/img/bannn.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
+                        </div>
+                        <div class="col-lg-4 col-xs-4 text-center" style="margin-top:30px;margin-bottom:5px;">
+                            <a class="text-transparent contact"> COPYRIGHT © 2019 SAKURA 🌸</a>
+                        </div>            
+                        <div class="col-lg-4 col-xs-4">
+                            <p class="text-left contact">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
+                            <p class="text-left contact">choochoochootor@gmail.com</p>
+                            <p class="text-left contact">(+63)9 12 3456 789</p>
+                        </div>    
                     </div>
                 </div>
-            </div>
-
+            </footer>        
         </div>
     </div>
 
-    
+
     <!-- Footer -->
-    <footer class="page-footer font-small fixed-bottom">
-
+    <!-- <footer class="text-center text-white font-small fixed-bottom" style="margin-top:100px;margin-bottom:10px;">
+        <a class="text-transparent"> Copyright © 2019 Sakura 🌸</a>
+    </footer> -->
+        
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">©
+    <!-- <div class="footer-copyright text-center py-3">©
         <a> SAKURA 🌸 2019</a>
-    </div>
+    </div> -->
     <!-- Copyright -->
-
-    </footer>
     <!-- Footer -->
  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

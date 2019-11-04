@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-   <h1>SCHEDULE</h1> 
+   <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE</h1> 
    <form action="/addinfo" method="POST">
     {{ csrf_field() }}    
         <div class="form-row">

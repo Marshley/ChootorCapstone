@@ -23,7 +23,7 @@ class TutorController extends Controller
     public function tutordashboard(Request $request)
     {
         // Tutor approved request | done tutor session
-        $user = User::find(auth()->user()->id); 
+        $user = User::find(auth()->user()->id);
         return view('tutor.dashboard')->with('user', $user);
     }
     public function workhistory(Request $request)
@@ -49,7 +49,8 @@ class TutorController extends Controller
     {
         // Tutor booking request | approved or disapproved
         $user = User::find(auth()->user()->id); 
-        return view('tutor.request')->with('user', $user);
+        $schedules = $user->schedules;
+        return view('tutor.request')->with('scheds', $schedules);
     }
     /**
      * Store a newly created resource in storage.
