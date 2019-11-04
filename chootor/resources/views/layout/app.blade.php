@@ -33,10 +33,12 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/tutorprofile">Profile</a>
-                    <div class="dropdown-divider"></div>
+                    @foreach ($user->notifications as $notification)
+                    <a class="dropdown-item" href="#">{{json_encode($notification->data, true)}}</a>
+                    {{-- <div class="dropdown-divider"></div> --}}
+                    @endforeach
                 </div>
-                </li> 
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="/tutordashboard">Dashboard</a>
             </li>
@@ -124,7 +126,10 @@
 <div class="container">
     @yield('content')
 </div>
- 
+{{-- {{$user->notifications}} --}}
+{{-- @foreach ($user->notifications as $notification)
+    <marquee >{{json_encode($notification->data, true)}}</marquee>
+@endforeach --}}
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
