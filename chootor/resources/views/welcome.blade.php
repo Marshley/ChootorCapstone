@@ -162,9 +162,6 @@
                 </div>
             </div>
 
-            
-           
-
             <div class="container" style="margin-top:300px">
                 <div class="row">
                     <div class="col-lg-12 col-xs-6">
@@ -176,15 +173,15 @@
             <div class="container center" style="margin-bottom:100px">
                 <div class="row">
                     <div class="col-lg-4 col-xs-4  text-center">
-                        <img src="/img/1-256.png" class="img-responsive rounded center-block" style="border-radius:50%">
+                        <img src="/img/erg.png" class="img-responsive rounded center-block" style="width:256px;height:256px">
                         <p class="profile" style="margin-top:30px">ERGIE CANILLAS</p>
                     </div>
                     <div class="col-lg-4 col-xs-4  text-center" >
-                        <img src="/img/2-256.png" class="img-responsive rounded center-block">
+                        <img src="/img/mah.png" class="img-responsive rounded center-block" style="width:256px;height:256px">
                         <p class="profile" style="margin-top:30px">MAHDA HARUN</p>
                     </div>
                     <div class="col-lg-4 col-xs-4  text-center" >
-                        <img src="/img/3-256.png" class="img-responsive rounded center-block">
+                        <img src="/img/dap.png" class="img-responsive rounded center-block" style="width:256px;height:256px">
                         <p class="profile" style="margin-top:30px">DAPHNIE REA MAGPANTAY</p>
                     </div>
                 </div>

@@ -45,6 +45,11 @@ class TuteeController extends Controller
         //
     }
 
+    public function tuteeprofile()
+    {
+        return view('tutee.profile');
+    }
+
     /**
      * Store a newly created resource in storage.
      *

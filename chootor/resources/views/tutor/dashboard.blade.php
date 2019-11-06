@@ -1,8 +1,8 @@
 @extends('layout.app')
 @section('content')
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTOR APPROVED BOOKING</h1>
-<table class="table table-light">
-    <thead>
+<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+    <thead class="thead-dark">
     <tr>
         <th scope="col">Tutee Name</th>
         <th scope="col">Time</th>

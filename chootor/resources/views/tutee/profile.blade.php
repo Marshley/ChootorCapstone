@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTOR PROFILE</h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTEE PROFILE</h1>
 
 <form>
 

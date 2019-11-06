@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-<h1>TUTUEE</h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTEE</h1>
 @foreach ($tutor_list as $tutor)
   @if ($tutor->schedules)
     <div class="card">

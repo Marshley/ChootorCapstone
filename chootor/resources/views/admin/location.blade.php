@@ -36,8 +36,8 @@
         </div>
       </div>
 
-<table class="table table-dark">
-    <thead>
+<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+  <thead class="thead-dark">
     <tr>
         <th scope="col">#</th>
         <th scope="col">Location Name</th>

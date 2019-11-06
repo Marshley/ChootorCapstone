@@ -23,8 +23,8 @@
     </div>
 </div>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  SUBJECT SCHEDULE
+<button type="button" class="btn btn-primary absolute-center" data-toggle="modal" data-target="#exampleModal">
+  CREATE SCHEDULE
 </button>
 
 <!-- Modal -->
@@ -83,8 +83,8 @@
 
 
 
-<table class="table table-light">
-    <thead>
+<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+    <thead class="thead-dark">
     <tr>
         {{-- <th scope="col">#</th> --}}
         <th scope="col">Day</th>

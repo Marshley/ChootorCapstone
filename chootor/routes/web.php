@@ -24,6 +24,7 @@ Route::post('/login','SessionController@store');
 Route::get('/logout', 'SessionController@destroy');
 // Tutee Routes
 Route::get('/tuteedashboard','TuteeController@index');
+Route::get('/tuteeprofile','TuteeController@tuteeprofile');
 Route::post('/booking','TuteeController@store');
 // Tutor Routes
 Route::get('/tutorschedule','TutorController@create');

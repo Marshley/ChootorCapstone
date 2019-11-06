@@ -1,13 +1,13 @@
 @extends('layout.app')
 @section('content')
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1>
-<table class="table table-light">
-    <thead>
+<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+    <thead class="thead-dark">
     <tr>
         <th scope="col">Tutee Name</th>
         <th scope="col">Time</th>
         <th scope="col">Day</th>
-        <th scope="col">Status</th>
+        <!-- <th scope="col">Status</th> -->
     </tr>
     </thead>
     <tbody>
@@ -19,7 +19,7 @@
                 <td>{{$sessiondone->booking->tutee->firstname}} {{$sessiondone->booking->tutee->lastname}}</td>
                 <td>{{$sessiondone->start_time}} to: {{$sessiondone->end_time}} </td>
                 <td>{{$sessiondone->day}}</td>
-                <td>{{$sessiondone->booking->status}}</td>
+                <!-- <td>{{$sessiondone->booking->status}}</td> -->
                 @endif
             @endif
         @endforeach
