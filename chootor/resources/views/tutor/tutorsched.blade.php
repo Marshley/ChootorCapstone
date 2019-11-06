@@ -20,10 +20,10 @@
                 </div>
                 <button type="submit" class="btn btn-primary">SAVE</button>
       </form>
-    </div>
-</div>
 
-<button type="button" class="btn btn-primary absolute-center" data-toggle="modal" data-target="#exampleModal">
+
+
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
   CREATE SCHEDULE
 </button>
 
