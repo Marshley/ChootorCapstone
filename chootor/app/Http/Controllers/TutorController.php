@@ -16,9 +16,10 @@ class TutorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('tutor.profile');
+        $user = User::find(auth()->user()->id); 
+        return view('tutor.profile')->with('user', $user);
     }
     public function tutordashboard(Request $request)
     {
@@ -45,12 +46,16 @@ class TutorController extends Controller
         $subject = Subject::all();
         return view('tutor.tutorsched',compact('user','location','subject'));
     }
-    public function bookingrequest(Request $request)
+    public function bookingrequest(Request $request, Booking $booking)
     {
         // Tutor booking request | approved or disapproved
         $user = User::find(auth()->user()->id); 
         $schedules = $user->schedules;
-        return view('tutor.request')->with('scheds', $schedules);
+        // $users = App\User::first();  
+        // $user->notify(new \App\Notifications\BookingReplyNotification(
+        //     'Tutor has replied to your booking request'.$booking->status));
+            // return $bookings;
+        return view('tutor.request',compact('user', 'schedules'));
     }
     /**
      * Store a newly created resource in storage.

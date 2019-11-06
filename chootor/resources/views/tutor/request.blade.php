@@ -14,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-        @foreach ($scheds as $request)
+        @foreach ($schedules as $request)
                 @if ($request->booking)
             @if ($request->booking->status == 'pending')
             <tr>

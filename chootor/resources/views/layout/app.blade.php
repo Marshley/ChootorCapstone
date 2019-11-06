@@ -69,6 +69,16 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                {{-- <li class="nav-item dropdown">
+                    <a class="nav-link fa fa-bell" href="#" id="navbarDropdown" role="button" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach ($user->notifications as $notification)
+                        <a class="dropdown-item" href="#">{{json_encode($notification->data, true)}}</a>
+                        @endforeach
+                    </div>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="/tuteedashboard">Dashboard</a>
                 </li>

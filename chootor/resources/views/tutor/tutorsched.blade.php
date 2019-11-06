@@ -11,7 +11,7 @@
           </div>
             <div class="form-group col-md-4">
               <label for="location_id">Location</label>
-                  <select id="location_id" class="form-control" name="location_id" >
+                <select id="location_id" class="form-control" name="location_id" >
                       @foreach ($location as $locations)
                           <option value="{{$locations->id}}"> {{$locations->name }}</option>
                       @endforeach                                
@@ -91,7 +91,7 @@
         <th scope="col">From</th>
         <th scope="col">To</th>
         <th scope="col">Subject</th>
-        
+        <th scope="col">Location</th>
     </tr>
     </thead>
     <tbody>
@@ -102,6 +102,7 @@
             <td>{{$schedules->start_time}}</td>
             <td>{{$schedules->end_time}}</td>
             <td>{{$schedules->subject->name}}</td>
+            <td>{{$schedules->location->name}}</td>
         </tr>
         @endforeach
     </tbody>

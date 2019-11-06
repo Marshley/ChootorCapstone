@@ -61,10 +61,13 @@ class TuteeController extends Controller
         $user = $request->user()->id;
         $schedules = $request->schedules;
         foreach ($schedules as $schedule){
-        // return $schedule;
             Booking::create(array_merge($request->toArray(), ['tutee_id' => $user, 
             'schedule_id' => $schedule]));
         } 
+        // $users = User::where($request->user()->id)->first();
+        // $users = User::where($user->bookings)->first();
+        // $users->notify( new \App\Notifications\BookingRequestNotification('Tutor has been '.$users->status));
+
         return redirect('/tuteedashboard');
     }
 
