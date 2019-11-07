@@ -128,7 +128,7 @@
             <div class="container justify-content-center" style="margin-top:80px">
                 <div class="col-lg-12 col-xs-12 justify-content-center">
                      <p class="company-head text-center" style="margin-top:300px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
-                    <p class="company-desc text-center" >We'll be guiding you to easily look for </br> your desired peer tutor.</p>   
+                    <p class="company-desc text-center" >We'll be guiding you to easily look for <br/> your desired peer tutor.</p>   
                 </div>
             </div>
 
@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-lg-4">
                         <p class="text-center about-chootor-alpha">STEP 2:</p>
-                        <p class="text-center about-chootor-beta">Set your appointment. </br> Choose which schedule that you </br> and your  chosen Tutor is available.</p>
+                        <p class="text-center about-chootor-beta">Set your appointment. <br/> Choose which schedule that you <br/> and your  chosen Tutor is available.</p>
                     </div>
                     <div class="col-lg-4">
                         <p class="text-center about-chootor-alpha">STEP 3:</p>

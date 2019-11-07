@@ -9,11 +9,6 @@ use App\Booking;
 
 class TuteeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index(Request $request)
     {
         $week_start = strtotime("monday this week");
@@ -34,28 +29,22 @@ class TuteeController extends Controller
     //    return $tutor_list; 
         return view('tutee.dashboard')->with('tutor_list', $tutor_list );
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+    
+    // START OF TUTEE PROFILE UPDATE
     public function tuteeprofile()
     {
-        return view('tutee.profile');
+        $user = User::find(auth()->user()->id); 
+        return view('tutee.profile')->with('user', $user);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function updateprofile(Request $request, User $user)
+    {
+        $user = User::find(auth()->user()->id);
+        $user->update($request->toArray());
+        return redirect('/tuteeprofile');
+    }
+    // END OF TUTEE PROFILE UPDATE
+
     public function store(Request $request, UserSchedule $userschedule)
     {
         $user = $request->user()->id;
@@ -71,48 +60,4 @@ class TuteeController extends Controller
         return redirect('/tuteedashboard');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

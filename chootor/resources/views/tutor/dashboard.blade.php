@@ -5,8 +5,9 @@
     <thead class="thead-dark">
     <tr>
         <th scope="col">Tutee Name</th>
+        <th scope="col">Day</th>
         <th scope="col">Time</th>
-        <th scope="col">Status</th>
+        {{-- <th scope="col">Status</th> --}}
         <th scope="col">Action Buttons</th>
     </tr>
     </thead>
@@ -16,8 +17,9 @@
         @if ($show->booking->status == 'approved')
             <tr>
                 <td>{{$show->booking->tutee->firstname}} {{$show->booking->tutee->lastname}}</td>
+                <td>{{$show->booking->schedule->day}}</td>
                 <td>{{$show->booking->schedule->start_time}} to {{$show->booking->schedule->end_time}}</td>
-                <td> {{$show->booking->status}}</td>
+                {{-- <td> {{$show->booking->status}}</td> --}}
                 <td>
                 <div class="d-flex flex-row">
                     <form method="post" action="updaterequest/{{$show->booking->id}}" >

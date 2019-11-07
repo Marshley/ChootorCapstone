@@ -20,19 +20,18 @@
                 </div>
                 <button type="submit" class="btn btn-primary">SAVE</button>
       </form>
-
-
-
+      <br/>
+{{-- START OF CREATING TUTOR SCHEDULE --}}
 <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#exampleModal">
   CREATE SCHEDULE
 </button>
-
+<br/>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">SET SCHEDULE</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -51,16 +50,18 @@
               <option>Friday</option>
               <option>Saturday</option>
             </select>
-        </div>
-        <div class="form-group mx-5 my-4">
-                <input type="time" id="time" class="form-control" name="start_time">
-                <label for="start_time">Choose start time</label>
-        </div>
-             
-        <div class="form-group mx-5 my-4 ">
-          <input type="time" id="time" class="form-control" name="end_time">
-          <label for="end_time">Choose end time</label>
-        </div>
+          </div>
+
+        <div class="row">
+          <div class="form-group mx-5 my-4">FROM
+            <input type="time" id="time" class="form-control" name="start_time">
+            <label for="start_time">Choose start time</label>
+          </div>
+          <div class="form-group mx-5 my-4"> TO:
+            <input type="time" id="time" class="form-control" name="end_time">
+            <label for="end_time">Choose end time</label>
+          </div>
+      </div>
         <div class="form-group col-md-4">
           <label for="subject_id">Subject</label>
           <select id="subject_id" class="form-control" name="subject_id" >
@@ -79,12 +80,10 @@
     </div>
   </div>
 </div>
-
-
-
-
+{{-- END OF CREATING TUTOR SCHEDULE --}}
+{{-- START OF TABLE --}}
 <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
-    <thead class="thead-dark">
+    <thead class="thead-light">
     <tr>
         {{-- <th scope="col">#</th> --}}
         <th scope="col">Day</th>

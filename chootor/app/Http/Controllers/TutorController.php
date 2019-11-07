@@ -11,22 +11,29 @@ use App\Booking;
 
 class TutorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
+    // TUTOR PROFILE UPDATE
+    public function index()
     {
+        // PROFILE VIEW
         $user = User::find(auth()->user()->id); 
         return view('tutor.profile')->with('user', $user);
     }
+
+    public function updateprofile(Request $request, User $user)
+    {
+        $user = User::find(auth()->user()->id);
+        $user->update($request->toArray());
+        return redirect('/tutorprofile');
+    }
+    // END OF TUTOR PROFILE UPDATE
+
     public function tutordashboard(Request $request)
     {
-        // Tutor approved request | done tutor session
+        // Tutor approved request | done tutor session VIEW
         $user = User::find(auth()->user()->id);
         return view('tutor.dashboard')->with('user', $user);
     }
+
     public function workhistory(Request $request)
     {
         // Done tutor session
@@ -34,11 +41,6 @@ class TutorController extends Controller
         return view('tutor.workhistory')->with('user', $user);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create(Request $request)
     {
         $user = User::find(auth()->user()->id);
@@ -46,6 +48,7 @@ class TutorController extends Controller
         $subject = Subject::all();
         return view('tutor.tutorsched',compact('user','location','subject'));
     }
+
     public function bookingrequest(Request $request, Booking $booking)
     {
         // Tutor booking request | approved or disapproved
@@ -57,20 +60,15 @@ class TutorController extends Controller
             // return $bookings;
         return view('tutor.request',compact('user', 'schedules'));
     }
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request, User $user)
     {
         // return [$user, $request->toArray()];
         // $user = User::find(auth()->user()->id);
         Userschedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id]));  
         return redirect('/tutorschedule');
-       
     }
+
     public function store1(Request $request, User $user)
     {
         // Update user rate and location
@@ -79,35 +77,16 @@ class TutorController extends Controller
         return redirect('/tutorschedule');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Booking $booking)
     {
         //Update of booking status
@@ -119,15 +98,9 @@ class TutorController extends Controller
     {
         //Update of tutor session status
         $booking->update($request->toArray());
-        return redirect('/request');
+        return redirect('/tutordashboard');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

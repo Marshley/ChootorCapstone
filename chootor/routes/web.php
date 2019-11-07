@@ -26,6 +26,7 @@ Route::get('/logout', 'SessionController@destroy');
 Route::get('/tuteedashboard','TuteeController@index');
 Route::get('/tuteeprofile','TuteeController@tuteeprofile');
 Route::post('/booking','TuteeController@store');
+Route::post('/updatetuteeprofile','TuteeController@updateprofile');
 // Tutor Routes
 Route::get('/tutorschedule','TutorController@create');
 Route::get('/request','TutorController@bookingrequest');
@@ -36,6 +37,7 @@ Route::post('/addtutorschedule/{user}','TutorController@store');
 Route::post('/addinfo','TutorController@store1');
 Route::post('/updaterequest/{booking}','TutorController@update');
 Route::post('/updaterequest/{booking}','TutorController@sessionstatus');
+Route::post('/updatetutorprofile','TutorController@updateprofile');
 // Admin Routes
 Route::get('/admindashboard','AdminController@show');
 Route::get('/subject','AdminController@index');
