@@ -2,23 +2,22 @@
 
 @section('content')
 
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTEE PROFILE</h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
     <form method="POST" action="/updatetuteeprofile">
     {{ csrf_field() }}
-    <div class="form-group">
-        <div class="row">
-            <div class="col-lg-12">
-                <label for="exampleFormControlFile1">You can upload your photo too!</label>
+    <div class="form-group ">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="/img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px">           
+                    <input type="file" class="form-control-file offset-sm-5" id="exampleFormControlFile1">
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <img src="/img/blank.png" class="img-responsive rounded center-block" style="width:200px;height:200px">           
-            <input type="file" class="form-control-file" id="exampleFormControlFile1">
         </div>
     </div>
 
 
-    <div class="form-group row col-sm-10">
+    <div class="form-group row col-lg-12" style="margin-top:50px">
         
         <div class="form-group row col-sm">
             <label for="firstname" class="col-sm-4 col-form-label">First Name: </label>
@@ -52,6 +51,14 @@
             </div>
     </div>
 
+    <!-- i add pa ang course, naglagay lang ako incase kailanganin na -->
+    <div class="form-group row">
+        <label for="course" class="col-sm-2 col-form-label">Course</label>
+        <div class="col-sm-10">
+        <input type="course" class="form-control font-italic" id="course" placeholder="Course" name="course" value="{{$user->course}}">
+        </div>
+    </div>
+    
     <div class="form-group row">
         <label for="email" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
@@ -75,8 +82,8 @@
     </div>
 
     <div class="form-group row">
-        <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">SAVE</button>
+        <div class="col-lg-12" style="margin-top:20px">
+            <button type="submit" class="btn btn-outline-dark btn-block" style="cursor:pointer">SAVE</button>
         </div>
     </div>
 </form>

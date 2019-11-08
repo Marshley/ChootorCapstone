@@ -2,7 +2,7 @@
  
 @section('content')
  
-    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">Sign In</h2>
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SIGN IN</h2>
     
     <form method="POST" action="/login">
         {{ csrf_field() }}
