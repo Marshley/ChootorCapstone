@@ -11,23 +11,28 @@ class TuteeController extends Controller
 {
     public function index(Request $request)
     {
-        $week_start = strtotime("monday this week");
-        $week_end = strtotime("sunday this week");
+        $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
+        $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
         $tutor_list = User::where('user_type','tutor')->where('status', 'approved')->get();
-        // $tutors = [];
-        // foreach ($tutor_list as $tutor){
-        //     $schedules = UserSchedule::whereBetween('created_at',[$week_start,$week_end])->get();
-            // $tutor[] = [
-            //     'schedules' => $schedules,
-            // ];
-            // $tutors[] = [
-            //     'user' => $tutor,
-            //     'schedules' => $schedules,
-            // ];
-    //         echo $schedules;
-    //     }
-    //    return $tutor_list; 
-        return view('tutee.dashboard')->with('tutor_list', $tutor_list );
+        $tutors = [];
+        foreach ($tutor_list as $tutor){
+            $schedules = UserSchedule::whereBetween('created_at',[$week_start,$week_end])->get();
+            $schedule_list = [];
+            foreach ($schedules as $sched){
+                $isBooked = Booking::where('schedule_id',$sched->id)->exists();
+                $isDisapproved = Booking::where('schedule_id',$sched->id )->where('status', 'disapproved')->first();
+
+                if(!$isBooked or $isDisapproved){
+                    $schedule_list[] = $sched;
+                }
+            }
+
+            $tutors[] = [
+                'user' => $tutor,
+                'schedules' => $schedule_list,
+            ];
+        }
+        return view('tutee.dashboard')->with('tutors', $tutors );
     }
     
     // START OF TUTEE PROFILE UPDATE
@@ -53,9 +58,10 @@ class TuteeController extends Controller
     public function store(Request $request)
     {
         $user = $request->user()->id;
-        $schedules = $request->schedules;
+        $schedules = $request->schedules_list;
         foreach ($schedules as $schedule){
             $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule]);
+
             $userschedule = UserSchedule::find($schedule);
             $tutor = $userschedule->tutor;
             $tutor->notify(new \App\Notifications\BookingRequestNotification('A tutee '. $userschedule->booking->tutee->firstname . ' ' . $userschedule->booking->tutee->lastname .' has booked your schedule'));
