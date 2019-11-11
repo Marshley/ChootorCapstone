@@ -19,7 +19,7 @@
            <h4>School ID:{{$tutor['user']->school_id}}</h4> <br />
           <h4>Rate: {{$tutor['user']->rate}}/hour</h4> <br /> 
            <h4>Subject:   
-           @foreach ($tutor['schedules'] as $schedule)
+           @foreach ($tutor['user']['schedules'] as $schedule)
             {{$schedule->subject->name}}
             @endforeach   
            <h4>Location: {{$tutor['user']->location->name}}</h4>
@@ -37,7 +37,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">TUTOR SCHEDULES</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
