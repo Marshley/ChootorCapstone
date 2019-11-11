@@ -19,20 +19,20 @@
     </div>
 
     <div class="form-group row col-sm-12" style="margin-top:50px">
-        
-        <div class="form-group row col-sm">
-            <label for="firstname" class="col-sm-4 col-form-label">First Name: </label>
-                <div class="form-group">
-                    <input type="text" class="form-control font-italic" id="firstname" name="firstname" 
-                            placeholder="First Name" value="{{$user->firstname}}">
-                </div>
-        </div>
-
+            
         <div class="form-group row col-sm">
             <label for="lastname" class="col-sm-4 col-form-label">Last Name: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="lastname" name="lastname" 
                             placeholder="Last Name" value="{{$user->lastname}}">
+                </div>
+        </div>
+
+        <div class="form-group row col-sm">
+            <label for="firstname" class="col-sm-4 col-form-label">First Name: </label>
+                <div class="form-group">
+                    <input type="text" class="form-control font-italic" id="firstname" name="firstname" 
+                            placeholder="First Name" value="{{$user->firstname}}">
                 </div>
         </div>
     
