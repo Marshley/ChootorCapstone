@@ -39,10 +39,10 @@ class TuteeController extends Controller
 
     public function updateprofile(Request $request, User $user)
     {
-        $this->validate(request(),[
-            'password' => 'required',
-            'password' => 'required|confirmed',
-        ]);
+        // $this->validate(request(),[
+        //     'password' => 'required',
+        //     'password' => 'required|confirmed',
+        // ]);
         
         $user = User::find(auth()->user()->id);
         $user->update($request->toArray());

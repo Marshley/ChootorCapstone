@@ -52,12 +52,12 @@
     </div>
 
     <!-- i add pa ang course, naglagay lang ako incase kailanganin na -->
-    <div class="form-group row">
+    {{-- <div class="form-group row">
         <label for="course" class="col-sm-2 col-form-label">Course</label>
         <div class="col-sm-10">
         <input type="course" class="form-control font-italic" id="course" placeholder="Course" name="course" value="{{$user->course}}">
         </div>
-    </div>
+    </div> --}}
     
     <div class="form-group row">
         <label for="email" class="col-sm-2 col-form-label">Email</label>
@@ -66,7 +66,7 @@
         </div>
     </div>
 
-    <div class="form-group row">
+    {{-- <div class="form-group row">
         <label for="password" class="col-sm-2 col-form-label">Password</label>
         <div class="col-sm-10">
         <input type="password" class="form-control font-italic" id="password" placeholder="Password" name="password">
@@ -79,7 +79,7 @@
             <input type="password" class="form-control font-italic" id="password_confirmation" 
             placeholder="Confirm Password" name="password_confirmation">
         </div>
-    </div>
+    </div> --}}
 
     <div class="form-group row">
         <div class="col-lg-12" style="margin-top:20px">
