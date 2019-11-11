@@ -15,7 +15,7 @@
               <label for="firstname">First Name:</label>
               <input type="text" class="form-control" id="firstname" name="firstname">
             </div>          
-            <div class="form-group col-2">
+            <div class="form-group col">
               <label for="middleinitial">Middle Initial:</label>
               <input type="text" class="form-control" id="middleinitial" name="middleinitial">
             </div>
@@ -37,10 +37,10 @@
             <input type="password" class="form-control" id="password_confirmation"
             name="password_confirmation">
           </div>        
-          <div class="row justify-content-center" style="margin-top:50px;margin-bottom:50px;font-size:30px">
+          <div class="row justify-content-center" style="margin-top:20px;margin-bottom:30px;font-size:30px">
             <span>Choose your role: </span> 
           </div>
-          <div class="row justify-content-center" style="margin-top:50px;margin-bottom:80px">
+          <div class="row justify-content-center" style="margin-top:20px;margin-bottom:50px">
             <div class="form-check form-check-inline" style="margin-right:50px;font-size:20px">
               <input class="form-check-input" type="radio" name="user_type" id="user_type" value="tutee" checked>
               <label class="form-check-label" for="user_type">

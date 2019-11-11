@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="/css/sticky-footer.css" rel="stylesheet">
     <link rel="shortcut icon" href="../img/logo.png" type="image/png">
+    <script defer src="" > </script>
 
     <style>
         .full-width-div {
@@ -19,27 +20,25 @@
         }
 
         .title {
-            font-size: 80px;
-            font-family: "Century Gothic";
+            font-size: 100px;
+            font-family: "Californian FB";
             font-weight: bold;
             color: #141945;
-            bottom: 50%; 
-            left: 10%;
+            left: 10%;      
+            bottom: 60%;     
         }     
 
         .sub {
-            font-size: 28px;
+            font-size: 30px;
             color: white;
-            bottom: 48%; 
-            left: 11%;
-            font-family: "Century Gothic";
+            font-family: "century gothic";
+            left: 16%;      
+            bottom: 58%;     
         }
 
         .butts {
-            font-size: 5px;
-            color: white;
-            bottom: 43%; 
-            left: 11%;
+            position: absolute;      
+            bottom: 50%; 
             font-family: "Century Gothic";
         }
 
@@ -48,7 +47,10 @@
             background-color: #141945;
             border-color: #141945;
             font-family: "century gothic";
+            font-weight: ;
+            left: 16%;  
             color: #ffffff;
+            margin-right: 15px;
         }
 
         .butt-reg {
@@ -56,11 +58,30 @@
             background-color: transparent;
             border-color: #141945;
             color: #141945;
+            left: 23%;  
             font-family: "century gothic";
         }
 
+        .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+            border-color: #141945;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #141945;
+        }
+
+        .btn-outline-dark, .btn-outline-dark:active, .btn-outline-dark:visited, .btn-outline-dark:focus {
+            border-color: #141945;
+        }
+
+        .btn-outline-dark:hover {
+            background-color: transparent;
+            color: #141945;
+        }
+
         .bottom-left {
-            position: absolute;                       
+            position: absolute;      
+                   
         }
 
         .company-head {
@@ -78,33 +99,48 @@
         }
 
         .about-us {
-            font-size: 6em;
+            font-size: 5em;
             color: #141945;
+            font-weight: bold;
+            font-family: "century gothic";
         }
 
         .about-chootor-alpha {
-            font-size: 3em;
+            font-size: 4em;
             font-weight: bold;
             color: #141945;
+            font-family: "century gothic";
         }
 
         .about-chootor-beta {
             font-size: 2em;
             color: #141945;
+            font-family: "century gothic";
         }
 
         .profile {
             font-size: 20px;
-            font-family: "Century Gothic";
+            font-family: "century gothic";
             color: #141945;
         }
 
         .contact {
             font-size: 18px;
             color: #ffffff;
-            font-style: "Century Gothic";
+            font-style: "century gothic";
         }
 
+        .center{
+            display: block;
+        }
+
+        /* body {
+            background: bg.png no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        } */
     </style>
 </head>
  
@@ -115,11 +151,13 @@
             
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <img src="/img/dashboard1.png" class="w-100  inline-block" alt="Responsive image">
-                <p class="bottom-left title">CHOOTOR</p> 
-                <p class="bottom-left sub">Choose a Tutor</p>
-                <p class="bottom-left butts">
-                    <a href="/login" class="btn btn-outline-primary text-white btn-lg butt-login" role="button" style="margin-right:15px">LOGIN</a>
-                    <a href="/register" class="btn btn-outline-primary btn-lg butt-reg" role="button">REGISTER</a> </p>                     
+                <p class="bottom-left title">CHOOTOR</p>                 
+                <p class="bottom-left sub">CHOOSE A TUTOR</p>                 
+                <!-- <img src="/img/logo-sq-wo.png" class="img-responsive bottom-left" style="width:256px;height:256px"> -->
+                <!-- <p class="butts"> -->
+                    <a href="/login" class="btn btn-lg btn-outline-dark butt-login butts" role="button" style="">LOGIN</a>
+                    <a href="/register" class="btn btn-lg btn-outline-primary butt-reg butts" role="button">REGISTER</a>
+                <!-- </p>      -->
             </div>             
             
             <div class="container justify-content-center" style="margin-top:80px">
@@ -141,7 +179,7 @@
                 <div class="row" style="margin-top:100px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p class="text-center about-chootor-alpha">STEP 1:</p>
-                        <p class="text-center about-chootor-beta">Book your desired peer Tutor.</p>
+                        <p class="text-center about-chootor-beta">BOOK YOUR DESIRED PEER TUTOR.</p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p class="text-center about-chootor-alpha">STEP 2:</p>
@@ -152,11 +190,21 @@
                         <p class="text-center about-chootor-beta">Meet your Tutor in person for the session!</p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
-                        <img src="/img/Logo.png" class="img-responsive rounded center-block" style="border-radius:50%;width:300px;height:300px">                       
+            </div>
+            
+            <div class="container" style="margin-top:300px">
+                <!-- <div class="row"> -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <img src="/img/logo-sq-wo.png" class="img-responsive center" style="width:400px;height:400px">                       
                     </div>
-                </div>
+                <!-- </div> -->
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <p class="text-center" style="font-size:2em;color:#141945;font-family:century gothic">
+                            <br/> <br/> In order to fulfill the needed requirements, <br/>
+                            this website will serve as a thesis under <br/>
+                            CSIT 141: Capstone Project Technopreunership.
+                        </p>                         
+                    </div>
             </div>
 
             <div class="container" style="margin-top:300px;margin-bottom:100px">
@@ -195,7 +243,7 @@
                             <img src="/img/icon-twitter-256.png" class="img-responsive rounded center" style="width:50px;height:50px;">
                             </br>
                             </br>
-                            <img src="/img/bannn.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
+                            <img src="/img/logo-rec-w.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center" style="margin-top:30px;margin-bottom:5px;">
                             <a class="text-transparent contact"> COPYRIGHT © 2019 SAKURA 🌸</a>
