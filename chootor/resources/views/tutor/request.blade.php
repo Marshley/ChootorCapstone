@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> TUTEE REQUESTS </h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1>
 
 <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
     <thead class="thead-dark">
@@ -61,8 +61,8 @@
                             <p class="text-center">[  PICTURE HERE  ] </p>
                             <p class="text-center">School ID: {{$request->booking->tutee->school_id}} </p>
                             <p class="text-center">Name: {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
-                            <p class="text-center">Email: {{$request->booking->tutee->email}} </p>
                             <p class="text-center">Course: [  COURSE HERE  ]</p>
+                            <p class="text-center">Email: {{$request->booking->tutee->email}} </p>
                           </div>
                         </div>
                         <div class="modal-footer">
