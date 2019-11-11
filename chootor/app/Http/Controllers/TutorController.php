@@ -83,9 +83,8 @@ class TutorController extends Controller
         //Update of booking status || APPROVED || DISAPPROVED
         $booking->update($request->toArray());
 
-        // $tuteebooking = Booking::find($booking);
-            $b_tutee = $booking->tutee;
-            $b_tutee->notify(new \App\Notifications\BookingReplyNotification('A Tutor has '. $booking->status. ' your booking request'));
+        $b_tutee = $booking->tutee;
+        $b_tutee->notify(new \App\Notifications\BookingReplyNotification('A Tutor has '. $booking->status. ' your booking request'));
 
         return redirect('/request');
     }
