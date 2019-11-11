@@ -24,16 +24,18 @@
             font-family: "Californian FB";
             font-weight: bold;
             color: #141945;
-            left: 10%;      
+            /* left: 10%;      
             bottom: 50%;     
+            position: absolute; */
         }     
 
         .sub {
             font-size: 30px;
-            color: white;
+            color: #141945;
             font-family: "century gothic";
-            left: 16%;      
-            bottom: 48%;     
+            /* left: 20%;      
+            bottom: 49%;     
+            position: absolute; */
         }
 
         .butts {
@@ -62,32 +64,28 @@
             font-family: "century gothic";
         }
 
-        .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+        /* .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
             border-color: #141945;
-        }
+        } */
 
-        .btn-outline-primary:hover {
+        .butt-login:hover {
             background-color: #1A2056;
             color: #ffffff;
             border-color: #1A2056;  
         }
 
-        .btn-outline-dark, .btn-outline-dark:active, .btn-outline-dark:visited, .btn-outline-dark:focus {
+        /* .btn-outline-dark, .btn-outline-dark:active, .btn-outline-dark:visited, .btn-outline-dark:focus {
             border-color: #141945;
-        }
+        } */
 
-        .btn-outline-dark:hover {
+        .butt-reg:hover {
             background-color: #1A2056;
             color: #ffffff;
             border-color: #1A2056;            
         }
 
-        .bottom-left {
-            position: absolute;      
-                   
-        }
-
         .company-head {
+            margin-top:300px;
             font-size: 3em;
             font-family: "century gothic";
             color: #141945;
@@ -147,37 +145,148 @@
             background-size: cover;
             -o-background-size: cover;
         } */
-    </style>
+
+        .sign-in {
+            bottom:28%;
+            left: 45%;
+            position: absolute;
+            
+        }
+
+        #ccard {
+            width: 400px;
+            height: 625px;
+            margin-top: 50px;
+            /* border-color: #FA935B; */
+        }
+
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px) {
+            .title {
+            font-size: 50px;
+            font-family: "Californian FB";
+            font-weight: bold;
+            color: #141945;
+            /* left: 10%;      
+            bottom: 50%;     
+            position: absolute; */
+            }     
+
+            .sub {
+                font-size: 15px;
+                color: #141945;
+                font-family: "century gothic";
+                /* left: 20%;      
+                bottom: 49%;     
+                position: absolute; */
+            }
+
+            .company-head {
+                margin-top:100px;
+                font-size: 2em;
+                font-family: "century gothic";
+                color: #141945;
+                font-weight: bold;
+            }
+
+            .company-desc {
+                font-size: 15px;
+                font-family: "century gothic";
+                color: #141945;
+                margin-top: 50px;
+            }
+        }
+</style>
 </head>
  
 <body>
 
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p class="bottom-left title">CHOOTOR</p>                 
-        <p class="bottom-left sub">CHOOSE A TUTOR</p>                 
-        <!-- <img src="/img/dashboard1.png" class="w-100" alt="Responsive image"> -->
-        <div class="view" alt="Responsive image" style="background-img:/img/dashboard1/png;
-                                background-repeat: no-repeat; background-size: cover; background-position: center center;">
-        <!-- <img src="/img/logo-sq-wo.png" class="img-responsive bottom-left" style="width:256px;height:256px"> -->
-        <!-- <p class="butts"> -->
-        <div class="container">
-            <a href="/login" class="btn btn-lg btn-outline-dark butt-login butts" role="button" style="">LOGIN</a>
-            <a href="/register" class="btn btn-lg btn-outline-dark butt-reg butts" role="button">REGISTER</a>
-        </div>
-        <!-- </p>      -->
-    </div>             
-    
-    <div class="container">
-        <div class="full-width-div">
-            
-            
-            <div class="container justify-content-center" style="margin-top:80px">
+    <div class="container-fluid">
+        <section>
+            <div class="row">
+                <div class="col-xs-12 col-lg-6">
+                    <!-- <div class="row  text-center"> -->
+                        <p class="title text-center">CHOOTOR</p>                 
+                    <!-- </div>
+                    <div class="row"> -->
+                        <p class="sub text-center">CHOOSE A TUTOR</p> 
+                    <!-- </div> -->
+                </div>
+                <div class="col-xs-12 col-lg-6">
+                    <div class="row justify-content-center">
+                        <div class="card shadow rounded" id="ccard">
+                            <div class="container absolute-center">
+                                <img src="/img/owl-wo.png" class="img-responsive rounded offset-lg-3" style="width:200px;height:200px;">
+                            </div>             
+                            <form method="POST" action="/login">
+                                {{ csrf_field() }}
+                                <div class="container" style="margin-top:10px;margin-bottom:30px;background-color:#ffffff">
+                                    <div class="col-lg-12 offset-lg-12">
+                                        <div class="card" style="border-color:white">
+                                            <div class="container">
+                                                <div class="form-group">
+                                                    <label for="email">Email:</label>
+                                                    <input type="email" class="form-control" id="email" name="email" style="border-color: #141945;">
+                                                </div>                
+                                                <div class="form-group">
+                                                    <label for="password">Password:</label>
+                                                    <input type="password" class="form-control" id="password" name="password" style="border-color: #141945;">
+                                                </div>                
+                                                <div class="form-group" style="margin-top:20px;margin-bottom:20px">
+                                                    <button id="cbtn" style="cursor:pointer" type="submit" class="btn butt-login btn-block" >LOGIN</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group text-center" style="margin-top:50px;margin-bottom:20px">
+                                            <p style="italic">No account? Click Register to create an account.</p>
+                                            <a href="/register" style="cursor:pointer" class="btn butt-reg btn-block">REGISTER</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
-                     <p class="company-head text-center" style="margin-top:300px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
+                    <p class="company-head text-center" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
                     <p class="company-desc text-center" >We'll be guiding you to easily look for <br/> your desired peer tutor.</p>   
                 </div>
             </div>
-
+        </section>
+        <section>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
+                    <p class="text-center about-chootor-alpha">BOOKING MADE EASY!</p>   
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class="text-center about-chootor-alpha">STEP 1:</p>
+                    <p class="text-center about-chootor-beta">Book your desired peer tutor.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class="text-center about-chootor-alpha">STEP 2:</p>
+                    <p class="text-center about-chootor-beta">Set your appointment.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                    <p class="text-center about-chootor-alpha">STEP 3:</p>
+                    <p class="text-center about-chootor-beta">Meet your Tutor in person for the session!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- <div class="container">
+        <div class="full-width-div">
+            <div class="container justify-content-center" style="margin-top:80px">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
+                    <p class="company-head text-center" style="margin-top:300px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
+                    <p class="company-desc text-center" >We'll be guiding you to easily look for <br/> your desired peer tutor.</p>   
+                </div>
+            </div>
             <div class="container" style="margin-top:300px;margin-bottom:100px">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -185,7 +294,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="container">
                 <div class="row" style="margin-top:100px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -202,22 +310,22 @@
                     </div>
                 </div>
             </div>
-            
             <div class="container text-center" style="margin-top:300px">
-                <!-- <div class="row"> -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="/img/logo-sq-wo.png" class="img-responsive" style="width:400px;height:400px">                       
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="/img/dash-disp.png" class="img-responsive" style="width:400px;height:400px">                       
                     </div>
-                <!-- </div> -->
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="text-center" style="font-size:2em;color:#141945;font-family:century gothic">
-                            <br/> <br/> In order to fulfill the needed requirements, <br/>
-                            this website will serve as a project under <br/>
-                            CSIT 141: Capstone Project Technopreunership.
-                        </p>                         
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                        <div class="container">
+                            <p class="text-left" style="font-size:2em;color:#141945;font-family:century gothic">
+                                <br/> <br/> In order to fulfill the needed requirements, 
+                                this website will serve as a project under
+                                CSIT 141: Capstone Project Technopreunership.
+                            </p>
+                        </div>                         
                     </div>
+                </div>
             </div>
-
             <div class="container" style="margin-top:300px;margin-bottom:100px">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -225,7 +333,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="container center" style="margin-bottom:100px">
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">
@@ -242,12 +349,10 @@
                     </div>
                 </div>
             </div>
-
             <footer id="sticky-footer" class="py-4 text-white text-center">
                 <div class="container" style="margin-top:50px">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
-                            <!-- <p class="text-left contact-us">CONTACT US</p> -->
                             <img src="/img/icon-facebook-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
                             <img src="/img/icon-instagram-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
                             <img src="/img/icon-google-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
@@ -268,7 +373,7 @@
                 </div>
             </footer>        
         </div>
-    </div>
+    </div> -->
 
 
     <!-- Footer -->

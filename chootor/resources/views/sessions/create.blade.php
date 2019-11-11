@@ -25,8 +25,8 @@
 </style>
 
 <div class="container">
-    <div class="row">
-        <div class="card offset-md-4" id="ccard">
+    <div class="row ">
+        <div class="card offset-md-4 shadow rounded" id="ccard">
             <div class="container" style="background-color:#141945">
                 <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#ffffff">SIGN IN</h2>   
             </div>             
