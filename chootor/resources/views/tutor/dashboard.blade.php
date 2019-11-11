@@ -18,7 +18,9 @@
             <tr>
                 <td>{{$show->booking->tutee->firstname}} {{$show->booking->tutee->lastname}}</td>
                 <td>{{$show->booking->schedule->day}}</td>
-                <td>{{$show->booking->schedule->start_time}} to {{$show->booking->schedule->end_time}}</td>
+                <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$show->booking->schedule->start_time)->format('h:i A')}}
+                    to 
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$show->booking->schedule->end_time)->format('h:i A')}}</td>
                 {{-- <td> {{$show->booking->status}}</td> --}}
                 <td>
                 <div class="d-flex flex-row">

@@ -17,7 +17,10 @@
             <tr> 
                 {{-- <td>{{$user->location->name}}</td> --}}
                 <td>{{$sessiondone->booking->tutee->firstname}} {{$sessiondone->booking->tutee->lastname}}</td>
-                <td>{{$sessiondone->start_time}} to: {{$sessiondone->end_time}} </td>
+                <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->start_time)->format('h:i A')}}
+                    to 
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->end_time)->format('h:i A')}}
+                </td>
                 <td>{{$sessiondone->day}}</td>
                 <!-- <td>{{$sessiondone->booking->status}}</td> -->
                 @endif

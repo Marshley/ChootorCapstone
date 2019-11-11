@@ -47,8 +47,10 @@
                   <label>
                   <input type="checkbox" name="schedules[]" value="{{$sched->id}}">  
                     {{$sched->day}}
-                    {{$sched->start_time}} to 
-                    {{$sched->end_time}} 
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$sched->start_time)->format('h:i A')}}
+                    to 
+                    {{\Carbon\Carbon::createFromFormat('H:i:s',$sched->end_time)->format('h:i A')}}
+                    <br/>
                     SUBJECT: {{$sched->subject->name}}</label>
                   </div>
                 @endforeach</h4> 
@@ -63,11 +65,6 @@
       </div>
     </div>
   </div>
-    {{-- @foreach ( $tutor->schedules as $sched)
-        {{$sched->day}}
-    @endforeach
-    {{$sched->subject->name}} --}}
-    {{-- {{$tutor->schedules}} --}}
-    @endif
+  @endif
 @endforeach
 @endsection

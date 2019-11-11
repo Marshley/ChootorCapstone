@@ -113,8 +113,8 @@
         <tr>
           {{-- <td>{{$schedules->id}}</td> --}}
           <td>{{$schedules->day}}</td>
-          <td>{{$schedules->start_time}}</td>
-          <td>{{$schedules->end_time}}</td>
+          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedules->start_time)->format('h:i A')}}</td>
+          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedules->end_time)->format('h:i A')}}</td>
           <td>{{$schedules->subject->name}}</td>
           <td>{{$schedules->location->name}}</td>
         </tr>

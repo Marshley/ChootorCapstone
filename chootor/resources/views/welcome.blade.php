@@ -58,7 +58,7 @@
             background-color: transparent;
             border-color: #141945;
             color: #141945;
-            left: 23%;  
+            left: 25%;  
             font-family: "century gothic";
         }
 
