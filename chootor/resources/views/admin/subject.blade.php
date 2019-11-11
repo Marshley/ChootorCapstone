@@ -2,9 +2,9 @@
 
 @section('content')
  
-    <h2>Subject</h2>
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2>
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
         Add Subject
       </button>
       

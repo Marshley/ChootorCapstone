@@ -25,7 +25,7 @@
             font-weight: bold;
             color: #141945;
             left: 10%;      
-            bottom: 60%;     
+            bottom: 50%;     
         }     
 
         .sub {
@@ -33,12 +33,12 @@
             color: white;
             font-family: "century gothic";
             left: 16%;      
-            bottom: 58%;     
+            bottom: 48%;     
         }
 
         .butts {
             position: absolute;      
-            bottom: 50%; 
+            bottom: 45%; 
             font-family: "Century Gothic";
         }
 
@@ -67,7 +67,9 @@
         }
 
         .btn-outline-primary:hover {
-            background-color: #141945;
+            background-color: #1A2056;
+            color: #ffffff;
+            border-color: #1A2056;  
         }
 
         .btn-outline-dark, .btn-outline-dark:active, .btn-outline-dark:visited, .btn-outline-dark:focus {
@@ -75,8 +77,9 @@
         }
 
         .btn-outline-dark:hover {
-            background-color: transparent;
-            color: #141945;
+            background-color: #1A2056;
+            color: #ffffff;
+            border-color: #1A2056;            
         }
 
         .bottom-left {
@@ -130,9 +133,12 @@
             font-style: "century gothic";
         }
 
-        .center{
-            display: block;
+        #sticky-footer {
+            background-color: #141945;
         }
+        /* .center{
+            display: block;
+        } */
 
         /* body {
             background: bg.png no-repeat center center fixed;
@@ -146,19 +152,24 @@
  
 <body>
 
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p class="bottom-left title">CHOOTOR</p>                 
+        <p class="bottom-left sub">CHOOSE A TUTOR</p>                 
+        <!-- <img src="/img/dashboard1.png" class="w-100" alt="Responsive image"> -->
+        <div class="view" alt="Responsive image" style="background-img:/img/dashboard1/png;
+                                background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <!-- <img src="/img/logo-sq-wo.png" class="img-responsive bottom-left" style="width:256px;height:256px"> -->
+        <!-- <p class="butts"> -->
+        <div class="container">
+            <a href="/login" class="btn btn-lg btn-outline-dark butt-login butts" role="button" style="">LOGIN</a>
+            <a href="/register" class="btn btn-lg btn-outline-dark butt-reg butts" role="button">REGISTER</a>
+        </div>
+        <!-- </p>      -->
+    </div>             
+    
     <div class="container">
         <div class="full-width-div">
             
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <img src="/img/dashboard1.png" class="w-100  inline-block" alt="Responsive image">
-                <p class="bottom-left title">CHOOTOR</p>                 
-                <p class="bottom-left sub">CHOOSE A TUTOR</p>                 
-                <!-- <img src="/img/logo-sq-wo.png" class="img-responsive bottom-left" style="width:256px;height:256px"> -->
-                <!-- <p class="butts"> -->
-                    <a href="/login" class="btn btn-lg btn-outline-dark butt-login butts" role="button" style="">LOGIN</a>
-                    <a href="/register" class="btn btn-lg btn-outline-primary butt-reg butts" role="button">REGISTER</a>
-                <!-- </p>      -->
-            </div>             
             
             <div class="container justify-content-center" style="margin-top:80px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
@@ -179,11 +190,11 @@
                 <div class="row" style="margin-top:100px">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p class="text-center about-chootor-alpha">STEP 1:</p>
-                        <p class="text-center about-chootor-beta">BOOK YOUR DESIRED PEER TUTOR.</p>
+                        <p class="text-center about-chootor-beta">Book your desired peer tutor.</p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p class="text-center about-chootor-alpha">STEP 2:</p>
-                        <p class="text-center about-chootor-beta">Set your appointment. <br/> Choose which schedule that you <br/> and your  chosen Tutor is available.</p>
+                        <p class="text-center about-chootor-beta">Set your appointment.</p>
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <p class="text-center about-chootor-alpha">STEP 3:</p>
@@ -192,16 +203,16 @@
                 </div>
             </div>
             
-            <div class="container" style="margin-top:300px">
+            <div class="container text-center" style="margin-top:300px">
                 <!-- <div class="row"> -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <img src="/img/logo-sq-wo.png" class="img-responsive center" style="width:400px;height:400px">                       
+                        <img src="/img/logo-sq-wo.png" class="img-responsive" style="width:400px;height:400px">                       
                     </div>
                 <!-- </div> -->
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <p class="text-center" style="font-size:2em;color:#141945;font-family:century gothic">
                             <br/> <br/> In order to fulfill the needed requirements, <br/>
-                            this website will serve as a thesis under <br/>
+                            this website will serve as a project under <br/>
                             CSIT 141: Capstone Project Technopreunership.
                         </p>                         
                     </div>
@@ -232,15 +243,15 @@
                 </div>
             </div>
 
-            <footer id="sticky-footer" class="py-4 bg-dark text-white text-center">
+            <footer id="sticky-footer" class="py-4 text-white text-center">
                 <div class="container" style="margin-top:50px">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
                             <!-- <p class="text-left contact-us">CONTACT US</p> -->
-                            <img src="/img/icon-facebook-256.png" class="img-responsive rounded center" style="width:50px;height:50px;">
-                            <img src="/img/icon-instagram-256.png" class="img-responsive rounded center" style="width:50px;height:50px;">
-                            <img src="/img/icon-google-256.png" class="img-responsive rounded center" style="width:50px;height:50px;">
-                            <img src="/img/icon-twitter-256.png" class="img-responsive rounded center" style="width:50px;height:50px;">
+                            <img src="/img/icon-facebook-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
+                            <img src="/img/icon-instagram-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
+                            <img src="/img/icon-google-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
+                            <img src="/img/icon-twitter-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
                             </br>
                             </br>
                             <img src="/img/logo-rec-w.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
