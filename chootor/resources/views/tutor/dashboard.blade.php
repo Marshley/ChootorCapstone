@@ -22,7 +22,7 @@
                 {{-- <td> {{$show->booking->status}}</td> --}}
                 <td>
                 <div class="d-flex flex-row">
-                    <form method="post" action="updaterequest/{{$show->booking->id}}" >
+                    <form method="post" action="updatesession/{{$show->booking->id}}" >
                           {{ csrf_field() }}
                         <button type="submit" class="btn btn-success " id="status" name="status" value="done">
                           <label class="form-check-label" for="status">

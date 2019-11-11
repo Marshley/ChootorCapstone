@@ -36,7 +36,7 @@ Route::get('/tutordashboard','TutorController@tutordashboard');
 Route::post('/addtutorschedule/{user}','TutorController@store');
 Route::post('/addinfo','TutorController@store1');
 Route::post('/updaterequest/{booking}','TutorController@update');
-Route::post('/updaterequest/{booking}','TutorController@sessionstatus');
+Route::post('/updatesession/{booking}','TutorController@sessionstatus');
 Route::post('/updatetutorprofile','TutorController@updateprofile');
 // Admin Routes
 Route::get('/admindashboard','AdminController@show');

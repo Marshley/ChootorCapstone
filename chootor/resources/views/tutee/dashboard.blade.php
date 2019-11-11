@@ -1,12 +1,12 @@
 @extends('layout.app')
 @section('content')
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTEE</h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">TUTEE DASHBOARD</h1>
 @foreach ($tutor_list as $tutor)
   @if ($tutor->schedules)
     <div class="card">
         <div class="card-body">
             <div class="card-title">   
-            <h3>Name: {{$tutor->firstname}} {{$tutor->lastname}} {{$tutor->middleinitial}}</h3>
+            <h3>Name: {{$tutor->firstname}} {{$tutor->lastname}} {{$tutor->middleinitial}}</h3><br/>
             </div>
             <div class="card-text">
                 <h4>School ID: {{$tutor->school_id}}</h4> <br />

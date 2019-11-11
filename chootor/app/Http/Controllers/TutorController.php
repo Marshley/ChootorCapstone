@@ -21,6 +21,11 @@ class TutorController extends Controller
 
     public function updateprofile(Request $request, User $user)
     {
+        $this->validate(request(),[
+            'password' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+        
         $user = User::find(auth()->user()->id);
         $user->update($request->toArray());
         return redirect('/tutorprofile');
@@ -49,15 +54,11 @@ class TutorController extends Controller
         return view('tutor.tutorsched',compact('user','location','subject'));
     }
 
-    public function bookingrequest(Request $request, Booking $booking)
+    public function bookingrequest(Request $request)
     {
-        // Tutor booking request | approved or disapproved
+        // Tutor booking request DISPLAY| approved or disapproved
         $user = User::find(auth()->user()->id); 
         $schedules = $user->schedules;
-        // $users = App\User::first();  
-        // $user->notify(new \App\Notifications\BookingReplyNotification(
-        //     'Tutor has replied to your booking request'.$booking->status));
-            // return $bookings;
         return view('tutor.request',compact('user', 'schedules'));
     }
 
@@ -77,20 +78,15 @@ class TutorController extends Controller
         return redirect('/tutorschedule');
     }
 
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(Request $request, Booking $booking)
     {
-        //Update of booking status
+        //Update of booking status || APPROVED || DISAPPROVED
         $booking->update($request->toArray());
+
+        // $tuteebooking = Booking::find($booking);
+            $b_tutee = $booking->tutee;
+            $b_tutee->notify(new \App\Notifications\BookingReplyNotification('A Tutor has '. $booking->status. ' your booking request'));
+
         return redirect('/request');
     }
 

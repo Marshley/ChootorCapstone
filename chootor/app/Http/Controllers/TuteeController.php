@@ -39,23 +39,32 @@ class TuteeController extends Controller
 
     public function updateprofile(Request $request, User $user)
     {
+        $this->validate(request(),[
+            'password' => 'required',
+            'password' => 'required|confirmed',
+        ]);
+        
         $user = User::find(auth()->user()->id);
         $user->update($request->toArray());
         return redirect('/tuteeprofile');
     }
     // END OF TUTEE PROFILE UPDATE
 
-    public function store(Request $request, UserSchedule $userschedule)
+    public function store(Request $request)
     {
         $user = $request->user()->id;
         $schedules = $request->schedules;
         foreach ($schedules as $schedule){
-            Booking::create(array_merge($request->toArray(), ['tutee_id' => $user, 
-            'schedule_id' => $schedule]));
+            $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule]);
+            $userschedule = UserSchedule::find($schedule);
+            $tutor = $userschedule->tutor;
+            $tutor->notify(new \App\Notifications\BookingRequestNotification('A tutee '. $userschedule->booking->tutee->firstname . ' ' . $userschedule->booking->tutee->lastname .' has booked your schedule'));
         } 
-        // $users = User::where($request->user()->id)->first();
-        // $users = User::where($user->bookings)->first();
-        // $users->notify( new \App\Notifications\BookingRequestNotification('Tutor has been '.$users->status));
+
+        // NOTIFY TUTOR IF SCHED IS BOOKED BY TUTEE
+        // $notification = User::where($user->schedules)->get();
+        // $tutor = $userschedules->tutor;
+        // $tutor->notify( new \App\Notifications\BookingRequestNotification('Tutor has been '.$booking->status));
 
         return redirect('/tuteedashboard');
     }
