@@ -45,7 +45,7 @@
             <div class="modal-body">
               <form method="post" action="/booking" >
                 {{ csrf_field() }} 
-                @foreach ($tutor['user']['schedules'] as $schedule)
+                 @foreach ($tutor['schedules'] as $schedule)
                   <div class="checkbox">
                   <label>
                   <input type="checkbox" name="schedules_list[]" value="{{$schedule->id}}">  
