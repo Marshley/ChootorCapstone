@@ -137,7 +137,7 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <a class="navbar-brand" href="/home" style="color:white">WELCOME</a>
     </ul>
-    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <!-- <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
         <li class="nav-item">
             <a class="nav-link" href="/login" style="color:white">Login</a>
@@ -145,7 +145,7 @@
         <li class="nav-item">
             <a class="nav-link " href="/register" style="color:white">Register</a>
         </li>
-    </ul>
+    </ul> -->
 </div>
 @endif 
 </div>

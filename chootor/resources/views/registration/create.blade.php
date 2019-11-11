@@ -30,7 +30,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="card" id="ccard">
+    <div class="card shadow rounded" id="ccard">
         <div class="container" style="background-color:#141945">
           <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#ffffff">REGISRATION</h2>
         </div>
