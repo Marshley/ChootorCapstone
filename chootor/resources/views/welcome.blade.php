@@ -107,14 +107,16 @@
         }
 
         .about-chootor-alpha {
-            font-size: 4em;
+            font-size: 3em;
+            margin-top:100px;
             font-weight: bold;
             color: #141945;
             font-family: "century gothic";
         }
 
         .about-chootor-beta {
-            font-size: 2em;
+            font-size: 25px;
+            margin-top:10px;
             color: #141945;
             font-family: "century gothic";
         }
@@ -129,6 +131,12 @@
             font-size: 18px;
             color: #ffffff;
             font-style: "century gothic";
+        }
+
+        .sayings {
+            font-size:2em;
+            color:#141945;
+            font-family:"century gothic";
         }
 
         #sticky-footer {
@@ -277,9 +285,27 @@
                 </div>
             </div>
         </section>
+        <section>
+            <div class="container text-center" style="margin-top:300px">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                        <img src="/img/dash-disp.png" class="img-responsive" style="width:400px;height:400px">                       
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                        <div class="container">
+                            <p class="text-left sayings" style="">
+                                <br/> <br/> In order to fulfill the needed requirements, 
+                                this website will serve as a project under
+                                CSIT 141: Capstone Project Technopreunership.
+                            </p>
+                        </div>                         
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     
-    <!-- <div class="container">
+    <div class="container">
         <div class="full-width-div">
             <div class="container justify-content-center" style="margin-top:80px">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
@@ -373,7 +399,7 @@
                 </div>
             </footer>        
         </div>
-    </div> -->
+    </div>
 
 
     <!-- Footer -->
