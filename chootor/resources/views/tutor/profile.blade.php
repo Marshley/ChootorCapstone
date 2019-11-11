@@ -1,7 +1,18 @@
 @extends('layout.app')
 
 @section('content')
+<style>
+    .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+        border-color: #141945;
+        color: #141945;
+    }
 
+    .btn-outline-primary:hover {
+        background-color: #141945;
+        color: #ffffff;
+        border-color: #141945;  
+    }
+</style>
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
     <form method="POST" action="/updatetutorprofile">
     
@@ -86,7 +97,7 @@
 
         <div class="form-group row">
             <div class="col-sm-12" style="margin-top:20px">
-                <button type="submit" class="btn btn-outline-dark btn-block" style="cursor:pointer">SAVE</button>
+                <button type="submit" class="btn btn-outline-primary btn-block" style="cursor:pointer">SAVE</button>
             </div>
         </div>        
     <!-- </div> -->

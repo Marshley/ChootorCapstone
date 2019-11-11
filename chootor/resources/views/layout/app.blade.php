@@ -11,26 +11,36 @@
     <link rel="shortcut icon" href="../img/logo.png" type="image/png">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
- 
+<style>
+    .navbar {
+        color: white;
+        background-color: #141945;
+    }    
+</style> 
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+
+    <nav class="navbar navbar-expand-lg ">
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     
     @if( auth()->check() )
 
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02 navbar-dark">
-            @if(auth()->user()->user_type == 'tutor')
+    <div class="collapse navbar-collapse" style="color:white" id="navbarTogglerDemo02 navbar-dark">
+        
+        <!-- TUTOR -->
+
+        @if(auth()->user()->user_type == 'tutor')
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color:white;">
-                <li class="nav-item ">
-                    <a class="navbar-brand" aria-disabled="true" > Hi {{ auth()->user()->firstname }}!<span class="sr-only">(current)</span></a>
-                </li>
+            <li class="nav-item ">
+                <a class="navbar-brand" aria-disabled="true" > Hi {{ auth()->user()->firstname }}!<span class="sr-only">(current)</span></a>
+            </li>
         </ul>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item dropdown">
-                <a class="nav-link fa fa-bell" href="#" id="navbarDropdown" role="button" 
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     @foreach ($user->notifications as $notification)
@@ -40,28 +50,30 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/tutordashboard">Dashboard</a>
+                <a class="nav-link" href="/tutordashboard" style="color:white;">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/request">Requests</a>
+                <a class="nav-link" href="/request" style="color:white;">Requests</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/workhistory">Work History</a>
+                <a class="nav-link" href="/workhistory" style="color:white;">Work History</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Settings
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/tutorprofile">Profile</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/tutorschedule">Schedule</a>
+                    <a class="dropdown-item" href="/tutorprofile">Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/tutorschedule">Schedule</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/logout">Logout</a>
                 </div>
               </li>
-            <li class="nav-item">
-                    <a class="nav-link " href="/logout">Logout</a>
-                </li>
         </ul>
+
+        <!-- TUTEE -->
+
         @elseif(auth()->user()->user_type == 'tutee')
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color:white;">
                 <li class="nav-item ">
@@ -70,8 +82,9 @@
             </ul>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
+                <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
                     <a class="nav-link fa fa-bell" href="#" id="navbarDropdown" role="button" 
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach (auth()->user()->notifications as $notification)
@@ -80,16 +93,19 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tuteedashboard">Dashboard</a>
+                    <a class="nav-link" href="/tuteedashboard" style="color:white;">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/tuteeprofile">Profile</a>
+                    <a class="nav-link " href="/tuteeprofile" style="color:white;">Profile</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link " href="/logout">Logout</a>
+                        <a class="nav-link " href="/logout" style="color:white;">Logout</a>
                 </li>
             </ul>
-            @elseif(auth()->user()->user_type == 'admin')
+
+        <!-- ADMIN -->
+
+        @elseif(auth()->user()->user_type == 'admin')
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color:white;">
                     <li class="nav-item ">
                         <a class="navbar-brand" aria-disabled="true">Hi {{ auth()->user()->firstname }}! <span class="sr-only">(current)</span></a>
@@ -97,35 +113,37 @@
                 </ul>
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="/admindashboard">Dashboard</a>
+                        <a class="nav-link" href="/admindashboard"  style="color:white">Dashboard</a>
                     </li>
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <li class="nav-item dropdown" style="color:white">
+                            <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Settings
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item" href="/subject">Subject</a>
-                              <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="/location">Location</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/subject">Subject</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/location">Location</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
-                    </li>
-                    <li class="nav-item">
-                            <a class="nav-link " href="/logout">Logout</a>
                     </li>
                 </ul>
         @endif
+
+        <!-- NULL -->
+
 @else
 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <a class="navbar-brand" href="/home">WELCOME</a>
+        <a class="navbar-brand" href="/home" style="color:white">WELCOME</a>
     </ul>
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
         <li class="nav-item">
-            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/login" style="color:white">Login</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="/register">Register</a>
+            <a class="nav-link " href="/register" style="color:white">Register</a>
         </li>
     </ul>
 </div>

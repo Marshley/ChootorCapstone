@@ -2,9 +2,10 @@
 
 @section('content')
  
-    <h2>Location</h2>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">LOCATION</h2>
+      
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
         Add Location
       </button>
       

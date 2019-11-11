@@ -1,10 +1,17 @@
 @extends('layout.app')
 
 @section('content')
-    <h1>ADMIN DASHBOARD</h1>
+  <style>
+    .thead {
+      background-color: #141945;
+      color: #ffffff;
+    }
+  </style>
+
+    <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">ADMIN DASHBOARD</h1>
 
     <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
-      <thead class="thead-dark">
+      <thead class="thead">
         <tr>
           <th scope="col">Name</th>
           <th scope="col">School ID</th>
