@@ -26,11 +26,30 @@
     #clabel {
       border-color: #141945;
     }
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
 </style>
 
 <div class="container">
   <div class="row">
     <div class="card shadow" id="ccard">
+        <div class="form-group">
+            <a href="/home" class="previous">&laquo; RETURN</a>
+        </div>
         <div class="container" >
           <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#141945">REGISRATION FORM</h2>
         </div>

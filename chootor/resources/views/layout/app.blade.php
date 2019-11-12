@@ -18,78 +18,24 @@
     }    
 </style> 
 <body>
-
-    <nav class="navbar navbar-expand-lg ">
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    @if( auth()->check() )
-
-    <div class="collapse navbar-collapse" style="color:white" id="navbarTogglerDemo02 navbar-dark">
-        
-        <!-- TUTOR -->
-
-        @if(auth()->user()->user_type == 'tutor')
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color:white;">
-            <li class="nav-item ">
-                <a class="navbar-brand" aria-disabled="true" > Hi {{ auth()->user()->firstname }}!<span class="sr-only">(current)</span></a>
-            </li>
-        </ul>
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item dropdown">
-                <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    @foreach ($user->notifications as $notification)
-                    <a class="list-group-item" href="/request">{{json_encode($notification->data, true)}}</a>
-                    {{-- <div class="dropdown-divider"></div> --}}
-                    @endforeach
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/tutordashboard" style="color:white;">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/request" style="color:white;">Requests</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/workhistory" style="color:white;">Work History</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Settings
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/tutorprofile">Profile</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/tutorschedule">Schedule</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/logout">Logout</a>
-                </div>
-              </li>
-        </ul>
-
-        <!-- TUTEE -->
-
-        @elseif(auth()->user()->user_type == 'tutee')
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color:white;">
-                <li class="nav-item ">
-                    <a class="navbar-brand" aria-disabled="true">Hi {{ auth()->user()->firstname }}! <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <nav class="navbar navbar-expand-lg navbar-light">
+            @if( auth()->check() )
+            <a class="navbar-brand" aria-disabled="true" > Hi {{ auth()->user()->firstname }}!<span class="sr-only">(current)</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    @if(auth()->user()->user_type == 'tutee')
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                    <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        @foreach (auth()->user()->notifications as $notification)
-                        <a class="list-group-item" href="#">{{json_encode($notification->data, true)}}</a>
-                        @endforeach
-                    </div>
+                        <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @foreach (auth()->user()->notifications as $notification)
+                            <a class="list-group-item" href="#">{{json_encode($notification->data, true)}}</a>
+                            @endforeach
+                        </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/tuteedashboard" style="color:white;">Dashboard</a>
@@ -101,65 +47,77 @@
                     <a class="nav-link " href="/tuteeprofile" style="color:white;">Profile</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link " href="/logout" style="color:white;">Logout</a>
+                    <a class="nav-link " href="/logout" style="color:white;">Logout</a>
                 </li>
-            </ul>
-
-        <!-- ADMIN -->
-
-        @elseif(auth()->user()->user_type == 'admin')
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="color:white;">
-                    <li class="nav-item ">
-                        <a class="navbar-brand" aria-disabled="true">Hi {{ auth()->user()->firstname }}! <span class="sr-only">(current)</span></a>
-                    </li>
                 </ul>
+                @elseif(auth()->user()->user_type == 'tutor')
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/admindashboard"  style="color:white">Dashboard</a>
-                    </li>
-                    <li class="nav-item dropdown" style="color:white">
-                            <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Settings
+                        <li class="nav-item dropdown">
+                            <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="/subject">Subject</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach ($user->notifications as $notification)
+                                <a class="list-group-item" href="/request">{{json_encode($notification->data, true)}}</a>
+                                {{-- <div class="dropdown-divider"></div> --}}
+                                @endforeach
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tutordashboard" style="color:white;">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/request" style="color:white;">Requests</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/workhistory" style="color:white;">Work History</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" style="color:white;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/tutorprofile">Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/location">Location</a>
+                                <a class="dropdown-item" href="/tutorschedule">Schedule</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
-                    </li>
-                </ul>
-        @endif
+                        </li>
+                    </ul>
+                @elseif(auth()->user()->user_type == 'admin')
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admindashboard"  style="color:white">Dashboard</a>
+                        </li>
+                        <li class="nav-item dropdown" style="color:white">
+                            <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Settings
+                            </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/subject">Subject</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/location">Location</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/logout">Logout</a>
+                                </div>
+                        </li>
+                    </ul>
+                @endif
+            </div>
+            @endif
+            </nav>
 
-        <!-- NULL -->
 
-@else
-<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <a class="navbar-brand" href="/home" style="color:white">WELCOME</a>
-    </ul>
-    <!-- <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
 
-        <li class="nav-item">
-            <a class="nav-link" href="/login" style="color:white">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link " href="/register" style="color:white">Register</a>
-        </li>
-    </ul> -->
-</div>
-@endif 
-</div>
-</nav>
+
+
+
+
 
 <div class="container">
     @yield('content')
 </div>
-{{-- {{$user->notifications}} --}}
-{{-- @foreach ($user->notifications as $notification)
-    <marquee >{{json_encode($notification->data, true)}}</marquee>
-@endforeach --}}
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
