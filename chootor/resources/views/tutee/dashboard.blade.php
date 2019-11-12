@@ -19,12 +19,14 @@
             @endforeach   
            <h4>Location: {{$tutor['user']->location->name}}</h4>
         </div>
-        <div class="col-lg-3" style="margin-top:70px;left:15%"> 
-          {{-- Button trigger modal  --}}
-          <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" style="margin-top:30px;margin-bottom:10px" data-target="#exampleModal{{$tutor['user']->id}}">
-            Book
-          </button>
-        </div> 
+        <div class="form-group row">
+          <div class="col-sm-12" style="margin-top:70px;left:15%"> 
+            {{-- Button trigger modal  --}}
+            <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" style="margin-top:30px;margin-bottom:10px" data-target="#exampleModal{{$tutor['user']->id}}">
+              Book
+            </button>
+          </div> 
+        </div>
       </div> 
 
     {{-- Modal --}}
