@@ -6,7 +6,7 @@
         background-color: #141945;
         color: #ffffff;
         border-color: #141945;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     #cbtn:hover {
@@ -18,9 +18,9 @@
 
     #ccard {
         width: 4000px;
-        height: 800px;
-        margin-top: 50px;
-        border-color: #141945;
+        height: auto;
+        /* margin-top: 50px; */
+        /* border-color: #141945; */
     }
 
     #clabel {
@@ -30,9 +30,9 @@
 
 <div class="container">
   <div class="row">
-    <div class="card shadow rounded" id="ccard">
-        <div class="container" style="background-color:#141945">
-          <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#ffffff">REGISRATION</h2>
+    <div class="card shadow" id="ccard">
+        <div class="container" >
+          <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#141945">REGISRATION FORM</h2>
         </div>
         
         <div class="container" style="margin-top:30px;">
