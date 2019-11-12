@@ -264,6 +264,124 @@
             .header {
                 margin-top: 20px;
             }
+
+            /* .about-chootor-alpha {
+                font-size: 3em;
+                margin-top: 500px;
+                font-weight: bold;
+                color: #141945;
+                font-family: "century gothic";
+            }
+            
+            .about-chootor-alpha-1 {
+                font-size: 3em;
+                margin-top: 200px;
+                font-weight: bold;
+                color: #141945;
+                font-family: "century gothic";
+            }
+
+            .about-chootor-beta {
+                font-size: 25px;
+                margin-top: 10px;
+                color: #141945;
+                font-family: "century gothic";
+            } */
+        }
+
+        @media only screen
+        and (min-device-width : 768px)
+        and (max-device-width : 1366px) {
+            .title {
+            font-size: 50px;
+            font-family: "Californian FB";
+            font-weight: bold;
+            color: #141945;
+            /* margin-top: 800px; */
+            /* left: 10%;      
+            bottom: 50%;     
+            position: absolute; */
+            }     
+
+            .sub {
+                font-size: 15px;
+                color: #141945;
+                font-family: "century gothic";
+                /* left: 20%;      
+                bottom: 49%;     
+                position: absolute; */
+            }
+
+            .company-head {
+                margin-top:300px;
+                font-size: 2em;
+                font-family: "century gothic";
+                color: #141945;
+                font-weight: bold;
+            }
+
+            .company-desc {
+                font-size: 20px;
+                font-family: "century gothic";
+                color: #141945;
+                margin-top: 100px;
+            }
+
+            .sayings {
+                font-size: 20px;
+                color:#141945;
+                font-family:"century gothic";
+                margin-bottom: 100px;
+            }
+
+            .animate{
+                width:25vw;
+                height:25vw;
+                color: #141945;
+
+            }
+
+            .animation{
+                /* margin-top:100x; */
+                margin-bottom: 100px;
+                color: #141945;
+            }
+
+            .about-us {
+                font-size: 3em;
+                color: #141945;
+                font-weight: bold;
+                font-family: "century gothic";
+                margin-top:100px;
+                margin-bottom:100px;
+            }
+
+            .header {
+                margin-top: 20px;
+            }
+
+            .about-chootor-alpha {
+                font-size: 3em;
+                margin-top: 500px;
+                font-weight: bold;
+                color: #141945;
+                font-family: "century gothic";
+            }
+            
+            .about-chootor-alpha-1 {
+                font-size: 2em;
+                margin-top: 200px;
+                font-weight: bold;
+                color: #141945;
+                font-family: "century gothic";
+            }
+
+            .about-chootor-beta {
+                font-size: 20px;
+                margin-top: 10px;
+                color: #141945;
+                font-family: "century gothic";
+            }
         }
 </style>
 </head>
@@ -273,17 +391,11 @@
     <div class="container-fluid">
         <section>
             <div class="row header">
-                <div class="col-xs-12 col-lg-6 align-middle">
+                <div class="col-xs-12 col-lg-6 align-middle"> <!-- CHOOTOR LOGO -->
                     <img src="/img/logo-rec-wo.png" class="img-responsive rounded offset-lg-3" style="width:100%;">
-                    <!-- <div class="row  text-center"> -->
-                        <!-- <p class="title text-center">CHOOTOR</p>                  -->
-                    <!-- </div>
-                    <div class="row"> -->
-                        <!-- <p class="sub text-center">CHOOSE A TUTOR</p>  -->
-                    <!-- </div> -->
                 </div>
                 <div class="col-xs-12 col-lg-6">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center align-middle">
                         <div class="card shadow rounded" id="ccard">
                             <!-- <div class="container absolute-center">
                                 <img src="/img/owl-wo.png" class="img-responsive rounded offset-lg-3" style="width:200px;height:200px;">
@@ -319,7 +431,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section> <!-- HAVING TROUBLE -->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
                     <p class="company-head text-center" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
@@ -327,7 +439,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section> <!-- booking made easy -->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
                     <p class="text-center about-chootor-alpha">BOOKING MADE EASY!</p>   
@@ -346,7 +458,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section> <!-- csit 141 -->
             <div class="container text-center animation">
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -364,7 +476,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section>       <!--  about us - DEVELOPERS -->
              <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

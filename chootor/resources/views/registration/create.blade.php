@@ -68,7 +68,7 @@
                     <input type="text" class="form-control" id="firstname" name="firstname">
                   </div>          
                   <div class="form-group col">
-                    <label for="middleinitial">Middle Initial:</label>
+                    <label for="middleinitial">MI:</label>
                     <input type="text" class="form-control" id="middleinitial" name="middleinitial">
                   </div>
                 </div>
