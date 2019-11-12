@@ -67,7 +67,6 @@
                             <p class="text-center">[  PICTURE HERE  ] </p>
                             <p class="text-center">School ID: {{$request->booking->tutee->school_id}} </p>
                             <p class="text-center">Name: {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
-                            <p class="text-center">Course: [  COURSE HERE  ]</p>
                             <p class="text-center">Email: {{$request->booking->tutee->email}} </p>
                           </div>
                         </div>
