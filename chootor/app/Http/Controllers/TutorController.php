@@ -85,6 +85,10 @@ class TutorController extends Controller
 
         $b_tutee = $booking->tutee;
         $b_tutee->notify(new \App\Notifications\BookingReplyNotification('A Tutor has '. $booking->status. ' your booking request'));
+        if($booking->status == 'disapproved')
+        {
+            $booking->delete();
+        }
 
         return redirect('/request');
     }
@@ -94,10 +98,5 @@ class TutorController extends Controller
         //Update of tutor session status
         $booking->update($request->toArray());
         return redirect('/tutordashboard');
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

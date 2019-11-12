@@ -16,7 +16,7 @@ class TuteeController extends Controller
         $tutor_list = User::where('user_type','tutor')->where('status', 'approved')->get();
         $tutors = [];
         foreach ($tutor_list as $tutor){
-            $schedules = UserSchedule::whereBetween('created_at',[$week_start,$week_end])->get();
+            $schedules = UserSchedule::where('tutor_id',$tutor->id)->whereBetween('created_at',[$week_start,$week_end])->get();
             $schedule_list = [];
             foreach ($schedules as $sched){
                 $isBooked = Booking::where('schedule_id',$sched->id)->exists();
@@ -59,6 +59,11 @@ class TuteeController extends Controller
     {
         $user = $request->user()->id;
         $schedules = $request->schedules_list;
+        // foreach($schedules as $checkschedule)
+        // {
+        //     $sched = UserSchedule::find($checkschedule);
+        // }
+
         foreach ($schedules as $schedule){
             $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule]);
 
@@ -67,12 +72,12 @@ class TuteeController extends Controller
             $tutor->notify(new \App\Notifications\BookingRequestNotification('A tutee '. $userschedule->booking->tutee->firstname . ' ' . $userschedule->booking->tutee->lastname .' has booked your schedule'));
         } 
 
-        // NOTIFY TUTOR IF SCHED IS BOOKED BY TUTEE
-        // $notification = User::where($user->schedules)->get();
-        // $tutor = $userschedules->tutor;
-        // $tutor->notify( new \App\Notifications\BookingRequestNotification('Tutor has been '.$booking->status));
-
         return redirect('/tuteedashboard');
     }
 
+    public function bookeddisplay(Booking $booking)
+    {
+        $user = User::find(auth()->user()->id); 
+        return view('tutee.booked')->with('user', $user);
+    }
 }

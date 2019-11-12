@@ -2,12 +2,7 @@
 @section('content')
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"></h1>
 @foreach ($tutors as $tutor)
-  {{-- @if ($tutor['user']->schedules) --}}
-    {{-- {{json_encode($tutor, true)}} --}}
-    {{-- {{$tutor['user']->firstname}} --}}
-   {{-- @foreach ($tutor['schedules'] as $schedule) --}}
-       {{-- {{$schedule->start_time}} --}}
-   
+
   <div class="card">
     <div class="card-body">
       <div class="card-title">   
@@ -26,7 +21,7 @@
         </div>
         <div class="col-lg-3" style="margin-top:70px;left:15%"> 
           {{-- Button trigger modal  --}}
-          <button type="button" class="btn btn-dark" data-toggle="modal" style="margin-top:5px;" data-target="#exampleModal{{$tutor['user']->id}}">
+          <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" style="margin-top:30px;margin-bottom:10px" data-target="#exampleModal{{$tutor['user']->id}}">
             Book
           </button>
         </div> 
@@ -54,7 +49,7 @@
                     to 
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}
                     <br/>
-                    SUBJECT: {{$schedule->subject->name}}</label>
+                   <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> 
                   </div>
                 @endforeach</h4>  
              </div>
@@ -68,7 +63,6 @@
       </div>
     </div>
   </div> 
-  {{-- @endif --}}
   
 @endforeach
 @endsection

@@ -25,6 +25,7 @@ Route::get('/logout', 'SessionController@destroy');
 // Tutee Routes
 Route::get('/tuteedashboard','TuteeController@index');
 Route::get('/tuteeprofile','TuteeController@tuteeprofile');
+Route::get('/booked','TuteeController@bookeddisplay');
 Route::post('/booking','TuteeController@store');
 Route::post('/updatetuteeprofile','TuteeController@updateprofile');
 // Tutor Routes

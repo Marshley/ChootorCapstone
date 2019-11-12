@@ -82,8 +82,7 @@
             </ul>
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
-                    <a class="nav-link fa fa-bell" href="#" id="navbarDropdown" role="button" 
+                    <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -94,6 +93,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/tuteedashboard" style="color:white;">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/booked" style="color:white;">Booked</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/tuteeprofile" style="color:white;">Profile</a>
