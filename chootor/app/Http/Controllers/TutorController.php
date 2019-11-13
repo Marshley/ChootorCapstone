@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use JD\Cloudder\Facades\Cloudder;
+
 use Illuminate\Http\Request;
 use App\User;
 use App\UserSchedule;
@@ -27,7 +29,18 @@ class TutorController extends Controller
         // ]);
         
         $user = User::find(auth()->user()->id);
-        $user->update($request->toArray());
+        if($request->image){
+            $image = $request->file('image');
+            $file_path = $image->getRealPath();
+            Cloudder::upload($file_path,null);
+            $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
+        }
+        else{
+            $user->update($request->toArray());
+        }
+        
+        $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
+        
         return redirect('/tutorprofile');
     }
     // END OF TUTOR PROFILE UPDATE

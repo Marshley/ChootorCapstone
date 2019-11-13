@@ -14,7 +14,7 @@
     }
 </style>
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
-    <form method="POST" action="/updatetuteeprofile">
+    <form method="POST" action="/updatetuteeprofile"  enctype="multipart/form-data">
     
     {{ csrf_field() }}
     
@@ -22,8 +22,8 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-12">
-                    <img src="/img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px">           
-                    <input type="file" class="form-control-file offset-sm-5" id="exampleFormControlFile1">
+                    <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">           
+                    <input type="file" class="form-control-file offset-sm-5" id="image" name="image">
                 </div>
             </div>
         </div>
