@@ -33,9 +33,23 @@
   }
   #ccard {
         width: 500px;
-        height: 400px;
+        height: auto;
         margin-top: 50px;
         border-color: #141945;
+  }
+
+  @media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 480px) {
+    #ccard {
+        width: 300px;
+        height: auto;
+        margin-top: 50px;
+        border-color: #141945;
+    }
+    .note {
+      font-size: 15px;
+    }
   }
 </style>
 @section('content')
@@ -46,15 +60,15 @@
         {{ csrf_field() }}    
         <div class="container">
           <div class="form-row justify-content-center">
-            <div class="form-group col-md-10" style="margin-top:50px">
-              <p class="font-italic">* note: please input first your rate per hour and the location where you'll meet with your tutee</p>
-              <label for="rate">RATE / HR</label>
+            <div class="form-group col-md-10 col-xs-10" style="margin-top:50px">
+              <p class="font-italic note">* note: please input first your rate per hour and the location where you'll meet with your tutee</p>
+              <label for="rate note">RATE / HR</label>
               <input type="rate" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}">
             </div>
           </div>
 
           <div class="form-row justify-content-center">
-            <div class="form-group col-md-10">
+            <div class="form-group note col-md-10 col-xs-10 ">
               <label for="location_id">LOCATION</label>
               <select id="location_id" class="form-control" name="location_id" >
                 @foreach ($location as $locations)
