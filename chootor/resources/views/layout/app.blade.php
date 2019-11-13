@@ -28,12 +28,12 @@
                     @if(auth()->user()->user_type == 'tutee')
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                        <a class="nav-link fa fa-bell" style="color:white;" href="/booked" id="navbarDropdown" role="button" 
+                        <a class="nav-link fa fa-bell" style="color:white;" href="#" id="navbarDropdown" role="button" 
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             @foreach (auth()->user()->notifications as $notification)
-                            <a class="list-group-item" href="#">{{json_encode($notification->data, true)}}</a>
+                            <a class="list-group-item" href="/booked">{{json_encode($notification->data, true)}}</a>
                             @endforeach
                         </div>
                 </li>
