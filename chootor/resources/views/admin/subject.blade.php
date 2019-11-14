@@ -51,7 +51,7 @@
         </div>
       </div>
 
-<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+<table class="table">
     <thead class="thead">
     <tr>
         <th scope="col">#</th>
