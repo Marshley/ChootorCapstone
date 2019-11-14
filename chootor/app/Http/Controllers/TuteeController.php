@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use JD\Cloudder\Facades\Cloudder;
+
 use Illuminate\Http\Request;
 use App\User;
 use App\UserSchedule;
@@ -38,7 +40,7 @@ class TuteeController extends Controller
     // START OF TUTEE PROFILE UPDATE
     public function tuteeprofile()
     {
-        $user = User::find(auth()->user()->id); 
+        $user = User::find(auth()->user()->id);
         return view('tutee.profile')->with('user', $user);
     }
 
@@ -48,9 +50,18 @@ class TuteeController extends Controller
         //     'password' => 'required',
         //     'password' => 'required|confirmed',
         // ]);
-        
+
         $user = User::find(auth()->user()->id);
-        $user->update($request->toArray());
+        if($request->image){
+            $image = $request->file('image');
+            $file_path = $image->getRealPath();
+            Cloudder::upload($file_path,null);
+            $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
+        }
+        else{
+            $user->update($request->toArray());
+        }
+        
         return redirect('/tuteeprofile');
     }
     // END OF TUTEE PROFILE UPDATE

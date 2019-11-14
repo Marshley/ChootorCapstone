@@ -99,7 +99,7 @@
             margin-top: 100px;
         }
 
-        .about-us {
+        .developers {
             font-size: 5em;
             color: #141945;
             font-weight: bold;
@@ -145,7 +145,7 @@
         }
 
         .animation{
-            margin-top:400px;
+            margin-top:300px;
             color: #141945;
 
         }
@@ -252,7 +252,7 @@
 
             }
 
-            .about-us {
+            .developers {
                 font-size: 2em;
                 color: #141945;
                 font-weight: bold;
@@ -297,19 +297,12 @@
             font-family: "Californian FB";
             font-weight: bold;
             color: #141945;
-            /* margin-top: 800px; */
-            /* left: 10%;      
-            bottom: 50%;     
-            position: absolute; */
             }     
 
             .sub {
                 font-size: 15px;
                 color: #141945;
                 font-family: "century gothic";
-                /* left: 20%;      
-                bottom: 49%;     
-                position: absolute; */
             }
 
             .company-head {
@@ -327,13 +320,6 @@
                 margin-top: 100px;
             }
 
-            .sayings {
-                font-size: 20px;
-                color:#141945;
-                font-family:"century gothic";
-                margin-bottom: 100px;
-            }
-
             .animate{
                 width:25vw;
                 height:25vw;
@@ -342,18 +328,26 @@
             }
 
             .animation{
-                /* margin-top:100x; */
+                margin-top:100px;
                 margin-bottom: 100px;
                 color: #141945;
             }
 
-            .about-us {
-                font-size: 3em;
+            .sayings {
+                font-size: 20px;
+                color:#141945;
+                font-family:"century gothic";
+                margin-bottom: 100px;
+                /* margin-top: 250px; */
+            }
+
+            .developers {
+                font-size: 4em;
                 color: #141945;
                 font-weight: bold;
                 font-family: "century gothic";
                 margin-top:100px;
-                margin-bottom:100px;
+                margin-bottom:50px;
             }
 
             .header {
@@ -362,7 +356,7 @@
 
             .about-chootor-alpha {
                 font-size: 3em;
-                margin-top: 500px;
+                margin-top: 300px;
                 font-weight: bold;
                 color: #141945;
                 font-family: "century gothic";
@@ -382,6 +376,14 @@
                 color: #141945;
                 font-family: "century gothic";
             }
+
+            .landing-logo {
+                margin-top: 130px;
+            }
+
+            .login {
+                margin-top: 20px;
+            }
         }
 </style>
 </head>
@@ -392,9 +394,9 @@
         <section>
             <div class="row header">
                 <div class="col-xs-12 col-lg-6 align-middle"> <!-- CHOOTOR LOGO -->
-                    <img src="/img/logo-rec-wo.png" class="img-responsive rounded offset-lg-3" style="width:100%;">
+                    <img src="/img/logo-rec-wo.png" class="img-responsive landing-logo rounded offset-lg-3" style="width:100%;">
                 </div>
-                <div class="col-xs-12 col-lg-6">
+                <div class="col-xs-12 col-lg-6 login">
                     <div class="row justify-content-center align-middle">
                         <div class="card shadow rounded" id="ccard">
                             <!-- <div class="container absolute-center">
@@ -458,7 +460,7 @@
                 </div>
             </div>
         </section>
-        <section> <!-- csit 141 -->
+        <section> <!-- sayings csit 141 -->
             <div class="container text-center animation">
                 <div class="row">
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
@@ -476,11 +478,11 @@
                 </div>
             </div>
         </section>
-        <section>       <!--  about us - DEVELOPERS -->
+        <section>       <!--   DEVELOPERS -->
              <div class="container">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="text-center about-us">DEVELOPERS</p>
+                        <p class="text-center developers">DEVELOPERS</p>
                     </div>
                 </div>
             </div>
@@ -526,114 +528,7 @@
         </footer>        
     </div>
     
-    <!-- <div class="container">
-        <div class="full-width-div">
-            <div class="container justify-content-center" style="margin-top:80px">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 justify-content-center">
-                    <p class="company-head text-center" style="margin-top:300px" >HAVING TROUBLE LOOKING FOR A TUTOR?</p>   
-                    <p class="company-desc text-center" >We'll be guiding you to easily look for <br/> your desired peer tutor.</p>   
-                </div>
-            </div>
-            <div class="container" style="margin-top:300px;margin-bottom:100px">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="text-center about-chootor-alpha">BOOKING MADE EASY!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row" style="margin-top:100px">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <p class="text-center about-chootor-alpha">STEP 1:</p>
-                        <p class="text-center about-chootor-beta">Book your desired peer tutor.</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <p class="text-center about-chootor-alpha">STEP 2:</p>
-                        <p class="text-center about-chootor-beta">Set your appointment.</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                        <p class="text-center about-chootor-alpha">STEP 3:</p>
-                        <p class="text-center about-chootor-beta">Meet your Tutor in person for the session!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container text-center" style="margin-top:300px">
-                <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
-                        <img src="/img/dash-disp.png" class="img-responsive" style="width:400px;height:400px">                       
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
-                        <div class="container">
-                            <p class="text-left" style="font-size:2em;color:#141945;font-family:century gothic">
-                                <br/> <br/> In order to fulfill the needed requirements, 
-                                this website will serve as a project under
-                                CSIT 141: Capstone Project Technopreunership.
-                            </p>
-                        </div>                         
-                    </div>
-                </div>
-            </div>
-            <div class="container" style="margin-top:300px;margin-bottom:100px">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <p class="text-center about-us">DEVELOPERS</p>
-                    </div>
-                </div>
-            </div>
-            <div class="container center" style="margin-bottom:100px">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center">
-                        <img src="/img/erg.png" class="img-responsive rounded center-block" style="width:256px;height:256px">
-                        <p class="profile" style="margin-top:30px">ERGIE CANILLAS</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center" >
-                        <img src="/img/mah.png" class="img-responsive rounded center-block" style="width:256px;height:256px">
-                        <p class="profile" style="margin-top:30px">MAHDA HARUN</p>
-                    </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4  text-center" >
-                        <img src="/img/dap.png" class="img-responsive rounded center-block" style="width:256px;height:256px">
-                        <p class="profile" style="margin-top:30px">DAPHNIE REA MAGPANTAY</p>
-                    </div>
-                </div>
-            </div>
-            <footer id="sticky-footer" class="py-4 text-white text-center">
-                <div class="container" style="margin-top:50px">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
-                            <img src="/img/icon-facebook-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
-                            <img src="/img/icon-instagram-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
-                            <img src="/img/icon-google-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
-                            <img src="/img/icon-twitter-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
-                            </br>
-                            </br>
-                            <img src="/img/logo-rec-w.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
-                        </div>
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center" style="margin-top:30px;margin-bottom:5px;">
-                            <a class="text-transparent contact"> COPYRIGHT © 2019 SAKURA 🌸</a>
-                        </div>            
-                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
-                            <p class="text-left contact text-center">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
-                            <p class="text-left contact text-center">choochoochootor@gmail.com</p>
-                            <p class="text-left contact text-center">(+63)9 12 3456 789</p>
-                        </div>    
-                    </div>
-                </div>
-            </footer>        
-        </div>
-    </div> -->
-
-
-    <!-- Footer -->
-    <!-- <footer class="text-center text-white font-small fixed-bottom" style="margin-top:100px;margin-bottom:10px;">
-        <a class="text-transparent"> Copyright © 2019 Sakura 🌸</a>
-    </footer> -->
-        
-    <!-- Copyright -->
-    <!-- <div class="footer-copyright text-center py-3">©
-        <a> SAKURA 🌸 2019</a>
-    </div> -->
-    <!-- Copyright -->
-    <!-- Footer -->
+    
  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
