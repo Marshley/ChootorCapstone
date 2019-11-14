@@ -62,11 +62,12 @@
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body text-center">
                           <div class="container">
-                            <p class="text-center">[  PICTURE HERE  ] </p>
+                            <img src="{{$request->booking->tutee->image}}" class="img-responsive" alt="profilepicture">                           
                             <p class="text-center">School ID: {{$request->booking->tutee->school_id}} </p>
                             <p class="text-center">Name: {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
+                            <p class="text-center">Course: {{$request->booking->tutee->course->course_name}} </p>
                             <p class="text-center">Email: {{$request->booking->tutee->email}} </p>
                           </div>
                         </div>

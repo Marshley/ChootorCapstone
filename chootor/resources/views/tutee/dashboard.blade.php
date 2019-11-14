@@ -6,17 +6,20 @@
   <div class="card">
     <div class="card-body">
       <div class="card-title">   
+        <img src="{{$tutor['user']->image}}" class="img-responsive" alt="profilepicture">   
         <h3>Name: {{$tutor['user']->firstname}}  {{$tutor['user']->lastname}}  {{$tutor['user']->middleinitial}}</h3>
       </div>
       <div class="row"> 
         <div class="card-text col-lg-12">
           <br /> 
-           <h4>School ID:{{$tutor['user']->school_id}}</h4> <br />
-          <h4>Rate: {{$tutor['user']->rate}}/hour</h4> <br /> 
-           <h4>Subject:   
+            <h4>School ID: {{$tutor['user']->school_id}}</h4> <br />
+              <h4>School ID: {{$tutor['user']->course->course_name}}</h4> <br />
+              <h4>Rate per hour: {{$tutor['user']->rate}}</h4> <br /> 
+            <h4>Subject:   
            @foreach ($tutor['user']['schedules'] as $schedule)
             {{$schedule->subject->name}}
             @endforeach   
+            </h4>
            <h4>Location: {{$tutor['user']->location->name}}</h4>
         </div>
         <div class="form-group row">
