@@ -72,6 +72,16 @@
                     <input type="text" class="form-control" id="middleinitial" name="middleinitial">
                   </div>
                 </div>
+
+                <div class="form-group">
+                  <label for="course_id">Course</label>
+                  <select id="course_id" class="form-control" name="course_id" >
+                      @foreach ($courses as $course)
+                          <option value="{{$course->id}}"> {{$course->course_name }}</option>
+                      @endforeach                                
+                  </select>
+                </div>
+
                 <div class="form-group">
                   <label for="school_id">School ID:</label>
                   <input type="text" class="form-control" id="school_id" name="school_id">

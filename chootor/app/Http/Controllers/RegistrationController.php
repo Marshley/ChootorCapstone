@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Course;
 
 class RegistrationController extends Controller
 {
@@ -24,7 +25,8 @@ class RegistrationController extends Controller
      */
     public function create()
     {
-        return view('registration.create');
+        $courses = Course::all();
+        return view('registration.create')->with('courses', $courses);
     }
 
     /**
@@ -45,7 +47,7 @@ class RegistrationController extends Controller
             'password' => 'required|confirmed',
         ]);
 
-        $user = User::create(request(['firstname', 'lastname', 'middleinitial','school_id','user_type','email','password', 'status']));
+        $user = User::create(request(['firstname', 'lastname', 'middleinitial','course_id','school_id','user_type','email','password', 'status']));
 
         auth()->login($user);
 

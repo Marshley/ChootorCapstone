@@ -23,12 +23,14 @@ class CreateUsersTable extends Migration
             $table->string('user_type');
             $table->string('status')->default('pending');
             $table->unsignedBigInteger('location_id')->nullable();
+            $table->unsignedBigInteger('course_id')->nullable();
             $table->double('rate')->nullable();
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
             
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
         });        
     }
 

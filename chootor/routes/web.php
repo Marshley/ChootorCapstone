@@ -43,8 +43,10 @@ Route::post('/updatetutorprofile','TutorController@updateprofile');
 Route::get('/admindashboard','AdminController@show');
 Route::get('/subject','AdminController@index');
 Route::get('/location','AdminController@index2');
+Route::get('/course','AdminController@displaycourse');
 Route::post('/addsubject','AdminController@store');
 Route::post('/addlocation','AdminController@store2');
+Route::post('/addcourse','AdminController@addcourse');
 Route::post('/updatetutor/{user}','AdminController@update');
 
 

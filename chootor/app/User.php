@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'middleinitial', 'email', 'password', 'school_id', 'user_type', 'status', 'rate', 'location_id', 'image',
+        'firstname', 'lastname', 'middleinitial', 'email', 'password', 'school_id', 'user_type', 'status', 'rate', 'location_id', 'image', 'course_id' ,
     ];
 
     /**
@@ -52,4 +52,9 @@ class User extends Authenticatable
     public function location() {
         return $this->belongsTo('App\Location', 'location_id');
     }
+
+    public function course() {
+        return $this->belongsTo('App\Course', 'course_id');
+    }
+    
 }

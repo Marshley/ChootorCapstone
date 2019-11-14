@@ -98,6 +98,8 @@
                                     <a class="dropdown-item" href="/subject">Subject</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/location">Location</a>
+                                    <div class="dropdown-divider"></div>                                    
+                                    <a class="dropdown-item" href="/course">Course</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/logout">Logout</a>
                                 </div>
