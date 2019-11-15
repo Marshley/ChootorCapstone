@@ -90,6 +90,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/admindashboard"  style="color:white">Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                                <a class="nav-link" href="/list"  style="color:white">List</a>
+                            </li>
                         <li class="nav-item dropdown" style="color:white">
                             <a class="nav-link dropdown-toggle" style="color:white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings

@@ -7,6 +7,7 @@ use App\User;
 use App\Subject;
 use App\Location;
 use App\Course;
+use App\Booking;
 
 class AdminController extends Controller
 {
@@ -67,5 +68,11 @@ class AdminController extends Controller
 
         return redirect('/admindashboard');
         
+    }
+
+    public function list()
+    {
+        $lists = Booking::all();
+        return view('admin.list')->with('lists', $lists);
     }
 }
