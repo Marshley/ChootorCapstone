@@ -19,7 +19,7 @@
     <tbody>
         @foreach ($user->bookings as $booked)
         @if ($user->bookings)
-        {{-- @if ($booked->status == 'approved') --}}
+        @if ($booked->status == 'approved')
             <tr>
                 <td>{{$booked->schedule->tutor->firstname}} {{$booked->schedule->tutor->lastname}}</td>
                 <td>{{$booked->schedule->day}}</td>
@@ -27,7 +27,7 @@
                     to 
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->end_time)->format('h:i A')}}</td>
                  <td> {{$booked->status}}</td>
-                {{-- @endif --}}
+                @endif
             @endif
         @endforeach
     </tbody>

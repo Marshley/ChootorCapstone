@@ -39,7 +39,7 @@ class TutorController extends Controller
             $user->update($request->toArray());
         }
         
-        $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
+        // $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
         
         return redirect('/tutorprofile');
     }

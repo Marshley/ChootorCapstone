@@ -13,9 +13,8 @@
     <tr>
         <th scope="col">Tutee Name</th>
         <th scope="col">Day</th>
-        <th scope="col">Start Time</th>
-        <th scope="col">End Time</th>
-        <th scope="col">Status</th>
+        <th scope="col">Time</th>
+        <th scope="col">Subject</th>
         <th scope="col">Action Buttons</th>
         <th scope="col"></th>
     </tr>
@@ -27,21 +26,21 @@
             <tr>
                 <td>{{$request->booking->tutee->firstname}} {{$request->booking->tutee->lastname}}</td>
                 <td>{{$request->booking->schedule->day}}</td>
-                <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$request->booking->schedule->start_time)->format('h:i A')}}</td>
-                <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$request->booking->schedule->end_time)->format('h:i A')}}</td>
-                <td> {{$request->booking->status}}</td>
+                <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$request->booking->schedule->start_time)->format('h:i A')}} -
+                {{\Carbon\Carbon::createFromFormat('H:i:s',$request->booking->schedule->end_time)->format('h:i A')}}</td>
+                <td>{{$request->booking->schedule->subject->name}} {{$request->booking->subtopic}}</td>
                 <td>
                 <div class="d-flex flex-row">
                     <form method="post" action="updaterequest/{{$request->booking->id}}" >
                           {{ csrf_field() }}
-                        <button type="submit" class="btn btn-success " id="status" name="status" value="approved">
+                        <button type="submit" class="btn btn-success" id="status" name="status" value="approved">
                           <label class="form-check-label" for="status">
                           ✓</button>
                         </form>
                         <span style="width:1em;"> </span>
                       <form method="post" action="/updaterequest/{{$request->booking->id}}" >
                           {{ csrf_field() }}
-                          <button type="submit" class="btn btn-danger " id="status" name="status" value="disapproved">
+                          <button type="submit" class="btn btn-danger" id="status" name="status" value="disapproved">
                           <label class="form-check-label" for="status">
                           X</button>
                         </form>

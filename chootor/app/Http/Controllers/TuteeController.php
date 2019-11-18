@@ -76,8 +76,8 @@ class TuteeController extends Controller
         // }
 
         foreach ($schedules as $schedule){
-            $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule]);
-
+            $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule, 'subtopic' => $request['subtopic_'.$schedule]]);
+            
             $userschedule = UserSchedule::find($schedule);
             $tutor = $userschedule->tutor;
             $tutor->notify(new \App\Notifications\BookingRequestNotification('A tutee '. $userschedule->booking->tutee->firstname . ' ' . $userschedule->booking->tutee->lastname .' has booked your schedule'));
