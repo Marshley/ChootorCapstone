@@ -13,7 +13,7 @@
         <div class="card-text col-lg-12">
           <br /> 
             <h4>School ID: {{$tutor['user']->school_id}}</h4> <br />
-              <h4>School ID: {{$tutor['user']->course->course_name}}</h4> <br />
+              <h4>Course: {{$tutor['user']->course->course_name}}</h4> <br />
               <h4>Rate per hour: {{$tutor['user']->rate}}</h4> <br /> 
             <h4>Subject:   
            @foreach ($tutor['user']['schedules'] as $schedule)

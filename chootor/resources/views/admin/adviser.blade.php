@@ -15,58 +15,47 @@
     background-color: #141945;
     color: #ffffff;
   }
+  
+  /* Ripple effect */
+  .ripple {
+    background-position: center;
+    transition: background 1s;
+  }
+
+  .ripple:hover {
+    background: #ffffff radial-gradient(circle, transparent 1%, #ffffff 1%) center/15000%;
+  }
+
+  .ripple:active {
+    background-color: #6eb9f7;
+    background-size: 100%;
+    transition: background 1s;
+  }
+
+  .btn-search {
+    /* background-image: linear-gradient(#1A2056, #141945); */
+    /* background-image: linear-gradient(#1A2056, #141945); */
+    background-color: #141945;
+  }
+
+  .btn:hover {
+    background-color: #ffffff;
+  }
+
 </style>
  
-    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">LOCATION</h2>
+    <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">ADVISER FORM</h1>
       
-      <!-- Button trigger modal -->
-      <button type="button" id="cbtn" class="btn btn-outline-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
-        Add Location
-      </button>
-      
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form method="post" action="/addlocation" >
-                {{ csrf_field() }}
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              
-                <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-          </div>
+    <!-- Search form -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <form class="form-inline md-form mr-auto mb-4">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-search btn-rounded btn-lg text-white" type="submit">Search</button>
+          </form>
         </div>
       </div>
-
-<table class="table">
-  <thead class="thead">
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Location Name</th>
-    </tr>
-    </thead>
-    <tbody>
-        @foreach ($location as $locations)
-        <tr>
-            <td>{{$locations->id}}</td>
-            <td>{{$locations->name}}</td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
+    </div>
 
 @endsection

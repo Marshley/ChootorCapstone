@@ -11,6 +11,12 @@ use App\Booking;
 
 class AdminController extends Controller
 {
+    public function displayadviserform()
+    {
+        // DISPLAY ADVISER
+        return view('admin.adviser');
+    }
+
     public function index()
     {
         // DISPLAY SUBJECT
