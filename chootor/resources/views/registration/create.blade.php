@@ -117,7 +117,8 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <button style="cursor:pointer;" id="cbtn" type="submit" class="btn btn-outline-dark btn-block">Submit</button>
+                  <p class="font-italic">By clicking Register, you agree to our Terms, Data Policy and Cookies Policy. </p>
+                  <button style="cursor:pointer;" id="cbtn" type="submit" class="btn btn-outline-dark btn-block">REGISTER</button>
                 </div>
               </div>
           </form>

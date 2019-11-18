@@ -422,7 +422,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group text-center" style="margin-top:50px;margin-bottom:20px">
-                                            <p style="italic">No account? Click Register to create an account.</p>
+                                            <p class="font-italic">No account? Click Register to create an account.</p>
                                             <a href="/register" style="cursor:pointer" class="btn butt-reg btn-block">REGISTER</a>
                                         </div>
                                     </div>
