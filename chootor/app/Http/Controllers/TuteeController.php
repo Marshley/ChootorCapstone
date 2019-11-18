@@ -86,9 +86,21 @@ class TuteeController extends Controller
         return redirect('/tuteedashboard');
     }
 
-    public function bookeddisplay(Booking $booking)
+    public function bookeddisplay()
     {
         $user = User::find(auth()->user()->id); 
         return view('tutee.booked')->with('user', $user);
+    }
+
+    public function donesessiondisplay()
+    {
+        $user = User::find(auth()->user()->id); 
+        return view('tutee.feedback')->with('user', $user);
+    }
+
+    public function feedback(Request $request, Booking $booking)
+    {
+        $booking->update($request->toArray());
+        return redirect('/history');
     }
 }

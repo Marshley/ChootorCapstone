@@ -28,8 +28,10 @@ Route::get('/logout', 'SessionController@destroy');
 Route::get('/tuteedashboard','TuteeController@index');
 Route::get('/tuteeprofile','TuteeController@tuteeprofile');
 Route::get('/booked','TuteeController@bookeddisplay');
+Route::get('/history','TuteeController@donesessiondisplay');
 Route::post('/booking','TuteeController@store');
 Route::post('/updatetuteeprofile','TuteeController@updateprofile');
+Route::post('/feedback/{booking}','TuteeController@feedback');
 // Tutor Routes
 Route::get('autocomplete', 'TutorController@autocomplete')->name('autocomplete');
 Route::get('/tutorschedule','TutorController@create');
