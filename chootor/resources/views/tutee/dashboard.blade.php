@@ -54,7 +54,8 @@
                     to 
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}
                     <br/>
-                   <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> 
+                   <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> <br/>
+                   TOPIC: <input type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}">
                   </div>
                 @endforeach</h4>  
              </div>

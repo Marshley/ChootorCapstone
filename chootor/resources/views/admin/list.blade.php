@@ -13,8 +13,9 @@
     <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
       <thead class="thead">
         <tr>
-          <th scope="col">Name</th>
+          <th scope="col">Tutee Name</th>
           <th scope="col">Subject</th>
+          <th scope="col">Tutor Name</th>
         </tr>
       </thead>
       <tbody>
@@ -24,9 +25,9 @@
               <tr>
                 <td>{{$list->tutee->firstname}} {{$list->tutee->lastname}} {{$list->tutee->middleinitial}}</td>
                 <td>{{$list->schedule->subject->name}}</td>      
+                <td>{{$list->schedule->tutor->firstname}}</td>      
               </tr>        
             @endif
-            {{-- {{$list->schedule->tutor->firstname}} FOR TUTOR OF THE TUTEE --}}
           @endforeach
         </tr>
       </tbody>

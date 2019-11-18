@@ -18,6 +18,9 @@ class CreateBookingsTable extends Migration
             $table->unsignedBigInteger('tutee_id');
             $table->unsignedBigInteger('schedule_id');
             $table->string('status')->default('pending');
+            $table->string('subtopic')->nullable();
+            $table->string('rate')->nullable();
+            $table->string('comment')->nullable();
             $table->timestamps();
 
             $table->foreign('tutee_id')->references('id')->on('users')->onDelete('cascade');
