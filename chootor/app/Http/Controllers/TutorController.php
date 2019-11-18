@@ -77,9 +77,11 @@ class TutorController extends Controller
 
     public function store(Request $request, User $user)
     {
-        // return [$user, $request->toArray()];
-        // $user = User::find(auth()->user()->id);
-        Userschedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id]));  
+        // CREATE TUTOR SCHEDULE
+
+        $subject = Subject::where('name', $request->subject)->first();
+
+        Userschedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id]));  
         return redirect('/tutorschedule');
     }
 
@@ -111,5 +113,15 @@ class TutorController extends Controller
         //Update of tutor session status
         $booking->update($request->toArray());
         return redirect('/tutordashboard');
+    }
+
+    
+    public function autocomplete(Request $request)
+    {
+        $data = Subject::select("name")
+                ->where("name","LIKE","%{$request->input('query')}%")
+                ->get();
+   
+        return response()->json($data);
     }
 }

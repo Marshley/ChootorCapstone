@@ -15,6 +15,8 @@ Route::get('/home', function () {
     return view('welcome');
 })->name('/home');
 
+//Search Routes
+Route::get('search', 'SearchController@index')->name('search');
 // Registration Routes
 Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
@@ -29,6 +31,7 @@ Route::get('/booked','TuteeController@bookeddisplay');
 Route::post('/booking','TuteeController@store');
 Route::post('/updatetuteeprofile','TuteeController@updateprofile');
 // Tutor Routes
+Route::get('autocomplete', 'TutorController@autocomplete')->name('autocomplete');
 Route::get('/tutorschedule','TutorController@create');
 Route::get('/request','TutorController@bookingrequest');
 Route::get('/tutorprofile','TutorController@index');

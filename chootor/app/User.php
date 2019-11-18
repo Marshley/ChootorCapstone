@@ -56,5 +56,9 @@ class User extends Authenticatable
     public function course() {
         return $this->belongsTo('App\Course', 'course_id');
     }
+
+    public function getScheduleCount($day) {
+        return UserSchedule::where([["tutor_id",$this->id], ["day",$day]])->count();
+    } 
     
 }

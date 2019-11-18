@@ -7,6 +7,31 @@
     }
 </style>
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1>
+
+<table class="table table-bordered text-center text-black">
+    <thead class="thead-light ">
+    <tr>
+        <th scope="col">MONDAY</th>
+        <th scope="col">TUESDAY</th>
+        <th scope="col">WEDNESDAY</th>
+        <th scope="col">THURSDAY</th>
+        <th scope="col">FRIDAY</th>
+        <th scope="col">SATURDAY</th>
+    </tr>
+    </thead>
+    <tbody>
+       <tr>
+        <td>You have {{ $user->getScheduleCount("Monday")}} appointment/s.</td>
+        <td>You have {{ $user->getScheduleCount("Tuesday")}} appointment/s.</td>
+        <td>You have {{ $user->getScheduleCount("Wednesday")}} appointment/s.</td>
+        <td>You have {{ $user->getScheduleCount("Thursday")}} appointment/s.</td>
+        <td>You have {{ $user->getScheduleCount("Friday")}} appointment/s.</td>
+        <td>You have {{ $user->getScheduleCount("Saturday")}} appointment/s.</td>
+        
+       </tr>
+    </tbody>
+</table>
+
 <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
     <thead class="thead">
     <tr>
