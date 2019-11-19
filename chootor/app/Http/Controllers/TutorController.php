@@ -85,6 +85,20 @@ class TutorController extends Controller
 
     public function store(Request $request, User $user)
     {
+        $booking_schedules = \App\Userschedule::whereTime('start_time', '>=', $request->start_time)->whereTime('start_time', '<=', $request->end_time)->where('day', $request->day)
+        ->get();
+        
+        if (!$booking_schedules->isEmpty())
+        {
+            return 'CONFLICT';
+        }
+        $booking_scheduless = \App\Userschedule::whereTime('end_time', '<=', $request->start_time)->whereTime('end_time', '>=', $request->end_time)->where('day', $request->day)
+        ->get();
+        
+        if (!$booking_scheduless->isEmpty())
+        {
+            return 'CONFLICT';
+        }
         // CREATE TUTOR SCHEDULE
 
         $subject = Subject::where('name', $request->subject)->first();

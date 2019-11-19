@@ -69,11 +69,30 @@ class TuteeController extends Controller
     public function store(Request $request)
     {
         $user = $request->user()->id;
-        $schedules = $request->schedules_list;
-        // foreach($schedules as $checkschedule)
-        // {
-        //     $sched = UserSchedule::find($checkschedule);
-        // }
+
+        //$request->schedules_list -> ID ng pinili na schedule ni user
+        $schedule_details = \App\UserSchedule::findOrFail($request->schedules_list); //details ng pinili na schedule ni user
+        foreach($schedule_details as $schedule_details){} //don't mind. nagdecode lng ng array
+        
+        //START NG COMPARISON
+        $booking_schedules = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+        ->whereTime('start_time', '>=', $schedule_details->start_time)->whereTime('start_time', '<=', $schedule_details->end_time)->where('day', $schedule_details->day)
+        ->get();
+        
+        if (!$booking_schedules->isEmpty())
+        {
+            return 'CONFLICT';
+        }
+        $booking_scheduless = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+        ->whereTime('end_time', '<=', $schedule_details->start_time)->whereTime('end_time', '>=', $schedule_details->end_time)->where('day', $schedule_details->day)
+        ->get();
+        
+        if (!$booking_scheduless->isEmpty())
+        {
+            return 'CONFLICT';
+        }
+
+        //END NG COMPARISON
 
         foreach ($schedules as $schedule){
             $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule, 'subtopic' => $request['subtopic_'.$schedule]]);
