@@ -64,14 +64,17 @@
                     <input disabled type="input" class="form-control font-italic" id="school_id" name="school_id" value="{{$user->school_id}}">
                 </div>
         </div>
-
+        {{$user->course->course_name}}
         <!-- i add pa ang course, naglagay lang ako incase kailanganin na -->
-        {{-- <div class="form-group row">
-            <label for="course" class="col-sm-2 col-form-label">Course</label>
-            <div class="col-sm-10">
-            <input type="course" class="form-control font-italic" id="course" placeholder="Course" name="course" value="{{$user->course}}">
-            </div>
-        </div> --}}
+        <div class="form-group">
+            <label for="course_id">Course</label>
+                <select id="course_id" class="form-control" name="course_id" > 
+                        {{-- <option selected value="{{$user->course->id}}"> {{$user->course->course_name}}</option> --}}
+                    @foreach ($courses as $course)
+                        <option selected value="{{$course->id}}"> {{$course->course_name }}</option>
+                    @endforeach                                
+                </select>
+        </div>
 
         <div class="form-group row">
             <label for="email" class="col-sm-2 col-form-label">Email</label>

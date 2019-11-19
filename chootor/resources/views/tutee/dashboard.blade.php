@@ -2,7 +2,8 @@
 @section('content')
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">BOOK A CHOOTOR</h1> 
 @foreach ($tutors as $tutor)
-
+{{-- @if ($tutor['user']['schedule']) --}}
+    
   <div class="card">
     <div class="card-body">
       <div class="card-title">   
@@ -22,14 +23,10 @@
             </h4>
            <h4>Location: {{$tutor['user']->location->name}}</h4>
         </div>
-        <div class="form-group row">
-          <div class="col-sm-12" style="margin-top:70px;left:15%"> 
-            {{-- Button trigger modal  --}}
+          {{-- Button trigger modal  --}}
             <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" style="margin-top:30px;margin-bottom:10px" data-target="#exampleModal{{$tutor['user']->id}}">
               Book
             </button>
-          </div> 
-        </div>
       </div> 
 
     {{-- Modal --}}
@@ -70,5 +67,6 @@
     </div>
   </div> 
   
+{{-- @endif --}}
 @endforeach
 @endsection

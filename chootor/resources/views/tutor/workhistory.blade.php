@@ -18,7 +18,7 @@
                             to 
                             {{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->end_time)->format('h:i A')}}
                         {{$sessiondone->day}}
-                        {{$sessiondone->booking->rate}}
+                        {{-- {{$sessiondone->booking->rate}} --}}
                         {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $sessiondone->booking->rate) !!}
                         {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!}
                         {{$sessiondone->booking->comment}}

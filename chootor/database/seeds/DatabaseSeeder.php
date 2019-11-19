@@ -10,16 +10,7 @@ class DatabaseSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        DB::table('users')->insert([
-            'firstname' => 'Mahda',
-            'lastname' => 'Harun',
-            'school_id' => '000',
-            'email' => 'admin@chootor.test',
-            'password' => bcrypt('password?'),
-            'user_type' => ('admin'),
-        ]);
-
+    {        
         DB::table('subjects')->insert([
             'name' => 'Capstone'
         ]);
@@ -31,5 +22,15 @@ class DatabaseSeeder extends Seeder
         DB::table('courses')->insert([
             'course_name' => 'BS Computer Science'
         ]);
+
+        DB::table('users')->insert([
+            'firstname' => 'Mahda',
+            'lastname' => 'Harun',
+            'school_id' => '000',
+            'email' => 'admin@chootor.test',
+            'password' => bcrypt('password?'),
+            'user_type' => ('admin'),
+        ]);
+
     }
 }

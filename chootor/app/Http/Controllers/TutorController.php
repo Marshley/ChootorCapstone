@@ -10,6 +10,7 @@ use App\UserSchedule;
 use App\Subject;
 use App\Location;
 use App\Booking;
+use App\Course;
 
 class TutorController extends Controller
 {
@@ -18,7 +19,8 @@ class TutorController extends Controller
     {
         // PROFILE VIEW
         $user = User::find(auth()->user()->id); 
-        return view('tutor.profile')->with('user', $user);
+        $courses = Course::all();
+        return view('tutor.profile',compact('user', 'courses'));
     }
 
     public function updateprofile(Request $request, User $user)
@@ -69,7 +71,7 @@ class TutorController extends Controller
         $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
         $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
         
-        $schedules = UserSchedule::whereBetween('created_at',[$week_start,$week_end])->get();
+        $schedules = UserSchedule::where('tutor_id', $user->id)->whereBetween('created_at',[$week_start,$week_end])->orderBy('day','desc')->orderBy('start_time', 'asc')->get();
         return view('tutor.tutorsched',compact('user','location','subject','schedules'));
     }
 
