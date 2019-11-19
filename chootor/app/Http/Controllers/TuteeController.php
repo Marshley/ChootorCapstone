@@ -101,6 +101,6 @@ class TuteeController extends Controller
     public function feedback(Request $request, Booking $booking)
     {
         $booking->update($request->toArray());
-        return redirect('/history');
+        return redirect('/feedback');
     }
 }

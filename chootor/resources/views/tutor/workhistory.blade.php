@@ -1,37 +1,31 @@
 @extends('layout.app')
 @section('content')
-<style>
-    .thead {
-      background-color: #141945;
-      color: #ffffff;
-    }
-</style>
+<!-- Add icon library -->
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1>
-<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
-    <thead class="thead">
-    <tr>
-        <th scope="col">Tutee Name</th>
-        <th scope="col">Time</th>
-        <th scope="col">Day</th>
-        <!-- <th scope="col">Status</th> -->
-    </tr>
-    </thead>
-    <tbody>
-        @foreach ($user->schedules as $sessiondone)
+
+<div class="card">
+    <div class="card-body">
+      <div class="card-title">
+           
+            @foreach ($user->schedules as $sessiondone)
                 @if ($sessiondone->booking)
-            @if ($sessiondone->booking->status == 'done')
-            <tr> 
-                {{-- <td>{{$user->location->name}}</td> --}}
-                <td>{{$sessiondone->booking->tutee->firstname}} {{$sessiondone->booking->tutee->lastname}}</td>
-                <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->start_time)->format('h:i A')}}
-                    to 
-                    {{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->end_time)->format('h:i A')}}
-                </td>
-                <td>{{$sessiondone->day}}</td>
-                <!-- <td>{{$sessiondone->booking->status}}</td> -->
+                    @if ($sessiondone->booking->status == 'done')
+                        <img src="{{$sessiondone->booking->tutee->image}}" alt="profile picture">
+                        {{$sessiondone->booking->tutee->firstname}} {{$sessiondone->booking->tutee->lastname}}
+                        {{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->start_time)->format('h:i A')}}
+                            to 
+                            {{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->end_time)->format('h:i A')}}
+                        {{$sessiondone->day}}
+                        {{$sessiondone->booking->rate}}
+                        {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $sessiondone->booking->rate) !!}
+                        {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!}
+                        {{$sessiondone->booking->comment}}
+                    @endif
                 @endif
-            @endif
-        @endforeach
-    </tbody>
-</table>
+            @endforeach
+      </div>
+    </div>
+</div>
 @endsection

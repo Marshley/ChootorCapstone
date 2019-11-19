@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('status')->default('pending');
             $table->unsignedBigInteger('location_id')->nullable();
             $table->unsignedBigInteger('course_id')->nullable();
-            $table->double('rate')->nullable();
+            $table->double('rate')->default('0');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();

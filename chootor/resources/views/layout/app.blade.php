@@ -47,6 +47,9 @@
                     <a class="nav-link" href="/booked" style="color:white;">Booked</a>
                 </li>
                 <li class="nav-item">
+                        <a class="nav-link " href="/feedback" style="color:white;">Feedback</a>
+                    </li>
+                <li class="nav-item">
                     <a class="nav-link " href="/tuteeprofile" style="color:white;">Profile</a>
                 </li>
                 <li class="nav-item">

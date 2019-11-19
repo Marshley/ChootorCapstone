@@ -1,6 +1,6 @@
 @extends('layout.app')
 @section('content')
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px"></h1>
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">BOOK A CHOOTOR</h1> 
 @foreach ($tutors as $tutor)
 
   <div class="card">

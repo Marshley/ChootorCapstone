@@ -18,7 +18,7 @@
   color: white;
 }
 </style>
-
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">FEEDBACK</h1> 
 @foreach($user->bookings as $history)
     @if($history->status == 'done')
     <div class="card">
@@ -73,8 +73,7 @@
                         </label>
 
                     </div>
-                    {{-- {!! str_repeat('<i class="fa fa-star" aria-hidden="true"></i>', $history->rate) !!}
-{!! str_repeat('<i class="fa fa-star-o" aria-hidden="true"></i>', 5 - $history->rate) !!} --}}
+                    
                   <br/>
                   COMMENT: <input type="text" name="comment" id="comment" value="{{$history->comment}}">
                </div>

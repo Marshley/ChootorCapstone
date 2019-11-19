@@ -61,10 +61,16 @@ class TutorController extends Controller
 
     public function create(Request $request)
     {
+        // DISPLAY FOR TUTORSCHED        
         $user = User::find(auth()->user()->id);
         $location = Location::all();
         $subject = Subject::all();
-        return view('tutor.tutorsched',compact('user','location','subject'));
+
+        $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
+        $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
+        
+        $schedules = UserSchedule::whereBetween('created_at',[$week_start,$week_end])->get();
+        return view('tutor.tutorsched',compact('user','location','subject','schedules'));
     }
 
     public function bookingrequest(Request $request)

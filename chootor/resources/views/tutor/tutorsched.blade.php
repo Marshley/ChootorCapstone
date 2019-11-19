@@ -175,14 +175,14 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($user->schedules as $schedules)
+      @foreach ($schedules as $schedule)
         <tr>
-          {{-- <td>{{$schedules->id}}</td> --}}
-          <td>{{$schedules->day}}</td>
-          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedules->start_time)->format('h:i A')}}</td>
-          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedules->end_time)->format('h:i A')}}</td>
-          <td>{{$schedules->subject->name}}</td>
-          <td>{{$schedules->location->name}}</td>
+          {{-- <td>{{$schedule->id}}</td> --}}
+          <td>{{$schedule->day}}</td>
+          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}</td>
+          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
+          <td>{{$schedule->subject->name}}</td>
+          <td>{{$schedule->location->name}}</td>
         </tr>
       @endforeach
     </tbody>
