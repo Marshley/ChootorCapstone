@@ -19,6 +19,11 @@ class TuteeController extends Controller
         $tutors = [];
         foreach ($tutor_list as $tutor){
             $schedules = UserSchedule::where('tutor_id',$tutor->id)->whereBetween('created_at',[$week_start,$week_end])->get();
+            $subjects123123132 = UserSchedule::select('subjects.name')->join('subjects', 'subjects.id', 'user_schedules.subject_id')
+                        ->where([
+                            ['user_schedules.tutor_id', $tutor->id]
+                        ])->groupBy('subjects.name')->get();
+            echo $tutor->id.json_encode($subjects123123132);
             $schedule_list = [];
             foreach ($schedules as $sched){
                 $isBooked = Booking::where('schedule_id',$sched->id)->exists();
@@ -32,6 +37,7 @@ class TuteeController extends Controller
             $tutors[] = [
                 'user' => $tutor,
                 'schedules' => $schedule_list,
+                'subjects123123132' => $subjects123123132,
             ];
         }
         return view('tutee.dashboard')->with('tutors', $tutors );

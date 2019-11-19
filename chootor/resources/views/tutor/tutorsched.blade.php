@@ -139,16 +139,14 @@
               </div>
               <div class="form-group col-md-4">
                 <label for="subject_id">Subject</label>
-                @foreach ($subject as $subjects)
                 <input class="typeahead form-control" type="text" name="subject" id="subject" />
-                @endforeach   
+                <!-- @foreach ($subject as $subjects) -->
+                <!-- @endforeach    -->
                 <!-- <select id="subject_id" class="form-control" name="subject_id" >
                     @foreach ($subject as $subjects)
                         <option value="{{$subjects->id}}"> {{$subjects->name }}</option>
                     @endforeach                                 -->
-                <!-- </select> -->
-                
-
+                <!-- </select> -->                
               </div>
               <div class="modal-footer">
                 <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
