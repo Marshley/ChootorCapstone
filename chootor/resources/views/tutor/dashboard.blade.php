@@ -26,8 +26,7 @@
         <td>You have {{ $user->getScheduleCount("Wednesday")}} appointment/s.</td>
         <td>You have {{ $user->getScheduleCount("Thursday")}} appointment/s.</td>
         <td>You have {{ $user->getScheduleCount("Friday")}} appointment/s.</td>
-        <td>You have {{ $user->getScheduleCount("Saturday")}} appointment/s.</td>
-        
+        <td>You have {{ $user->getScheduleCount("Saturday")}} appointment/s.</td>        
        </tr>
     </tbody>
 </table>
@@ -58,9 +57,8 @@
                     <form method="post" action="updatesession/{{$show->booking->id}}" >
                           {{ csrf_field() }}
                         <button type="submit" class="btn btn-success " id="status" name="status" value="done">
-                          <label class="form-check-label" for="status">
-                          DONE</button>
-                        </form>
+                        <label class="form-check-label" for="status">DONE</button>
+                    </form>
                 </td>
                 @endif
             @endif

@@ -58,7 +58,13 @@ class User extends Authenticatable
     }
 
     public function getScheduleCount($day) {
-        return UserSchedule::where([["tutor_id",$this->id], ["day",$day]])->count();
+        // return Booking::where([["tutor_id",$this->id], ["day",$day]])->count();
+        return Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+                        ->where([
+                            ['user_schedules.tutor_id', $this->id], 
+                            ['user_schedules.day', $day],
+                            ['bookings.status', 'approved']
+                        ])->count();
     } 
     
 }

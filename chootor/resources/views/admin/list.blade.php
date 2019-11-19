@@ -25,7 +25,7 @@
               <tr>
                 <td>{{$list->tutee->firstname}} {{$list->tutee->lastname}} {{$list->tutee->middleinitial}}</td>
                 <td>{{$list->schedule->subject->name}}</td>      
-                <td>{{$list->schedule->tutor->firstname}}</td>      
+                <td>{{$list->schedule->tutor->firstname}} {{$list->schedule->tutor->lastname}}</td>      
               </tr>        
             @endif
           @endforeach
