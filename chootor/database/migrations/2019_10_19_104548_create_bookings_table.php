@@ -19,7 +19,7 @@ class CreateBookingsTable extends Migration
             $table->unsignedBigInteger('schedule_id');
             $table->string('status')->default('pending');
             $table->string('subtopic')->nullable();
-            $table->string('rate')->nullable();
+            $table->string('rate')->default('pending');
             $table->string('comment')->nullable();
             $table->timestamps();
 

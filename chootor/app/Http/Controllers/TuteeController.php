@@ -93,7 +93,7 @@ class TuteeController extends Controller
         }
 
         //END NG COMPARISON
-
+        $schedules = $request->schedules_list;
         foreach ($schedules as $schedule){
             $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule, 'subtopic' => $request['subtopic_'.$schedule]]);
             
