@@ -15,6 +15,10 @@ Route::get('/home', function () {
     return view('welcome');
 })->name('/home');
 
+Route::get('/bawalkadito', function() {
+    return view('bawalkadito');
+})->name('bawalkadito');
+
 //Search Routes
 Route::get('search', 'SearchController@index')->name('search');
 // Registration Routes
@@ -25,35 +29,35 @@ Route::get('/login','SessionController@create');
 Route::post('/login','SessionController@store');
 Route::get('/logout', 'SessionController@destroy');
 // Tutee Routes
-Route::get('/tuteedashboard','TuteeController@index');
-Route::get('/tuteeprofile','TuteeController@tuteeprofile');
-Route::get('/booked','TuteeController@bookeddisplay');
-Route::get('/feedback','TuteeController@donesessiondisplay');
-Route::post('/booking','TuteeController@store');
-Route::post('/updatetuteeprofile','TuteeController@updateprofile');
-Route::post('/feedback/{booking}','TuteeController@feedback');
+Route::get('/tuteedashboard','TuteeController@index')->middleware('role:tutee');
+Route::get('/tuteeprofile','TuteeController@tuteeprofile')->middleware('role:tutee');
+Route::get('/booked','TuteeController@bookeddisplay')->middleware('role:tutee');
+Route::get('/feedback','TuteeController@donesessiondisplay')->middleware('role:tutee');
+Route::post('/booking','TuteeController@store')->middleware('role:tutee');
+Route::post('/updatetuteeprofile','TuteeController@updateprofile')->middleware('role:tutee');
+Route::post('/feedback/{booking}','TuteeController@feedback')->middleware('role:tutee');
 // Tutor Routes
 Route::get('autocomplete', 'TutorController@autocomplete')->name('autocomplete');
-Route::get('/tutorschedule','TutorController@create');
-Route::get('/request','TutorController@bookingrequest');
-Route::get('/tutorprofile','TutorController@index');
-Route::get('/workhistory','TutorController@workhistory');
-Route::get('/tutordashboard','TutorController@tutordashboard');
-Route::post('/addtutorschedule/{user}','TutorController@store');
-Route::post('/addinfo','TutorController@store1');
-Route::post('/updaterequest/{booking}','TutorController@update');
-Route::post('/updatesession/{booking}','TutorController@sessionstatus');
-Route::post('/updatetutorprofile','TutorController@updateprofile');
+Route::get('/tutorschedule','TutorController@create')->middleware('role:tutor');
+Route::get('/request','TutorController@bookingrequest')->middleware('role:tutor');
+Route::get('/tutorprofile','TutorController@index')->middleware('role:tutor');
+Route::get('/workhistory','TutorController@workhistory')->middleware('role:tutor');
+Route::get('/tutordashboard','TutorController@tutordashboard')->middleware('role:tutor');
+Route::post('/addtutorschedule/{user}','TutorController@store')->middleware('role:tutor');
+Route::post('/addinfo','TutorController@store1')->middleware('role:tutor');
+Route::post('/updaterequest/{booking}','TutorController@update')->middleware('role:tutor');
+Route::post('/updatesession/{booking}','TutorController@sessionstatus')->middleware('role:tutor');
+Route::post('/updatetutorprofile','TutorController@updateprofile')->middleware('role:tutor');
 // Admin Routes
-Route::get('/admindashboard','AdminController@show');
-Route::get('/subject','AdminController@index');
-Route::get('/location','AdminController@index2');
-Route::get('/course','AdminController@displaycourse');
-Route::get('/list','AdminController@list');
-Route::post('/addsubject','AdminController@store');
-Route::post('/addlocation','AdminController@store2');
-Route::post('/addcourse','AdminController@addcourse');
-Route::post('/updatetutor/{user}','AdminController@update');
+Route::get('/admindashboard','AdminController@show')->middleware('role:admin');
+Route::get('/subject','AdminController@index')->middleware('role:admin');
+Route::get('/location','AdminController@index2')->middleware('role:admin');
+Route::get('/course','AdminController@displaycourse')->middleware('role:admin');
+Route::get('/list','AdminController@list')->middleware('role:admin');
+Route::post('/addsubject','AdminController@store')->middleware('role:admin');
+Route::post('/addlocation','AdminController@store2')->middleware('role:admin');
+Route::post('/addcourse','AdminController@addcourse')->middleware('role:admin');
+Route::post('/updatetutor/{user}','AdminController@update')->middleware('role:admin');
 
 
 
