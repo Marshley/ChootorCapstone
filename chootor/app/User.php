@@ -66,5 +66,10 @@ class User extends Authenticatable
                             ['bookings.status', 'approved']
                         ])->count();
     } 
+
+    // public function hasRole($role)
+    // {
+    //     return User::where('user_type', $role)->get();
+    // }
     
 }

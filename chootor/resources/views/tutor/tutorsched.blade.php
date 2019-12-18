@@ -64,7 +64,7 @@
             <div class="form-group col-md-10 col-xs-10" style="margin-top:50px">
               <p class="font-italic note">* note: please input first your rate per hour and the location where you'll meet with your tutee</p>
               <label for="rate note">RATE / HR</label>
-              <input type="rate" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}">
+              <input type="number" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}" min="0" max="150">
             </div>
           </div>
 
