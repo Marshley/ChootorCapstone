@@ -46,13 +46,13 @@
 
 <div class="container">
   <div class="row">
-    <div class="card shadow" id="ccard">
+    <!-- <div class="card shadow" id="ccard"> -->
         <div class="form-group">
             <a href="/home" class="previous">&laquo; RETURN</a>
         </div>
-        <div class="container" >
+        <!-- <div class="container" >
           <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#141945">REGISRATION FORM</h2>
-        </div>
+        </div> -->
         
         <div class="container" style="margin-top:30px;">
           <form method="POST" action="/register">
@@ -117,14 +117,19 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <p class="font-italic">By clicking Register, you agree to our Terms, Data Policy and Cookies Policy. </p>
+                  <div class="custom-control custom-checkbox font-italic" style="margin-bottom:30px">
+                    <input type="checkbox" class="custom-control-input" id="materialUnchecked" unchecked>
+                    <label class="custom-control-label" for="materialUnchecked">By clicking Register, you agree to our <a href="google.com" style="padding:0">Terms</a>, <a href="google.com" style="padding:0">Data Policy</a> and <a href="google.com" style="padding:0">Cookies Policy.</a></label> 
+                  </div>
+                  
+                  <!-- <p class="font-italic btn-link">By clicking Register, you agree to our Terms, Data Policy and Cookies Policy. </p> -->
                   <button style="cursor:pointer;" id="cbtn" type="submit" class="btn btn-outline-dark btn-block">REGISTER</button>
                 </div>
               </div>
           </form>
         </div>      
 
-    </div>
+    <!-- </div> -->
   </div>
 </div>
  
