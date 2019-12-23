@@ -152,7 +152,7 @@
 
         .contact {
             font-size: 18px;
-            color: #ffffff;
+            color: #141945;
             font-style: "century gothic";
         }
 
@@ -163,7 +163,8 @@
         }
 
         #sticky-footer {
-            background-color: #141945;
+            background-color: #ffffff;
+            color: #141945;
         }
         /* .center{
             display: block;
@@ -503,10 +504,10 @@
                 </div>
             </div>
         </section>
-        <footer id="sticky-footer" class="py-4 text-white text-center" style="margin-right:-12px;margin-left:-12px;">
+        <footer id="sticky-footer" class="py-4 " style="margin-right:-12px;margin-left:-12px;">
             <div class="container" style="margin-top:50px;">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
                         <img src="/img/icon-facebook-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
                         <img src="/img/icon-instagram-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
                         <img src="/img/icon-google-256.png" class="img-responsive rounded" style="width:50px;height:50px;">
@@ -515,13 +516,13 @@
                         </br>
                         <img src="/img/logo-rec-w.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center" style="margin-top:30px;margin-bottom:5px;">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 " style="margin-top:30px;margin-bottom:5px;">
                         <a class="text-transparent contact"> COPYRIGHT © 2019 SAKURA 🌸</a>
                     </div>            
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 text-center">
-                        <p class="text-left contact text-center">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
-                        <p class="text-left contact text-center">choochoochootor@gmail.com</p>
-                        <p class="text-left contact text-center">(+63)9 12 3456 789</p>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
+                        <p class="text-left contact ">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
+                        <p class="text-left contact ">choochoochootor@gmail.com</p>
+                        <p class="text-left contact ">(+63)9 12 3456 789</p>
                     </div>    
                 </div>
             </div>

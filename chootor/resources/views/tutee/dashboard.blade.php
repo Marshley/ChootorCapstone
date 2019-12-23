@@ -8,6 +8,15 @@
 @section('content')
 <!-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">BOOK A CHOOTOR</h1>  -->
 
+<style>
+  .btn-info {
+    background-color: #006d5b;
+  }
+  .btn-info:hover {
+    background-color: #009B81;
+  }
+</style>
+
 <div class="col-12" style="margin-top:50px;margin-bottom:50px" >
   <div class="row" style="margin-bottom:50px">
     @foreach ($tutors as $tutor)
@@ -76,7 +85,7 @@
 
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>              
-                <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
+                <button style="cursor:pointer" type="submit" class="btn btn-info">Submit</button>
                 </form>
               </div>
 

@@ -7,36 +7,48 @@
     float: none; /* Added */
     margin-bottom: 10px; /* Added */  
   }
+  
+  #homebtn {
+    background-color: #006D5B;
+    color: white;
+    border-color: #006D5B;
+  }
 
+  #homebtn:hover {
+    background-color: #009B81;
+    color: #ffffff;
+    border-color: #009B81;
+  }
   #cbtn {
     background-color: #ffffff;
-    color: #141945;
-    border-color: #141945;
+    color: #006D5B;
+    border-color: #006D5B;
   }
   #cbtn:hover {
-    background-color: #141945;
+    background-color: #009B81;
     color: #ffffff;
+    border-color: #009B81;
   }
   #cbtnsbmt {
-    background-color: #141945;
+    background-color: #006D5B;
     color: #ffffff;
-    border-color: #141945;
+    border-color: #006D5B;
   }
   #cbtnsbmt:hover {
-    background-color: #1A2056;
+    background-color: #009B81;
     color: #ffffff;
-    border-color: #1A2056;
+    border-color: #009B81;
   }
 
   .thead {
-    background-color: #141945;
-    color: #ffffff;
+    /* background-color: #141945; */
+    color: #006D5B;
   }
   #ccard {
         width: 500px;
         height: auto;
         margin-top: 50px;
-        border-color: #141945;
+        border-color: #006D5B;
   }
 
   @media only screen
@@ -54,7 +66,7 @@
   }
 </style>
 @section('content')
-   <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1> 
+   {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1>  --}}
    
     <div class="card text-center" id="ccard">
       <form action="/addinfo" method="POST">
@@ -85,8 +97,8 @@
               <div class="col-md-4 justify-content-center">
                  
               </div>
-              <div class="col-md-4 justify-content-center">
-                  <button id="cbtn" type="submit" class="btn btn-outline-dark btn-block" style="margin-top:30px;margin-bottom:10px">SAVE</button>
+              <div class="col-md-4 justify-content-center" >
+                  <button id="homebtn" type="submit" class="btn btn-outline-dark btn-block" style="margin-top:30px;margin-bottom:10px">SAVE</button>
               </div>
               <div class="col-md-4 justify-content-center">
                  
@@ -98,7 +110,7 @@
     </div>
     <br/>
                             {{-- START OF CREATING TUTOR SCHEDULE --}}
-    <button id="cbtn" type="button" class="btn btn-outline-primary btn-block" data-toggle="modal" style="margin-top:20px;margin-bottom:10px" data-target="#exampleModal">
+    <button id="homebtn" type="button" class="btn btn-primary btn-block" data-toggle="modal" style="margin-top:20px;margin-bottom:10px" data-target="#exampleModal">
       CREATE SCHEDULE
     </button>
     <br/>
@@ -165,11 +177,11 @@
     <thead class="thead">
       <tr>
           {{-- <th scope="col">#</th> --}}
-          <th scope="col">Day</th>
-          <th scope="col">From</th>
-          <th scope="col">To</th>
-          <th scope="col">Subject</th>
-          <th scope="col">Location</th>
+          <th scope="col">DAY</th>
+          <th scope="col">FROM</th>
+          <th scope="col">TO</th>
+          <th scope="col">SUBJECT</th>
+          <th scope="col">LOCATION</th>
       </tr>
     </thead>
     <tbody>

@@ -3,9 +3,9 @@
 <!-- Add icon library -->
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1>
+{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1> --}}
 
-<div class="card">
+<div class="card" style="margin-top:50px">
     <div class="card-body">
       <div class="card-title">
            

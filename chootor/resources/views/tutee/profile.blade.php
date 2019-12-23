@@ -2,28 +2,33 @@
 
 @section('content')
 <style>
-    .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
-        border-color: #141945;
-        color: #141945;
+    .btn-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
+        border-color: #006D5B;
+        color: #ffffff;
+        background-color: #006D5B;
     }
 
-    .btn-outline-primary:hover {
-        background-color: #141945;
+    .btn-primary:hover {
+        background-color: #009B81;
         color: #ffffff;
-        border-color: #141945;  
+        border-color: #009B81;  
     }
 </style>
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
+{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1> --}}
     <form method="POST" action="/updatetuteeprofile"  enctype="multipart/form-data">
     
     {{ csrf_field() }}
     
-    <div class="form-group ">
+    <div class="form-group " style="margin-top:50px">
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-12">
                     <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">           
-                    <input type="file" class="form-control-file offset-sm-5" id="image" name="image">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-3 justify-content-center">
+                            <input type="file" class="form-control-file" id="image" name="image">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,7 +77,18 @@
             <input type="course" class="form-control font-italic" id="course" placeholder="Course" name="course" value="{{$user->course}}">
             </div>
         </div> --}}
-
+        <div class="form-group row">
+            <label for="course_id" class="col-sm-2 col-form-label">Course</label>
+            <div class="col-sm-10">
+                <select id="course_id" class="form-control" name="course_id" > 
+                        {{-- <option selected value="{{$user->course->id}}"> {{$user->course->course_name}}</option> --}}
+                    @foreach ($courses as $course)
+                        <option selected value="{{$course->id}}"> {{$course->course_name }}</option>
+                    @endforeach                                
+                </select>
+            </div>
+        </div>
+        
         <div class="form-group row">
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
@@ -97,7 +113,7 @@
 
         <div class="form-group row">
             <div class="col-sm-12" style="margin-top:20px">
-                <button type="submit" class="btn btn-outline-primary btn-block" style="cursor:pointer">SAVE</button>
+                <button type="submit" class="btn btn-primary btn-block" style="cursor:pointer">SAVE</button>
             </div>
         </div>        
     <!-- </div> -->
