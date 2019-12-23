@@ -81,22 +81,24 @@ class TuteeController extends Controller
         foreach($schedule_details as $schedule_details){
             //START NG COMPARISON
             $booking_schedules = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
-            ->whereTime('start_time', '>=', $schedule_details->start_time)->whereTime('start_time', '<=', $schedule_details->end_time)->where('day', $schedule_details->day)
+            ->whereTime('start_time', '>=', $schedule_details->start_time)
+            ->whereTime('start_time', '<=', $schedule_details->end_time)
+            ->where('day', $schedule_details->day)
             ->where('tutee_id',$request->user()->id)->get();
 
             if (!$booking_schedules->isEmpty())
             {
                 return redirect('/tuteedashboard')->with('msg', 'Failed to Book. Conflict of Schedules');
-                // return redirect()->route('tuteedashboard')->with( [ 'msg' => 'Aigooo' ] );
             }
             $booking_scheduless = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
-            ->whereTime('end_time', '<=', $schedule_details->start_time)->whereTime('end_time', '>=', $schedule_details->end_time)->where('day', $schedule_details->day)
+            ->whereTime('end_time', '<=', $schedule_details->start_time)
+            ->whereTime('end_time', '>=', $schedule_details->end_time)
+            ->where('day', $schedule_details->day)
             ->where('tutee_id',$request->use)->get();
 
             if (!$booking_scheduless->isEmpty())
             {
                 return redirect('/tuteedashboard')->with('msg', 'Failed to Book. Conflict of Schedules');
-                // return redirect()->route('tuteedashboard')->with( [ 'msg' => 'Aigooo' ] );
             }
 
             //END NG COMPARISON

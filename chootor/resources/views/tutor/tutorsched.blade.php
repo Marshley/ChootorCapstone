@@ -54,6 +54,12 @@
   }
 </style>
 @section('content')
+  @if(session('msg'))
+    <div class="alert alert-danger" role="alert" > 
+      {{ session('msg') }}
+    </div>
+  @endif
+
    <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1> 
    
     <div class="card text-center" id="ccard">

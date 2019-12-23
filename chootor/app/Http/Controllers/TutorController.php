@@ -85,22 +85,26 @@ class TutorController extends Controller
 
     public function store(Request $request, User $user)
     {
-        
-
-        $booking_schedules = \App\Userschedule::whereTime('start_time', '>', $request->start_time)->whereTime('start_time', '<', $request->end_time)->where('day', $request->day)
-        ->where('tutor_id',$request->user()->id)->get();
-        
-        if (!$booking_schedules->isEmpty())
-        {
-            return 'CONFLICT';
-        }
-        $booking_scheduless = \App\Userschedule::whereTime('end_time', '<', $request->start_time)->whereTime('end_time', '>', $request->end_time)->where('day', $request->day)
-        ->where('tutor_id',$request->user()->id)->get();
-        
-        if (!$booking_scheduless->isEmpty())
-        {
-            return 'CONFLICT';
-        }
+        if (!\App\Userschedule::whereTime('start_time', '>', $request->start_time)
+        ->where('day', $request->day)
+        ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+            if (!\App\Userschedule::whereTime('start_time', '<', $request->end_time)
+            ->where('day', $request->day)
+            ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+                return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+            } 
+            if (!\App\Userschedule::whereTime('end_time', '<=', $request->end_time)
+            ->where('day', $request->day)
+            ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+                return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+            } 
+        } 
+        elseif (!\App\Userschedule::whereTime('start_time', '<=', $request->start_time)
+        ->whereTime('end_time', '>', $request->start_time)
+        ->where('day', $request->day)
+        ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+            return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+        } 
         // CREATE TUTOR SCHEDULE
 
         $subject = Subject::where('name', $request->subject)->first();
