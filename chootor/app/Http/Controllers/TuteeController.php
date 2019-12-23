@@ -108,7 +108,6 @@ class TuteeController extends Controller
 
         } //don't mind. nagdecode lng ng array
         
-        
         $schedules = $request->schedules_list;
         foreach ($schedules as $schedule){
             $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule, 'subtopic' => $request['subtopic_'.$schedule]]);
