@@ -56,16 +56,27 @@
         
         <div class="container" style="margin-top:30px;">
           <form method="POST" action="/register">
+            @if(count($errors))
+            <div class="form-group">
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        @endif
               {{ csrf_field() }}
               <div class="container">
                 <div class="row">
                   <div class="form-group col">
                     <label for="lastname">Last Name:</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname">
+                    <input type="text" class="form-control" id="lastname" name="lastname" required>
                   </div>
                   <div class="form-group col">
                     <label for="firstname">First Name:</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname">
+                    <input type="text" class="form-control" id="firstname" name="firstname" required>
                   </div>          
                   <div class="form-group col">
                     <label for="middleinitial">MI:</label>
@@ -75,7 +86,7 @@
 
                 <div class="form-group">
                   <label for="course_id">Course</label>
-                  <select id="course_id" class="form-control" name="course_id" >
+                  <select id="course_id" class="form-control" name="course_id" required>
                       @foreach ($courses as $course)
                           <option value="{{$course->id}}"> {{$course->course_name }}</option>
                       @endforeach                                
@@ -84,20 +95,20 @@
 
                 <div class="form-group">
                   <label for="school_id">School ID:</label>
-                  <input type="text" class="form-control" id="school_id" name="school_id">
+                  <input type="text" class="form-control" id="school_id" name="school_id" required>
                 </div>        
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" name="email">
+                  <input type="email" class="form-control" id="email" name="email" required>
                 </div>        
                 <div class="form-group">
                   <label for="password">Password:</label>
-                  <input type="password" class="form-control" id="password" name="password">
+                  <input type="password" class="form-control" id="password" name="password" required>
                 </div>        
                 <div class="form-group">
-                  <label for="password_confirmation">Password Confirmation:</label>
+                  <label for="password_confirmation">Password Confirmation:</label> 
                   <input type="password" class="form-control" id="password_confirmation"
-                  name="password_confirmation">
+                  name="password_confirmation" required>
                 </div>        
                 <div class="row justify-content-center" style="margin-top:20px;margin-bottom:30px;font-size:30px">
                   <span>Choose your role: </span> 
@@ -121,6 +132,7 @@
                   <button style="cursor:pointer;" id="cbtn" type="submit" class="btn btn-outline-dark btn-block">REGISTER</button>
                 </div>
               </div>
+              
           </form>
         </div>      
 

@@ -21,12 +21,12 @@
     </thead>
     <tbody>
        <tr>
-        <td>You have {{ $user->getScheduleCount("Monday")}} appointment/s.</td>
-        <td>You have {{ $user->getScheduleCount("Tuesday")}} appointment/s.</td>
-        <td>You have {{ $user->getScheduleCount("Wednesday")}} appointment/s.</td>
-        <td>You have {{ $user->getScheduleCount("Thursday")}} appointment/s.</td>
-        <td>You have {{ $user->getScheduleCount("Friday")}} appointment/s.</td>
-        <td>You have {{ $user->getScheduleCount("Saturday")}} appointment/s.</td>        
+        <td> {{ $user->getScheduleCount("Monday")}} </td>
+        <td> {{ $user->getScheduleCount("Tuesday")}} </td>
+        <td> {{ $user->getScheduleCount("Wednesday")}} </td>
+        <td> {{ $user->getScheduleCount("Thursday")}} </td>
+        <td> {{ $user->getScheduleCount("Friday")}} </td>
+        <td> {{ $user->getScheduleCount("Saturday")}} </td>        
        </tr>
     </tbody>
 </table>
