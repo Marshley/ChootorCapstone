@@ -399,6 +399,13 @@
                 <div class="col-xs-12 col-lg-6 login">
                     <div class="row justify-content-center align-middle">
                         <div class="card shadow rounded" id="ccard">
+                            
+                            @if(session('msg'))
+                                <div class="alert alert-danger" role="alert" > 
+                                    {{ session('msg') }}
+                                </div>
+                            @endif
+
                             <!-- <div class="container absolute-center">
                                 <img src="/img/owl-wo.png" class="img-responsive rounded offset-lg-3" style="width:200px;height:200px;">
                             </div>              -->

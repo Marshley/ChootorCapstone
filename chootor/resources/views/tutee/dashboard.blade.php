@@ -1,9 +1,15 @@
 @extends('layout.app')
 
 @section('content')
+  @if(session('msg'))
+    <div class="alert alert-danger" role="alert" > 
+      {{ session('msg') }}
+    </div>
+  @endif
+
   <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">BOOK A CHOOTOR</h1> 
     @foreach ($tutors as $tutor)
-      @if ($tutor['user']['schedule'])
+      {{-- @if ($tutor['user']['schedule']) --}}
         
       <div class="card">
         <div class="card-body">
@@ -73,6 +79,6 @@
 
         </div>
       </div>   
-    @endif
+    {{-- @endif --}}
   @endforeach
 @endsection

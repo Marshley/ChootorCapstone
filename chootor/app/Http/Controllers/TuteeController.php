@@ -78,27 +78,32 @@ class TuteeController extends Controller
 
         //$request->schedules_list -> ID ng pinili na schedule ni user
         $schedule_details = \App\UserSchedule::findOrFail($request->schedules_list); //details ng pinili na schedule ni user
-        foreach($schedule_details as $schedule_details){} //don't mind. nagdecode lng ng array
-        
-        //START NG COMPARISON
-        $booking_schedules = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
-        ->whereTime('start_time', '>=', $schedule_details->start_time)->whereTime('start_time', '<=', $schedule_details->end_time)->where('day', $schedule_details->day)
-        ->get();
-        
-        if (!$booking_schedules->isEmpty())
-        {
-            return 'CONFLICT';
-        }
-        $booking_scheduless = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
-        ->whereTime('end_time', '<=', $schedule_details->start_time)->whereTime('end_time', '>=', $schedule_details->end_time)->where('day', $schedule_details->day)
-        ->get();
-        
-        if (!$booking_scheduless->isEmpty())
-        {
-            return 'CONFLICT';
-        }
+        foreach($schedule_details as $schedule_details){
+            //START NG COMPARISON
+            $booking_schedules = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+            ->whereTime('start_time', '>=', $schedule_details->start_time)->whereTime('start_time', '<=', $schedule_details->end_time)->where('day', $schedule_details->day)
+            ->where('tutee_id',$request->user()->id)->get();
 
-        //END NG COMPARISON
+            if (!$booking_schedules->isEmpty())
+            {
+                return redirect('/tuteedashboard')->with('msg', 'Failed to Book. Conflict of Schedules');
+                // return redirect()->route('tuteedashboard')->with( [ 'msg' => 'Aigooo' ] );
+            }
+            $booking_scheduless = \App\Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+            ->whereTime('end_time', '<=', $schedule_details->start_time)->whereTime('end_time', '>=', $schedule_details->end_time)->where('day', $schedule_details->day)
+            ->where('tutee_id',$request->use)->get();
+
+            if (!$booking_scheduless->isEmpty())
+            {
+                return redirect('/tuteedashboard')->with('msg', 'Failed to Book. Conflict of Schedules');
+                // return redirect()->route('tuteedashboard')->with( [ 'msg' => 'Aigooo' ] );
+            }
+
+            //END NG COMPARISON
+
+        } //don't mind. nagdecode lng ng array
+        
+        
         $schedules = $request->schedules_list;
         foreach ($schedules as $schedule){
             $booking = Booking::create(['tutee_id' => $user, 'schedule_id' => $schedule, 'subtopic' => $request['subtopic_'.$schedule]]);

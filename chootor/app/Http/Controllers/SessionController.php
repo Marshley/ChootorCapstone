@@ -37,9 +37,10 @@ class SessionController extends Controller
     public function store(Request $request)
     {
         if (auth()->attempt(request(['email', 'password'])) == false) {
-            return back()->withErrors([
-                'message' => 'The email or password is incorrect, please try again'
-            ]);
+            // return back()->withErrors([
+            //     'message' => 'The email or password is incorrect, please try again'
+            // ]);
+            return redirect('/home')->with('msg', 'The email or password is incorrect, please try again');
         }
         
         if (Auth::user()->user_type == 'tutee')

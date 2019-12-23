@@ -29,7 +29,7 @@ Route::get('/login','SessionController@create');
 Route::post('/login','SessionController@store');
 Route::get('/logout', 'SessionController@destroy');
 // Tutee Routes
-Route::get('/tuteedashboard','TuteeController@index')->middleware('role:tutee');
+Route::get('/tuteedashboard','TuteeController@index')->name('tuteedashboard')->middleware('role:tutee');
 Route::get('/tuteeprofile','TuteeController@tuteeprofile')->middleware('role:tutee');
 Route::get('/booked','TuteeController@bookeddisplay')->middleware('role:tutee');
 Route::get('/feedback','TuteeController@donesessiondisplay')->middleware('role:tutee');
