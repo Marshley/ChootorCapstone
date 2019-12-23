@@ -129,11 +129,11 @@
               </div>
               <div class="row">
                 <div class="form-group mx-5 my-4">FROM
-                  <input type="time" id="time" class="form-control" name="start_time" min="08:00:00" max="17:00:00">
+                  <input type="time" id="start_time" class="form-control" name="start_time" min="08:00:00" max="17:00:00">
                   <label for="start_time">Choose start time</label>
                 </div>
                 <div class="form-group mx-5 my-4"> TO:
-                  <input type="time" id="time" class="form-control" name="end_time" min="08:00:00" max="17:00:00">
+                  <input type="time" id="end_time" class="form-control" name="end_time" min="08:00:00" max="17:00:00">
                   <label for="end_time">Choose end time</label>
                 </div>
               </div>
@@ -184,5 +184,16 @@
         </tr>
       @endforeach
     </tbody>
-  </table>  
+  </table>
+  
+{{-- <script>
+  var ONE_HOUR = 60 * 60 * 1000; /* ms */
+    function Compare()
+    {    
+      if('start_time' && 'end_time' > ONE_HOUR)
+      {
+        alert("Must be one hour")
+      }
+    }
+</script> --}}
 @endsection
