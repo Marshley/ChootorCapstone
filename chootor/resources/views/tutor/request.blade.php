@@ -2,20 +2,21 @@
 @section('content')
 <style>
   .thead {
-    background-color: #141945;
-    color: #ffffff;
+    /* background-color: #006D5B; */
+    /* color: #ffffff; */
+    color: #006d5b;
   }
 </style>
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1>
+{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1> --}}
 
-<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style="margin-top:50px">
     <thead class="thead">
     <tr>
-        <th scope="col">Tutee Name</th>
-        <th scope="col">Day</th>
-        <th scope="col">Time</th>
-        <th scope="col">Subject</th>
-        <th scope="col">Action Buttons</th>
+        <th scope="col">TUTEE NAME</th>
+        <th scope="col">DAY</th>
+        <th scope="col">TIME</th>
+        <th scope="col">SUBJECT</th>
+        <th scope="col">ACTION BUTTONS</th>
         <th scope="col"></th>
     </tr>
     </thead>

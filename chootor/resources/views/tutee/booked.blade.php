@@ -2,18 +2,18 @@
 @section('content')
 <style>
     .thead {
-      background-color: #141945;
-      color: #ffffff;
+      background-color:white;
+      color: #006D5B;
     }
 </style>
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1>
-<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> --}}
+<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style ="margin-top: 50px">
     <thead class="thead">
     <tr>
-        <th scope="col">Tutor Name</th>
-        <th scope="col">Day</th>
-        <th scope="col">Time</th>
-        <th scope="col">Status</th>
+        <th scope="col">TUTOR NAME</th>
+        <th scope="col">DAY</th>
+        <th scope="col">TIME</th>
+        <th scope="col">STATUS</th>
     </tr>
     </thead>
     <tbody>

@@ -3,16 +3,16 @@
 @section('content')
  <style>
     #cbtn {
-        background-color: #141945;
+        background-color: #006D5B;
         color: #ffffff;
-        border-color: #141945;
+        border-color: #006D5B;
         margin-bottom: 50px;
     }
 
     #cbtn:hover {
-        background-color: #1A2056;
+        background-color: #009B81;
         color: #ffffff;
-        border-color: #1A2056;
+        border-color: #009B81;
         /* font-weight: bold; */
     }
 
@@ -20,7 +20,7 @@
         width: 500px;
         height: 450px;
         margin-top: 50px;
-        border-color: #141945;
+        border-color: #006D5B;
     }
 </style>
 

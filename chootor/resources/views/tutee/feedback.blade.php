@@ -18,7 +18,7 @@
   color: white;
 }
 </style>
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">FEEDBACK</h1> 
+{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">FEEDBACK</h1>  --}}
  
   @foreach($user->bookings as $history)
     @if($history->status == 'done')
