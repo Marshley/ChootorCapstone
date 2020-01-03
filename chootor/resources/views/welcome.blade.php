@@ -524,7 +524,7 @@
                         <img src="/img/logo-rec-w.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
                     </div>
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 " style="margin-top:30px;margin-bottom:5px;">
-                        <a class="text-transparent contact"> COPYRIGHT © 2019 SAKURA 🌸</a>
+                        <a class="text-transparent contact"> COPYRIGHT © 2020 SAKURA 🌸</a>
                     </div>            
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
                         <p class="text-left contact ">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
