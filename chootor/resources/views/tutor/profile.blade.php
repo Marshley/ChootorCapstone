@@ -27,8 +27,7 @@
                         <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
                     @else
                     <img src="../img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
-                    @endif
-                               
+                    @endif   
                     <div class="row justify-content-center">
                         <div class="col-sm-3 justify-content-center">
                             <input type="file" class="form-control-file" id="image" name="image">

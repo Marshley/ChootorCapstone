@@ -22,7 +22,11 @@
                             <div class="card-title">                       
                                 <div class="row">
                                     <div class="col-3 text-center">
+                                        @if($sessiondone->booking->tutee->image)
                                         <img src="{{$sessiondone->booking->tutee->image}}" alt="profile picture"> 
+                                        @else
+                                        <img src="../img/blank.png" class="img-responsive" alt="profilepicture">
+                                        @endif
                                     </div>
                                     <div class="col-4">
                                     Tutee:
