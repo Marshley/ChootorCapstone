@@ -3,16 +3,16 @@
 @section('content')
 <style>
   .thead {
-      background-color: #141945;
+      background-color: #d35400;
       color: #ffffff;
   }
   #cbtn {
     background-color: #ffffff;
-    color: #141945;
-    border-color: #141945;
+    color: #d35400;
+    border-color: #d35400;
   }
   #cbtn:hover {
-    background-color: #141945;
+    background-color: #d35400;
     color: #ffffff;
   }
   
@@ -33,9 +33,9 @@
   }
 
   .btn-search {
-    /* background-image: linear-gradient(#1A2056, #141945); */
-    /* background-image: linear-gradient(#1A2056, #141945); */
-    background-color: #141945;
+    /* background-image: linear-gradient(#1A2056, #d35400); */
+    /* background-image: linear-gradient(#1A2056, #d35400); */
+    background-color: #d35400;
   }
 
   .btn:hover {
@@ -44,7 +44,7 @@
 
 </style>
  
-    <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">ADVISER FORM</h1>
+    <!-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">ADVISER FORM</h1> -->
       
     <!-- Search form -->
     <div class="container">

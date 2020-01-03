@@ -3,21 +3,22 @@
 @section('content')
   <style>
     .thead {
-      background-color: #141945;
-      color: #ffffff;
+      /* background-color: #fa935b; */
+      color: #d35400;
+      /* border-color: #fa935b; */
     }
   </style>
 
-    <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">ADMIN DASHBOARD</h1>
+    <!-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">ADMIN DASHBOARD</h1> -->
 
     <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
       <thead class="thead">
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">School ID</th>
-          <th scope="col">Email</th>
-          <th scope="col">Status</th>
-          <th scope="col">Action Button</th>
+          <th scope="col">NAME</th>
+          <th scope="col">SCHOOL ID</th>
+          <th scope="col">EMAIL</th>
+          <th scope="col">STATUS</th>
+          <th scope="col">ACTION BUTTON</th>
         </tr>
       </thead>
       <tbody>

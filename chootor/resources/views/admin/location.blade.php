@@ -3,21 +3,30 @@
 @section('content')
 <style>
   .thead {
-      background-color: #141945;
-      color: #ffffff;
+      background-color: #ffffff;
+      color: #d35400;
   }
   #cbtn {
-    background-color: #ffffff;
-    color: #141945;
-    border-color: #141945;
+    background-color: #d35400;
+    color: #ffffff;
+    /* border-color: #141945; */
   }
   #cbtn:hover {
-    background-color: #141945;
+    background-color: #e27235;
+    color: #ffffff;
+  }
+  #cbtnn {
+    background-color: #7f8c8d;
+    color: #ffffff;
+    /* border-color: #e27235; */
+  }
+  #cbtnn:hover {
+    background-color: #bdc3c7;
     color: #ffffff;
   }
 </style>
  
-    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">LOCATION</h2>
+    <!-- <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">LOCATION</h2> -->
       
       <!-- Button trigger modal -->
       <button type="button" id="cbtn" class="btn btn-outline-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
@@ -43,7 +52,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-              <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" id="cbtnn" class="btn btn-secondary" data-dismiss="modal">Close</button>
               
                 <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -56,7 +65,7 @@
   <thead class="thead">
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Location Name</th>
+        <th scope="col">LOCATION NAME</th>
     </tr>
     </thead>
     <tbody>

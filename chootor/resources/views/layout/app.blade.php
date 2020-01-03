@@ -16,7 +16,7 @@
 </head>
 <style>
     .navbar {
-        color: #006D5B;
+        color: #d35400;
         /* background-color: black; */
         /* opacity: .05; */
     }    
@@ -32,7 +32,7 @@
                     @if(auth()->user()->user_type == 'tutee')
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item dropdown">
-                        <a class="nav-link fa fa-bell" style="color:#006D5B;" href="#" id="navbarDropdown" role="button" 
+                        <a class="nav-link fa fa-bell" style="color:#d35400;" href="#" id="navbarDropdown" role="button" 
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -42,25 +42,25 @@
                         </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/tuteedashboard" style="color:#006D5B;">Dashboard</a>
+                    <a class="nav-link" href="/tuteedashboard" style="color:#d35400;">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/booked" style="color:#006D5B;">Booked</a>
+                    <a class="nav-link" href="/booked" style="color:#d35400;">Booked</a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link " href="/feedback" style="color:#006D5B;">Feedback</a>
+                        <a class="nav-link " href="/feedback" style="color:#d35400;">Feedback</a>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/tuteeprofile" style="color:#006D5B;">Profile</a>
+                    <a class="nav-link " href="/tuteeprofile" style="color:#d35400;">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/logout" style="color:#006D5B;">Logout</a>
+                    <a class="nav-link " href="/logout" style="color:#d35400;">Logout</a>
                 </li>
                 </ul>
                 @elseif(auth()->user()->user_type == 'tutor')
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link fa fa-bell" style="color:#006D5B;" href="#" id="navbarDropdown" role="button" 
+                            <a class="nav-link fa fa-bell" style="color:#d35400;" href="#" id="navbarDropdown" role="button" 
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -71,16 +71,16 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tutordashboard" style="color:#006D5B;">Dashboard</a>
+                            <a class="nav-link" href="/tutordashboard" style="color:#d35400;">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/request" style="color:#006D5B;">Requests</a>
+                            <a class="nav-link" href="/request" style="color:#d35400;">Requests</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/workhistory" style="color:#006D5B;">Work History</a>
+                            <a class="nav-link" href="/workhistory" style="color:#d35400;">Work History</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color:#006D5B;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" style="color:#d35400;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -95,13 +95,13 @@
                 @elseif(auth()->user()->user_type == 'admin')
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/admindashboard"  style="color:#006D5B">Dashboard</a>
+                            <a class="nav-link" href="/admindashboard"  style="color:#d35400">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="/list"  style="color:#006D5B">List</a>
+                                <a class="nav-link" href="/list"  style="color:#d35400">List</a>
                             </li>
-                        <li class="nav-item dropdown" style="color:#006D5B">
-                            <a class="nav-link dropdown-toggle" style="color:#006D5B" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <li class="nav-item dropdown" style="color:#d35400">
+                            <a class="nav-link dropdown-toggle" style="color:#d35400" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings
                             </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
