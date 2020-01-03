@@ -31,6 +31,7 @@ Route::get('/logout', 'SessionController@destroy');
 // Tutee Routes
 Route::get('/tuteedashboard','TuteeController@index')->name('tuteedashboard')->middleware('role:tutee');
 Route::get('/tuteeprofile','TuteeController@tuteeprofile')->middleware('role:tutee');
+Route::get('/tnotifications','TuteeController@notifications')->middleware('role:tutee');
 Route::get('/booked','TuteeController@bookeddisplay')->middleware('role:tutee');
 Route::get('/feedback','TuteeController@donesessiondisplay')->middleware('role:tutee');
 Route::post('/booking','TuteeController@store')->middleware('role:tutee');
@@ -43,6 +44,7 @@ Route::get('/request','TutorController@bookingrequest')->middleware('role:tutor'
 Route::get('/tutorprofile','TutorController@index')->middleware('role:tutor');
 Route::get('/workhistory','TutorController@workhistory')->middleware('role:tutor');
 Route::get('/tutordashboard','TutorController@tutordashboard')->middleware('role:tutor');
+Route::get('/notifications','TutorController@notifications')->middleware('role:tutor');
 Route::post('/addtutorschedule/{user}','TutorController@store')->middleware('role:tutor');
 Route::post('/addinfo','TutorController@store1')->middleware('role:tutor');
 Route::post('/updaterequest/{booking}','TutorController@update')->middleware('role:tutor');

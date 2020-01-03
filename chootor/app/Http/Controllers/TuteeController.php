@@ -140,4 +140,12 @@ class TuteeController extends Controller
         $booking->update($request->toArray());
         return redirect('/feedback');
     }
+
+    // START OF NOTIFICATIONS
+    public function notifications(){
+        $user = User::find(auth()->user()->id);
+        return view('tutor.notifications')->with('user', $user);
+    }
+    // END OF NOTIFICATIONS
+
 }

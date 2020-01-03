@@ -14,6 +14,13 @@ use App\Course;
 
 class TutorController extends Controller
 {
+    // START OF NOTIFICATIONS
+    public function notifications(){
+        $user = User::find(auth()->user()->id);
+        return view('tutor.notifications')->with('user', $user);
+    }
+    // END OF NOTIFICATIONS
+
     // TUTOR PROFILE UPDATE
     public function index()
     {
@@ -24,12 +31,7 @@ class TutorController extends Controller
     }
 
     public function updateprofile(Request $request, User $user)
-    {
-        // $this->validate(request(),[
-        //     'password' => 'required',
-        //     'password' => 'required|confirmed',
-        // ]);
-        
+    {        
         $user = User::find(auth()->user()->id);
         if($request->image){
             $image = $request->file('image');

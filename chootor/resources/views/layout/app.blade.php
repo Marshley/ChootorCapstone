@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     @if(auth()->user()->user_type == 'tutee')
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item dropdown">
+                {{-- <li class="nav-item dropdown">
                         <a class="nav-link fa fa-bell" style="color:#d35400;" href="#" id="navbarDropdown" role="button" 
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         </a>
@@ -40,7 +40,7 @@
                             <a class="list-group-item" href="/booked">{{json_encode($notification->data, true)}}</a>
                             @endforeach
                         </div>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="/tuteedashboard" style="color:#d35400;">Dashboard</a>
                 </li>
@@ -54,22 +54,24 @@
                     <a class="nav-link " href="/tuteeprofile" style="color:#d35400;">Profile</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link " href="/tnotifications" style="color:#d35400;">Notification</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link " href="/logout" style="color:#d35400;">Logout</a>
                 </li>
                 </ul>
                 @elseif(auth()->user()->user_type == 'tutor')
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item dropdown">
+                        {{-- <li class="nav-item dropdown">
                             <a class="nav-link fa fa-bell" style="color:#d35400;" href="#" id="navbarDropdown" role="button" 
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach ($user->notifications as $notification)
                                 <a class="list-group-item" href="/request">{{json_encode($notification->data, true)}}</a>
-                                {{-- <div class="dropdown-divider"></div> --}}
                                 @endforeach
                             </div>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a class="nav-link" href="/tutordashboard" style="color:#d35400;">Dashboard</a>
                         </li>
@@ -87,6 +89,8 @@
                                 <a class="dropdown-item" href="/tutorprofile">Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/tutorschedule">Schedule</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/notifications">Notification</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
