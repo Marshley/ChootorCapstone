@@ -44,7 +44,7 @@
             <label for="lastname" class="col-sm-4 col-form-label">Last Name: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="lastname" name="lastname" 
-                            placeholder="Last Name" value="{{$user->lastname}}">
+                            placeholder="Last Name" value="{{$user->lastname}}" maxlength="15">
                 </div>
         </div>
 
@@ -52,7 +52,7 @@
             <label for="firstname" class="col-sm-4 col-form-label">First Name: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="firstname" name="firstname" 
-                            placeholder="First Name" value="{{$user->firstname}}">
+                            placeholder="First Name" value="{{$user->firstname}}" maxlength="20">
                 </div>
         </div>
     
@@ -60,7 +60,7 @@
             <label for="middleinitial" class="col-sm-5 col-form-label">Middle Initial: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="middleinitial" name="middleinitial" 
-                    placeholder="M.I" value="{{$user->middleinitial}}">
+                    placeholder="M.I" value="{{$user->middleinitial}}" maxlength="2">
                 </div>
         </div>
     </div>
@@ -96,7 +96,8 @@
         <div class="form-group row">
             <label for="email" class="col-sm-2 col-form-label">Email</label>
             <div class="col-sm-10">
-            <input type="email" class="form-control font-italic" id="email" placeholder="Email" name="email" value="{{$user->email}}">
+            <input type="email" class="form-control font-italic" id="email" placeholder="Email" 
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" value="{{$user->email}}">
             </div>
         </div>
 

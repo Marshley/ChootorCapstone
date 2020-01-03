@@ -72,11 +72,15 @@
                 <div class="row">
                   <div class="form-group col">
                     <label for="lastname">Last Name:</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" maxlength="15" required >
+                    <input type="text" class="form-control" id="lastname" name="lastname"
+                      onkeypress="return ((event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 && event.charCode <= 57));"
+                      maxlength="15" required >
                   </div>
                   <div class="form-group col">
                     <label for="firstname">First Name:</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" maxlength="20" required>
+                    <input type="text" class="form-control" id="firstname" name="firstname" 
+                      onkeypress="return ((event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 && event.charCode <= 57));"
+                      maxlength="20" required>
                   </div>          
                   <div class="form-group col">
                     <label for="middleinitial">MI:</label>
@@ -99,7 +103,7 @@
                 </div>        
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" name="email" required>
+                  <input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 </div>        
                 <div class="form-group">
                   <label for="password">Password:</label>

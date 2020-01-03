@@ -36,7 +36,7 @@
                     <div class="col-lg-12 offset-lg-12">
                         <div class="form-group text-center">
                             <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" style="border-color: #141945;">
+                            <input type="email" class="form-control" id="email" name="email" style="border-color: #141945;" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         </div>                
                         <div class="form-group text-center">
                             <label for="password">Password:</label>

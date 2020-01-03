@@ -158,13 +158,13 @@
               <div class="form-group col-md-4">
                 <label for="subject_id">Subject</label>
                 <input class="typeahead form-control" type="text" name="subject" id="subject" />
-                <!-- @foreach ($subject as $subjects) -->
-                <!-- @endforeach    -->
-                <!-- <select id="subject_id" class="form-control" name="subject_id" >
+                 {{-- @foreach ($subject as $subjects) 
+                @endforeach   
+                <select id="subject_id" class="form-control" name="subject_id" >
                     @foreach ($subject as $subjects)
                         <option value="{{$subjects->id}}"> {{$subjects->name }}</option>
-                    @endforeach                                 -->
-                <!-- </select> -->                
+                    @endforeach                              
+                </select>                --}}
               </div>
               <div class="modal-footer">
                 <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -205,27 +205,17 @@
   </table>
   
 <script>
-  // var ONE_HOUR = 60 * 60 * 1000; /* ms */
-  //   function Compare()
-  //   {    
-  //     if('start_time' && 'end_time' > ONE_HOUR)
-  //     {
-  //       alert("Must be one hour")
-  //     }
-  //   }
 
     function validateForm() {
       var startTime = document.getElementById("start_time").value
       var endTime = document.getElementById("end_time").value
-
-      // alert(startTime < endTime)
 
       var time1 = startTime.split(":");
       var hour1 = time1[0];
       if(hour1 == "00") {hour1 = 24}
       var min1 = time1[1];
       startTime = hour1 + "." + min1
-      // alert("1")
+      
       var time2 = endTime.split(":")
       var hour2 = time2[0];
       if(hour2 == "00") {hour2 = 24}
@@ -242,5 +232,6 @@
 
       return false;
     }
+
 </script>
 @endsection
