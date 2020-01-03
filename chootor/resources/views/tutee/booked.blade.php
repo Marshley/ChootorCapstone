@@ -19,7 +19,7 @@
     <tbody>
         @foreach ($user->bookings as $booked)
         @if ($user->bookings)
-        @if ($booked->status == 'approved')
+        @if ($booked->status != 'done')
             <tr>
                 <td>{{$booked->schedule->tutor->firstname}} {{$booked->schedule->tutor->lastname}}</td>
                 <td>{{$booked->schedule->day}}</td>
