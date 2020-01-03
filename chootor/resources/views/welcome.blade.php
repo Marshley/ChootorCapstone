@@ -57,9 +57,9 @@
 
         .butt-reg {
             /* border-radius: 50px; */
-            background-color: transparent;
-            border-color: #141945;
-            color: #141945;
+            background-color: #e27235;
+            border-color: #e27235;
+            color: #ffffff;
             left: 25%;  
             font-family: "century gothic";
         }
@@ -79,9 +79,9 @@
         } */
 
         .butt-reg:hover {
-            background-color: #1A2056;
+            background-color: #d35400;
             color: #ffffff;
-            border-color: #1A2056;            
+            border-color: #d35400;            
         }
 
         .company-head {
