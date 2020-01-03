@@ -9,46 +9,46 @@
   }
   
   #homebtn {
-    background-color: #006D5B;
+    background-color: #e27235;
     color: white;
-    border-color: #006D5B;
+    border-color: #e27235;
   }
 
   #homebtn:hover {
-    background-color: #009B81;
+    background-color: #fa935b;
     color: #ffffff;
-    border-color: #009B81;
+    border-color: #fa935b;
   }
   #cbtn {
     background-color: #ffffff;
-    color: #006D5B;
-    border-color: #006D5B;
+    color: #e27235;
+    border-color: #e27235;
   }
   #cbtn:hover {
-    background-color: #009B81;
+    background-color: #fa935b;
     color: #ffffff;
-    border-color: #009B81;
+    border-color: #fa935b;
   }
   #cbtnsbmt {
-    background-color: #006D5B;
+    background-color: #e27235;
     color: #ffffff;
-    border-color: #006D5B;
+    border-color: #e27235;
   }
   #cbtnsbmt:hover {
-    background-color: #009B81;
+    background-color: #fa935b;
     color: #ffffff;
-    border-color: #009B81;
+    border-color: #fa935b;
   }
 
   .thead {
     /* background-color: #141945; */
-    color: #006D5B;
+    color: #e27235;
   }
   #ccard {
         width: 500px;
         height: auto;
         margin-top: 50px;
-        border-color: #006D5B;
+        border-color: #e27235;
   }
 
   @media only screen

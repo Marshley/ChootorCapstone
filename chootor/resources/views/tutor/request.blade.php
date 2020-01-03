@@ -4,8 +4,19 @@
   .thead {
     /* background-color: #006D5B; */
     /* color: #ffffff; */
-    color: #006d5b;
+    color: #e27235;
   }
+  .btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
+        border-color: #e27235;
+        color: white;
+        background-color: #e27235;
+    }
+
+    .btn-primary:hover {
+        background-color: #fa935b;
+        color: #ffffff;
+        border-color: #fa935b;  
+    }
 </style>
 {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1> --}}
 
