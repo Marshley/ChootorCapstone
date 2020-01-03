@@ -4,14 +4,18 @@
     .thead {
       /* background-color: #141945; */
       /* color: #006D5B; */
-      color: #e27235;
-
+      color: #d35400;
+    }
+    .thead-light {
+      /* background-color: #141945; */
+      /* color: #006D5B; */
+      color: #141945;
     }
 </style>
 {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> --}}
 
-<table class="table table-bordered text-center text-black" style="margin-top:50px;margin-bottom:50px">
-    <thead class="thead-light ">
+<table class="table table-borderless text-center" style="margin-top:50px;margin-bottom:50px">
+    <thead class="thead">
     <tr>
         <th scope="col">MONDAY</th>
         <th scope="col">TUESDAY</th>
@@ -33,8 +37,8 @@
     </tbody>
 </table>
 
-<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
-    <thead class="thead">
+<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+    <thead class="thead-light">
     <tr>
         <th scope="col">TUTEE NAME</th>
         <th scope="col">DAY</th>

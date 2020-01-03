@@ -4,7 +4,7 @@
 <style>
   .thead {
       background-color: #ffffff;
-      color: #fa935b;
+      color: #d35400;
   }
   #cbtn {
     background-color: #d35400;

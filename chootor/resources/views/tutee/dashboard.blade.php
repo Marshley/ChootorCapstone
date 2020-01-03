@@ -15,11 +15,22 @@
 <!-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">BOOK A CHOOTOR</h1>  -->
 
 <style>
-  .btn-info {
-    background-color: #006d5b;
+  #butto {
+    background-color: #e27235;
+    color: #ffffff;
+  
   }
-  .btn-info:hover {
-    background-color: #009B81;
+  #butto:hover {
+    background-color: #d35400;
+    color: #ffffff;
+  }
+  #closebtn {
+    background-color: #7f8c8d;
+    color: #ffffff;
+  }
+  #closebtn:hover {
+    background-color: #bdc3c7;
+    color: #ffffff;
   }
 </style>
 
@@ -27,7 +38,7 @@
   <div class="row" style="margin-bottom:50px">
     @foreach ($tutors as $tutor)
     {{-- @if ($tutor['user']['schedule']) --}}    
-    <div class="card col-5 m-auto" style="height:auto;">
+    <div class="card col-5 mx-auto my-1" style="height:auto">
       <div class="card-body">
         <div class="card-img text-center">   
           @if($tutor['user']->image)
@@ -52,7 +63,7 @@
           </div>
 
         {{-- Button trigger modal  --}}
-          <button type="button" class="btn btn-info btn-block" data-toggle="modal" style="margin-top:30px;margin-bottom:10px" data-target="#exampleModal{{$tutor['user']->id}}"> Book </button> 
+          <button type="button" class="btn btn-block" id="butto" data-toggle="modal" style="margin-top:30px;margin-bottom:10px" data-target="#exampleModal{{$tutor['user']->id}}"> Book </button> 
         <!-- </div>  -->
 
         {{-- Modal --}}
@@ -94,8 +105,8 @@
               </div>
 
               <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>              
-                <button style="cursor:pointer" type="submit" class="btn btn-info">Submit</button>
+                <button type="button" class="btn" id="closebtn" data-dismiss="modal">Close</button>              
+                <button style="cursor:pointer" type="submit" class="btn" id="butto">Submit</button>
                 </form>
               </div>
 
@@ -105,7 +116,7 @@
 
       </div>
     </div> 
-    
+    </br>
     {{-- @endif --}}
     @endforeach
   </div>

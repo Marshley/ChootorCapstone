@@ -3,7 +3,7 @@
 <style>
     .thead {
       background-color:white;
-      color: #006D5B;
+      color: #d35400;
     }
 </style>
 {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> --}}

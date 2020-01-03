@@ -3,16 +3,16 @@
 @section('content')
 <style>
     #cbtn {
-        background-color: #006D5B;
+        background-color: #d35400;
         color: #ffffff;
-        border-color: #006D5B;
+        border-color: #d35400;
         margin-bottom: 20px;
     }
 
     #cbtn:hover {
-        background-color: #009B81;
+        background-color: #e27235;
         color: #ffffff;
-        border-color: #009B81;
+        border-color: #e27235;
         /* font-weight: bold; */
     }
 
@@ -24,7 +24,7 @@
     }
 
     #clabel {
-      border-color: #006D5B;
+      border-color: #d35400;
     }
     a {
       text-decoration: none;
@@ -134,7 +134,7 @@
                 <div class="form-group">
                   <div class="custom-control custom-checkbox font-italic" style="margin-bottom:30px">
                     <input type="checkbox" class="custom-control-input" id="materialUnchecked" unchecked required>
-                    <label class="custom-control-label" for="materialUnchecked">By clicking Register, you agree to our <a href="google.com" style="padding:0">Terms</a>, <a href="google.com" style="padding:0">Data Policy</a> and <a href="google.com" style="padding:0">Cookies Policy.</a></label> 
+                    <label class="custom-control-label" for="materialUnchecked">By clicking Register, you agree to our <a href="https://policies.google.com/terms" style="padding:0">Terms</a> and <a href="https://policies.google.com/privacy" style="padding:0">Privacy Policy.</a></label> 
                   </div>
                   
                   <!-- <p class="font-italic btn-link">By clicking Register, you agree to our Terms, Data Policy and Cookies Policy. </p> -->
