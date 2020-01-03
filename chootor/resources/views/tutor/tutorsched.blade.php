@@ -218,26 +218,26 @@
       var startTime = document.getElementById("start_time").value
       var endTime = document.getElementById("end_time").value
 
-      alert(startTime < endTime)
+      // alert(startTime < endTime)
 
       var time1 = startTime.split(":");
       var hour1 = time1[0];
       if(hour1 == "00") {hour1 = 24}
       var min1 = time1[1];
       startTime = hour1 + "." + min1
-
+      // alert("1")
       var time2 = endTime.split(":")
       var hour2 = time2[0];
-      if(hou2 == "00") {hour2 = 24}
+      if(hour2 == "00") {hour2 = 24}
       var min2 = time2[1]
       endTime = hour2 + "." + min2
-
+      
       var totalTime = startTime - endTime
 
-      if(Math.abs(totalTime) > 1) {
-        alert("!")
+      if(Math.abs(totalTime) >= 1) {
+        return true;
       } else {
-        alert("!!")
+        alert("Time durtion must be atleast 1 hour!")
       }
 
       return false;

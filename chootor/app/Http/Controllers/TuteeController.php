@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\UserSchedule;
 use App\Booking;
+use App\Course;
 
 class TuteeController extends Controller
 {
@@ -48,7 +49,8 @@ class TuteeController extends Controller
     public function tuteeprofile()
     {
         $user = User::find(auth()->user()->id);
-        return view('tutee.profile')->with('user', $user);
+        $courses = Course::all();
+        return view('tutee.profile',compact('user', 'courses'));
     }
 
     public function updateprofile(Request $request, User $user)

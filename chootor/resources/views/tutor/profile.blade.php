@@ -23,7 +23,13 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-12">
-                    <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">           
+                    @if($user->image)
+                        <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
+                    @else
+                    <img src="../img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
+                    @endif
+
+                               
                     <div class="row justify-content-center">
                         <div class="col-sm-3 justify-content-center">
                             <input type="file" class="form-control-file" id="image" name="image">
