@@ -3,15 +3,15 @@
 @section('content')
 <style>
     .btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
-        border-color: #006D5B;
+        border-color: #e27235;
         color: white;
-        background-color: #006D5B;
+        background-color: #e27235;
     }
 
     .btn-primary:hover {
-        background-color: #009B81;
+        background-color: #fa935b;
         color: #ffffff;
-        border-color: #009B81;  
+        border-color: #fa935b;  
     }
 </style>
 {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1> --}}
@@ -28,7 +28,6 @@
                     @else
                     <img src="../img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
                     @endif
-
                                
                     <div class="row justify-content-center">
                         <div class="col-sm-3 justify-content-center">
