@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('middleinitial')->nullable();
-            $table->string('school_id')->unique();
+            $table->string('school_id');
             $table->string('user_type');
             $table->string('status')->default('pending');
             $table->unsignedBigInteger('location_id')->default('1');

@@ -30,7 +30,11 @@
     <div class="card col-5 m-auto" style="height:auto;">
       <div class="card-body">
         <div class="card-img text-center">   
-          <img src="{{$tutor['user']->image}}" class="img-responsive" alt="profilepicture" style="height:100px;width:100px">   
+          @if($tutor['user']->image)
+            <img src="{{$tutor['user']->image}}" class="img-responsive" alt="profilepicture" style="height:100px;width:100px">   
+          @else
+            <img src="../img/blank.png" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+          @endif
         </div>
         <!-- <div class="row">  -->
         <div class="card-text text-center">

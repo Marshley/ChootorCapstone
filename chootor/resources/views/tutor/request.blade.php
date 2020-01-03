@@ -64,7 +64,12 @@
                         </div>
                         <div class="modal-body text-center">
                           <div class="container">
-                            <img src="{{$request->booking->tutee->image}}" class="img-responsive" alt="profilepicture">                           
+                            @if($user->image)
+                              <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+                            @else
+                              <img src="../img/blank.png" class="img-responsive"style="height:100px;width:100px"  alt="profilepicture">
+                            @endif
+                                                       
                             <p class="text-center">School ID: {{$request->booking->tutee->school_id}} </p>
                             <p class="text-center">Name: {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
                             <p class="text-center">Course: {{$request->booking->tutee->course->course_name}} </p>

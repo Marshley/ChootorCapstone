@@ -27,8 +27,12 @@
           <div class="card">
             <div class="card-body">
               <div class="card-title">
-            
-                <img src="{{$history->schedule->tutor->image}}" class="img-responsive" alt="profilepicture">   
+                @if($history->schedule->tutor->image)
+                  <img src="{{$history->schedule->tutor->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+                @else
+                  <img src="../img/blank.png" class="img-responsive" style="height:100px;width:100px"  alt="profilepicture">
+                @endif
+                   
                 <h2>{{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</h2>
                 
               </div> 
