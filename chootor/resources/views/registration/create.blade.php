@@ -72,15 +72,15 @@
                 <div class="row">
                   <div class="form-group col">
                     <label for="lastname">Last Name:</label>
-                    <input type="text" class="form-control" id="lastname" name="lastname" required>
+                    <input type="text" class="form-control" id="lastname" name="lastname" maxlength="15" required >
                   </div>
                   <div class="form-group col">
                     <label for="firstname">First Name:</label>
-                    <input type="text" class="form-control" id="firstname" name="firstname" required>
+                    <input type="text" class="form-control" id="firstname" name="firstname" maxlength="20" required>
                   </div>          
                   <div class="form-group col">
                     <label for="middleinitial">MI:</label>
-                    <input type="text" class="form-control" id="middleinitial" name="middleinitial">
+                    <input type="text" class="form-control" id="middleinitial" name="middleinitial" maxlength="2">
                   </div>
                 </div>
 
@@ -103,12 +103,12 @@
                 </div>        
                 <div class="form-group">
                   <label for="password">Password:</label>
-                  <input type="password" class="form-control" id="password" name="password" required>
+                  <input type="password" class="form-control" id="password" name="password" maxlength="8" required>
                 </div>        
                 <div class="form-group">
                   <label for="password_confirmation">Password Confirmation:</label> 
                   <input type="password" class="form-control" id="password_confirmation"
-                  name="password_confirmation" required>
+                  name="password_confirmation" maxlength="8" required>
                 </div>        
                 <div class="row justify-content-center" style="margin-top:20px;margin-bottom:30px;font-size:30px">
                   <span>Choose your role: </span> 
