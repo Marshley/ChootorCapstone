@@ -154,4 +154,11 @@ class TutorController extends Controller
    
         return response()->json($data);
     }
+
+    // public function destroy(UserSchedule $UserSchedule)
+    // {
+    //     // $user = User::find(auth()->user()->id);
+    //     $UserSchedule->delete();
+    //     return redirect('/tutorschedule')->with('UserSchedule', $UserSchedule);
+    // }
 }

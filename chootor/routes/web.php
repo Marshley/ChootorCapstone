@@ -45,6 +45,7 @@ Route::get('/tutorprofile','TutorController@index')->middleware('role:tutor');
 Route::get('/workhistory','TutorController@workhistory')->middleware('role:tutor');
 Route::get('/tutordashboard','TutorController@tutordashboard')->middleware('role:tutor');
 Route::get('/notifications','TutorController@notifications')->middleware('role:tutor');
+// Route::get('/destroy','TutorController@destroy')->middleware('role:tutor');
 Route::post('/addtutorschedule/{user}','TutorController@store')->middleware('role:tutor');
 Route::post('/addinfo','TutorController@store1')->middleware('role:tutor');
 Route::post('/updaterequest/{booking}','TutorController@update')->middleware('role:tutor');

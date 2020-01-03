@@ -199,6 +199,10 @@
           <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
           <td>{{$schedule->subject->name}}</td>
           <td>{{$schedule->location->name}}</td>
+          {{-- <td> <form name="destroy" method="get" action="/destroy" >
+           <button> Delete </button> 
+          </form>
+        </td> --}}
         </tr>
       @endforeach
     </tbody>

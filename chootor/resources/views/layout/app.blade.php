@@ -122,7 +122,7 @@
                 @endif
             </div>
             @endif
-            </nav>
+    </nav>
 
 
 
