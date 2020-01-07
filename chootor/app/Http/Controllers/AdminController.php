@@ -42,21 +42,21 @@ class AdminController extends Controller
     {   
         // Create Subject
         $subject->create($request->toArray());
-        return redirect('/subject');
+        return redirect('/subject')->with('mesg', 'Saved Successfully!');
     }
 
     public function store2(Request $request, Location $location)
     {   
         // Create Location
         $location->create($request->toArray());
-        return redirect('/location');
+        return redirect('/location')->with('mesg', 'Saved Successfully!');
     }
 
     public function addcourse(Request $request, Course $course)
     {
         // Create Course
         $course->create($request->toArray());
-        return redirect('/course');
+        return redirect('/course')->with('mesg', 'Saved Successfully!');
     }
 
     public function show(Request $request)
