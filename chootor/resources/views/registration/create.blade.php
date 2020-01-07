@@ -134,7 +134,63 @@
                 <div class="form-group">
                   <div class="custom-control custom-checkbox font-italic" style="margin-bottom:30px">
                     <input type="checkbox" class="custom-control-input" id="materialUnchecked" unchecked required>
-                    <label class="custom-control-label" for="materialUnchecked">By clicking Register, you agree to our <a href="https://policies.google.com/terms" style="padding:0">Terms</a> and <a href="https://policies.google.com/privacy" style="padding:0">Privacy Policy.</a></label> 
+                    <label class="custom-control-label" for="materialUnchecked">By clicking Register, you agree to our 
+                      {{-- <a href="https://policies.google.com/terms" style="padding:0">Terms</a>  --}}
+                      
+                
+                          
+                   
+                        {{-- and <a href="https://policies.google.com/privacy" style="padding:0">Privacy Policy.</a></label>  --}}
+                        <!-- Button trigger modal -->
+                        <a type="button" style="padding:0; color:blue;" data-toggle="modal" data-target="#exampleModal1">
+                          Privacy Policy 
+                        </a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">PRIVACY POLICY</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div class="container">
+                                      <p> INSERT TEXT HERE </p>
+                                    </div>
+                                </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>and  
+                            <!-- Button trigger modal -->
+                        <a type="button" style="padding:0; color:blue;" data-toggle="modal" data-target="#exampleModal">
+                          Terms and Services
+                        </a>
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">TERMS</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <div class="container">
+                                      <p> INSERT TEXT HERE </p>
+                                    </div>
+                                </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>         
                   </div>
                   
                   <!-- <p class="font-italic btn-link">By clicking Register, you agree to our Terms, Data Policy and Cookies Policy. </p> -->

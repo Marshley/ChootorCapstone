@@ -23,17 +23,17 @@
   <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style="margin-top:50px">
       <thead class="thead">
       <tr>
-          <th scope="col">TUTEE NAME</th>
+          <th style="padding-left:200px" scope="col">TUTEE NAME</th>
           {{-- <th scope="col">STATUS</th> --}}
-          <th class="text-right" scope="col">ACTION BUTTON</th>
+          <th class="text-right" style="padding-right:200px" scope="col">ACTION BUTTON</th>
       </tr>
       </thead>
         <tbody>
             @foreach ($tutees as $tutee)
             <tr>
-                <td>{{$tutee->lastname}} {{$tutee->firstname}} {{$tutee->middleinitial}} </td>
+                <td style="padding-left:200px"> {{$tutee->lastname}} {{$tutee->firstname}} {{$tutee->middleinitial}} </td>
                 {{-- <td>{{$tutee->status}}</td> --}}
-                <td class="text-right">
+                <td class="text-right" style="padding-right:240px">
                    <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$tutee->id}}">
                     View 
