@@ -66,9 +66,16 @@
   }
 </style>
 @section('content')
+
   @if(session('msg'))
     <div class="alert alert-danger" role="alert" > 
       {{ session('msg') }}
+    </div>
+  @endif
+
+  @if(session('mesg'))
+    <div class="alert alert-success" role="alert" > 
+      {{ session('mesg') }}
     </div>
   @endif
 

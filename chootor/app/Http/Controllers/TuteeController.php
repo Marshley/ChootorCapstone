@@ -120,7 +120,7 @@ class TuteeController extends Controller
             $tutor->notify(new \App\Notifications\BookingRequestNotification('A tutee '. $userschedule->booking->tutee->firstname . ' ' . $userschedule->booking->tutee->lastname .' has booked your schedule'));
         } 
 
-        return redirect('/tuteedashboard');
+        return redirect('/tuteedashboard')->with('mesg', 'Successfully booked!');
     }
 
     public function bookeddisplay()
