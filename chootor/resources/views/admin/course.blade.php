@@ -12,7 +12,7 @@
     /* border-color: #e27235; */
   }
   #cbtn:hover {
-    background-color: #fa935b;
+    background-color: #e27235;
     color: #ffffff;
   }
   #cbtnn {
@@ -26,11 +26,8 @@
   }
 </style>
  
-    <!-- <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2> -->
-<!-- Button trigger modal -->
-    <button type="button" id="cbtn" class="btn btn-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
-        Add Course
-    </button>
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2>
+ 
       
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -60,11 +57,12 @@
         </div>
       </div>
 
-<table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
     <thead class="thead">
     <tr>
         <th scope="col">#</th>
         <th scope="col">COURSE NAME</th>
+        <th scope="col"> <!-- Button trigger modal --> <button type="button" id="cbtn" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Add Course</button></th>
     </tr>
     </thead>
     <tbody>
@@ -72,6 +70,7 @@
         <tr>
             <td>{{$course->id}}</td>
             <td>{{$course->course_name}}</td>
+            <td> </td>
         </tr>
         @endforeach
     </tbody>
