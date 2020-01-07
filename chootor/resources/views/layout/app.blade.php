@@ -88,7 +88,7 @@
                             <a class="nav-link dropdown-toggle" style="color:#d35400;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Settings
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
                                 <a class="dropdown-item" href="/tutorprofile">Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <!-- <a class="dropdown-item" href="/tutorschedule">Schedule</a>
@@ -111,7 +111,7 @@
                             <a class="nav-link dropdown-toggle" style="color:#d35400" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings
                             </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/subject">Subject</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/location">Location</a>
