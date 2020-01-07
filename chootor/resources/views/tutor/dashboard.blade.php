@@ -9,10 +9,11 @@
     .thead-light {
       /* background-color: #141945; */
       /* color: #006D5B; */
-      color: #141945;
+      color: #e27235;
     }
 </style>
-{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> --}}
+ <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
+<!-- <hr> -->
 
 <table class="table table-borderless text-center" style="margin-top:50px;margin-bottom:50px">
     <thead class="thead">
@@ -37,8 +38,10 @@
     </tbody>
 </table>
 
+</br>
+
 <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
-    <thead class="thead-light">
+    <thead class="thead">
     <tr>
         <th scope="col">TUTEE NAME</th>
         <th scope="col">DAY</th>

@@ -11,7 +11,7 @@
     }
     
 </style>
-{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1> --}}
+ <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1> 
 
             @foreach ($user->schedules as $sessiondone)
                 @if ($sessiondone->booking)
