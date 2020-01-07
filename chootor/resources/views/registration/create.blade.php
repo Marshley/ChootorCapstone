@@ -155,9 +155,13 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body text-center">
+                                <div class="modal-body text-justify">
                                     <div class="container">
-                                      <p> INSERT TEXT HERE </p>
+                                      <p> Chootor may collect data from you, since you’ll need an account in order to have access, as stated on Terms and Services.  </br>
+                                      - Your personal information is safe with us kemerut.  </br>
+                                      - We share your personal data with your consent for the purpose of being able to identify you as an eligible student of the current semester. </br>
+                                      - We do not sell nor share your personal information to a third-party peeps. </br>
+                                      </p>
                                     </div>
                                 </div>
                                   <div class="modal-footer">
@@ -180,9 +184,18 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body text-center">
+                                <div class="modal-body text-justify">
                                     <div class="container">
-                                      <p> INSERT TEXT HERE </p>
+                                      <p> By using our services, you are agreeing to our terms. Please carefully read it below. 
+                                      Do not misuse our Services. </br>
+                                      -	In order to gain access to our site, you’ll need to create an account with your First Name and Last Name; Middle Name won’t be required. Email is also asked since it’ll serve as our communication. </br>
+                                      -	The service we offer is solely for peer to peer tutoring only. </br>
+                                      -	You may use our services only as for educational purposes only. </br>
+                                      -	Our services will be available 24/7, upon official deployment of the higher-ups. </br>
+                                      -	Tutors’ schedule will only be available from Monday to Saturday, between 7am and 5pm only. </br>
+                                      -	Some of our Services are available on mobile devices. Do not use such Services in a way that distracts you and prevents you from obeying traffic or safety laws. </br>
+                                      -	Personal information is only used within the site only. </br>
+                                      </p>
                                     </div>
                                 </div>
                                   <div class="modal-footer">
