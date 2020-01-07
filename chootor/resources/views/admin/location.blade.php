@@ -32,12 +32,8 @@
   </div>
  @endif
 
-    <!-- <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">LOCATION</h2> -->
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">LOCATION</h2>
       
-      <!-- Button trigger modal -->
-      <button type="button" id="cbtn" class="btn btn-outline-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
-        Add Location
-      </button>
       
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,11 +63,12 @@
         </div>
       </div>
 
-<table class="table">
+<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
   <thead class="thead">
     <tr>
         <th scope="col">#</th>
         <th scope="col">LOCATION NAME</th>
+        <th scope="col"><!-- Button trigger modal --> <button type="button" id="cbtn" class="btn btn-outline-primary btn-sm m-0" data-toggle="modal"  data-target="#exampleModal">Add Location</button></th>
     </tr>
     </thead>
     <tbody>
@@ -79,6 +76,7 @@
         <tr>
             <td>{{$locations->id}}</td>
             <td>{{$locations->name}}</td>
+            <td> </td>
         </tr>
         @endforeach
     </tbody>

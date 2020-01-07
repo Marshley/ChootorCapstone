@@ -32,7 +32,7 @@
   </div>
  @endif
 
-    <!-- <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2> -->
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2>
 <!-- Button trigger modal -->
 <button type="button" id="cbtn" class="btn btn-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
         Add Subject
@@ -66,11 +66,12 @@
         </div>
       </div>
 
-<table class="table">
-    <thead class="thead">
+<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
+    <thead class="thead"></thead>
     <tr>
         <th scope="col">#</th>
         <th scope="col">SUBJECT NAME</th>
+        <th scope="col"><!-- Button trigger modal --><button type="button" id="cbtn" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Add Subject</button></th>
     </tr>
     </thead>
     <tbody>
@@ -78,6 +79,7 @@
         <tr>
             <td>{{$subjects->id}}</td>
             <td>{{$subjects->name}}</td>
+            <td> </td>
         </tr>
         @endforeach
     </tbody>
