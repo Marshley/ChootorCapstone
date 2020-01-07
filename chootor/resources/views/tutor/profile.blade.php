@@ -14,7 +14,7 @@
         border-color: #fa935b;  
     }
 </style>
-{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1> --}}
+ <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
     <form method="POST" action="/updatetutorprofile" enctype="multipart/form-data">
     
     {{ csrf_field() }}
@@ -38,6 +38,33 @@
         </div>
     </div>
 
+    <!-- <div class="form-group " style="margin-top:50px">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    @if($user->image)
+                        <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
+                    @else
+                    <img src="../img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
+                    @endif   
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4 justify-content-center">
+                            <input type="file" class="form-control-file" id="image" name="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+ 
+
+                <!-- SAVE BUTTON -->
+                <!--  -->
+                <div class="row">
+                    <div class="col-sm-12 d-flex align-items-end justify-content-center" style="">
+                        <button type="submit" class="btn btn-primary" style="cursor:pointer">SAVE CHANGES</button>
+                    </div>
+                </div>
     <div class="form-group row col-sm-12" style="margin-top:50px">
             
         <div class="form-group row col-sm">
@@ -95,7 +122,7 @@
             </div>
         </div>
 
-        {{-- <div class="form-group row">
+        <!-- {{-- <div class="form-group row">
             <label for="password" class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
             <input type="password" class="form-control font-italic" id="password" placeholder="Password" name="password">
@@ -108,13 +135,9 @@
                 <input type="password" class="form-control font-italic" id="password_confirmation" 
                 placeholder="Confirm Password" name="password_confirmation">
             </div>
-        </div> --}}
+        </div> --}} -->
 
-        <div class="form-group row">
-            <div class="col-sm-12" style="margin-top:20px">
-                <button type="submit" class="btn btn-primary btn-block" style="cursor:pointer">SAVE</button>
-            </div>
-        </div>        
+              
     <!-- </div> -->
 </form>
 @endsection

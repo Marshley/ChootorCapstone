@@ -18,10 +18,11 @@
         border-color: #fa935b;  
     }
 </style>
-{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1> --}}
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1>
+
 
 <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style="margin-top:50px">
-    <thead class="thead">
+    <thead class="thead" >
     <tr>
         <th scope="col">TUTEE NAME</th>
         <th scope="col">DAY</th>

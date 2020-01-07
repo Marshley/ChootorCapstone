@@ -81,15 +81,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/workhistory" style="color:#d35400;">Work History</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tutorschedule" style="color:#d35400;">Schedule</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color:#d35400;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" style="color:#d35400;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Settings
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="/tutorprofile">Profile</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/tutorschedule">Schedule</a>
-                                <div class="dropdown-divider"></div>
+                                <!-- <a class="dropdown-item" href="/tutorschedule">Schedule</a>
+                                <div class="dropdown-divider"></div> -->
                                 <a class="dropdown-item" href="/notifications">Notification</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>

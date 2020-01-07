@@ -58,7 +58,7 @@
         width: 300px;
         height: auto;
         margin-top: 50px;
-        border-color: #141945;
+        border-color: #e27235;
     }
     .note {
       font-size: 15px;
@@ -72,9 +72,9 @@
     </div>
   @endif
 
-   {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1>  --}}
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1>
    
-    <div class="card text-center" id="ccard">
+    <div class="card text-center shadow p-2 mb-3" id="ccard">
       <form action="/addinfo" method="POST">
         {{ csrf_field() }}    
         <div class="container">
@@ -116,9 +116,9 @@
     </div>
     <br/>
                             {{-- START OF CREATING TUTOR SCHEDULE --}}
-    <button id="homebtn" type="button" class="btn btn-primary btn-block" data-toggle="modal" style="margin-top:20px;margin-bottom:10px" data-target="#exampleModal">
+    <!-- <button id="homebtn" type="button" class="btn btn-primary btn-block" data-toggle="modal" style="margin-top:20px;margin-bottom:10px" data-target="#exampleModal">
       CREATE SCHEDULE
-    </button>
+    </button> -->
     <br/>
 
     <!-- Modal -->
@@ -179,35 +179,41 @@
 
 
     {{-- START OF TABLE --}}
-  <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
-    <thead class="thead">
-      <tr>
-          {{-- <th scope="col">#</th> --}}
-          <th scope="col">DAY</th>
-          <th scope="col">FROM</th>
-          <th scope="col">TO</th>
-          <th scope="col">SUBJECT</th>
-          <th scope="col">LOCATION</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach ($schedules as $schedule)
+  <div class="container-fluid overflow-scroll">
+    <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl .w-auto">
+      <thead class="thead">
         <tr>
-          {{-- <td>{{$schedule->id}}</td> --}}
-          <td>{{$schedule->day}}</td>
-          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}</td>
-          <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
-          <td>{{$schedule->subject->name}}</td>
-          <td>{{$schedule->location->name}}</td>
-          {{-- <td> <form name="destroy" method="get" action="/destroy" >
-           <button> Delete </button> 
-          </form>
-        </td> --}}
+            {{-- <th scope="col">#</th> --}}
+            <th scope="col">DAY</th>
+            <th scope="col">FROM</th>
+            <th scope="col">TO</th>
+            <th scope="col">SUBJECT</th>
+            <th scope="col">LOCATION</th>
+            <th scope="col"><button id="homebtn" type="button" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal"> Add Schedule </button></th>
         </tr>
-      @endforeach
-    </tbody>
-  </table>
-  
+      </thead>
+      <tbody>
+        @foreach ($schedules as $schedule)
+          <tr>
+            {{-- <td>{{$schedule->id}}</td> --}}
+            <td>{{$schedule->day}}</td>
+            <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}</td>
+            <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
+            <td>{{$schedule->subject->name}}</td>
+            <td>{{$schedule->location->name}}</td>
+            <td> </td>
+            {{-- <td> <form name="destroy" method="get" action="/destroy" >
+            <button> Delete </button> 
+            </form>
+          </td> --}}
+          </tr>
+        @endforeach
+      </tbody>
+    </table>
+    
+  </div>
+
+
 <script>
 
     function validateForm() {
