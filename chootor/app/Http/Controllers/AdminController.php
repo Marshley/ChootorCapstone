@@ -81,4 +81,20 @@ class AdminController extends Controller
     //     $lists = Booking::all();
     //     return view('admin.list')->with('lists', $lists);
     // }
+
+    // START LIST OF TUTORS
+    public function tutorlist()
+    {
+        $tutors = User::where('user_type', 'tutor')->get();
+        return view('admin.tutorlist')->with('tutors', $tutors);
+    }
+    // END OF LIST OF TUTORS
+
+    // START LIST OF TUTEE
+    public function tuteelist()
+    {
+        $tutees = User::where('user_type', 'tutee')->get();
+        return view('admin.tuteelist')->with('tutees', $tutees);
+    }
+    // END LIST OF TUTEE
 }
