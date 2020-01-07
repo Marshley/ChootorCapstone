@@ -38,15 +38,18 @@
     background-color: #bdc3c7;
     color: #ffffff;
   }
+  p{
+    font-size: 15px;
+  }
 </style>
 
 <div class="col-12" style="margin-top:50px;margin-bottom:50px" >
   <div class="row" style="margin-bottom:50px">
     @foreach ($tutors as $tutor)
     {{-- @if ($tutor['user']['schedule']) --}}    
-    <div class="card col-5 mx-auto my-1" style="height:auto">
+    <div class="card col-5 mx-auto my-1 mb-4" style="height:auto">
       <div class="card-body">
-        <div class="card-img text-center">   
+        <div class="card-img text-center img-fluid">   
           @if($tutor['user']->image)
             <img src="{{$tutor['user']->image}}" class="img-responsive" alt="profilepicture" style="height:100px;width:100px">   
           @else
@@ -56,16 +59,16 @@
         <!-- <div class="row">  -->
         <div class="card-text text-center">
             <br/> 
-              <h3>Name: {{$tutor['user']->firstname}}  {{$tutor['user']->lastname}}  {{$tutor['user']->middleinitial}}</h3>
-              <h4>School ID: {{$tutor['user']->school_id}}</h4>
-              <h4>Course: {{$tutor['user']->course->course_name}}</h4> <br />
-              <h4>Rate per hour: {{$tutor['user']->rate}}</h4> 
-              <h4>Location: {{$tutor['user']->location->name}}</h4>  <br />
-              <h4>Subject/s:               
+              <p>Name: {{$tutor['user']->firstname}}  {{$tutor['user']->lastname}}  {{$tutor['user']->middleinitial}} </p>
+              <p>School ID: {{$tutor['user']->school_id}}</p>
+              <p>Course: {{$tutor['user']->course->course_name}}</p> 
+              <p>Rate per hour: {{$tutor['user']->rate}}</p> 
+              <p>Location: {{$tutor['user']->location->name}}</p>  
+              <p>Subject/s:               
                 @foreach ($tutor['subjects'] as $subject)
                   {{ $subject['name'] }}, 
                 @endforeach
-              </h4>
+              </p>
           </div>
 
         {{-- Button trigger modal  --}}
