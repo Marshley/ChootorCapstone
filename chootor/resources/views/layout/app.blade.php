@@ -104,6 +104,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/admindashboard"  style="color:#d35400">Dashboard</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tutorlist"  style="color:#d35400">List of Tutors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/tuteelist"  style="color:#d35400">List of Tutees</a>
+                        </li>
                         {{-- <li class="nav-item">
                                 <a class="nav-link" href="/list"  style="color:#d35400">List</a>
                             </li> --}}

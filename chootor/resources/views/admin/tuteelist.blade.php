@@ -25,7 +25,7 @@
       <tr>
           <th scope="col">TUTEE NAME</th>
           {{-- <th scope="col">STATUS</th> --}}
-          <th scope="col">ACTION BUTTON</th>
+          <th class="text-right" scope="col">ACTION BUTTON</th>
       </tr>
       </thead>
         <tbody>
@@ -33,7 +33,7 @@
             <tr>
                 <td>{{$tutee->lastname}} {{$tutee->firstname}} {{$tutee->middleinitial}} </td>
                 {{-- <td>{{$tutee->status}}</td> --}}
-                <td>
+                <td class="text-right">
                    <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$tutee->id}}">
                     View 
