@@ -76,9 +76,9 @@ class AdminController extends Controller
         
     }
 
-    public function list()
-    {
-        $lists = Booking::all();
-        return view('admin.list')->with('lists', $lists);
-    }
+    // public function list()
+    // {
+    //     $lists = Booking::all();
+    //     return view('admin.list')->with('lists', $lists);
+    // }
 }

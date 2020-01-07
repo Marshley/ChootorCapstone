@@ -144,7 +144,7 @@ class TuteeController extends Controller
     // START OF NOTIFICATIONS
     public function notifications(){
         $user = User::find(auth()->user()->id);
-        return view('tutor.notifications')->with('user', $user);
+        return view('tutee.notifications')->with('user', $user);
     }
     // END OF NOTIFICATIONS
 
