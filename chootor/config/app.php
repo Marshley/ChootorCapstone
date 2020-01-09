@@ -229,6 +229,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
+        'Input' => Illuminate\Support\Facades\Request::class,
 
     ],
 

@@ -79,6 +79,12 @@
     </div>
   @endif
 
+@if(session('messg'))
+  <div class="alert alert-danger" role="alert" > 
+    {{ session('messg') }}
+  </div>
+@endif
+
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1>
    
     <div class="card text-center shadow p-2 mb-3" id="ccard">
