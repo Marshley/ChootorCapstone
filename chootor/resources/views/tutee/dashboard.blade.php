@@ -93,7 +93,7 @@
               <div class="modal-body">
                 <form method="post" action="/booking" >
                   {{ csrf_field() }} 
-                  @foreach ($tutor['schedules'] as $schedule ?? '')                  
+                  @foreach ($tutor['schedules'] as $schedule)                  
                   <div class="row">
                     <div class="col-1">
                       <p> </p>    
@@ -105,15 +105,17 @@
                       </div>
                     </div>
                     <div class="col-10">
-                      {{$schedule ?? ''->day}}
-                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule ?? ''->start_time)->format('h:i A')}}
+                      {{$schedule->day}}
+                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}
                       to 
-                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule ?? ''->end_time)->format('h:i A')}}
+                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}
                       <br/>
-                      <span class="font-italic">SUBJECT: {{$schedule ?? ''->subject->name}}</label></span> <br/>
+                      <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> <br/>
                       <div class="col-md-8 Subtopic">
-                        TOPIC: <input type="text" name="subtopic_{{$schedule ?? ''->id}}" id="subtopic_{{$schedule ?? ''->id}}" disabled >                        
+                        TOPIC: <input type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}" disabled >                        
                       </div>
+                    </div>
+                  </div>
                       @endforeach  
                   </div>
                   <div class="modal-footer">
