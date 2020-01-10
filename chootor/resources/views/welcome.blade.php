@@ -154,6 +154,7 @@
             font-size: 18px;
             color: #141945;
             font-style: "century gothic";
+            text-align: center;
         }
 
         .sayings {
@@ -166,6 +167,12 @@
             background-color: #ffffff;
             color: #141945;
         }
+
+        
+        .copyright {
+            margin-top: 50px;
+            margin-bottom: 5px;
+            }
         /* .center{
             display: block;
         } */
@@ -266,6 +273,18 @@
                 margin-top: 20px;
             }
 
+            #sticky-footer {
+                text-align: center;
+            }
+
+            .contact {
+                text-align: center;
+            }
+
+            .copyright {
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
             /* .about-chootor-alpha {
                 font-size: 3em;
                 margin-top: 500px;
@@ -523,13 +542,13 @@
                         </br>
                         <img src="/img/logo-rec-w.png" class="img-responsive rounded center-block" style="width:200px;height:80px;">
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 " style="margin-top:30px;margin-bottom:5px;">
-                        <a class="text-transparent contact"> COPYRIGHT © 2020 SAKURA 🌸</a>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 copyright">
+                        <a class="text-transparent "> COPYRIGHT © 2020 SAKURA 🌸</a>
                     </div>            
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 ">
-                        <p class="text-left contact ">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
-                        <p class="text-left contact ">choochoochootor@gmail.com</p>
-                        <p class="text-left contact ">(+63)9 12 3456 789</p>
+                        <p class="contact ">Nuñez Extension Highway </br> Zamboanga City, 7000 </br> Philippines</p>
+                        <p class="contact ">choochoochootor@gmail.com</p>
+                        <p class="contact ">(+63)9 12 3456 789</p>
                     </div>    
                 </div>
             </div>

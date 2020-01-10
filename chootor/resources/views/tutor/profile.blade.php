@@ -13,8 +13,16 @@
         color: #ffffff;
         border-color: #fa935b;  
     }
+    @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px) {
+            #names {
+                align-content:  center;
+            }
+    
+    }
 </style>
- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
+ <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h2>
     <form method="POST" action="/updatetutorprofile" enctype="multipart/form-data">
     
     {{ csrf_field() }}
@@ -65,9 +73,10 @@
                         <button type="submit" class="btn btn-primary" style="cursor:pointer">SAVE CHANGES</button>
                     </div>
                 </div>
-    <div class="form-group row col-sm-12" style="margin-top:50px">
+                
+    <div class="form-group row col-sm-12" id="names" style="margin-top:50px">
             
-        <div class="form-group row col-sm">
+        <div class="form-group row col-sm" id="names">
             <label for="lastname" class="col-sm-4 col-form-label">Last Name: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="lastname" name="lastname" 
@@ -75,7 +84,7 @@
                 </div>
         </div>
 
-        <div class="form-group row col-sm">
+        <div class="form-group row col-sm" id="names">
             <label for="firstname" class="col-sm-4 col-form-label">First Name: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="firstname" name="firstname" 
@@ -83,8 +92,8 @@
                 </div>
         </div>
     
-        <div class="form-group row col-sm">
-            <label for="middleinitial" class="col-sm-5 col-form-label">Middle Initial: </label>
+        <div class="form-group row col-sm" id="names">
+            <label for="middleinitial" class="col-sm-4 col-form-label">Middle Initial: </label>
                 <div class="form-group">
                     <input type="text" class="form-control font-italic" id="middleinitial" name="middleinitial" 
                     placeholder="M.I" value="{{$user->middleinitial}}" maxlength="2">

@@ -89,7 +89,7 @@
               <div class="modal-body">
                 <form method="post" action="/booking" >
                   {{ csrf_field() }} 
-                  @foreach ($tutor['schedules'] as $schedule)                  
+                  @foreach ($tutor['schedules'] as $schedule ?? '')                  
                   <div class="row">
                     <div class="col-1">
                       <p> </p>    
@@ -97,18 +97,18 @@
                     <div class="col-1">
                       <div class="checkbox">
                         <label>
-                        <input type="checkbox" name="schedules_list[]" value="{{$schedule->id}}" class="make-switch" id="on_off" data-on-text="on" data-off-text="off">  
+                        <input type="checkbox" name="schedules_list[]" value="{{$schedule ?? ''->id}}" class="make-switch" id="on_off" data-on-text="on" data-off-text="off">  
                       </div>
                     </div>
                     <div class="col-10">
-                      {{$schedule->day}}
-                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}
+                      {{$schedule ?? ''->day}}
+                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule ?? ''->start_time)->format('h:i A')}}
                       to 
-                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}
+                      {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule ?? ''->end_time)->format('h:i A')}}
                       <br/>
-                      <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> <br/>
+                      <span class="font-italic">SUBJECT: {{$schedule ?? ''->subject->name}}</label></span> <br/>
                       <div class="col-md-8 Subtopic">
-                        TOPIC: <input type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}" disabled >                        
+                        TOPIC: <input type="text" name="subtopic_{{$schedule ?? ''->id}}" id="subtopic_{{$schedule ?? ''->id}}" disabled >                        
                       </div>
                     </div>
                   </div>
@@ -135,7 +135,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
     $('#on_off').click(function() {
-      $('.Subtopic [id="subtopic_{{$schedule->id}}"]').attr('disabled', $(this).is(':checked') ? false : true);
+      $('.Subtopic [id="subtopic_{{$schedule ?? ''->id}}"]').attr('disabled', $(this).is(':checked') ? false : true);
       });
   </script>
 
