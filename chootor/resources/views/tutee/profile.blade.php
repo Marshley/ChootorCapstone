@@ -3,18 +3,18 @@
 @section('content')
 <style>
     .btn-primary, .btn-outline-primary:active, .btn-outline-primary:visited, .btn-outline-primary:focus {
-        border-color: #006D5B;
+        border-color: #e27235;
         color: #ffffff;
-        background-color: #006D5B;
+        background-color: #e27235;
     }
 
     .btn-primary:hover {
-        background-color: #009B81;
+        background-color: #fa935b;
         color: #ffffff;
-        border-color: #009B81;  
+        border-color: #fa935b;  
     }
 </style>
-{{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1> --}}
+ <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h1>
     <form method="POST" action="/updatetuteeprofile"  enctype="multipart/form-data">
     
     {{ csrf_field() }}
@@ -29,7 +29,7 @@
                     <img src="../img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
                     @endif
                     <div class="row justify-content-center">
-                        <div class="col-sm-3 justify-content-center">
+                        <div class="col-lg-3 col-sm-12 justify-content-center">
                             <input type="file" class="form-control-file" id="image" name="image">
                         </div>
                     </div>
@@ -37,6 +37,15 @@
             </div>
         </div>
     </div>
+
+    <!-- SAVE BUTTON -->
+    <!--  -->
+    <div class="row">
+        <div class="col-sm-12 d-flex align-items-end justify-content-center" style="">
+            <button type="submit" class="btn btn-primary" style="cursor:pointer">SAVE CHANGES</button>
+        </div>
+    </div>
+    
 
     <div class="form-group row col-sm-12" style="margin-top:50px">
             
@@ -116,11 +125,11 @@
             </div>
         </div> --}}
 
-        <div class="form-group row">
+        <!-- <div class="form-group row">
             <div class="col-sm-12" style="margin-top:20px">
                 <button type="submit" class="btn btn-primary btn-block" style="cursor:pointer">SAVE</button>
             </div>
-        </div>        
+        </div>         -->
     <!-- </div> -->
 </form>
 @endsection

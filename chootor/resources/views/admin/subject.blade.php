@@ -34,9 +34,9 @@
 
     <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2>
 <!-- Button trigger modal -->
-<button type="button" id="cbtn" class="btn btn-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
+<!-- <button type="button" id="cbtn" class="btn btn-primary btn-block" data-toggle="modal" style="margin-bottom:20px" data-target="#exampleModal">
         Add Subject
-      </button>
+      </button> -->
       
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
