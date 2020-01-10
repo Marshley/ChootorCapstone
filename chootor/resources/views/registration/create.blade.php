@@ -83,7 +83,7 @@
                       maxlength="20" required>
                   </div>          
                   <div class="form-group col">
-                    <label for="middleinitial">MI:</label>
+                    <label for="middleinitial">Middle Initial:</label>
                     <input type="text" class="form-control" id="middleinitial" name="middleinitial" maxlength="2">
                   </div>
                 </div>
