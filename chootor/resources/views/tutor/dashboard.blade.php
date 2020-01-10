@@ -15,7 +15,7 @@
  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
 <!-- <hr> -->
 
-<table class="table table-borderless text-center" style="margin-top:50px;margin-bottom:50px">
+<table class="table table-borderless text-center  table-responsive-xs table-responsive-sm table-responsive-md table-responsive-lg " style="margin-top:50px;margin-bottom:50px">
     <thead class="thead">
     <tr>
         <th scope="col">MONDAY</th>
@@ -40,7 +40,7 @@
 
 </br>
 
-<table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl ">
+<table class="table table-hover table-responsive-xs table-responsive-sm table-responsive-md table-responsive-lg ">
     <thead class="thead">
     <tr>
         <th scope="col">TUTEE NAME</th>
