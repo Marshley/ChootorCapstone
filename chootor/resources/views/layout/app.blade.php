@@ -54,7 +54,9 @@
                     <a class="nav-link " href="/tuteeprofile" style="color:#d35400;">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/tnotifications" style="color:#d35400;">Notification</a>
+                    <a class="nav-link " href="/tnotifications" id="tuteenotif" style="color:#d35400;">Notification
+                        <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/logout" style="color:#d35400;">Logout</a>
@@ -93,7 +95,9 @@
                                 <div class="dropdown-divider"></div>
                                 <!-- <a class="dropdown-item" href="/tutorschedule">Schedule</a>
                                 <div class="dropdown-divider"></div> -->
-                                <a class="dropdown-item" href="/notifications">Notification</a>
+                                <a class="dropdown-item" href="/notifications" id="tutornotif">Notification  
+                                    <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
@@ -161,5 +165,15 @@
                       }
                   });
                 </script>
-</body> 
+<script>
+
+$( "#tutornotif" ).click(function() {
+    {{ auth()->user()->unreadNotifications->markAsRead()}}
+});
+$( "#tuteenotif" ).click(function() {
+    {{ auth()->user()->unreadNotifications->markAsRead()}}
+});
+
+</script>
+</body>
 </html>

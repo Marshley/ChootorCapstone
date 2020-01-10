@@ -250,7 +250,7 @@
       if(Math.abs(totalTime) >= 1) {
         return true;
       } else {
-        alert("Time durtion must be atleast 1 hour!")
+        alert("Time duration must be atleast 1 hour!")
       }
 
       return false;
