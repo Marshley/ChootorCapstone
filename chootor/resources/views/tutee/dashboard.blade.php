@@ -114,6 +114,8 @@
                       <div class="col-md-8 Subtopic">
                         TOPIC: <input type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}" disabled >                        
                       </div>
+                    </div>
+                  </div>
                       @endforeach  
                   </div>
                   <div class="modal-footer">
