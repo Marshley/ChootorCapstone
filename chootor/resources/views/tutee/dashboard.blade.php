@@ -101,7 +101,7 @@
                     <div class="col-1">
                       <div class="checkbox">
                         <label>
-                        <input type="checkbox" name="schedules_list[]" value="{{$schedule ?? ''->id}}" class="make-switch" id="on_off" data-on-text="on" data-off-text="off">  
+                        <input type="checkbox" name="schedules_list[]" value="{{$schedule->id}}" class="make-switch" id="on_off_{{$schedule->id}}" data-on-text="on" data-off-text="off" onchange="checkboxClicked({{$schedule->id}})">  
                       </div>
                     </div>
                     <div class="col-10">
@@ -136,11 +136,12 @@
   <!-- </div> -->
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>
-    $('#on_off').click(function() {
-      $('.Subtopic [id="subtopic_{{$schedule ?? ''->id}}"]').attr('disabled', $(this).is(':checked') ? false : true);
-      });
+
+    function checkboxClicked(id) {
+      $('#subtopic_' + id).attr('disabled', $('#on_off_' + id).is(':checked') ? false : true)
+    }
+
   </script>
 
 @endsection

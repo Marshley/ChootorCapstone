@@ -46,10 +46,10 @@
                                     <div class="col-4">
                                     Rate:
                                         <div class="font-weight-bold">
-                                        <!-- {{-- {{$sessiondone->booking->rate}} --}}
-                                        {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $sessiondone->booking->rate) !!}
-                                        {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!}
-                                        {{$sessiondone->booking->comment}} -->
+                                         {{$sessiondone->booking->rate}}/5 
+                                        {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $sessiondone->booking->rate) !!}
+                                        {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!} --}}
+                                        {{-- {{$sessiondone->booking->comment}}  --}}
                                         </div>
 
                                     </div>

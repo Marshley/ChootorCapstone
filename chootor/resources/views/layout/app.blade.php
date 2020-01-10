@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {{-- <link href="/css/sticky-footer.css" rel="stylesheet"> --}}
-    {{-- <link rel="shortcut icon" href="../img/logo.png" type="image/png"> --}}
+    <link rel="icon" href="../img/logo-sq-wo.png" type="image/icon type">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <!-- link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" /> -->
     
@@ -54,7 +54,9 @@
                     <a class="nav-link " href="/tuteeprofile" style="color:#d35400;">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="/tnotifications" style="color:#d35400;">Notification</a>
+                    <a class="nav-link " href="/tnotifications" id="tuteenotif" style="color:#d35400;">Notification
+                        <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/logout" style="color:#d35400;">Logout</a>
@@ -93,7 +95,9 @@
                                 <div class="dropdown-divider"></div>
                                 <!-- <a class="dropdown-item" href="/tutorschedule">Schedule</a>
                                 <div class="dropdown-divider"></div> -->
-                                <a class="dropdown-item" href="/notifications">Notification</a>
+                                <a class="dropdown-item" href="/notifications" id="tutornotif">Notification  
+                                    <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
+                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
@@ -145,11 +149,11 @@
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
                 <script type="text/javascript">
                   var path = "{{ route('autocomplete') }}";
@@ -161,5 +165,15 @@
                       }
                   });
                 </script>
-</body> 
+<script>
+
+$( "#tutornotif" ).click(function() {
+    {{ auth()->user()->unreadNotifications->markAsRead()}}
+});
+$( "#tuteenotif" ).click(function() {
+    {{ auth()->user()->unreadNotifications->markAsRead()}}
+});
+
+</script>
+</body>
 </html>
