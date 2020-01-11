@@ -11,7 +11,9 @@
   background-color: #d35400;
   cursor: pointer;
 }
-
+p {
+  text-size: 10px;
+}
 /* Style the active class (and buttons on mouse-over) */
 .active, #ratebutton:hover {
   background-color: #e27235;
@@ -35,19 +37,19 @@
               <img src="../img/blank.png" class="img-responsive" style="height:100px;width:100px"  alt="profilepicture">
             @endif
             
-            <h2>Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</h2>
+            <p>Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</p>
         
           </div> 
           <div class="row"> 
           <div class="card-text col-lg-12">
             <br /> 
-            <h3>School ID: {{$history->schedule->tutor->school_id}}</h3>
-            <h4>Day: {{$history->schedule->day}}</h4>
-            <h4>  
+            <p>School ID: {{$history->schedule->tutor->school_id}}</p>
+            <p>Day: {{$history->schedule->day}}</p>
+            <p>  
               {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->start_time)->format('h:i A')}} - 
               {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->end_time)->format('h:i A')}}
-            </h4>
-            <h4>Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</h4>
+            </p>
+            <p>Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</p>
             {{-- <h4>{{$history->rate}}</h4> --}}
             {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $history->rate) !!}
             {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $history->rate) !!} --}}

@@ -124,9 +124,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/tuteelist"  style="color:#d35400">List of Tutees</a>
                         </li>
-                        {{-- <li class="nav-item">
-                                <a class="nav-link" href="/list"  style="color:#d35400">List</a>
-                            </li> --}}
+                        <li class="nav-item">
+                                <a class="nav-link" href="/records"  style="color:#d35400">Records</a>
+                            </li>
                         <li class="nav-item dropdown" style="color:#d35400">
                             <a class="nav-link dropdown-toggle" style="color:#d35400" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings
