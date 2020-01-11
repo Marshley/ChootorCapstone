@@ -48,6 +48,7 @@
     <div class="col-12" style="margin-top:50px;margin-bottom:50px" >
       <div class="row" style="margin-bottom:50px">
         @foreach ($tutors as $tutor)
+          @if(count($tutor['schedules']) > 0 )
         {{-- @if ($tutor['user']['schedule']) --}}    
         <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
         <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
@@ -92,7 +93,7 @@
               </div>
               <div class="modal-body">
                 <form method="post" action="/booking" >
-                  {{ csrf_field() }} 
+                  {{ csrf_field() }}
                   @foreach ($tutor['schedules'] as $schedule)                  
                   <div class="row">
                     <div class="col-1">
@@ -131,7 +132,7 @@
           </div>
         </div> 
         <br/>
-        {{-- @endif --}}
+        @endif
         @endforeach
       </div>
     </div>
