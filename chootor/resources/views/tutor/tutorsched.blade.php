@@ -201,7 +201,7 @@
             <th scope="col">FROM</th>
             <th scope="col">TO</th>
             <th scope="col">SUBJECT</th>
-            <th scope="col">LOCATION</th>
+            {{-- <th scope="col">LOCATION</th> --}}
             <th scope="col"><button id="homebtn" type="button" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal"> Add Schedule </button></th>
         </tr>
       </thead>
@@ -213,7 +213,7 @@
             <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}</td>
             <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
             <td>{{$schedule->subject->name}}</td>
-            <td>{{$schedule->location->name}}</td>
+            {{-- <td>{{$schedule->location->name}}</td> --}}
             <td> </td>
             {{-- <td> <form name="destroy" method="get" action="/destroy" >
             <button> Delete </button> 

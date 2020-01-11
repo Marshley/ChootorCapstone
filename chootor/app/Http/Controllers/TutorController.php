@@ -16,7 +16,11 @@ class TutorController extends Controller
 {
     // START OF NOTIFICATIONS
     public function notifications(){
+
         $user = User::find(auth()->user()->id);
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
         return view('tutor.notifications')->with('user', $user);
     }
     // END OF NOTIFICATIONS

@@ -30,6 +30,8 @@ class TuteeController extends Controller
                 $isBooked = Booking::where('schedule_id',$sched->id)->exists();
                 $isDisapproved = Booking::where('schedule_id',$sched->id )->where('status', 'disapproved')->first();
 
+                // $isNotBooked = UserSchedule::where('schedule_id',$sched->id)->joinBookingeywankona
+
                 if(!$isBooked or $isDisapproved){
                     $schedule_list[] = $sched;
                 }
@@ -144,6 +146,9 @@ class TuteeController extends Controller
     // START OF NOTIFICATIONS
     public function notifications(){
         $user = User::find(auth()->user()->id);
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
         return view('tutee.notifications')->with('user', $user);
     }
     // END OF NOTIFICATIONS
