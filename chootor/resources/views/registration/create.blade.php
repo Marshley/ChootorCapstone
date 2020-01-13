@@ -48,7 +48,7 @@
   <div class="row">
     <!-- <div class="card shadow" id="ccard"> -->
         <div class="form-group">
-            <a href="/home" class="previous">&laquo; RETURN</a>
+            <a href="/" class="previous">&laquo; RETURN</a>
         </div>
         <!-- <div class="container" >
           <h2 class="text-center" style="margin-top:50px;margin-bottom:50px;color:#141945">REGISRATION FORM</h2>
@@ -71,13 +71,13 @@
               <div class="container">
                 <div class="row">
                   <div class="form-group col">
-                    <label for="lastname">Last Name:</label>
+                    <label for="lastname">*Last Name:</label>
                     <input type="text" class="form-control" id="lastname" name="lastname"
                       onkeypress="return ((event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 && event.charCode <= 57));"
                       maxlength="15" required >
                   </div>
                   <div class="form-group col">
-                    <label for="firstname">First Name:</label>
+                    <label for="firstname">*First Name:</label>
                     <input type="text" class="form-control" id="firstname" name="firstname" 
                       onkeypress="return ((event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || event.charCode == 8 || event.charCode == 32 || (event.charCode >= 48 && event.charCode <= 57));"
                       maxlength="20" required>
@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="course_id">Course</label>
+                  <label for="course_id">*Course</label>
                   <select id="course_id" class="form-control" name="course_id" required>
                       @foreach ($courses as $course)
                           <option value="{{$course->id}}"> {{$course->course_name }}</option>
@@ -97,8 +97,8 @@
                   </select>
                 </div>
                 <div class="row">
-                  <div class="form-group col-6">
-                    <label for="school_id">School ID:</label>
+                  <div class="form-group col-12">
+                    <label for="school_id">*School ID:</label>
                     <input type="text" class="form-control" id="school_id" name="school_id" required>
                   </div>  
                   <!-- <div class="form-group col-6">
@@ -112,15 +112,15 @@
                 </div>
                       
                 <div class="form-group">
-                  <label for="email">Email:</label>
+                  <label for="email">*Email:</label>
                   <input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
                 </div>        
                 <div class="form-group">
-                  <label for="password">Password:</label>
+                  <label for="password">*Password:</label>
                   <input type="password" class="form-control" id="password" name="password" maxlength="8" required>
                 </div>        
                 <div class="form-group">
-                  <label for="password_confirmation">Password Confirmation:</label> 
+                  <label for="password_confirmation">*Password Confirmation:</label> 
                   <input type="password" class="form-control" id="password_confirmation"
                   name="password_confirmation" maxlength="8" required>
                 </div>        

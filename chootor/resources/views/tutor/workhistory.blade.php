@@ -55,7 +55,11 @@
                                            
                                     Rate:
                                         <div class="font-weight-bold">
-                                         {{$sessiondone->booking->rate}}/5 
+                                            @if($sessiondone->booking->rate != 'pending')
+                                                {{$sessiondone->booking->rate}}/5
+                                            @elseif($sessiondone->booking->rate = 'pending')
+                                                NO RATINGS YET!
+                                            @endif
                                         {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $sessiondone->booking->rate) !!}
                                         {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!} --}}
                                         {{-- {{$sessiondone->booking->comment}}  --}}
