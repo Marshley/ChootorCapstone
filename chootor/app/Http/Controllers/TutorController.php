@@ -91,21 +91,21 @@ class TutorController extends Controller
 
     public function store(Request $request, User $user)
     {
-        if (!\App\Userschedule::whereTime('start_time', '>', $request->start_time)
+        if (!\App\UserSchedule::whereTime('start_time', '>', $request->start_time)
         ->where('day', $request->day)
         ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
-            if (!\App\Userschedule::whereTime('start_time', '<', $request->end_time)
+            if (!\App\UserSchedule::whereTime('start_time', '<', $request->end_time)
             ->where('day', $request->day)
             ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
                 return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
             } 
-            if (!\App\Userschedule::whereTime('end_time', '<=', $request->end_time)
+            if (!\App\UserSchedule::whereTime('end_time', '<=', $request->end_time)
             ->where('day', $request->day)
             ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
                 return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
             } 
         } 
-        elseif (!\App\Userschedule::whereTime('start_time', '<=', $request->start_time)
+        elseif (!\App\UserSchedule::whereTime('start_time', '<=', $request->start_time)
         ->whereTime('end_time', '>', $request->start_time)
         ->where('day', $request->day)
         ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
@@ -115,7 +115,7 @@ class TutorController extends Controller
 
         if($subject = Subject::where('name', $request->subject)->exists()){
             $subject = Subject::where('name', $request->subject)->first();
-            Userschedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id]));  
+            UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id]));  
             return redirect('/tutorschedule')->with('mesg', 'Saved Successfully!');
         }
         else {
