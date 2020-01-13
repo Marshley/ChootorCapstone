@@ -415,6 +415,7 @@
             <div class="row header">
                 <div class="col-xs-12 col-lg-6 align-middle"> <!-- CHOOTOR LOGO -->
                     <img src="/img/logo-rec-wo.png" class="img-responsive landing-logo rounded offset-lg-3" style="width:100%;">
+                    <p class="offset-lg-5 text-center font-italic" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Connects you to a student tutor that will help you improve your studies.</p>
                 </div>
                 <div class="col-xs-12 col-lg-6 login">
                     <div class="row justify-content-center align-middle">

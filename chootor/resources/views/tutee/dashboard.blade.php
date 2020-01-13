@@ -18,7 +18,7 @@
       {{ session('mesg') }}
     </div>
   @endif
-<!-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">BOOK A CHOOTOR</h1>  -->
+ <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">CHOOSE YOUR TUTOR OF INTEREST!</h1>  
 
 <style>
   #butto {
@@ -52,7 +52,7 @@
         {{-- @if ($tutor['user']['schedule']) --}}    
         <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
         <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
-        <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-5 mx-auto my-1 mb-5" style="height:auto">
+        <div class="card col-xs-12 col-sm-12 col-md-12 col-lg-5 mx-auto my-1 mb-5 shadow p-3 mb-5 bg-white rounded" style="height:auto; border-color: #e27235;">
           <div class="card-body">
             <div class="card-img text-center img-fluid">   
               @if($tutor['user']->image)
