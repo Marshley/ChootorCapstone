@@ -98,13 +98,16 @@
               <input type="number" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}" min="0" max="150">
             </div>
           </div>
-
+{{-- {{$user->location->name}} --}}
           <div class="form-row justify-content-center">
             <div class="form-group note col-md-10 col-xs-10 ">
               <label for="location_id">LOCATION</label>
               <select id="location_id" class="form-control" name="location_id" >
+                <option selected disabled> {{$user->location->name}}</option>
                 @foreach ($location as $locations)
-                  <option selected value="{{$locations->id}}"> {{$locations->name }}</option>
+                 @if($user->location->name != $locations->name)
+                    <option value="{{$locations->id}}"> {{$locations->name }}</option>
+                  @endif
                 @endforeach                                
               </select>
             </div>

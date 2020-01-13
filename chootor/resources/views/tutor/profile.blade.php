@@ -116,8 +116,11 @@
             <div class="col-sm-10">
                 <select id="course_id" class="form-control" name="course_id" > 
                         {{-- <option selected value="{{$user->course->id}}"> {{$user->course->course_name}}</option> --}}
+                        <option selected disabled> {{$user->course->course_name }}</option>
                     @foreach ($courses as $course)
-                        <option selected value="{{$course->id}}"> {{$course->course_name }}</option>
+                        @if($user->course->course_name != $course->course_name)
+                            <option value="{{$course->id}}"> {{$course->course_name }}</option>
+                        @endif
                     @endforeach                                
                 </select>
             </div>
