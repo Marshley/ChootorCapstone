@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('welcome');
-})->name('/home');
+})->name('/');
 
 Route::get('/bawalkadito', function() {
     return view('bawalkadito');

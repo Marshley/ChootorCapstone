@@ -40,7 +40,7 @@ class SessionController extends Controller
             // return back()->withErrors([
             //     'message' => 'The email or password is incorrect, please try again'
             // ]);
-            return redirect('/home')->with('msg', 'The email or password is incorrect, please try again');
+            return redirect('/')->with('msg', 'The email or password is incorrect, please try again');
         }
         
         if (Auth::user()->user_type == 'tutee')
@@ -101,6 +101,6 @@ class SessionController extends Controller
     {
         auth()->logout();
         
-        return redirect()->to('/home');
+        return redirect()->to('/');
     }
 }
