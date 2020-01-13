@@ -13,6 +13,7 @@
         <th scope="col">TUTOR NAME</th>
         <th scope="col">DAY</th>
         <th scope="col">TIME</th>
+        <th scope="col">SUBJECT</th>
         <th scope="col">STATUS</th>
     </tr>
     </thead>
@@ -26,6 +27,7 @@
                 <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->start_time)->format('h:i A')}}
                     to 
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->end_time)->format('h:i A')}}</td>
+                <td>{{$booked->schedule->subject->name}}</td>
                  <td> {{$booked->status}}</td>
                 @endif
             @endif

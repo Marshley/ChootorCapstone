@@ -54,17 +54,17 @@
                                     <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
-                                <div class="modal-body text-center">
+                                <div class="modal-body text-left">
                                     <div class="container">
-                                      <p class="text-center"> SUBJECT: {{$list->schedule->subject->name}} 
+                                      <p class="text-left"> SUBJECT: {{$list->schedule->subject->name}} 
                                         {{$list->subtopic}} </p>
-                                      <p class="text-center">TIME: {{\Carbon\Carbon::createFromFormat('H:i:s',$list->schedule->start_time)->format('h:i A')}} to 
+                                      <p class="text-left">TIME: {{\Carbon\Carbon::createFromFormat('H:i:s',$list->schedule->start_time)->format('h:i A')}} to 
                                         {{\Carbon\Carbon::createFromFormat('H:i:s',$list->schedule->end_time)->format('h:i A')}} </p>
-                                        <p class="text-center">LOCATION: {{$list->schedule->location->name}} </p>
-                                        <p class="text-center">RATE: {{$list->schedule->tutor->rate}}/hr </p>
+                                        <p class="text-left">LOCATION: {{$list->schedule->location->name}} </p>
+                                        <p class="text-left">RATE: {{$list->schedule->tutor->rate}}/hr </p>
                                         @if ($list->rate != 'pending') 
-                                        <p class="text-center">RATING: {{$list->rate}}/5 </p>   
-                                        <p class="text-center">COMMENT: {{$list->comment}} </p> 
+                                        <p class="text-left">RATING: {{$list->rate}}/5 </p>   
+                                        <p class="text-left">COMMENT: {{$list->comment}} </p> 
                                         @endif  
                                     </div>
                                 </div>

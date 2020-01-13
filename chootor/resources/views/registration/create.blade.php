@@ -96,11 +96,21 @@
                       @endforeach                                
                   </select>
                 </div>
-
-                <div class="form-group">
-                  <label for="school_id">School ID:</label>
-                  <input type="text" class="form-control" id="school_id" name="school_id" required>
-                </div>        
+                <div class="row">
+                  <div class="form-group col-6">
+                    <label for="school_id">School ID:</label>
+                    <input type="text" class="form-control" id="school_id" name="school_id" required>
+                  </div>  
+                  <!-- <div class="form-group col-6">
+                    <label for="school_id">Year Level:</label>
+                    <select id="course_id" class="form-control" name="course_id" required>
+                      @foreach ($courses as $course)
+                          <option value="{{$course->id}}"> {{$course->course_name }}</option>
+                      @endforeach                                
+                  </select>
+                  </div>   -->
+                </div>
+                      
                 <div class="form-group">
                   <label for="email">Email:</label>
                   <input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
