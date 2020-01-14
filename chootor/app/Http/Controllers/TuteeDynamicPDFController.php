@@ -34,7 +34,7 @@ class TuteeDynamicPDFController extends Controller
     {
      $tutee_data = $this->get_tutee_data();
      $output = '
-     <h3 align="center">tutee Data</h3>
+     <h3 align="center">Tutee Data</h3>
      <table width="100%" style="border-collapse: collapse; border: 0px;">
       <tr>
     <th style="border: 1px solid; padding:12px;" width="20%">Lastname</th>
