@@ -26,7 +26,7 @@ class TutorDynamicPDFController extends Controller
     function pdf()
     {
      $pdf = \App::make('dompdf.wrapper');
-     $pdf->loadHTML($this->convert_tutor_data_to_html());
+     $pdf->loadHTML($this->convert_tutor_data_to_html())->setPaper('a4', 'landscape');
      return $pdf->stream();
     }
 

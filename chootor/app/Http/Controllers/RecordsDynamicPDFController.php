@@ -24,7 +24,7 @@ class RecordsDynamicPDFController extends Controller
     function pdf()
     {
      $pdf = \App::make('dompdf.wrapper');
-     $pdf->loadHTML($this->convert_records_data_to_html());
+     $pdf->loadHTML($this->convert_records_data_to_html())->setPaper('a4', 'landscape');
      return $pdf->stream();
     }
 
@@ -32,7 +32,7 @@ class RecordsDynamicPDFController extends Controller
     {
      $records_data = $this->get_records_data();
      $output = '
-     <h3 align="center">records Data</h3>
+     <h3 align="left">Records Data</h3>
      <table width="100%" style="border-collapse: collapse; border: 0px;">
       <tr>
     <th style="border: 1px solid; padding:12px;" width="20%">Tutee Name</th>
