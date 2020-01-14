@@ -168,9 +168,9 @@
                                 <div class="modal-body text-justify">
                                     <div class="container">
                                       <p> Chootor may collect data from you, since you’ll need an account in order to have access, as stated on Terms and Services.  </br>
-                                      - Your personal information is safe with us kemerut.  </br>
+                                      - Your personal information is safe with us.  </br>
                                       - We share your personal data with your consent for the purpose of being able to identify you as an eligible student of the current semester. </br>
-                                      - We do not sell nor share your personal information to a third-party peeps. </br>
+                                      - We do not sell nor share your personal information to a third-party. </br>
                                       </p>
                                     </div>
                                 </div>
