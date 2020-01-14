@@ -46,8 +46,9 @@
         <th scope="col">TUTEE NAME</th>
         <th scope="col">DAY</th>
         <th scope="col">TIME</th>
-        <th scope="col">Location</th>
-        <th scope="col">Rate/hr</th>
+        <th scope="col">LOCATION</th>
+        <th scope="col">SUBJECT</th>
+        <th scope="col">RATE/hr</th>
         <th scope="col">ACTION BUTTONS</th>
     </tr>
     </thead>
@@ -63,6 +64,7 @@
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$show->booking->schedule->end_time)->format('h:i A')}}</td>
                 {{-- <td> {{$show->booking->status}}</td> --}}
                 <td>{{$show->booking->schedule->location->name}}</td>
+                <td>{{$show->booking->schedule->subject->name}}</td>
                 <td>{{$user->rate}} php</td>
                 <td>
                 <div class="d-flex flex-row">

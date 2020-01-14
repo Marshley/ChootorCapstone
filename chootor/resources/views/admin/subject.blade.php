@@ -67,7 +67,7 @@
       </div>
 
 <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl">
-    <thead class="thead"></thead>
+    <thead class="thead">
     <tr>
         <th scope="col">#</th>
         <th scope="col">SUBJECT NAME</th>

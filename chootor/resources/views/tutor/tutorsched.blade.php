@@ -147,7 +147,8 @@
             <div class="modal-body">
             <form name="setSchedule" method="post" action="/addtutorschedule/{{$user->id}}" onsubmit="return validateForm()" >
               {{ csrf_field() }}                    
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-12">
+              <p class="font-italic note text-center">* note: that the schedule you set will only be visible for this week only</p>
                 <label for="day">Day</label>
                 <select id="day" class="form-control" name="day">
                   <option selected>Monday</option>
@@ -159,16 +160,16 @@
                 </select>
               </div>
               <div class="row">
-                <div class="form-group mx-5 my-4">FROM
+                <div class="form-group mx-5 my-5">FROM
                   <input type="time" id="start_time" class="form-control" name="start_time" min="08:00:00" max="17:00:00">
                   <label for="start_time">Choose start time</label>
                 </div>
-                <div class="form-group mx-5 my-4"> TO:
+                <div class="form-group mx-5 my-5"> TO:
                   <input type="time" id="end_time" class="form-control" name="end_time" min="08:00:00" max="17:00:00">
                   <label for="end_time">Choose end time</label>
                 </div>
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-md-12">
                 <label for="subject_id">Subject</label>
                 <input class="typeahead form-control" type="text" name="subject" id="subject" />
                  {{-- @foreach ($subject as $subjects) 

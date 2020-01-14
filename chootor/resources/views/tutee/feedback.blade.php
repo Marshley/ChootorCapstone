@@ -24,7 +24,7 @@ p {
 <div class="container">
   <div class="row">
     <div class="col-sm-6" >
-      <p>TO RATE</p>
+      <p class="text-center">TO RATE</p>
       @foreach($user->bookings as $history)
     @if($history->status == 'done')
       @if($history->rate == 'pending')          
@@ -121,40 +121,40 @@ p {
   @endforeach
 </div>
 
-    <div class="col-sm-6" >
-      <p>HAS RATED</p>
-      @foreach($user->bookings as $history)
-    {{-- @if($history->status == 'done') --}}
-      @if($history->rate != 'pending')          
+<div class="col-sm-6" >
+  <p class="text-center">HAS RATED</p>
+  @foreach($user->bookings as $history)
+  {{-- @if($history->status == 'done') --}}
+    @if($history->rate != 'pending')          
       <div class="card">
         <div class="card-body">
           <div class="card-title">
             @if($history->schedule->tutor->image)
-              <img src="{{$history->schedule->tutor->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+              <img src="{{$history->schedule->tutor->image}}" class="img-responsive" style="height:130px;width:130px" alt="profilepicture">
             @else
-              <img src="../img/blank.png" class="img-responsive" style="height:100px;width:100px"  alt="profilepicture">
+              <img src="../img/blank.png" class="img-responsive" style="height:130px;width:130px"  alt="profilepicture">
             @endif
             
-            <h2>Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</h2>
+            <h2 class="text-center">Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</h2>
         
           </div> 
-          <div class="row"> 
-          <div class="card-text col-lg-12">
-            <br /> 
-            <h3>School ID: {{$history->schedule->tutor->school_id}}</h3>
-            <h4>Day {{$history->schedule->day}}</h4>
-            <h4>  Time 
-              {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->start_time)->format('h:i A')}} - 
-              {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->end_time)->format('h:i A')}}
-            </h4>
-            <h4> Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</h4>
-            <h4> Rate: {{$history->rate}}/5</h4>
-            {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $history->rate) !!}
-            {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $history->rate) !!} --}}
-            <h4>Comment: {{$history->comment}}</h4>
-          </div>
-          @endif
-        @endforeach
+      <div class="row"> 
+        <div class="card-text col-lg-12 text-center">
+          <br /> 
+          <h3 class="text-center">School ID: {{$history->schedule->tutor->school_id}}</h3>
+          <h4 class="text-center">Day {{$history->schedule->day}}</h4>
+          <h4 class="text-center">  Time 
+            {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->start_time)->format('h:i A')}} - 
+            {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->end_time)->format('h:i A')}}
+          </h4>
+          <h4 class="text-center"> Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</h4>
+          <h4 class="text-center"> Rate: {{$history->rate}}/5</h4>
+          {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $history->rate) !!}
+          {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $history->rate) !!} --}}
+          <h4 class="text-center">Comment: {{$history->comment}}</h4>
+        </div>
+    @endif
+  @endforeach
     </div>
   </div>
 </div>

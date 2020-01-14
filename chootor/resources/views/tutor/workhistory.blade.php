@@ -9,7 +9,10 @@
         /* width: 500px; */
         height: auto;
     }
-    
+    #profile-img {
+        height: 130px;
+        width: 130px;
+    }
 </style>
  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">WORK HISTORY</h1> 
 
@@ -23,9 +26,9 @@
                                 <div class="row">
                                     <div class="col-3 text-center">
                                         @if($sessiondone->booking->tutee->image)
-                                        <img src="{{$sessiondone->booking->tutee->image}}" alt="profile picture"> 
+                                        <img src="{{$sessiondone->booking->tutee->image}}" id="profile-img" class="img-responsive" alt="profile picture"> 
                                         @else
-                                        <img src="../img/blank.png" class="img-responsive" alt="profilepicture">
+                                        <img src="../img/blank.png" class="img-responsive" id="profile-img" alt="profilepicture">
                                         @endif
                                     </div>
                                     <div class="col-4">
@@ -44,6 +47,12 @@
                                         </div>
                                     </div>
                                     <div class="col-4">
+                                    Subject:
+                                        <div class="font-weight-bold">
+                                        {{$sessiondone->booking->schedule->subject->name}} 
+                                        </div>
+                                    </br>
+                                           
                                     Rate:
                                         <div class="font-weight-bold">
                                          {{$sessiondone->booking->rate}}/5 
@@ -51,7 +60,7 @@
                                         {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!} --}}
                                         {{-- {{$sessiondone->booking->comment}}  --}}
                                         </div>
-
+                                    
                                     </div>
                                 </div>
                             </div>
