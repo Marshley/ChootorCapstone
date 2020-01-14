@@ -57,6 +57,11 @@
                     <a class="nav-link " href="/tnotifications" id="tuteenotif" style="color:#d35400;">Notification
                         <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
                     </a>
+                    {{-- <script>
+                     $( "#tuteenotif" ).click(function() {
+                        {{ auth()->user()->unreadNotifications->markAsRead()}}
+                    });
+                    </script> --}}
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/logout" style="color:#d35400;">Logout</a>
@@ -98,6 +103,11 @@
                                 <a class="dropdown-item" href="/notifications" id="tutornotif">Notification  
                                     <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
                                 </a>
+                                {{-- <script>                                    
+                                $( "#tutornotif" ).click(function() {
+                                    {{ auth()->user()->unreadNotifications->markAsRead()}}
+                                });
+                                </script> --}}
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">Logout</a>
                             </div>
@@ -114,9 +124,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/tuteelist"  style="color:#d35400">List of Tutees</a>
                         </li>
-                        {{-- <li class="nav-item">
-                                <a class="nav-link" href="/list"  style="color:#d35400">List</a>
-                            </li> --}}
+                        <li class="nav-item">
+                                <a class="nav-link" href="/records"  style="color:#d35400">Records</a>
+                            </li>
                         <li class="nav-item dropdown" style="color:#d35400">
                             <a class="nav-link dropdown-toggle" style="color:#d35400" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings
@@ -136,8 +146,17 @@
             </div>
             @endif
     </nav>
+{{-- 
+    <script>
 
-
+        $( "#tutornotif" ).click(function() {
+            {{ auth()->user()->unreadNotifications->markAsRead()}}
+        });
+        $( "#tuteenotif" ).click(function() {
+            {{ auth()->user()->unreadNotifications->markAsRead()}}
+        });
+        
+        </script> --}}
 
 
 
@@ -165,15 +184,6 @@
                       }
                   });
                 </script>
-<script>
 
-$( "#tutornotif" ).click(function() {
-    {{ auth()->user()->unreadNotifications->markAsRead()}}
-});
-$( "#tuteenotif" ).click(function() {
-    {{ auth()->user()->unreadNotifications->markAsRead()}}
-});
-
-</script>
 </body>
 </html>

@@ -19,12 +19,12 @@
           border-color: #fa935b;  
       }
   </style>
-  {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1> --}}
+  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> LIST OF TUTEES </h1>
   <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style="margin-top:50px">
       <thead class="thead">
       <tr>
           <th style="padding-left:200px" scope="col">TUTEE NAME</th>
-          {{-- <th scope="col">STATUS</th> --}}
+          <th scope="col">Bookings</th>
           <th class="text-right" style="padding-right:200px" scope="col">ACTION BUTTON</th>
       </tr>
       </thead>
@@ -33,6 +33,8 @@
             <tr>
                 <td style="padding-left:200px"> {{$tutee->lastname}} {{$tutee->firstname}} {{$tutee->middleinitial}} </td>
                 {{-- <td>{{$tutee->status}}</td> --}}
+                <td>{{$tutee->bookings->count()}}</td>
+
                 <td class="text-right" style="padding-right:240px">
                    <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$tutee->id}}">

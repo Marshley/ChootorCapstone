@@ -56,7 +56,7 @@ Route::get('/admindashboard','AdminController@show')->middleware('role:admin');
 Route::get('/subject','AdminController@index')->middleware('role:admin');
 Route::get('/location','AdminController@index2')->middleware('role:admin');
 Route::get('/course','AdminController@displaycourse')->middleware('role:admin');
-// Route::get('/list','AdminController@list')->middleware('role:admin');
+Route::get('/records','AdminController@list')->middleware('role:admin');
 Route::get('/tutorlist','AdminController@tutorlist')->middleware('role:admin');
 Route::get('/tuteelist','AdminController@tuteelist')->middleware('role:admin');
 Route::post('/addsubject','AdminController@store')->middleware('role:admin');

@@ -16,8 +16,10 @@ class TuteeController extends Controller
     {
         $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
         $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
+
         $tutor_list = User::where('user_type','tutor')->where('status', 'approved')->get();
         $tutors = [];
+
         foreach ($tutor_list as $tutor){
             $schedules = UserSchedule::where('tutor_id',$tutor->id)->whereBetween('created_at',[$week_start,$week_end])->get();
             $subjects = UserSchedule::select('subjects.name')->join('subjects', 'subjects.id', 'user_schedules.subject_id')
@@ -28,9 +30,9 @@ class TuteeController extends Controller
             $schedule_list = [];
             foreach ($schedules as $sched){
                 $isBooked = Booking::where('schedule_id',$sched->id)->exists();
-                $isDisapproved = Booking::where('schedule_id',$sched->id )->where('status', 'disapproved')->first();
+                // $isDisapproved = Booking::where('schedule_id',$sched->id )->where('status', 'disapproved')->first();
 
-                if(!$isBooked or $isDisapproved){
+                if(!$isBooked){
                     $schedule_list[] = $sched;
                 }
             }
@@ -42,6 +44,7 @@ class TuteeController extends Controller
             ];
         }
 
+        // return $tutors;
         return view('tutee.dashboard')->with('tutors', $tutors );
     }
     
@@ -144,6 +147,9 @@ class TuteeController extends Controller
     // START OF NOTIFICATIONS
     public function notifications(){
         $user = User::find(auth()->user()->id);
+        foreach ($user->unreadNotifications as $notification) {
+            $notification->markAsRead();
+        }
         return view('tutee.notifications')->with('user', $user);
     }
     // END OF NOTIFICATIONS

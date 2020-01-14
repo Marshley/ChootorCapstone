@@ -19,7 +19,7 @@
           border-color: #fa935b;  
       }
   </style>
-  {{-- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> BOOKING REQUESTS </h1> --}}
+  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px"> LIST OF TUTORS </h1>
   <table class="table table-hover table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style="margin-top:50px">
       <thead class="thead">
       <tr>
@@ -34,6 +34,9 @@
                 <td>{{$tutor->lastname}} {{$tutor->firstname}} {{$tutor->middleinitial}} </td>
                 <td>{{$tutor->status}}</td>
                 <td>
+                    {{-- @foreach ($tutor->schedules as $schedule) --}}
+                        {{-- {{$tutor->schedules->count()}} --}}
+                    {{-- @endforeach  --}}
                    <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$tutor->id}}">
                     View 
