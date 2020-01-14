@@ -125,13 +125,13 @@
                             <a class="nav-link" href="/admindashboard"  style="color:#d35400">Dashboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tutorlist"  style="color:#d35400">List of Tutors</a>
+                            <a class="nav-link" href="/tutor_dynamic_pdf"  style="color:#d35400">List of Tutors</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/tuteelist"  style="color:#d35400">List of Tutees</a>
+                            <a class="nav-link" href="/tutee_dynamic_pdf"  style="color:#d35400">List of Tutees</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="/records"  style="color:#d35400">Records</a>
+                                <a class="nav-link" href="/dynamic_pdf"  style="color:#d35400">Records</a>
                             </li>
                         <li class="nav-item dropdown" style="color:#d35400">
                             <a class="nav-link dropdown-toggle" style="color:#d35400" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -144,6 +144,9 @@
                                     <div class="dropdown-divider"></div>                                    
                                     <a class="dropdown-item" href="/course">Course</a>
                                     <div class="dropdown-divider"></div>
+                                    
+                                    {{-- <a class="dropdown-item" href="/dynamic_pdf">Printables</a>
+                                    <div class="dropdown-divider"></div> --}}
                                     <a class="dropdown-item" href="/logout">Logout</a>
                                 </div>
                         </li>

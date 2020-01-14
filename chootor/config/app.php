@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         JD\Cloudder\CloudderServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -230,6 +231,8 @@ return [
 
         'Cloudder' => JD\Cloudder\Facades\Cloudder::class,
         'Input' => Illuminate\Support\Facades\Request::class,
+        'PDF' => Barryvdh\DomPDF\Facade::class,
+
 
     ],
 
