@@ -18,8 +18,8 @@ class Booking extends Model
         return $this->belongsTo('App\User', 'tutee_id');
     }
 
-    public function evaluation() {
-        return $this->hasOne('App\Evaluation', 'booking_id');
+    // public function evaluation() {
+    //     return $this->hasOne('App\Evaluation', 'booking_id');
         // return $this->hasMany('App\Evaluation', 'booking_id');
-    }
+    // }
 }
