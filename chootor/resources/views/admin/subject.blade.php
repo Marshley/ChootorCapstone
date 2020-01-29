@@ -39,7 +39,7 @@
       </button> -->
       
       <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -49,18 +49,17 @@
               </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="/addsubject" >
-                {{ csrf_field() }}
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                    </div>
+              <form method="post" action="/addsubject" >
+                <!-- {{ csrf_field() }} -->
+                <div class="form-group">
+                  <label for="name">Name:</label>
+                  <input type="text" class="form-control" id="name" name="name">
+                </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id="cbtnn" data-dismiss="modal">Close</button>
-              
-                <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
-                </form>
+              <button type="button" class="btn btn-secondary" id="cbtnn" data-dismiss="modal">Close</button>              
+              <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
+              </form>
             </div>
           </div>
         </div>
@@ -71,7 +70,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">SUBJECT NAME</th>
-        <th scope="col"><!-- Button trigger modal --><button type="button" id="cbtn" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Add Subject</button></th>
+        <th scope="col"><!-- Button trigger modal --><button type="button" id="cbtn" class="btn btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Add Subject</button></th>
     </tr>
     </thead>
     <tbody>
@@ -79,7 +78,7 @@
         <tr>
             <td>{{$subjects->id}}</td>
             <td>{{$subjects->name}}</td>
-            <td> </td>
+            <td><!-- Button trigger modal --><button type="button" id="cbtn" class="btn btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Edit</button></td>
         </tr>
         @endforeach
     </tbody>

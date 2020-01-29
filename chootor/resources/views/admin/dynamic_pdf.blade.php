@@ -12,16 +12,16 @@
       /* color: #ffffff; */
       color: #d35400;
     }
-    .btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
-        border-color: #fa935b;
+    #pbtn, #pbtn:active, #pbtn:visited, #pbtn:focus {
+        border-color: #e27235;
         color: white;
-        background-color: #fa935b;
+        background-color: #e27235;
     }
 
-    .btn-primary:hover {
-        background-color: #e27235;
+    #pbtn:hover {
+        background-color: #d35400;
         color: #ffffff;
-        border-color: #e27235;  
+        border-color: #d35400;  
     }
   </style>
   <br />
@@ -34,7 +34,7 @@
      <h4></h4>
     </div>
     <div class="col-md-5" align="right">
-     <a href="{{ url('dynamic_pdf/pdf') }}" class="btn btn-primary">PRINT</a>
+     <a href="{{ url('dynamic_pdf/pdf') }}" class="btn " id="pbtn">PRINT</a>
     </div>
    </div>
    <br />

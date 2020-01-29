@@ -40,6 +40,15 @@
 
 </br>
 
+        @if(auth()->user()->status == 'pending')
+            <div class="alert alert-primary" role="alert">
+                Your account is needed to be verified first but you can already create a schedule for the week. Go to <a href="/tutorschedule" class="alert-link">Schedule Settings</a>.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
+
 <table class="table table-hover table-responsive-xs table-responsive-sm table-responsive-md table-responsive-lg ">
     <thead class="thead">
     <tr>

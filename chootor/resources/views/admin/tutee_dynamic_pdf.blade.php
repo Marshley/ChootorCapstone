@@ -20,15 +20,15 @@
       color: #d35400;
     }
     .btn-primary, .btn-primary:active, .btn-primary:visited, .btn-primary:focus {
-        border-color: #fa935b;
+        border-color: #e27235;
         color: white;
-        background-color: #fa935b;
+        background-color: #e27235;
     }
 
     .btn-primary:hover {
-        background-color: #e27235;
+        background-color: #d35400;
         color: #ffffff;
-        border-color: #e27235;  
+        border-color: #d35400;  
     }
   </style>
  {{-- </head> --}}

@@ -70,53 +70,57 @@
                 </li>
                 </ul>
                 @elseif(auth()->user()->user_type == 'tutor')
+                
                 <a class="navbar-brand" aria-disabled="true" > Hi Tutor {{ auth()->user()->firstname }}!<span class="sr-only">(current)</span></a>
 
-                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        {{-- <li class="nav-item dropdown">
-                            <a class="nav-link fa fa-bell" style="color:#d35400;" href="#" id="navbarDropdown" role="button" 
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @foreach ($user->notifications as $notification)
-                                <a class="list-group-item" href="/request">{{json_encode($notification->data, true)}}</a>
-                                @endforeach
-                            </div>
-                        </li> --}}
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tutordashboard" style="color:#d35400;">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/request" style="color:#d35400;">Requests</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/workhistory" style="color:#d35400;">Work History</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/tutorschedule" style="color:#d35400;">Schedule</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color:#d35400;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Settings
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
-                                <a class="dropdown-item" href="/tutorprofile">Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <!-- <a class="dropdown-item" href="/tutorschedule">Schedule</a>
-                                <div class="dropdown-divider"></div> -->
-                                <a class="dropdown-item" href="/notifications" id="tutornotif">Notification  
-                                    <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                            <!-- {{-- <li class="nav-item dropdown">
+                                <a class="nav-link fa fa-bell" style="color:#d35400;" href="#" id="navbarDropdown" role="button" 
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 </a>
-                                {{-- <script>                                    
-                                $( "#tutornotif" ).click(function() {
-                                    {{ auth()->user()->unreadNotifications->markAsRead()}}
-                                });
-                                </script> --}}
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/logout">Logout</a>
-                            </div>
-                        </li>
-                    </ul>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @foreach ($user->notifications as $notification)
+                                    <a class="list-group-item" href="/request">{{json_encode($notification->data, true)}}</a>
+                                    @endforeach
+                                </div>
+                            </li> --}} -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="/tutordashboard" style="color:#d35400;">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/request" style="color:#d35400;">Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/workhistory" style="color:#d35400;">Work History</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/tutorschedule" style="color:#d35400;">Schedule</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" style="color:#d35400;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Settings
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown" >
+                                    <a class="dropdown-item" href="/tutorprofile">Profile</a>
+                                    <div class="dropdown-divider"></div>
+                                    <!-- <a class="dropdown-item" href="/tutorschedule">Schedule</a>
+                                    <div class="dropdown-divider"></div> -->
+                                    <a class="dropdown-item" href="/notifications" id="tutornotif">Notification  
+                                        <span class="badge badge-light">  {{ auth()->user()->unreadNotifications->count()}} </span>
+                                    </a>
+                                    {{-- <script>                                    
+                                    $( "#tutornotif" ).click(function() {
+                                        {{ auth()->user()->unreadNotifications->markAsRead()}}
+                                    });
+                                    </script> --}}
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/logout">Logout</a>
+                                </div>
+                            </li>
+                        </ul>   
+                    </ul>   
+                    
+                    
                 @elseif(auth()->user()->user_type == 'admin')
                 <a class="navbar-brand" aria-disabled="true" > Welcome Admin {{ auth()->user()->firstname }}!<span class="sr-only">(current)</span></a>
 
@@ -155,7 +159,7 @@
             </div>
             @endif
     </nav>
-{{-- 
+<!-- {{-- 
     <script>
 
         $( "#tutornotif" ).click(function() {
@@ -165,7 +169,7 @@
             {{ auth()->user()->unreadNotifications->markAsRead()}}
         });
         
-        </script> --}}
+        </script> --}} -->
 
 
 
