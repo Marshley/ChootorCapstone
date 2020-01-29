@@ -132,6 +132,12 @@ class TuteeController extends Controller
         return view('tutee.booked')->with('user', $user);
     }
 
+    public function mysched()
+    {
+        $user = User::find(auth()->user()->id); 
+        return view('tutee.mysched')->with('user', $user);
+    }
+
     public function donesessiondisplay()
     {
         $user = User::find(auth()->user()->id); 

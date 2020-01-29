@@ -33,6 +33,7 @@ Route::get('/tuteedashboard','TuteeController@index')->name('tuteedashboard')->m
 Route::get('/tuteeprofile','TuteeController@tuteeprofile')->middleware('role:tutee');
 Route::get('/tnotifications','TuteeController@notifications')->middleware('role:tutee');
 Route::get('/booked','TuteeController@bookeddisplay')->middleware('role:tutee');
+Route::get('/myschedule','TuteeController@mysched')->middleware('role:tutee');
 Route::get('/feedback','TuteeController@donesessiondisplay')->middleware('role:tutee');
 Route::post('/booking','TuteeController@store')->middleware('role:tutee');
 Route::post('/updatetuteeprofile','TuteeController@updateprofile')->middleware('role:tutee');

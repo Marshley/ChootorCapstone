@@ -47,7 +47,10 @@
                     <a class="nav-link" href="/tuteedashboard" style="color:#d35400;">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/booked" style="color:#d35400;">Booked</a>
+                    <a class="nav-link" href="/booked" style="color:#d35400;">Bookings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/myschedule" style="color:#d35400;">My Schedule</a>
                 </li>
                 <li class="nav-item">
                         <a class="nav-link " href="/feedback" style="color:#d35400;">Feedback</a>
