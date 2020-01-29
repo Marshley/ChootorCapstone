@@ -55,7 +55,7 @@
        <th>MI</th>
        <th>COURSE</th>
        <th>EMAIL</th>
-       <th>RATE</th>
+       <th>RATE/HR</th>
       </tr>
      </thead>
      <tbody>
@@ -66,7 +66,7 @@
        <td>{{ $tutor->middleinitial }}</td>
        <td>{{ $tutor->course->course_name}}</td>
        <td>{{ $tutor->email }}</td>       
-       <td>{{ $tutor->rate }}</td>   
+       <td>₱ {{ $tutor->rate }}.00</td>   
       </tr>
      @endforeach
      </tbody>

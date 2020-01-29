@@ -41,7 +41,7 @@ class RecordsDynamicPDFController extends Controller
     <th style="border: 1px solid; padding:12px;" width="15%">Subject</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Time</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Location</th>
-    <th style="border: 1px solid; padding:12px;" width="20%">Rate</th>
+    <th style="border: 1px solid; padding:12px;" width="20%">Rate/hr</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Rating</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Comment</th>
    </tr>
@@ -56,7 +56,7 @@ class RecordsDynamicPDFController extends Controller
        <td style="border: 1px solid; padding:12px;">'.$record->schedule->subject->name. ' '.$record->subtopic.'</td>
        <td style="border: 1px solid; padding:12px;">'.$record->schedule->start_time. ' '.$record->schedule->end_time.'</td>
        <td style="border: 1px solid; padding:12px;">'.$record->schedule->location->name.'</td>
-       <td style="border: 1px solid; padding:12px;">'.$record->schedule->tutor->rate.'/hr' .'</td>
+       <td style="border: 1px solid; padding:12px;">'. 'Php ' .$record->schedule->tutor->rate.'.00' .'</td>
        <td style="border: 1px solid; padding:12px;">'.$record->rate.'/5'.'</td>
        <td style="border: 1px solid; padding:12px;">'.$record->comment.'</td>
       </tr>

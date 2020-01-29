@@ -74,7 +74,7 @@
                 {{-- <td> {{$show->booking->status}}</td> --}}
                 <td>{{$show->booking->schedule->location->name}}</td>
                 <td>{{$show->booking->schedule->subject->name}}</td>
-                <td>{{$user->rate}} php</td>
+                <td>₱ {{$user->rate}}.00</td>
                 <td>
                 <div class="d-flex flex-row">
                     <form method="post" action="updatesession/{{$show->booking->id}}" >

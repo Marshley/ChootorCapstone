@@ -51,6 +51,12 @@ class AdminController extends Controller
         $location->create($request->toArray());
         return redirect('/location')->with('mesg', 'Saved Successfully!');
     }
+    
+    public function editlocation(Request $request, Location $location)
+    {
+        $location->update($request->toArray());
+        return redirect('/location')->with('mesg', 'Saved Successfully!');
+    }
 
     public function addcourse(Request $request, Course $course)
     {

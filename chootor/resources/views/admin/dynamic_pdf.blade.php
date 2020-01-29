@@ -48,7 +48,7 @@
        <th>SUBJECT</th>
        <th>TIME</th>
        <th>LOCATION</th>
-       <th>RATE</th>
+       <th>RATE/HR</th>
        <th>RATING</th>
        <th>COMMENT</th>
       </tr>
@@ -63,7 +63,7 @@
        <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$record->schedule->start_time)->format('h:i A')}} to 
         {{\Carbon\Carbon::createFromFormat('H:i:s',$record->schedule->end_time)->format('h:i A')}} </td>
         <td>{{$record->schedule->location->name}}</td>
-        <td>{{$record->schedule->tutor->rate}}/hr</td>
+        <td>₱ {{$record->schedule->tutor->rate}}.00</td>
         @if ($record->rate != 'pending') 
             <td>{{$record->rate}}/5 </td>
             <td>{{$record->comment}}</td>
