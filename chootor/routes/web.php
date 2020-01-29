@@ -63,6 +63,7 @@ Route::post('/addsubject','AdminController@store')->middleware('role:admin');
 Route::post('/addlocation','AdminController@store2')->middleware('role:admin');
 Route::post('/editlocation/{location}','AdminController@editlocation')->middleware('role:admin');
 Route::post('/addcourse','AdminController@addcourse')->middleware('role:admin');
+Route::post('/editcourse/{course}','AdminController@editcourse')->middleware('role:admin');
 Route::post('/updatetutor/{user}','AdminController@update')->middleware('role:admin');
 
 Route::get('/tutor_dynamic_pdf', 'TutorDynamicPDFController@index')->middleware('role:admin');

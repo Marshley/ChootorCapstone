@@ -76,41 +76,40 @@
         <tr>
             <td>{{$locations->id}}</td>
             <td>{{$locations->name}}</td>
-              <td>
-                <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-toggle="modal" id="cbtn" class="btn btn-sm m-0" data-target="#exampleModal{{$locations->id}}">
-                  Edit 
-                </button>
-                  
-                  <!-- Modal -->
-                  <div class="modal fade" id="exampleModal{{$locations->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Edit Location</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
-                        <div class="modal-body">
-                        <form method="post" action="/editlocation/{{$locations->id}}" >
-                          {{ csrf_field() }}
-                              <div class="form-group">
-                                  <label for="name">Name:</label>
-                              <input type="text" class="form-control" id="name" name="name" value="{{$locations->name}}">
-                              </div>
+            <td>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" id="cbtn" class="btn btn-sm m-0" data-target="#exampleModal{{$locations->id}}">
+                Edit 
+              </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal{{$locations->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Location</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
                       </div>
-                      <div class="modal-footer">
-                        <button type="button" id="cbtnn" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        
-                          <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
-                          </form>
-                        </div>
+                      <div class="modal-body">
+                      <form method="post" action="/editlocation/{{$locations->id}}" >
+                        {{ csrf_field() }}
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{$locations->name}}">
+                            </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="cbtnn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      
+                        <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                       </div>
                     </div>
                   </div>
-
-                </td>
+                </div>
+          </td>
         </tr>
         @endforeach
     </tbody>

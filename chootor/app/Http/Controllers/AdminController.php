@@ -65,6 +65,13 @@ class AdminController extends Controller
         return redirect('/course')->with('mesg', 'Saved Successfully!');
     }
 
+    public function editcourse(Request $request, Course $course)
+    {
+        // return $request;
+        $course->update($request->toArray());
+        return redirect('/course')->with('mesg', 'Saved Successfully!');
+    }
+
     public function show(Request $request)
     {
         $users = User::all();
