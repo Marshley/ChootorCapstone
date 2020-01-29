@@ -68,7 +68,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">COURSE NAME</th>
-        <th scope="col"> <!-- Button trigger modal --> <button type="button" id="cbtn" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Add Course</button></th>
+        <th scope="col"> <!-- Button trigger modal --> <button type="button" id="cbtn" class="btn btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Add Course</button></th>
     </tr>
     </thead>
     <tbody>
@@ -76,7 +76,7 @@
         <tr>
             <td>{{$course->id}}</td>
             <td>{{$course->course_name}}</td>
-            <td> </td>
+            <td><!-- Button trigger modal --><button type="button" id="cbtn" class="btn btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Edit</button></td>
         </tr>
         @endforeach
     </tbody>

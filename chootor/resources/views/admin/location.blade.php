@@ -68,7 +68,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">LOCATION NAME</th>
-        <th scope="col"><!-- Button trigger modal --> <button type="button" id="cbtn" class="btn btn-outline-primary btn-sm m-0" data-toggle="modal"  data-target="#exampleModal">Add Location</button></th>
+        <th scope="col"><!-- Button trigger modal --> <button type="button" id="cbtn" class="btn btn-sm m-0" data-toggle="modal"  data-target="#exampleModal">Add Location</button></th>
     </tr>
     </thead>
     <tbody>
@@ -76,7 +76,7 @@
         <tr>
             <td>{{$locations->id}}</td>
             <td>{{$locations->name}}</td>
-            <td> </td>
+            <td><!-- Button trigger modal --><button type="button" id="cbtn" class="btn btn-sm m-0" data-toggle="modal" data-target="#exampleModal">Edit</button></td>
         </tr>
         @endforeach
     </tbody>
