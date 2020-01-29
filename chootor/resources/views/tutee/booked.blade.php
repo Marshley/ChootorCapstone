@@ -27,7 +27,7 @@
                 <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->start_time)->format('h:i A')}}
                     to 
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->end_time)->format('h:i A')}}</td>
-                <td>{{$booked->schedule->subject->name}}</td>
+                <td>{{$booked->schedule->subject->name}} {{$booked->subtopic}}</td>
                  <td> {{$booked->status}}</td>
                 @endif
             @endif

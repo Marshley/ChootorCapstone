@@ -67,7 +67,7 @@
                   <p>Name: {{$tutor['user']->firstname}}  {{$tutor['user']->lastname}}  {{$tutor['user']->middleinitial}} </p>
                   <p>School ID: {{$tutor['user']->school_id}}</p>
                   <p>Course: {{$tutor['user']->course->course_name}}</p> 
-                  <p>Rate per hour: {{$tutor['user']->rate}}</p> 
+                  <p>Rate per hour: ₱ {{$tutor['user']->rate}}.00</p> 
                   <p>Location: {{$tutor['user']->location->name}}</p>  
                   <p>Subject/s:               
                     @foreach ($tutor['subjects'] as $subject)

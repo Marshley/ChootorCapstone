@@ -95,10 +95,18 @@
             <div class="form-group col-md-10 col-xs-10" style="margin-top:50px">
               <p class="font-italic note">* note: please input first your rate per hour and the location where you'll meet with your tutee</p>
               <label for="rate note">RATE / HR</label>
-              <input type="number" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}" min="0" max="150">
+              
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">₱</span>
+                </div>
+                <input type="number" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}" min="0" max="150">
+                <div class="input-group-append">
+                  <span class="input-group-text">.00</span>
+                </div>
+              </div>
             </div>
           </div>
-{{-- {{$user->location->name}} --}}
           <div class="form-row justify-content-center">
             <div class="form-group note col-md-10 col-xs-10 ">
               <label for="location_id">LOCATION</label>
