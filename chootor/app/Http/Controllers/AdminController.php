@@ -45,6 +45,13 @@ class AdminController extends Controller
         return redirect('/subject')->with('mesg', 'Saved Successfully!');
     }
 
+    public function editsubject(Request $request, Subject $subject)
+    {
+        // return $request;
+        $subject->update($request->toArray());
+        return redirect('/subject')->with('mesg', 'Saved Successfully!');
+    }
+
     public function store2(Request $request, Location $location)
     {   
         // Create Location
