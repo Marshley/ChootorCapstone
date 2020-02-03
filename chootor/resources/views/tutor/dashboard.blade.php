@@ -57,7 +57,7 @@
         <th scope="col">TIME</th>
         <th scope="col">LOCATION</th>
         <th scope="col">SUBJECT</th>
-        <th scope="col">RATE/hr</th>
+        <th scope="col">RATE/HR</th>
         <th scope="col">ACTION BUTTONS</th>
     </tr>
     </thead>

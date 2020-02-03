@@ -27,6 +27,12 @@ class TuteeController extends Controller
                             ['user_schedules.tutor_id', $tutor->id]
                         ])->groupBy('subjects.name')->get();
 
+            // $ave_rating = Booking::avg('rate');
+            $avg_rating = Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+                    ->where('user_schedules.tutor_id', $tutor->id)
+                    ->avg('bookings.rate');
+            $avg_rating = round($avg_rating, 2);
+
             $schedule_list = [];
             foreach ($schedules as $sched){
                 $isBooked = Booking::where('schedule_id',$sched->id)->exists();
@@ -41,6 +47,7 @@ class TuteeController extends Controller
                 'user' => $tutor,
                 'schedules' => $schedule_list,
                 'subjects' => $subjects,
+                'ratings' => $avg_rating,
             ];
         }
 
