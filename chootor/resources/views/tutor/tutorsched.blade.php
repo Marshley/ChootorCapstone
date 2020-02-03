@@ -160,7 +160,7 @@
               {{ csrf_field() }}                    
               <div class="form-group col-md-12">
               <p class="font-italic note text-center">* note: that the schedule you set will only be visible for this week only</p>
-                <label for="day">Day</label>
+                {{-- <label for="day">Day</label>
                 <select id="day" class="form-control" name="day">
                   <option selected>Monday</option>
                   <option>Tuesday</option>
@@ -168,7 +168,31 @@
                   <option>Thursday</option>
                   <option>Friday</option>
                   <option>Saturday</option>
-                </select>
+                </select> --}}
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="day" value="Monday" name="day">
+                <label class="form-check-label" for="day">Monday</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="day" value="Tuesday" name="day">
+                <label class="form-check-label" for="day">Tuesday</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="day" value="Wednesday" name="day">
+                <label class="form-check-label" for="day">Wednesday</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="day" value="Thursday" name="day">
+                <label class="form-check-label" for="day">Thursday</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="day" value="Friday" name="day">
+                <label class="form-check-label" for="day">Friday</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day">
+                <label class="form-check-label" for="day">Saturday</label>
               </div>
               <div class="row">
                 <div class="form-group mx-5 my-5">FROM
@@ -193,7 +217,7 @@
               </div>
               <div class="form-group col-md-12">              
                 <label for="materials">Materials to bring (if any): </label>   
-                <input class="typeahead form-control" type="text" name="materials" id="materials" />                
+                <input class="typeahead form-control" type="text" name="materials" id="materials" />  
               </div>
               <div class="modal-footer">
                 <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -217,6 +241,7 @@
             <th scope="col">FROM</th>
             <th scope="col">TO</th>
             <th scope="col">SUBJECT</th>
+            <th scope="col">MATERIALS</th>
             {{-- <th scope="col">LOCATION</th> --}}
             <th scope="col"><button id="homebtn" type="button" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal"> Add Schedule </button></th>
         </tr>
@@ -229,6 +254,7 @@
             <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->start_time)->format('h:i A')}}</td>
             <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
             <td>{{$schedule->subject->name}}</td>
+            <td>{{$schedule->materials}}</td>
             {{-- <td>{{$schedule->location->name}}</td> --}}
             <td> </td>
             {{-- <td> <form name="destroy" method="get" action="/destroy" >

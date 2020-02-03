@@ -137,7 +137,8 @@ class TutorController extends Controller
         }
         // CREATE TUTOR SCHEDULE
 
-        if($subject = Subject::where('name', $request->subject)->exists()){
+        if($subject = Subject::where('name', $request->subject)->exists())
+        {
             $subject = Subject::where('name', $request->subject)->first();
             UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id]));  
             return redirect('/tutorschedule')->with('mesg', 'Saved Successfully!');
