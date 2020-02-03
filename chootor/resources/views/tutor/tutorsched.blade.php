@@ -194,6 +194,9 @@
                 <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day_list[]">
                 <label class="form-check-label" for="day">Saturday</label>
               </div>
+
+              <input type="checkbox" onclick="toggle(this);" />Select all?<br />
+
               <div class="row">
                 <div class="form-group mx-5 my-5">FROM
                   <input type="time" id="start_time" class="form-control" name="start_time" min="08:00:00" max="17:00:00">
@@ -298,5 +301,15 @@
       return false;
     }
 
+</script>
+
+<script>
+function toggle(source) {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i] != source)
+            checkboxes[i].checked = source.checked;
+    }
+}
 </script>
 @endsection
