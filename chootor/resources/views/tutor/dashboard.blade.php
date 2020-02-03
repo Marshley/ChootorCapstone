@@ -58,6 +58,7 @@
         <th scope="col">LOCATION</th>
         <th scope="col">SUBJECT</th>
         <th scope="col">RATE/HR</th>
+        <th scope="col">MATERIALS</th>
         <th scope="col">ACTION BUTTONS</th>
     </tr>
     </thead>
@@ -75,6 +76,7 @@
                 <td>{{$show->booking->schedule->location->name}}</td>
                 <td>{{$show->booking->schedule->subject->name}}</td>
                 <td>₱ {{$user->rate}}.00</td>
+                <td>{{$show->booking->schedule->materials}}</td>
                 <td>
                 <div class="d-flex flex-row">
                     <form method="post" action="updatesession/{{$show->booking->id}}" >

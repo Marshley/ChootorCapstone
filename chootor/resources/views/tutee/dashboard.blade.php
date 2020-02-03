@@ -113,6 +113,7 @@
                       {{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}
                       <br/>
                       <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> <br/>
+                      <span class="font-italic">Materials to bring: {{$schedule->materials}}</span>
                       <div class="col-md-8 Subtopic">
                         TOPIC: <input type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}" disabled >                        
                       </div>

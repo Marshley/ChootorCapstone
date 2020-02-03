@@ -21,6 +21,7 @@ class CreateUserSchedulesTable extends Migration
             $table->string('day');
             $table->time('start_time');
             $table->time('end_time');
+            $table->string('materials');
             $table->timestamps();
 
             $table->foreign('tutor_id')->references('id')->on('users')->onDelete('cascade');

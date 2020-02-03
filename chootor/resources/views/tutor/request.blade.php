@@ -28,6 +28,7 @@
         <th scope="col">DAY</th>
         <th scope="col">TIME</th>
         <th scope="col">SUBJECT</th>
+        <th scope="col">MATERIALS</th>
         <th scope="col">ACTION BUTTONS</th>
         <th scope="col"></th>
     </tr>
@@ -42,6 +43,7 @@
                 <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$request->booking->schedule->start_time)->format('h:i A')}} -
                 {{\Carbon\Carbon::createFromFormat('H:i:s',$request->booking->schedule->end_time)->format('h:i A')}}</td>
                 <td>{{$request->booking->schedule->subject->name}} {{$request->booking->subtopic}}</td>
+                <td>{{$request->booking->schedule->materials}}</td>
                 <td>
                 <div class="d-flex flex-row">
                     <form method="post" action="updaterequest/{{$request->booking->id}}" >

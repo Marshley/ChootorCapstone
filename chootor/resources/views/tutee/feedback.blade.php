@@ -69,11 +69,12 @@ p {
             <div class="col-lg-5">
               <br /> 
 
-              <p class="text-left">Day: {{$history->schedule->day}}</p>
-              <p class="text-left">  
+              <p class="text-left">Day and Time: {{$history->schedule->day}}</p>
+              <p class="text-left"> 
                 {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->start_time)->format('h:i A')}} - 
                 {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->end_time)->format('h:i A')}}
               </p>
+              <p class="text-left">Materials: {{$history->schedule->materials}}</p>
               {{-- <h4>{{$history->rate}}</h4> --}}
               {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $history->rate) !!}
               {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $history->rate) !!} --}}
@@ -97,19 +98,19 @@ p {
                   {{ csrf_field() }} 
                   <div class="rating btn-group btn-group-toggle " data-toggle="buttons">
                     <span class="btn" for="rate" id="ratebutton">☆
-                      <input type="radio" name="rate" id="rate" value="1">
-                    </span>
-                    <span class="btn" for="rate" id="ratebutton">☆
-                      <input type="radio" name="rate" id="rate" value="2">
-                    </span>
-                    <span class="btn" for="rate" id="ratebutton">☆
-                      <input type="radio" name="rate" id="rate" value="3">
+                      <input type="radio" name="rate" id="rate" value="5">
                     </span>
                     <span class="btn" for="rate" id="ratebutton">☆
                       <input type="radio" name="rate" id="rate" value="4">
                     </span>
                     <span class="btn" for="rate" id="ratebutton">☆
-                      <input type="radio" name="rate" id="rate" value="5">
+                      <input type="radio" name="rate" id="rate" value="3">
+                    </span>
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="2">
+                    </span>
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="1">
                     </span>
                     </div>
 
@@ -178,12 +179,13 @@ p {
                 <br /> 
                 <p class="text-left">Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</p>
                 <p class="text-left">School ID: {{$history->schedule->tutor->school_id}}</p>
-                <p class="text-left">Day {{$history->schedule->day}}</p>
-                <p class="text-left">  Time 
+                <p class="text-left"> Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</p>
+                <p class="text-left"> Materials: {{$history->schedule->materials}}</p>
+                <p class="text-left">Day and Time: {{$history->schedule->day}}</p>
+                <p class="text-left">  
                   {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->start_time)->format('h:i A')}} - 
                   {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->end_time)->format('h:i A')}}
                 </p>
-                <p class="text-left"> Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</p>
               </div>
               <div class="col-lg-5">
                 </br>

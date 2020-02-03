@@ -53,7 +53,12 @@
                                         {{$sessiondone->booking->subtopic}}
                                         </div>
                                     </br>
-                                           
+                                    <div>
+                                        Materials: 
+                                        <div class="font-weight-bold">{{$sessiondone->booking->schedule->materials}}
+                                        </div>
+                                    </div>
+                                    <br/>
                                     Rate:
                                         <div class="font-weight-bold">
                                             @if($sessiondone->booking->rate != 'pending')
