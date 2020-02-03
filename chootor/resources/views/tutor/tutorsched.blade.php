@@ -191,6 +191,10 @@
                     @endforeach                              
                 </select>                --}}
               </div>
+              <div class="form-group col-md-12">              
+                <label for="materials">Materials to bring (if any): </label>   
+                <input class="typeahead form-control" type="text" name="materials" id="materials" />                
+              </div>
               <div class="modal-footer">
                 <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
