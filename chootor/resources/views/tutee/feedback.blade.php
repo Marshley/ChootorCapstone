@@ -19,6 +19,20 @@ p {
   background-color: #e27235;
   color: white;
 }
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
 </style>
 
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">FEEDBACK</h1> 
@@ -81,29 +95,46 @@ p {
                   <div class="modal-body text-center">
                     <form method="post" action="/feedback/{{$history->id}}" >
                   {{ csrf_field() }} 
-                  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    
-                    <label class="btn far fa-frown" for="rate" id="ratebutton">
+                  <div class="rating btn-group btn-group-toggle " data-toggle="buttons">
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="1">
+                    </span>
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="2">
+                    </span>
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="3">
+                    </span>
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="4">
+                    </span>
+                    <span class="btn" for="rate" id="ratebutton">☆
+                      <input type="radio" name="rate" id="rate" value="5">
+                    </span>
+                    </div>
+
+                  {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn fas fa-star" for="rate" id="ratebutton">
                         <input type="radio" name="rate" id="rate" value="1">
                     </label>
 
-                    <label class="btn far fa-frown-open" for="rate" id="ratebutton">
+                    <label class="btn fas fa-star" for="rate" id="ratebutton">
                         <input type="radio" name="rate" id="rate" value="2">
                       </label>
                     
-                      <label class="btn far fa-meh-o" for="rate" id="ratebutton">
+                      <label class="btn fas fa-star" for="rate" id="ratebutton">
                         <input type="radio" name="rate" id="rate" value="3">
                       </label>
                       
-                      <label class="btn far fa-smile" for="rate" id="ratebutton">
+                      <label class="btn fas fa-star" for="rate" id="ratebutton">
                         <input type="radio" name="rate" id="rate" value="4">
                       </label>
                       
-                      <label class="btn far fa-smile-beam" for="rate" id="ratebutton">
+                      <label class="btn fas fa-star" for="rate" id="ratebutton">
                         <input type="radio" name="rate" id="rate" value="5">
-                      </label>
+                      </label> --}}
                       
-                    </div>
+                    {{-- </div> --}}
                     <br/>
                     <br/>
                     COMMENT: <input type="text" name="comment" id="comment" value="{{$history->comment}}">
@@ -156,9 +187,29 @@ p {
               </div>
               <div class="col-lg-5">
                 </br>
-                <p class="text-left"> Rate: {{$history->rate}}/5</p>
-                {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $history->rate) !!}
-                {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $history->rate) !!} --}}
+                <p class="text-left"> RATING:
+
+                <div class="placeholder" style="color: lightgray;">
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <span class="small">({{ $history->rate }})</span>
+              </div>
+              <div class="overlay" style="position: relative;top: -22px;">
+            
+                @while($history->rate>0)
+                    @if($history->rate >0.5)
+                        <i class="fas fa-star"></i>
+                    @else
+                        <i class="fas fa-star-half"></i>
+                    @endif
+                    @php $history->rate--; @endphp
+                @endwhile
+    
+            </div> 
+                </p>
                 <p class="text-left">Comment: {{$history->comment}}</p>
               </div>
             </div>
@@ -167,6 +218,5 @@ p {
         </div>
       @endif
     @endforeach
-      
 @endsection
       

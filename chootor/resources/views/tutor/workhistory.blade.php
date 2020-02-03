@@ -50,13 +50,34 @@
                                     Subject:
                                         <div class="font-weight-bold">
                                         {{$sessiondone->booking->schedule->subject->name}} 
+                                        {{$sessiondone->booking->subtopic}}
                                         </div>
                                     </br>
                                            
                                     Rate:
                                         <div class="font-weight-bold">
                                             @if($sessiondone->booking->rate != 'pending')
-                                                {{$sessiondone->booking->rate}}/5
+                                                {{-- {{$sessiondone->booking->rate}}/5 --}}
+                                                <div class="placeholder" style="color: lightgray;">
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <i class="far fa-star"></i>
+                                                    <span class="small">({{ $sessiondone->booking->rate }})</span>
+                                                </div>
+                                                <div class="overlay" style="position: relative;top: -22px;">
+                                              
+                                                  @while($sessiondone->booking->rate>0)
+                                                      @if($sessiondone->booking->rate >0.5)
+                                                          <i class="fas fa-star"></i>
+                                                      @else
+                                                          <i class="fas fa-star-half"></i>
+                                                      @endif
+                                                      @php $sessiondone->booking->rate--; @endphp
+                                                  @endwhile
+                                      
+                                              </div> 
                                             @elseif($sessiondone->booking->rate = 'pending')
                                                 NO RATINGS YET!
                                             @endif
