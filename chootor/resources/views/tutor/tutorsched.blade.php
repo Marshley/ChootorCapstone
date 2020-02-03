@@ -171,27 +171,27 @@
                 </select> --}}
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Monday" name="day">
+                <input class="form-check-input" type="checkbox" id="day" value="Monday" name="day_list[]">
                 <label class="form-check-label" for="day">Monday</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Tuesday" name="day">
+                <input class="form-check-input" type="checkbox" id="day" value="Tuesday" name="day_list[]">
                 <label class="form-check-label" for="day">Tuesday</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Wednesday" name="day">
+                <input class="form-check-input" type="checkbox" id="day" value="Wednesday" name="day_list[]">
                 <label class="form-check-label" for="day">Wednesday</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Thursday" name="day">
+                <input class="form-check-input" type="checkbox" id="day" value="Thursday" name="day_list[]">
                 <label class="form-check-label" for="day">Thursday</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Friday" name="day">
+                <input class="form-check-input" type="checkbox" id="day" value="Friday" name="day_list[]">
                 <label class="form-check-label" for="day">Friday</label>
               </div>
               <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day">
+                <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day_list[]">
                 <label class="form-check-label" for="day">Saturday</label>
               </div>
               <div class="row">

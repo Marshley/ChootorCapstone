@@ -91,61 +91,101 @@ class TutorController extends Controller
 
     public function store(Request $request, User $user)
     { 
-        $scheds = \App\UserSchedule::whereTime('start_time', '>', $request->start_time)
-        ->where('day', $request->day)
-        ->where('tutor_id',$request->user()->id)->get();
-        if (!$scheds->isEmpty()){
-            foreach ($scheds as $sched) {
-                if (!\App\UserSchedule::where('id', $sched->id)->whereTime('start_time', '<', $request->end_time)
-                ->where('day', $request->day)
-                ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
-                    return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
-                }
-                if (!\App\UserSchedule::where('id', $sched->id)->whereTime('end_time', '<=', $request->end_time)
-                ->where('day', $request->day)
-                ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
-                    return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
-                }
-            }
-
-            // if (!\App\UserSchedule::whereTime('start_time', '<', $request->end_time)
-            // ->where('day', $request->day)
-            // ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
-            //     return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
-            // } 
-            // if (!\App\UserSchedule::whereTime('end_time', '<=', $request->end_time)
-            // ->where('day', $request->day)
-            // ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
-            //     return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
-            // } 
-        } 
-        
-        $scheds = \App\UserSchedule::whereTime('start_time', '<=', $request->start_time)
-        ->whereTime('end_time', '>', $request->start_time)
-        ->where('day', $request->day)
-        ->where('tutor_id',$request->user()->id)->get();
-        
-        if (!$scheds->isEmpty()){
-            foreach ($scheds as $sched) {
-                if (!\App\UserSchedule::where('id', $sched->id)->whereTime('start_time', '<=', $request->start_time)
-                ->whereTime('end_time', '>', $request->start_time)
-                ->where('day', $request->day)
-                ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
-                    return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+        foreach($request->day_list as $day) {
+            $scheds = \App\UserSchedule::whereTime('start_time', '>', $request->start_time)
+            ->where('day', $day)
+            ->where('tutor_id',$request->user()->id)->get();
+            if (!$scheds->isEmpty()){
+                foreach ($scheds as $sched) {
+                    if (!\App\UserSchedule::where('id', $sched->id)->whereTime('start_time', '<', $request->end_time)
+                    ->where('day', $day)
+                    ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+                        return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+                    }
+                    if (!\App\UserSchedule::where('id', $sched->id)->whereTime('end_time', '<=', $request->end_time)
+                    ->where('day', $day)
+                    ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+                        return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+                    }
                 } 
+            } 
+            
+            $scheds = \App\UserSchedule::whereTime('start_time', '<=', $request->start_time)
+            ->whereTime('end_time', '>', $request->start_time)
+            ->where('day', $day)
+            ->where('tutor_id',$request->user()->id)->get();
+            
+            if (!$scheds->isEmpty()){
+                foreach ($scheds as $sched) {
+                    if (!\App\UserSchedule::where('id', $sched->id)->whereTime('start_time', '<=', $request->start_time)
+                    ->whereTime('end_time', '>', $request->start_time)
+                    ->where('day', $day)
+                    ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+                        return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+                    } 
+                }
             }
         }
-        // CREATE TUTOR SCHEDULE
 
-        if($subject = Subject::where('name', $request->subject)->exists())
-        {
+        
+        if($subject = Subject::where('name', $request->subject)->exists()){
             $subject = Subject::where('name', $request->subject)->first();
-            UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id]));  
+            foreach($request->day_list as $day) {
+                UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id, 'day' => $day]));
+            }
             return redirect('/tutorschedule')->with('mesg', 'Saved Successfully!');
         }
         else {
             return redirect('/tutorschedule')->with('messg', 'Subject does not exist!');
         }
+
+        
+        // return $request->day_list;
+        // $scheds = \App\UserSchedule::whereTime('start_time', '>', $request->start_time)
+        // ->where('day', $request->day)
+        // ->where('tutor_id',$request->user()->id)->get();
+        // if (!$scheds->isEmpty()){
+        //     foreach ($scheds as $sched) {
+        //         if (!\App\UserSchedule::where('id', $sched->id)->whereTime('start_time', '<', $request->end_time)
+        //         ->where('day', $request->day)
+        //         ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+        //             return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+        //         }
+        //         if (!\App\UserSchedule::where('id', $sched->id)->whereTime('end_time', '<=', $request->end_time)
+        //         ->where('day', $request->day)
+        //         ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+        //             return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+        //         }
+        //     } 
+        // } 
+        
+        // $scheds = \App\UserSchedule::whereTime('start_time', '<=', $request->start_time)
+        // ->whereTime('end_time', '>', $request->start_time)
+        // ->where('day', $request->day)
+        // ->where('tutor_id',$request->user()->id)->get();
+        
+        // if (!$scheds->isEmpty()){
+        //     foreach ($scheds as $sched) {
+        //         if (!\App\UserSchedule::where('id', $sched->id)->whereTime('start_time', '<=', $request->start_time)
+        //         ->whereTime('end_time', '>', $request->start_time)
+        //         ->where('day', $request->day)
+        //         ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+        //             return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+        //         } 
+        //     }
+        // }
+        // CREATE TUTOR SCHEDULE
+
+        // if($subject = Subject::where('name', $request->subject)->exists()){
+        //     // for(){
+        //     $subject = Subject::where('name', $request->subject)->first();
+        //     UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id]));  
+        //     return redirect('/tutorschedule')->with('mesg', 'Saved Successfully!');
+        // }
+        // else {
+        //     return redirect('/tutorschedule')->with('messg', 'Subject does not exist!');
+        // }
+    // }
 
     }
 
@@ -196,3 +236,16 @@ class TutorController extends Controller
     //     return redirect('/tutorschedule')->with('UserSchedule', $UserSchedule);
     // }
 }
+
+
+
+            // if (!\App\UserSchedule::whereTime('start_time', '<', $request->end_time)
+            // ->where('day', $request->day)
+            // ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+            //     return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+            // } 
+            // if (!\App\UserSchedule::whereTime('end_time', '<=', $request->end_time)
+            // ->where('day', $request->day)
+            // ->where('tutor_id',$request->user()->id)->get()->isEmpty()){
+            //     return redirect('/tutorschedule')->with('msg', 'Failed to Book. Conflict of Schedules');
+            // }
