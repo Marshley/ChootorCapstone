@@ -11,11 +11,24 @@ use App\Subject;
 use App\Location;
 use App\Booking;
 use App\Course;
+use App\Report;
 
 class TutorController extends Controller
 {
+    // START OF REPORT
+
+    public function report(Request $request, Booking $booking)
+    {
+        $user = User::find(auth()->user()->id);
+        Report::create(array_merge($request->toArray(), ['booking_id' => $booking->id]));
+        return back();
+    }
+
+    // END OF REPORT
+
     // START OF NOTIFICATIONS
-    public function notifications(){
+    public function notifications()
+    {
 
         $user = User::find(auth()->user()->id);
         foreach ($user->unreadNotifications as $notification) {

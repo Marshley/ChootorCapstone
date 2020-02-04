@@ -8,13 +8,21 @@ use App\Subject;
 use App\Location;
 use App\Course;
 use App\Booking;
+use App\Report;
 
 class AdminController extends Controller
 {
-    public function displayadviserform()
+
+    // public function displayadviserform()
+    // {
+    //     // DISPLAY ADVISER
+    //     return view('admin.adviser');
+    // }
+
+    public function displayreport()
     {
-        // DISPLAY ADVISER
-        return view('admin.adviser');
+        $reports = Report::all();
+        return view('admin.reports')->with('reports', $reports);
     }
 
     public function index()

@@ -85,6 +85,44 @@
                         <label class="form-check-label" for="status">DONE</button>
                     </form>
                 </td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$show->booking->id}}">
+                        Report
+                    </button>
+                      
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal{{$show->booking->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">REPORT</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body text-center">
+                              <div class="container">
+                              <p>{{$show->booking->tutee->firstname}}</p>
+                              {{-- {{$show->booking->report}} --}}
+                              <form method="post" action="report/{{$show->booking->id}}" >
+                                {{ csrf_field() }}
+                                <div class="form-group col-md-12">              
+                                    <label for="description">Describe the report: </label>   
+                                    <input class="typeahead form-control" type="text" name="description" id="description" />  
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success " id="booking_id" name="booking_id">
+                                <label class="form-check-label" for="booking_id">SUBMIT REPORT</button>
+                            </div>
+                        </form>
+                          </div>
+                        </div>
+                      </div>
+    
+                    </td>
                 @endif
             @endif
         @endforeach
