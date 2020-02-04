@@ -20,8 +20,22 @@ class TutorController extends Controller
     public function report(Request $request, Booking $booking)
     {
         $user = User::find(auth()->user()->id);
-        Report::create(array_merge($request->toArray(), ['booking_id' => $booking->id]));
-        return back();
+        $bookings = Booking::all();
+        foreach ($bookings as $booked)
+        {
+            $isReported = Report::where('booking_id', $booked->id)->exists();
+
+            if(!$isReported)
+            {
+                Report::create(array_merge($request->toArray(), ['booking_id' => $booking->id]));
+                return back()->with('msg', 'You have successfully reported this incident');;
+            }
+            else 
+            {
+                return back()->with('mesg', 'You have already reported this incident');;
+            }
+        }
+        
     }
 
     // END OF REPORT

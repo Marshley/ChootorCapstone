@@ -12,6 +12,16 @@
       color: #e27235;
     }
 </style>
+ @if(session('mesg'))
+ <div class="alert alert-danger" role="alert" > 
+   {{ session('mesg') }}
+ </div>
+@endif
+@if(session('msg'))
+<div class="alert alert-success" role="alert" > 
+  {{ session('msg') }}
+</div>
+@endif
  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
 <!-- <hr> -->
 
@@ -87,7 +97,7 @@
                 </td>
                 <td>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{$show->booking->id}}">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$show->booking->id}}">
                         Report
                     </button>
                       
@@ -103,12 +113,20 @@
                             </div>
                             <div class="modal-body text-center">
                               <div class="container">
-                              <p>{{$show->booking->tutee->firstname}}</p>
+                              <p>TUTEE:</p>
+
+                              @if($user->image)
+                              <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+                            @else
+                              <img src="../img/blank.png" class="img-responsive"style="height:100px;width:100px"  alt="profilepicture">
+                            @endif
+                            <br/>
+                              <p>{{$show->booking->tutee->lastname}}, {{$show->booking->tutee->firstname}} {{$show->booking->tutee->middleinitial}}</p>
                               {{-- {{$show->booking->report}} --}}
                               <form method="post" action="report/{{$show->booking->id}}" >
                                 {{ csrf_field() }}
                                 <div class="form-group col-md-12">              
-                                    <label for="description">Describe the report: </label>   
+                                    <label for="description">Describe the incident: </label>   
                                     <input class="typeahead form-control" type="text" name="description" id="description" />  
                                   </div>
                               </div>

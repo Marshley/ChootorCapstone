@@ -138,8 +138,11 @@
                             <a class="nav-link" href="/tutee_dynamic_pdf"  style="color:#d35400">List of Tutees</a>
                         </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="/dynamic_pdf"  style="color:#d35400">Records</a>
-                            </li>
+                            <a class="nav-link" href="/dynamic_pdf"  style="color:#d35400">Records</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/reports"  style="color:#d35400">Reported Tutees</a>
+                        </li>
                         <li class="nav-item dropdown" style="color:#d35400">
                             <a class="nav-link dropdown-toggle" style="color:#d35400" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Settings

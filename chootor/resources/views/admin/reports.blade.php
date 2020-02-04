@@ -30,22 +30,32 @@
                                         @endif
                                     </div> --}}
                                     <div class="col-4">
-                                    Tutor:
+                                        Reported by Tutor:
                                         <div class="font-weight-bold">
-                                        {{$report->booked->schedule->tutor->firstname}} 
-                                        {{$report->booked->schedule->tutor->lastname}} 
+                                            {{$report->booked->schedule->tutor->firstname}} 
+                                            {{$report->booked->schedule->tutor->lastname}} 
                                         </div>
-                                        </br>
-                                    Schedule:
+                                    </br>
+                                    Tutee:
                                         <div class="font-weight-bold">
-                                        {{$report->booked->schedule->day}}
-                                        
-                                        {{\Carbon\Carbon::createFromFormat('H:i:s',$report->booked->schedule->start_time)->format('h:i A')}}
-                                            to 
-                                        {{\Carbon\Carbon::createFromFormat('H:i:s',$report->booked->schedule->end_time)->format('h:i A')}}
+                                            {{$report->booked->tutee->firstname}}
+                                            {{$report->booked->tutee->lastname}}
+                                        </div>
+                                    <br/>
+                                    Incident Report:
+                                        <div class="font-weight-bold">
+                                            {{$report->description}}
                                         </div>
                                     </div>
                                     <div class="col-4">
+                                    Schedule:
+                                    <div class="font-weight-bold">
+                                    {{$report->booked->schedule->day}}
+                                    
+                                    {{\Carbon\Carbon::createFromFormat('H:i:s',$report->booked->schedule->start_time)->format('h:i A')}}
+                                        to 
+                                    {{\Carbon\Carbon::createFromFormat('H:i:s',$report->booked->schedule->end_time)->format('h:i A')}}
+                                    </div>
                                     Subject:
                                         <div class="font-weight-bold">
                                         {{$report->booked->schedule->subject->name}} 
@@ -59,12 +69,6 @@
                                         </div>
                                     </div>
                                     <br/>
-                                    Tutee:
-                                        <div class="font-weight-bold">
-                                            {{$report->booked->tutee->firstname}}
-                                            {{$report->booked->tutee->lastname}}
-                                        </div>
-                                    
                                     </div>
                                 </div>
                             </div>
