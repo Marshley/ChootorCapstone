@@ -10,7 +10,17 @@
   padding: 10px 16px;
   background-color: #d35400;
   cursor: pointer;
+  color: white;
 }
+#stars {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+
 p {
   text-size: 10px;
 }
@@ -22,16 +32,24 @@ p {
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
+  /* color: orange; */
 }
 .rating > span {
   display: inline-block;
   position: relative;
   width: 1.1em;
+  color: black;
 }
 .rating > span:hover:before,
 .rating > span:hover ~ span:before {
    content: "\2605";
    position: absolute;
+   color: #ffae42 ;
+}
+
+}
+.fa-star {
+  color: #ffae42;
 }
 </style>
 
@@ -96,20 +114,20 @@ p {
                   <div class="modal-body text-center">
                     <form method="post" action="/feedback/{{$history->id}}" >
                   {{ csrf_field() }} 
-                  <div class="rating btn-group btn-group-toggle " data-toggle="buttons">
-                    <span class="btn" for="rate" id="ratebutton">☆
+                  <div class="rating btn-group-toggle" data-toggle="buttons" aria-pressed="false" autocomplete="off">
+                    <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="5">
                     </span>
-                    <span class="btn" for="rate" id="ratebutton">☆
+                    <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="4">
                     </span>
-                    <span class="btn" for="rate" id="ratebutton">☆
+                    <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="3">
                     </span>
-                    <span class="btn" for="rate" id="ratebutton">☆
+                    <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="2">
                     </span>
-                    <span class="btn" for="rate" id="ratebutton">☆
+                    <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="1">
                     </span>
                     </div>
@@ -138,12 +156,24 @@ p {
                     {{-- </div> --}}
                     <br/>
                     <br/>
-                    COMMENT: <input type="text" name="comment" id="comment" value="{{$history->comment}}">
+                    <div class="form-group ">
+                      <div class="row">
+                        <div class="col-1">
+                        
+                        </div>
+                        <div class="col-10">
+                          <label>How was your experience?</label>
+                        <br/>
+                        <br/>
+                          <input class="typehead form-control" type="text" name="comment" id="comment" value="{{$history->comment}}">              
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>              
-                    <button style="cursor:pointer" type="submit" class="btn btn-primary">Submit</button>
+                    <button style="cursor:pointer" type="submit" id="ratebutton" class="btn">Submit</button>
                 </form>
               </div>
               
