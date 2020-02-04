@@ -94,12 +94,14 @@
                         <button type="submit" class="btn btn-success " id="status" name="status" value="done">
                         <label class="form-check-label" for="status">DONE</button>
                     </form>
+                    <span style="width:1em;"> </span>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$show->booking->id}}">
+                      !
+                  </button>
                 </td>
                 <td>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$show->booking->id}}">
-                        Report
-                    </button>
+                    
                       
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal{{$show->booking->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
