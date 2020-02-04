@@ -37,14 +37,16 @@
                           {{ csrf_field() }}
                         <button type="submit" class="btn btn-success " id="status" name="status" value="approved">
                           <label class="form-check-label" for="status">
-                          ✓</button>
+                          ✓
+                          </button>
                         </form>
                         <span style="width:1em;"> </span>
                       <form method="post" action="/updatetutor/{{$user->id}}" >
                           {{ csrf_field() }}
                           <button type="submit" class="btn btn-danger " id="status" name="status" value="disapproved">
                           <label class="form-check-label" for="status">
-                          X</button>
+                          X
+                          </button>
                         </form>
                       </td>
                     </div>
