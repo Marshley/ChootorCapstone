@@ -41,7 +41,22 @@
   p{
     font-size: 15px;
   }
+  .active-pink-2 input[type=text]:focus:not([readonly]) {
+    border: 0;
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+  }
+  .active-pink input[type=text] {
+    border-bottom: 1px solid #f48fb1;
+    box-shadow: 0 1px 0 0 #f48fb1;
+  }
 </style>
+
+<!-- Search form -->
+<div class="md-form active-pink active-pink-2 mb-3 mt-0">
+  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+</div>
+
 
 <div class="container">
   <!-- <div class="card-deck"> -->
@@ -114,15 +129,15 @@
                       <br/>
                       <span class="font-italic">SUBJECT: {{$schedule->subject->name}}</label></span> <br/>
                       <span class="font-italic">Materials to bring: {{$schedule->materials}}</span>
-                      <div class="col-md-8 Subtopic">
-                        TOPIC: <input type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}" disabled >                        
+                      <br/>
+                      <label> TOPIC: </label> 
+                      <input class="typehead form-control" type="text" name="subtopic_{{$schedule->id}}" id="subtopic_{{$schedule->id}}" disabled >                        
                       </div>
-                    </div>
                   </div>
                       @endforeach  
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn" id="closebtn" data-dismiss="modal">Close</button>              
+                    <button type="button" class="btn btn-secondary"data-dismiss="modal">Close</button>              
                     <button style="cursor:pointer" type="submit" class="btn" id="butto">Submit</button>
                     </form>
                   </div>

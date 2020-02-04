@@ -155,7 +155,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="height:620;weight:478">
             <form name="setSchedule" method="post" action="/addtutorschedule/{{$user->id}}" onsubmit="return validateForm()" >
               {{ csrf_field() }}                    
               <div class="form-group col-md-12">
@@ -170,41 +170,58 @@
                   <option>Saturday</option>
                 </select> --}}
               </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Monday" name="day_list[]">
-                <label class="form-check-label" for="day">Monday</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Tuesday" name="day_list[]">
-                <label class="form-check-label" for="day">Tuesday</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Wednesday" name="day_list[]">
-                <label class="form-check-label" for="day">Wednesday</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Thursday" name="day_list[]">
-                <label class="form-check-label" for="day">Thursday</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Friday" name="day_list[]">
-                <label class="form-check-label" for="day">Friday</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day_list[]">
-                <label class="form-check-label" for="day">Saturday</label>
+              <div class="form-group col-md-12">
+                <p class="note"> PICK YOUR AVAILABLE DAY/S</p> 
+                <div class="row my-3">
+                  <div class="col-1">
+                  </div>
+                  <div class="col-3 center">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="day" value="Monday" name="day_list[]">
+                      <label class="form-check-label" for="day">Monday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="day" value="Thursday" name="day_list[]">
+                      <label class="form-check-label" for="day">Thursday</label>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="day" value="Tuesday" name="day_list[]">
+                      <label class="form-check-label" for="day">Tuesday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="day" value="Friday" name="day_list[]">
+                      <label class="form-check-label" for="day">Friday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="day" value="Everyday" name="day_list[]">
+                      <label class="form-check-label" for="day">Everyday</label>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="day" value="Wednesday" name="day_list[]">
+                      <label class="form-check-label" for="day">Wednesday</label>
+                    </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day_list[]">
+                          <label class="form-check-label" for="day">Saturday</label>
+                        </div>
+                  </div>
+                </div>
               </div>
               <div class="row">
-                <div class="form-group mx-5 my-5">FROM
+                <div class="form-group mx-5 my-4">FROM
                   <input type="time" id="start_time" class="form-control" name="start_time" min="08:00:00" max="17:00:00">
                   <label for="start_time">Choose start time</label>
                 </div>
-                <div class="form-group mx-5 my-5"> TO:
+                <div class="form-group mx-5 my-4"> TO:
                   <input type="time" id="end_time" class="form-control" name="end_time" min="08:00:00" max="17:00:00">
                   <label for="end_time">Choose end time</label>
                 </div>
               </div>
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-12 my-3">
                 <label for="subject_id">Subject</label>
                 <input class="typeahead form-control" type="text" name="subject" id="subject" />
                  {{-- @foreach ($subject as $subjects) 
@@ -220,7 +237,7 @@
                 <input class="typeahead form-control" type="text" name="materials" id="materials" />  
               </div>
               <div class="modal-footer">
-                <button type="button" id="cbtn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
                 </form>
               </div>
