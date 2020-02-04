@@ -47,7 +47,6 @@ p {
    color: #ffae42 ;
 }
 
-}
 .fa-star {
   color: #ffae42;
 }
