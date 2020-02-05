@@ -9,50 +9,81 @@ use App\User;
 use App\UserSchedule;
 use App\Booking;
 use App\Course;
+use App\Subject;
 
 class TuteeController extends Controller
 {
     public function index(Request $request)
     {
-        $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
-        $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
-
-        $tutor_list = User::where('user_type','tutor')->where('status', 'approved')->get();
-        $tutors = [];
-
-        foreach ($tutor_list as $tutor){
-            $schedules = UserSchedule::where('tutor_id',$tutor->id)->whereBetween('created_at',[$week_start,$week_end])->get();
-            $subjects = UserSchedule::select('subjects.name')->join('subjects', 'subjects.id', 'user_schedules.subject_id')
-                        ->where([
-                            ['user_schedules.tutor_id', $tutor->id]
-                        ])->groupBy('subjects.name')->get();
-
-            // $ave_rating = Booking::avg('rate');
-            $avg_rating = Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
-                    ->where('user_schedules.tutor_id', $tutor->id)
-                    ->avg('bookings.rate');
-            $avg_rating = round($avg_rating, 2);
-
-            $schedule_list = [];
-            foreach ($schedules as $sched){
-                $isBooked = Booking::where('schedule_id',$sched->id)->exists();
-                // $isDisapproved = Booking::where('schedule_id',$sched->id )->where('status', 'disapproved')->first();
-
-                if(!$isBooked){
-                    $schedule_list[] = $sched;
-                }
+        if($request->subject){
+            $subject = Subject::where('name', 'LIKE', "%$request->subject%")->first();
+            // return $subject;
+            if($subject) {
+                $tutor_list = User::leftJoin('user_schedules', 'user_schedules.tutor_id', 'users.id')
+                                ->where('users.user_type','tutor')
+                                ->where('users.status', 'approved')
+                                ->where('user_schedules.subject_id', $subject->id)
+                                ->groupBy('users.id')
+                                ->get();
+                // return $tutor_list;
+            // $tutor_list = UserSchedule::join('users', 'users.id', 'user_schedules.tutor_id')
+            //             ->where('user_schedules.subject_id', $subject->id)
+            //             ->get();    
+            
+            if(!(count($tutor_list) > 0)) {
+                return back()->with('norecordmsg','No Record Exists!');
             }
-
-            $tutors[] = [
-                'user' => $tutor,
-                'schedules' => $schedule_list,
-                'subjects' => $subjects,
-                'ratings' => $avg_rating,
-            ];
+            } else {
+                return back()->with('norecordmesg','No Record Exists!');
+            }
+            
+        }
+        else{
+            $tutor_list = User::where('user_type','tutor')->where('status', 'approved')->get(); 
         }
 
-        // return $tutors;
-        return view('tutee.dashboard')->with('tutors', $tutors );
+            $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
+            $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
+    
+            
+            $tutors = [];
+    
+            foreach ($tutor_list as $tutor){
+                $tutorID = $request->subject ? $tutor->tutor_id : $tutor->id;
+                $schedules = UserSchedule::where('tutor_id',$tutorID)->whereBetween('created_at',[$week_start,$week_end])->get();
+                $subjects = UserSchedule::select('subjects.name')->join('subjects', 'subjects.id', 'user_schedules.subject_id')
+                            ->where([
+                                ['user_schedules.tutor_id', $tutorID]
+                            ])->groupBy('subjects.name')->get();
+                // return $subjects;   
+                $avg_rating = Booking::join('user_schedules', 'user_schedules.id', 'bookings.schedule_id')
+                        ->where('user_schedules.tutor_id', $tutorID)
+                        ->avg('bookings.rate');
+                $avg_rating = round($avg_rating, 2);
+                                
+                $schedule_list = [];
+                foreach ($schedules as $sched){
+                    $isBooked = Booking::where('schedule_id',$sched->id)->exists();
+                    // $isDisapproved = Booking::where('schedule_id',$sched->id )->where('status', 'disapproved')->first();
+    
+                    if(!$isBooked){
+                        $schedule_list[] = $sched;
+                    }
+                }
+    
+                $tutors[] = [
+                    'user' => $tutor,
+                    'schedules' => $schedule_list,
+                    'subjects' => $subjects,
+                    'ratings' => $avg_rating,
+                ];
+            }
+
+            // return response($tutors);
+    
+            // return $tutors;
+            return view('tutee.dashboard')->with('tutors', $tutors );
+        
     }
     
     // START OF TUTEE PROFILE UPDATE

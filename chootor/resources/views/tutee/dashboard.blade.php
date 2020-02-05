@@ -18,6 +18,18 @@
       {{ session('mesg') }}
     </div>
   @endif
+
+  @if(session('norecordmesg'))
+    <div class="alert alert-danger" role="alert" > 
+      {{ session('norecordmesg') }}
+    </div>
+  @endif
+
+  @if(session('norecordmsg'))
+    <div class="alert alert-danger" role="alert" > 
+      {{ session('norecordmsg') }}
+    </div>
+  @endif
  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">CHOOSE YOUR TUTOR OF INTEREST!</h1>  
 
 <style>
@@ -53,16 +65,18 @@
 </style>
 
 <!-- Search form -->
-<div class="md-form active-pink active-pink-2 mb-3 mt-0">
-  <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-</div>
-
+<form method="get" action="/tuteedashboard" >
+  <div class="md-form active-pink active-pink-2 mb-3 mt-0">
+    <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="subject">
+  </div>
+</form>
 
 <div class="container">
   <!-- <div class="card-deck"> -->
     <div class="col-12" style="margin-top:50px;margin-bottom:50px" >
       <div class="row" style="margin-bottom:50px">
         @foreach ($tutors as $tutor)
+        {{-- {{$tutor[0]}} --}}
           @if(count($tutor['schedules']) > 0 )
         {{-- @if ($tutor['user']['schedule']) --}}    
         <div class="w-100 d-none d-sm-block d-md-none"><!-- wrap every 2 on sm--></div>
@@ -81,7 +95,7 @@
                 <br/> 
                   <p>Name: {{$tutor['user']->firstname}}  {{$tutor['user']->lastname}}  {{$tutor['user']->middleinitial}} </p>
                   <p>School ID: {{$tutor['user']->school_id}}</p>
-                  <p>Course: {{$tutor['user']->course->course_name}}</p> 
+                  <p>Course: {{$tutor['user']->course['course_name']}}</p> 
                   <p>Average Rating: {{$tutor['ratings']}} </p>
                   <p>Rate per hour: ₱ {{$tutor['user']->rate}}.00</p> 
                   <p>Location: {{$tutor['user']->location->name}}</p>  
