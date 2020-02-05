@@ -95,9 +95,10 @@
                         <label class="form-check-label" for="status">DONE</button>
                     </form>
                     <span style="width:1em;"> </span>
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$show->booking->id}}">
+                    <button type="button" class="btn btn-danger" data-toggle="modal" style="font-weight:bold" data-target="#exampleModal{{$show->booking->id}}">
                       !
-                  </button>
+                    </button>
+                    {{-- <ion-icon type="button" class="btn btn-danger" data-toggle="modal" style="font-weight:bold" data-target="#exampleModal{{$show->booking->id}}" name="warning"></ion-icon> --}}
                 </td>
                 <td>
                     <!-- Button trigger modal -->
@@ -115,21 +116,24 @@
                             </div>
                             <div class="modal-body text-center">
                               <div class="container">
-                              <p>TUTEE:</p>
+                              {{-- <p>TUTEE:</p> --}}
 
                               @if($user->image)
-                              <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
-                            @else
-                              <img src="../img/blank.png" class="img-responsive"style="height:100px;width:100px"  alt="profilepicture">
-                            @endif
+                                <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+                              @else
+                                <img src="../img/blank.png" class="img-responsive"style="height:100px;width:100px"  alt="profilepicture">
+                              @endif
+                            <br/>
                             <br/>
                               <p>{{$show->booking->tutee->lastname}}, {{$show->booking->tutee->firstname}} {{$show->booking->tutee->middleinitial}}</p>
                               {{-- {{$show->booking->report}} --}}
                               <form method="post" action="report/{{$show->booking->id}}" >
                                 {{ csrf_field() }}
-                                <div class="form-group col-md-12">              
-                                    <label for="description">Describe the incident: </label>   
-                                    <input class="typeahead form-control" type="text" name="description" id="description" />  
+                                <div class="form-group col-md-12">   
+                            <br/>
+                            <br/>
+                                  <label for="description">Can you describe the incident?</label>   
+                                  <input class="typeahead form-control" type="text" name="description" id="description" />  
                                   </div>
                               </div>
                             </div>

@@ -29,10 +29,10 @@ p {
   background-color: #e27235;
   color: white;
 }
-.rating {
+
+/* .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
-  /* color: orange; */
 }
 .rating > span {
   display: inline-block;
@@ -45,11 +45,38 @@ p {
    content: "\2605";
    position: absolute;
    color: #ffae42 ;
-}
+} */
 
 .fa-star {
   color: #ffae42;
 }
+
+
+
+    .starrating > input {
+      display: none;
+    }  /* Remove radio buttons */
+
+    .starrating > label:before {
+      content: "\f005"; /* Star */
+      margin: 2px;
+      font-size: 4em;
+      font-family: FontAwesome;
+      display: inline-block; 
+    }
+
+    .starrating > label {
+      color: #222222; /* Start color when not clicked */
+    }
+
+    .starrating > input:checked ~ label {
+      color: #ffca08 ; 
+    } /* Set yellow color when star checked */
+
+    .starrating > input:hover ~ label {
+      color: #ffca08 ;  
+    } /* Set yellow color when star hover */
+
 </style>
 
 <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">FEEDBACK</h1> 
@@ -113,7 +140,20 @@ p {
                   <div class="modal-body text-center">
                     <form method="post" action="/feedback/{{$history->id}}" >
                   {{ csrf_field() }} 
-                  <div class="rating btn-group-toggle" data-toggle="buttons" aria-pressed="false" autocomplete="off">
+                  <div class="starrating risingstar d-flex justify-content-center flex-row-reverse">
+                    <input type="radio" id="star5" for="rate" name="rate" value="5" />
+                    <label for="star5" title="5 star"></label> {{-- may mag lalabas na label sa kung aling star na hinover nya--}}
+                    <input type="radio" id="star4" for="rate" name="rate" value="4" />
+                    <label for="star4" title="4 star"></label> {{-- may mag lalabas na label sa kung aling star na hinover nya--}}
+                    <input type="radio" id="star3" for="rate" name="rate" value="3" />
+                    <label for="star3" title="3 star"></label> {{-- may mag lalabas na label sa kung aling star na hinover nya--}}
+                    <input type="radio" id="star2" for="rate" name="rate" value="2" />
+                    <label for="star2" title="2 star"></label> {{-- may mag lalabas na label sa kung aling star na hinover nya--}}
+                    <input type="radio" id="star1" for="rate" name="rate" value="1" />
+                    <label for="star1" title="1 star"></label> {{-- may mag lalabas na label sa kung aling star na hinover nya--}}
+                </div>
+
+                  {{-- <div class="rating btn-group-toggle" data-toggle="buttons" >
                     <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="5">
                     </span>
@@ -129,7 +169,7 @@ p {
                     <span class="btn btn-lg" for="rate" id="stars">☆
                       <input type="radio" name="rate" id="rate" value="1">
                     </span>
-                    </div>
+                  </div> --}}
 
                   {{-- <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn fas fa-star" for="rate" id="ratebutton">
