@@ -195,8 +195,7 @@
                       <label class="form-check-label" for="day">Friday</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="day" value="Everyday" name="day_list[]">
-                      <label class="form-check-label" for="day">Everyday</label>
+                      <input type="checkbox" onclick="toggle(this);" />Everyday<br />
                     </div>
                   </div>
                   <div class="col-3">
@@ -212,7 +211,7 @@
                 </div>
               </div>
 
-              <input type="checkbox" onclick="toggle(this);" />Select all?<br />
+              {{-- <input type="checkbox" onclick="toggle(this);" />Select all?<br /> --}}
 
               <div class="row">
                 <div class="form-group mx-5 my-4">FROM
