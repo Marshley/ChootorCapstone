@@ -94,11 +94,13 @@
             <div class="card-text text-center">
                 <br/> 
                   <p>Name: {{$tutor['user']->firstname}}  {{$tutor['user']->lastname}}  {{$tutor['user']->middleinitial}} </p>
-                  <p>Expertise: 
-                    @foreach (json_decode($tutor['user']->expertise) as $exp)
-                      {{$exp}}, 
-                    @endforeach
-                  </p>
+                  @if($tutor['user']->expertise)
+                    <p>Expertise: 
+                      @foreach (json_decode($tutor['user']->expertise) as $exp)
+                        {{$exp}}, 
+                      @endforeach
+                    </p>
+                  @endif
                   <p>School ID: {{$tutor['user']->school_id}}</p>
                   <p>Course: {{$tutor['user']->course['course_name']}}</p> 
                   <p>Average Rating: {{$tutor['ratings']}} </p>

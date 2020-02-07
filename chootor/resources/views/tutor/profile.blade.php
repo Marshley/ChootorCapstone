@@ -169,9 +169,11 @@
         <label for="email" class="col-sm-2 col-form-label">Expertise </label>
             <div class="col-sm-10">
                 <select class="js-example-tags form-control" multiple="multiple" data-width="50%" name="expertise[]">
-                    @foreach(json_decode($user->expertise) as $exp)
-                        <option selected value="{{$exp}}">{{$exp}}</option>
-                    @endforeach
+                    @if($user->expertise)
+                        @foreach(json_decode($user->expertise) as $exp)
+                            <option selected value="{{$exp}}">{{$exp}}</option>
+                        @endforeach
+                    @endif
                 {{-- <option value="{{$user->expertise}}"></option> --}}
                     {{-- <option selected="selected">purple</option> --}}
                 </select>

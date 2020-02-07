@@ -68,9 +68,11 @@
        <td>{{ $tutor->course->course_name}}</td>
        <td>{{ $tutor->email }}</td>       
       <td>
-        @foreach(json_decode($tutor->expertise) as $exp) 
-          {{$exp}}, 
-        @endforeach
+        @if($tutor->expertise)
+          @foreach(json_decode($tutor->expertise) as $exp) 
+            {{$exp}}, 
+          @endforeach
+        @endif
       </td>
        <td>₱ {{ $tutor->rate }}.00</td>   
       </tr>
