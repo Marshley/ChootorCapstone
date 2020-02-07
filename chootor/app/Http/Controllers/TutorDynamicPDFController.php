@@ -42,6 +42,7 @@ class TutorDynamicPDFController extends Controller
     <th style="border: 1px solid; padding:12px;" width="15%">MI</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Course</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Email</th>
+    <th style="border: 1px solid; padding:12px;" width="20%">Expertise</th>
     <th style="border: 1px solid; padding:12px;" width="20%">Rate/hr</th>
    </tr>
      ';  
@@ -54,6 +55,7 @@ class TutorDynamicPDFController extends Controller
        <td style="border: 1px solid; padding:12px;">'.$tutor->middleinitial.'</td>
        <td style="border: 1px solid; padding:12px;">'.$tutor->course->course_name.'</td>
        <td style="border: 1px solid; padding:12px;">'.$tutor->email.'</td>
+       <td style="border: 1px solid; padding:12px;">'.$tutor->expertise.'</td>
        <td style="border: 1px solid; padding:12px;">'. 'Php ' .$tutor->rate. '.00' .'</td>
       </tr>
       ';

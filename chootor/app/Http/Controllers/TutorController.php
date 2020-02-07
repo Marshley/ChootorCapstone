@@ -65,18 +65,20 @@ class TutorController extends Controller
     {        
         $user = User::find(auth()->user()->id);
         if($request->image){
-            $image = $request->file('image');
-            $file_path = $image->getRealPath();
-            Cloudder::upload($file_path,null);
-            $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
+            foreach($request->expertise as $exp){
+                $image = $request->file('image');
+                $file_path = $image->getRealPath();
+                Cloudder::upload($file_path,null);
+                $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
+            }
         }
         else{
-            $user->update($request->toArray());
+            foreach($request->expertise as $exp){
+                $user->update($request->toArray());
+            }
         }
         
-        // $user->update(array_merge($request->toArray(), ['image' => Cloudder::show(Cloudder::getPublicId())]));
-        
-        return redirect('/tutorprofile');
+        return redirect('/tutorprofile')->with('msg','Your profile has been updated successfully');
     }
     // END OF TUTOR PROFILE UPDATE
 

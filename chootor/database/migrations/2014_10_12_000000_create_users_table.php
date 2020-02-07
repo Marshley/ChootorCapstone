@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('school_id');
             $table->string('user_type');
             $table->string('status')->default('pending');
+            $table->string('expertise')->nullable();
             $table->unsignedBigInteger('location_id')->default('1');
             $table->unsignedBigInteger('course_id')->nullable();
             $table->double('rate')->default('0');

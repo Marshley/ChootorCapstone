@@ -22,6 +22,13 @@
     
     }
 </style>
+
+@if(session('msg'))
+<div class="alert alert-success" role="alert" > 
+  {{ session('msg') }}
+</div>
+@endif
+
  <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h2>
     <form method="POST" action="/updatetutorprofile" enctype="multipart/form-data">
     
@@ -153,5 +160,29 @@
 
               
     <!-- </div> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-css/1.4.6/select2-bootstrap.min.css" rel="stylesheet" />
+
+    <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Expertise </label>
+            <div class="col-sm-10">
+                <select class="js-example-tags form-control" multiple="multiple" data-width="50%" name="expertise[]">
+                    @foreach(json_decode($user->expertise) as $exp)
+                        <option selected value="{{$exp}}">{{$exp}}</option>
+                    @endforeach
+                {{-- <option value="{{$user->expertise}}"></option> --}}
+                    {{-- <option selected="selected">purple</option> --}}
+                </select>
+                {{-- {{$user->expertise}} --}}
+            </div>
+    </div>
+
+    <script>
+        $(".js-example-tags").select2({
+            tags: true
+        })
+    </script>
 </form>
 @endsection

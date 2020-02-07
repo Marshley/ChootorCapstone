@@ -108,11 +108,16 @@ p {
               <br /> 
               <p class="text-left">Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</p>
               <p class="text-left">School ID: {{$history->schedule->tutor->school_id}}</p>
+                <p>Expertise: 
+                  @foreach (json_decode($history->schedule->tutor->expertise) as $exp)
+                    {{$exp}}, 
+                  @endforeach
+                </p>
               <p class="text-left">Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</p>
             </div>
             <div class="col-lg-5">
               <br /> 
-
+              
               <p class="text-left">Day and Time: {{$history->schedule->day}}</p>
               <p class="text-left"> 
                 {{\Carbon\Carbon::createFromFormat('H:i:s',$history->schedule->start_time)->format('h:i A')}} - 
@@ -248,6 +253,11 @@ p {
                 <br /> 
                 <p class="text-left">Name: {{$history->schedule->tutor->firstname}} {{$history->schedule->tutor->lastname}} {{$history->schedule->tutor->middleinitial}}</p>
                 <p class="text-left">School ID: {{$history->schedule->tutor->school_id}}</p>
+                <p>Expertise: 
+                  @foreach (json_decode($history->schedule->tutor->expertise) as $exp)
+                    {{$exp}}, 
+                  @endforeach
+                </p>
                 <p class="text-left"> Subject: {{$history->schedule->subject->name}} {{$history->subtopic}}</p>
                 <p class="text-left"> Materials: {{$history->schedule->materials}}</p>
                 <p class="text-left">Day and Time: {{$history->schedule->day}}</p>

@@ -55,6 +55,7 @@
        <th>MI</th>
        <th>COURSE</th>
        <th>EMAIL</th>
+       <th>EXPERTISE</th>
        <th>RATE/HR</th>
       </tr>
      </thead>
@@ -66,6 +67,11 @@
        <td>{{ $tutor->middleinitial }}</td>
        <td>{{ $tutor->course->course_name}}</td>
        <td>{{ $tutor->email }}</td>       
+      <td>
+        @foreach(json_decode($tutor->expertise) as $exp) 
+          {{$exp}}, 
+        @endforeach
+      </td>
        <td>₱ {{ $tutor->rate }}.00</td>   
       </tr>
      @endforeach

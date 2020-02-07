@@ -48,17 +48,19 @@
                                             to 
                                         {{\Carbon\Carbon::createFromFormat('H:i:s',$sessiondone->end_time)->format('h:i A')}}
                                         </div>
-                                    </div>
-                                    <div class="col-4">
+                                        <br/>
                                     Subject:
                                         <div class="font-weight-bold">
-                                        {{$sessiondone->booking->schedule->subject->name}} 
-                                        {{$sessiondone->booking->subtopic}}
+                                            {{$sessiondone->booking->schedule->subject->name}} 
+                                            {{$sessiondone->booking->subtopic}}
                                         </div>
+                                    </div>
+                                    <div class="col-4">
                                     </br>
                                     <div>
                                         Materials: 
-                                        <div class="font-weight-bold">{{$sessiondone->booking->schedule->materials}}
+                                        <div class="font-weight-bold">
+                                            {{$sessiondone->booking->schedule->materials}}
                                         </div>
                                     </div>
                                     <br/>
@@ -89,10 +91,13 @@
                                             @elseif($sessiondone->booking->rate = 'pending')
                                                 NO RATINGS YET!
                                             @endif
-                                        {{-- {!! str_repeat('<i class="far fa-smile" aria-hidden="true"></i>', $sessiondone->booking->rate) !!}
-                                        {!! str_repeat('<i class="fas fa-smile" aria-hidden="true"></i>', 5 - $sessiondone->booking->rate) !!} --}}
-                                        {{-- {{$sessiondone->booking->comment}}  --}}
                                         </div>
+                                            <div>
+                                                Comment: 
+                                                    <div class="font-weight-bold">
+                                                        {{$sessiondone->booking->comment}} 
+                                                    </div>
+                                            </div>
                                     
                                     </div>
                                 </div>
