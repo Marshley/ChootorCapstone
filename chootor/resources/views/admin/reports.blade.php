@@ -56,6 +56,7 @@
                                         to 
                                     {{\Carbon\Carbon::createFromFormat('H:i:s',$report->booked->schedule->end_time)->format('h:i A')}}
                                     </div>
+                                    <br/>
                                     Subject:
                                         <div class="font-weight-bold">
                                         {{$report->booked->schedule->subject->name}} 

@@ -168,10 +168,9 @@
                   </div>
                       @endforeach  
                            
-                    </form>
-                    <br/>
-                    
-                    <div class="form-row">
+                      <br/>
+                      
+                      <div class="form-row">
                         <div class="col-md-4 justify-content-center">
                           
                         </div>
@@ -179,10 +178,11 @@
                           <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
+                      </form>
                         <div class="col-md-2 justify-content-center">
                           
                         </div>
-                    </div>
+                      </div>
                   </div>
                   {{-- <div class="modal-footer">
                   </div> --}}
