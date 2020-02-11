@@ -6,7 +6,7 @@
       color: #d35400;
     }
 </style>
- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
+ <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">MY SCHEDULE</h1> 
 <table class="table table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl " style ="margin-top: 50px">
     <thead class="thead">
     <tr>
@@ -29,7 +29,7 @@
                     to 
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->end_time)->format('h:i A')}}</td>
                 <td>{{$booked->schedule->subject->name}} {{$booked->subtopic}}</td>
-                <td>{{$booked->schedule->materials}}}</td>
+                <td>{{$booked->schedule->materials}}</td>
                 <td> {{$booked->status}}</td>
                 @endif
             @endif
