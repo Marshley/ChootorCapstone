@@ -19,8 +19,16 @@
   background-color: #ffffff;
   cursor: pointer;
 }
-
-
+#cbtnsbmt {
+    background-color: #e27235;
+    color: #ffffff;
+    border-color: #e27235;
+  }
+  #cbtnsbmt:hover {
+    background-color: #fa935b;
+    color: #ffffff;
+    border-color: #fa935b;
+  }
 p {
   text-size: 10px;
 }
@@ -128,7 +136,7 @@ p {
             
             
             {{-- Modal --}}
-            <div class="modal fade" id="exampleModal{{$history->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div style="height: auto;" class="modal fade" id="exampleModal{{$history->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -193,8 +201,8 @@ p {
                       </label> --}}
                       
                     {{-- </div> --}}
-                    <br/>
-                    <br/>
+                    {{-- <br/>
+                    <br/> --}}
                     <div class="form-group ">
                       <div class="row">
                         <div class="col-1">
@@ -202,19 +210,27 @@ p {
                         </div>
                         <div class="col-10">
                           <label>How was your experience?</label>
-                        <br/>
-                        <br/>
+                        
                           <input class="typehead form-control" type="text" name="comment" id="comment" value="{{$history->comment}}">              
                         </div>
                       </div>
                     </div>
+                    <div class="form-row">
+                      <div class="col-md-4 justify-content-center">
+                        
+                      </div>
+                      <div class="col-md-4 justify-content-center" >
+                        <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <br/>
+                      </div>
+                      <div class="col-md-4 justify-content-center">
+                        
+                      </div>
+                    </div>
+                  </form>
                   </div>
                   
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>              
-                    <button style="cursor:pointer" type="submit" id="ratebutton" class="btn">Submit</button>
-                </form>
-              </div>
               
             </div>
           </div>

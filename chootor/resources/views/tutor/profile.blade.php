@@ -31,10 +31,10 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="font-italic note text-center">* note: that the image ratio must be 1:1</p>
+                    <p class="font-italic note text-center">* note: that the image ratio must be square for a better fit</p>
 
                     @if($user->image)
-                        <img src="{{$user->image}}" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
+                        <img src="{{$user->image}}" class="img-responsive rounded" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
                     @else
                     <img src="../img/blank.png" class="img-responsive" style="width:200px;height:200px;margin-top:10px;margin-bottom:20px" alt="profilepicture">
                     @endif   

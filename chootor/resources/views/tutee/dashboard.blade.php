@@ -38,17 +38,28 @@
     background-color: #bdc3c7;
     color: #ffffff;
   }
+  #cbtnsbmt {
+    background-color: #e27235;
+    color: #ffffff;
+    border-color: #e27235;
+  }
+  #cbtnsbmt:hover {
+    background-color: #fa935b;
+    color: #ffffff;
+    border-color: #fa935b;
+  }
   p{
     font-size: 15px;
   }
   .active-pink-2 input[type=text]:focus:not([readonly]) {
     border: 0;
-    border-bottom: 1px solid #f48fb1;
-    box-shadow: 0 1px 0 0 #f48fb1;
+    border-bottom: 1px solid #e27235;
+    box-shadow: 0 3px 0 0 #e27235;
   }
   .active-pink input[type=text] {
-    border-bottom: 1px solid #f48fb1;
-    box-shadow: 0 1px 0 0 #f48fb1;
+    border: 0;
+    border-bottom: 1px solid #d35400;
+    box-shadow: 0 1px 0 0 #d35400;
   }
 </style>
 
@@ -135,12 +146,25 @@
                       </div>
                   </div>
                       @endforeach  
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary"data-dismiss="modal">Close</button>              
-                    <button style="cursor:pointer" type="submit" class="btn" id="butto">Submit</button>
+                           
                     </form>
+                    <br/>
+                    
+                    <div class="form-row">
+                        <div class="col-md-4 justify-content-center">
+                          
+                        </div>
+                        <div class="col-md-6 justify-content-center" >
+                          <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        <div class="col-md-2 justify-content-center">
+                          
+                        </div>
+                    </div>
                   </div>
+                  {{-- <div class="modal-footer">
+                  </div> --}}
 
                 </div>
               </div>

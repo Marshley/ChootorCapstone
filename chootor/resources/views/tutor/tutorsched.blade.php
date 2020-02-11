@@ -155,7 +155,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body" style="height:620;weight:478">
+            <div class="modal-body" style="height:auto;weight:478">
             <form name="setSchedule" method="post" action="/addtutorschedule/{{$user->id}}" onsubmit="return validateForm()" >
               {{ csrf_field() }}                    
               <div class="form-group col-md-12">
@@ -171,6 +171,7 @@
                 </select> --}}
               </div>
               <div class="form-group col-md-12">
+                <br/>
                 <p class="note"> PICK YOUR AVAILABLE DAY/S</p> 
                 <div class="row my-3">
                   <div class="col-1">
@@ -195,8 +196,9 @@
                       <label class="form-check-label" for="day">Friday</label>
                     </div>
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="day" value="Everyday" name="day_list[]">
-                      <label class="form-check-label" for="day">Everyday</label>
+                      {{-- <input class="form-check-input" type="checkbox" id="day" value="Everyday" name="day_list[]"> --}}
+                      <input type="checkbox" onclick="toggle(this);" />Everyday<br />
+                      {{-- <label class="form-check-label" for="day">Everyday</label> --}}
                     </div>
                   </div>
                   <div class="col-3">
@@ -208,11 +210,9 @@
                           <input class="form-check-input" type="checkbox" id="day" value="Saturday" name="day_list[]">
                           <label class="form-check-label" for="day">Saturday</label>
                         </div>
-                  </div>
+                      </div>
                 </div>
               </div>
-
-              <input type="checkbox" onclick="toggle(this);" />Select all?<br />
 
               <div class="row">
                 <div class="form-group mx-5 my-4">FROM
@@ -239,11 +239,23 @@
                 <label for="materials">Materials to bring (if any): </label>   
                 <input class="typeahead form-control" type="text" name="materials" id="materials" />  
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
-                </form>
-              </div>
+
+              <div class="form-row">
+                <div class="col-md-4 justify-content-center">
+                   
+                </div>
+                <div class="col-md-6 justify-content-center" >
+                  <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                <div class="col-md-2 justify-content-center">
+                   
+                </div>
+            </div>
+              
+              </form>
+              {{-- <div class="modal-footer">
+              </div> --}}
             </div>
           </div>
         </div>

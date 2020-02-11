@@ -11,6 +11,22 @@
       /* color: #006D5B; */
       color: #e27235;
     }
+    .shadow-textarea textarea.form-control::placeholder {
+      font-weight: 300;
+    }
+    .shadow-textarea textarea.form-control {
+      padding-left: 0.8rem;
+    }
+    #cbtnsbmt {
+    background-color: #e27235;
+    color: #ffffff;
+    border-color: #e27235;
+    }
+    #cbtnsbmt:hover {
+      background-color: #fa935b;
+      color: #ffffff;
+      border-color: #fa935b;
+    }
 </style>
  @if(session('mesg'))
  <div class="alert alert-danger" role="alert" > 
@@ -101,47 +117,51 @@
                     {{-- <ion-icon type="button" class="btn btn-danger" data-toggle="modal" style="font-weight:bold" data-target="#exampleModal{{$show->booking->id}}" name="warning"></ion-icon> --}}
                 </td>
                 <td>
-                    <!-- Button trigger modal -->
-                    
-                      
+                    <!-- Button trigger modal --> 
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal{{$show->booking->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
                               <h5 class="modal-title" id="exampleModalLabel">REPORT</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
                               </button>
                             </div>
+                            
                             <div class="modal-body text-center">
                               <div class="container">
                               {{-- <p>TUTEE:</p> --}}
-
-                              @if($user->image)
-                                <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+                              <br/>
+                              <br/>
+                              @if($show->booking->tutee->image)
+                                <img src="{{$show->booking->tutee->image}}" class="img-responsive rounded" style="height:150px;width:150px" alt="profilepicture">
                               @else
-                                <img src="../img/blank.png" class="img-responsive"style="height:100px;width:100px"  alt="profilepicture">
+                                <img src="../img/blank.png" class="img-responsive" style="height:100px;width:100px"  alt="profilepicture">
                               @endif
-                            <br/>
-                            <br/>
-                              <p>{{$show->booking->tutee->lastname}}, {{$show->booking->tutee->firstname}} {{$show->booking->tutee->middleinitial}}</p>
+                              <br/>
+                              <br/>
+                              <h5 style="font-weight: bold;">{{$show->booking->tutee->lastname}}, {{$show->booking->tutee->firstname}} {{$show->booking->tutee->middleinitial}}</h5>
                               {{-- {{$show->booking->report}} --}}
                               <form method="post" action="report/{{$show->booking->id}}" >
                                 {{ csrf_field() }}
                                 <div class="form-group col-md-12">   
-                            <br/>
-                            <br/>
-                                  <label for="description">Can you describe the incident?</label>   
-                                  <input class="typeahead form-control" type="text" name="description" id="description" />  
-                                  </div>
+                                <br/>
+                                {{-- <label for="description" class="font-italic">Can you describe the incident?</label>    --}}
+                                {{-- <input class="typeahead form-control" type="text" name="description" id="description" />   --}}
+                                {{-- <textarea class="form-control rounded-0" id="description" hint="Can you describe the incident?" name="description" rows="10"></textarea> --}}
+                                <textarea class="form-control z-depth-1" name="description" id="description" rows="3" placeholder="Can you describe the incident?"></textarea>  
+                              </form>
+                              
+                              <br/>
+                              <button type="submit" class="btn btn-success " id="cbtnsbmt" for="booking_id" name="booking_id">
+                              {{-- <label class="form-check-label" for="booking_id"> --}}
+                                SUBMIT REPORT</button>
                               </div>
                             </div>
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-success " id="booking_id" name="booking_id">
-                                <label class="form-check-label" for="booking_id">SUBMIT REPORT</button>
-                            </div>
-                        </form>
+                          </div>
+                            
+                            
                           </div>
                         </div>
                       </div>
