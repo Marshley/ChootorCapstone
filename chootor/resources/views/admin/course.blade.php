@@ -32,7 +32,7 @@
    </div>
  @endif
  
-    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">SUBJECT</h2>
+    <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">COURSE</h2>
  
       
       <!-- Modal Add Course-->
