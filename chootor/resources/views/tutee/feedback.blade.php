@@ -228,7 +228,7 @@ p {
                       </div>
                       <div class="col-md-4 justify-content-center" >
                         <button style="cursor:pointer" id="cbtnsbmt" type="submit" class="btn btn-dark">Submit</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
                         <br/>
                       </div>
                       <div class="col-md-4 justify-content-center">

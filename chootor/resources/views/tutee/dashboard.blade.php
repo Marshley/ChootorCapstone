@@ -78,7 +78,7 @@
 <!-- Search form -->
 <form method="get" action="/tuteedashboard" >
   <div class="md-form active-pink active-pink-2 mb-3 mt-0">
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search" name="subject">
+    <input class="form-control" type="text" placeholder="Search by Subject" aria-label="Search" name="subject">
   </div>
 </form>
 

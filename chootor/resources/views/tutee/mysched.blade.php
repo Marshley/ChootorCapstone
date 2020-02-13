@@ -15,7 +15,7 @@
         <th scope="col">TIME</th>
         <th scope="col">SUBJECT</th>
         <th scope="col">MATERIALS</th>
-        <th scope="col">STATUS</th>
+        {{-- <th scope="col">STATUS</th> --}}
     </tr>
     </thead>
     <tbody>
@@ -30,7 +30,7 @@
                     {{\Carbon\Carbon::createFromFormat('H:i:s',$booked->schedule->end_time)->format('h:i A')}}</td>
                 <td>{{$booked->schedule->subject->name}} {{$booked->subtopic}}</td>
                 <td>{{$booked->schedule->materials}}</td>
-                <td> {{$booked->status}}</td>
+                {{-- <td> {{$booked->status}}</td> --}}
                 @endif
             @endif
         @endforeach
