@@ -85,8 +85,22 @@
   </div>
 @endif
 
-<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1>
-   
+@foreach ($rates as $rate)
+    {{-- {{$rate->max_rate}} --}}
+    @if(session('message'))
+    <div class="alert alert-danger" role="alert" > 
+      {{ session('message') }} minimun rate: {{$rate->min_rate}} - maximum rate: {{$rate->max_rate}}
+    </div>
+    @endif
+    
+    @if(session('messgs'))
+    <div class="alert alert-success" role="alert" > 
+      {{ session('messgs') }}
+    </div>
+    @endif
+    
+    <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">SCHEDULE CONFIGURATION</h1>
+    
     <div class="card text-center shadow p-2 mb-3" id="ccard">
       <form action="/addinfo" method="POST">
         {{ csrf_field() }}    
@@ -100,7 +114,8 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text">₱</span>
                 </div>
-                <input type="number" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}" min="0" max="150">
+              <input type="number" class="form-control text-center" id="rate" name="rate" value="{{$user->rate}}" min="{{$rate->min_rate}}" max="{{$rate->max_rate}}">
+                @endforeach
                 <div class="input-group-append">
                   <span class="input-group-text">.00</span>
                 </div>

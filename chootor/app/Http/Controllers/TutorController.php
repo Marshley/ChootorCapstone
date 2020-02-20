@@ -12,6 +12,7 @@ use App\Location;
 use App\Booking;
 use App\Course;
 use App\Report;
+use App\Rate;
 
 class TutorController extends Controller
 {
@@ -43,7 +44,6 @@ class TutorController extends Controller
     // START OF NOTIFICATIONS
     public function notifications()
     {
-
         $user = User::find(auth()->user()->id);
         foreach ($user->unreadNotifications as $notification) {
             $notification->markAsRead();
@@ -102,12 +102,13 @@ class TutorController extends Controller
         $user = User::find(auth()->user()->id);
         $location = Location::all();
         $subject = Subject::all();
+        $rates = Rate::select('min_rate','max_rate')->get();
 
         $week_start = date("Y-m-d",strtotime("monday this week"))." 00:00:00";
         $week_end = date("Y-m-d",strtotime("saturday this week"))." 23:59:59";
         
         $schedules = UserSchedule::where('tutor_id', $user->id)->whereBetween('created_at',[$week_start,$week_end])->orderBy('day','desc')->orderBy('start_time', 'asc')->get();
-        return view('tutor.tutorsched',compact('user','location','subject','schedules'));
+        return view('tutor.tutorsched',compact('user','location','subject','schedules', 'rates'));
     }
 
     public function bookingrequest(Request $request)
@@ -222,8 +223,11 @@ class TutorController extends Controller
     {
         // Update user rate and location
         $user = User::find(auth()->user()->id);
+        
+        // $rates = Rate::select('max_rate','min_rate')->get();
         $user->update($request->toArray());
-        return redirect('/tutorschedule');
+        return redirect('/tutorschedule')->with('messgs', 'Successfully saved!');
+
     }
 
     public function update(Request $request, Booking $booking)

@@ -154,6 +154,9 @@
                                     <div class="dropdown-divider"></div>                                    
                                     <a class="dropdown-item" href="/course">Course</a>
                                     <div class="dropdown-divider"></div>
+
+                                    <a class="dropdown-item" href="/rate">Rate</a>
+                                    <div class="dropdown-divider"></div>
                                     
                                     {{-- <a class="dropdown-item" href="/dynamic_pdf">Printables</a>
                                     <div class="dropdown-divider"></div> --}}

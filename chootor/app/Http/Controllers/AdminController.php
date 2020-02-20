@@ -9,6 +9,7 @@ use App\Location;
 use App\Course;
 use App\Booking;
 use App\Report;
+use App\Rate;
 
 class AdminController extends Controller
 {
@@ -85,6 +86,28 @@ class AdminController extends Controller
         // return $request;
         $course->update($request->toArray());
         return redirect('/course')->with('mesg', 'Saved Successfully!');
+    }
+
+    public function displayrate()
+    {
+        // Display Rate
+        $rates = Rate::all();
+        return view('admin.rate')->with('rates', $rates);
+    }
+
+    public function editrate(Request $request)
+    {
+        // Edit Rate
+        // return $request;
+        $rate = Rate::find(1);
+        if($request->min_rate > $request->max_rate)
+        {
+            // return 'x';
+        return redirect('/rate')->with('messg', 'Minimum rate cannot be greater than maximum rate!');
+        }
+        // return '/';
+        $rate->update($request->toArray());
+        return redirect('/rate')->with('mesg', 'Saved Successfully!');
     }
 
     public function show(Request $request)
