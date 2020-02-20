@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes(['verify' => true]);
+  
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +20,11 @@ Route::get('/', function () {
 Route::get('/bawalkadito', function() {
     return view('bawalkadito');
 })->name('bawalkadito');
+Route::get('/verifyemail', function() {
+    return view('verify');
+})->name('verifyemail');
 
+Route::get('/email/verification/{token}', 'AdminController@verify_email');
 //Search Routes
 Route::get('search', 'SearchController@index')->name('search');
 // Registration Routes

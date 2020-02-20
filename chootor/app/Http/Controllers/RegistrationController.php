@@ -49,17 +49,22 @@ class RegistrationController extends Controller
 
         $user = User::create(request(['firstname', 'lastname', 'middleinitial','course_id','school_id','user_type','email','password', 'status']));
 
-        auth()->login($user);
+        \Mail::send('emails.verification', ['token' => $user->token], function($message) use ($user) {
+            $message->to($user->email)->subject('Email Verification');
+            $message->from('xmash16x@gmail.com');
+        });
+            return view('verify');
+        // auth()->login($user);
 
-        if ($user->user_type == 'tutee'){
-            $user = User::find($user->id);
-            return redirect()->to('/tuteedashboard');     
-        }
-        elseif ($user->user_type == 'tutor')
-        {
-            $user = User::find($user->id);
-             return redirect()->to('/tutordashboard');
-        }
+        // if ($user->user_type == 'tutee'){
+        //     $user = User::find($user->id);
+        //     return redirect()->to('/tuteedashboard');     
+        // }
+        // elseif ($user->user_type == 'tutor')
+        // {
+        //     $user = User::find($user->id);
+        //      return redirect()->to('/tutordashboard');
+        // }
     }
 
     /**

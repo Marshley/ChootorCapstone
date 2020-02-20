@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'middleinitial', 'email', 'password', 'school_id', 'user_type', 'status', 'rate', 'location_id', 'image', 'course_id', 'expertise',
+        'firstname', 'lastname', 'middleinitial', 'email', 'password', 'school_id', 'user_type', 'status', 'rate', 'location_id', 'image', 'course_id', 'expertise', 'verified_at',
     ];
 
     /**
@@ -65,7 +65,16 @@ class User extends Authenticatable
                             ['user_schedules.day', $day],
                             ['bookings.status', 'approved']
                         ])->count();
-    } 
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        static::created( function($model) {
+            $model->token = md5(time());
+            $model->save();
+        });
+    }
 
     // public function hasRole($role)
     // {
