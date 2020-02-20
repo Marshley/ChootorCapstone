@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string('expertise')->nullable();
             $table->unsignedBigInteger('location_id')->default('1');
             $table->unsignedBigInteger('course_id')->nullable();
+            // $table->unsignedBigInteger('rate_id')->nullable();
             $table->double('rate')->default('0');
             $table->string('email')->unique();
             $table->string('password');
@@ -32,6 +33,7 @@ class CreateUsersTable extends Migration
             
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');
             $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
+            // $table->foreign('rate_id')->references('id')->on('rates')->onDelete('cascade');
         });        
     }
 

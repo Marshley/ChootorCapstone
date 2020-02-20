@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Capstone'
         ]);
 
+        DB::table('rates')->insert([
+            'min_rate' => '0',
+            'max_rate' => '150'
+        ]);
+
         DB::table('locations')->insert([
             'name' => 'Library'
         ]);
@@ -31,6 +36,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password?'),
             'user_type' => ('admin'),
         ]);
+        
 
     }
 }

@@ -62,6 +62,8 @@ Route::get('/records','AdminController@list')->middleware('role:admin');
 Route::get('/tutorlist','AdminController@tutorlist')->middleware('role:admin');
 Route::get('/tuteelist','AdminController@tuteelist')->middleware('role:admin');
 Route::get('/reports','AdminController@displayreport')->middleware('role:admin');
+Route::get('/rate','AdminController@displayrate')->middleware('role:admin');
+Route::post('/editrate','AdminController@editrate')->middleware('role:admin');
 Route::post('/addsubject','AdminController@store')->middleware('role:admin');
 Route::post('/editsubject/{subject}','AdminController@editsubject')->middleware('role:admin');
 Route::post('/addlocation','AdminController@store2')->middleware('role:admin');
