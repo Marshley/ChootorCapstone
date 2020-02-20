@@ -30,6 +30,12 @@
       {{ session('norecordmsg') }}
     </div>
   @endif
+
+  @if(session('vmsg'))
+    <div class="alert alert-success" role="alert" > 
+    {{ session('vmsg') }}
+    </div>
+  @endif
  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">CHOOSE YOUR TUTOR OF INTEREST!</h1>  
 
 <style>

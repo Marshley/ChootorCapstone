@@ -16,6 +16,10 @@ use App\Rate;
 
 class TutorController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware(['auth','verified']);
+    // }
     // START OF REPORT
 
     public function report(Request $request, Booking $booking)

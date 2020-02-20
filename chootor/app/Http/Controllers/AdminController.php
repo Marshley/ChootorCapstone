@@ -148,4 +148,23 @@ class AdminController extends Controller
         return view('admin.tuteelist')->with('tutees', $tutees);
     }
     // END LIST OF TUTEE
+
+    public function verify_email(Request $request, $token) {
+        $user = User::where(['token' => $token])->first();
+        $user->verified_at = now();
+        $user->save();
+
+        auth()->login($user);
+
+        if ($user->user_type == 'tutee'){
+            $user = User::find($user->id);
+            return redirect()->to('/tuteedashboard')->with('vmsg', 'Your account has been verified');     
+        }
+        elseif ($user->user_type == 'tutor')
+        {
+            $user = User::find($user->id);
+             return redirect()->to('/tutordashboard')->with('vmsg', 'Your account has been verified'); 
+        }
+        // return view('emails.verified');
+    }
 }

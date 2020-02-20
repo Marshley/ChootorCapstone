@@ -29,6 +29,8 @@ class CreateUsersTable extends Migration
             $table->double('rate')->default('0');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamp('verified_at')->nullable();
+            $table->string('token')->nullable();
             $table->timestamps();
             
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('cascade');

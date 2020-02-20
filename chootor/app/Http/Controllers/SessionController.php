@@ -42,6 +42,12 @@ class SessionController extends Controller
             // ]);
             return redirect('/')->with('msg', 'The email or password is incorrect, please try again');
         }
+
+        if(Auth::user()->verified_at == NULL)
+        {
+            return redirect('/')->with('msg', 'Please verify your email to login');
+        }
+
         
         if (Auth::user()->user_type == 'tutee')
         {
@@ -51,6 +57,8 @@ class SessionController extends Controller
             
             return redirect()->to('/tutordashboard');             
         }
+
+
         elseif (Auth::user()->user_type == 'admin')
         {
             return redirect()->to('/admindashboard');
