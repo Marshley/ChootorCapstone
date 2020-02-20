@@ -78,16 +78,27 @@
                         </div>
                         <div class="modal-body text-center">
                           <div class="container">
-                            @if($user->image)
-                              <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:100px;width:100px" alt="profilepicture">
+                            @if($request->booking->tutee->image)
+                              <img src="{{$request->booking->tutee->image}}" class="img-responsive" style="height:150;width:150" alt="profilepicture">
                             @else
-                              <img src="../img/blank.png" class="img-responsive"style="height:100px;width:100px"  alt="profilepicture">
+                              <img src="../img/blank.png" class="img-responsive"style="height:150px;width:150px"  alt="profilepicture">
                             @endif
-                                                       
-                            <p class="text-center">School ID: {{$request->booking->tutee->school_id}} </p>
-                            <p class="text-center">Name: {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
-                            <p class="text-center">Course: {{$request->booking->tutee->course->course_name}} </p>
-                            <p class="text-center">Email: {{$request->booking->tutee->email}} </p>
+                        </br>                                         
+                        </br>                                         
+                            <div class="row text-left">
+                              <div class="col-5">
+                                <p class="text-right">School ID:  </p>
+                                <p class="text-right">Name: </p>
+                                <p class="text-right">Course: </p>
+                                <p class="text-right">Email: </p>
+                              </div>
+                              <div class="col-7">
+                                <p> {{$request->booking->tutee->school_id}}</p>
+                                <p class="font-weight-bold"> {{$request->booking->tutee->lastname}}, {{$request->booking->tutee->firstname}} {{$request->booking->tutee->middleinitial}}</p>
+                                <p> {{$request->booking->tutee->course->course_name}} </p>
+                                <p class="font-italic"> {{$request->booking->tutee->email}} </p>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div class="modal-footer">

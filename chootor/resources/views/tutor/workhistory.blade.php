@@ -23,7 +23,7 @@
                 @if ($sessiondone->booking)
                     @if ($sessiondone->booking->status == 'done')
                     
-                    <div class="card mx-auto shadow" id="ccard" style="margin-top:50px">
+                    <div class="card mx-auto shadow" id="ccard" style="margin-top:30px">
                         <div class="card-body">
                             <div class="card-title">                       
                                 <div class="row">

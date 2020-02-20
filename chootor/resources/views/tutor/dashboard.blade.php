@@ -28,17 +28,19 @@
       border-color: #fa935b;
     }
 </style>
- @if(session('mesg'))
- <div class="alert alert-danger" role="alert" > 
-   {{ session('mesg') }}
- </div>
+
+@if(session('mesg'))
+  <div class="alert alert-danger" role="alert" > 
+    {{ session('mesg') }}
+  </div>
 @endif
 @if(session('msg'))
-<div class="alert alert-success" role="alert" > 
-  {{ session('msg') }}
-</div>
+  <div class="alert alert-success" role="alert" > 
+    {{ session('msg') }}
+  </div>
 @endif
- <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
+
+<h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
 <!-- <hr> -->
 
 <table class="table table-borderless text-center  table-responsive-xs table-responsive-sm table-responsive-md table-responsive-lg " style="margin-top:50px;margin-bottom:50px">
@@ -66,17 +68,23 @@
 
 </br>
 
-        @if(auth()->user()->status == 'pending')
-            <div class="alert alert-primary" role="alert">
-                Your account is needed to be verified first but you can already create a schedule for the week. Go to <a href="/tutorschedule" class="alert-link">Schedule Settings</a>.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
+@if(auth()->user()->status == 'pending')
+  <div class="alert alert-primary" role="alert">
+    Your account is needed to be verified by the administration first but you can already create a schedule for the week. Go to <a href="/tutorschedule" class="alert-link">Schedule Settings.</a> 
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="alert alert-primary" role="alert">
+    You can set your field of expertise on <a href="/tutorprofile" class="alert-link">Profile.</a>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+@endif
 
 <table class="table table-hover table-responsive-xs table-responsive-sm table-responsive-md table-responsive-lg ">
-    <thead class="thead">
+  <thead class="thead">
     <tr>
         <th scope="col">TUTEE NAME</th>
         <th scope="col">DAY</th>
