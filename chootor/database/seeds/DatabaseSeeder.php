@@ -35,6 +35,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@chootor.test',
             'password' => bcrypt('password?'),
             'user_type' => ('admin'),
+            'verified_at' => ('2020-02-21 09:32:26'),
         ]);
         
 

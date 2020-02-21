@@ -45,6 +45,7 @@
     <form action="/editrate" method="POST">
         {{ csrf_field() }}    
         <div class="container">
+          <br/>
           <label for="min_rate">SET MINIMUN RATE</label>
           <div class="form-row justify-content-center">
             <div class="form-group col-md-10 col-xs-10" style="margin-top:50px">
