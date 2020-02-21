@@ -12,17 +12,17 @@
     <link rel="icon" href="../img/logo-sq-wo.png" type="image/icon type">
     <script defer src="" > </script>
 </head>
-<style>
 
-.card{
-    padding: 50px;
-}
-
-</style>
 <body>
-    <div class="card text-center">
+  <div class="row">
+    <div class="col-lg-3 col-xs-1"></div>
+    <div class="col-lg-6 col-xs-10 justify-content-center" style="margin-top:50px">
+      <div class="card text-center">
         <div class="card-header">
-          Chootor
+          <div class="col-xs-12 align-middle"> <!-- CHOOTOR LOGO -->
+            <img src="/img/logo-rec-wo.png" class="img-responsive landing-logo rounded img-fluid" style="width:300px;">
+            {{-- <p class="offset-lg-5 text-center font-italic" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Connects you to a student tutor that will help you improve your studies.</p> --}}
+        </div>
         </div>
         <div class="card-body">
           <h5 class="card-title">Please verify your email</h5>
@@ -30,6 +30,8 @@
           <a href="http://gmail.com" class="btn btn-primary">Click here to verify your email</a>
         </div>
     </div>
-
+    <div class="col-lg-3 col-xs-1"></div>
+  </div>
+</div>
 </body>
 </html>
