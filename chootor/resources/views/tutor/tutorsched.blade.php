@@ -316,6 +316,8 @@
             <td>{{$schedule->materials}}</td>
             <td>{{$schedule->status}}</td>
             <td>
+              @if ($schedule->status == 'draft')
+                  
               <div class="d-flex flex-row">
               <form method="post" action="/publish/{{$schedule->id}}" >
                 {{ csrf_field() }}
@@ -327,8 +329,9 @@
                 <button id="btn" type="submit" class="btn btn-danger btn-sm m-0"> Remove </button>
             </form>
               </div>
+              
+              @endif
             </td>
-            <td> </td>
             {{-- <td> <form name="destroy" method="get" action="/destroy" >
             <button> Delete </button> 
             </form>
