@@ -59,6 +59,8 @@ Route::post('/updaterequest/{booking}','TutorController@update')->middleware('ro
 Route::post('/updatesession/{booking}','TutorController@sessionstatus')->middleware('role:tutor');
 Route::post('/report/{booking}','TutorController@report')->middleware('role:tutor');
 Route::post('/updatetutorprofile','TutorController@updateprofile')->middleware('role:tutor');
+Route::post('/publish/{userschedule}','TutorController@publish')->middleware('role:tutor');
+Route::post('/destroy/{userschedule}','TutorController@destroy')->middleware('role:tutor');
 // Admin Routes
 Route::get('/admindashboard','AdminController@show')->middleware('role:admin');
 Route::get('/subject','AdminController@index')->middleware('role:admin');

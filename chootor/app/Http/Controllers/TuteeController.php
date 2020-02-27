@@ -50,7 +50,7 @@ class TuteeController extends Controller
     
             foreach ($tutor_list as $tutor){
                 $tutorID = $request->subject ? $tutor->tutor_id : $tutor->id;
-                $schedules = UserSchedule::where('tutor_id',$tutorID)->whereBetween('created_at',[$week_start,$week_end])->get();
+                $schedules = UserSchedule::where('tutor_id',$tutorID)->whereBetween('created_at',[$week_start,$week_end])->where('status', 'published')->get();
                 $subjects = UserSchedule::select('subjects.name')->join('subjects', 'subjects.id', 'user_schedules.subject_id')
                             ->where([
                                 ['user_schedules.tutor_id', $tutorID]

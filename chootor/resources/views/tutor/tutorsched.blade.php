@@ -85,6 +85,18 @@
   </div>
 @endif
 
+@if(session('delmsg'))
+  <div class="alert alert-success" role="alert" > 
+    {{ session('delmsg') }}
+  </div>
+@endif
+
+@if(session('umsg'))
+  <div class="alert alert-success" role="alert" > 
+    {{ session('umsg') }}
+  </div>
+@endif
+
 @foreach ($rates as $rate)
     {{-- {{$rate->max_rate}} --}}
     @if(session('message'))
@@ -289,7 +301,7 @@
             <th scope="col">TO</th>
             <th scope="col">SUBJECT</th>
             <th scope="col">MATERIALS</th>
-            {{-- <th scope="col">LOCATION</th> --}}
+            <th scope="col">STATUS</th>
             <th scope="col"><button id="homebtn" type="button" class="btn btn-primary btn-sm m-0" data-toggle="modal" data-target="#exampleModal"> Add Schedule </button></th>
         </tr>
       </thead>
@@ -302,7 +314,20 @@
             <td>{{\Carbon\Carbon::createFromFormat('H:i:s',$schedule->end_time)->format('h:i A')}}</td>
             <td>{{$schedule->subject->name}}</td>
             <td>{{$schedule->materials}}</td>
-            {{-- <td>{{$schedule->location->name}}</td> --}}
+            <td>{{$schedule->status}}</td>
+            <td>
+              <div class="d-flex flex-row">
+              <form method="post" action="/publish/{{$schedule->id}}" >
+                {{ csrf_field() }}
+              <button id="homebtn" type="submit" class="btn btn-primary btn-sm m-0" name="status" value="published"> Publish </button>
+            </form>
+            <span style="width:1em;"> </span>
+            <form method="post" action="/destroy/{{$schedule->id}}" >
+              {{ csrf_field() }}
+                <button id="btn" type="submit" class="btn btn-danger btn-sm m-0"> Remove </button>
+            </form>
+              </div>
+            </td>
             <td> </td>
             {{-- <td> <form name="destroy" method="get" action="/destroy" >
             <button> Delete </button> 

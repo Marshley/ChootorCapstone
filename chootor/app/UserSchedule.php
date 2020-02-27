@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserSchedule extends Model
 {
     protected $fillable = [
-        'tutor_id', 'subject_id', 'location_id', 'day', 'start_time', 'end_time', 'materials', 
+        'tutor_id', 'subject_id', 'location_id', 'day', 'start_time', 'end_time', 'materials', 'status', 
     ];
 
     public function booking() {

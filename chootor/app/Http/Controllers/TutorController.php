@@ -165,7 +165,7 @@ class TutorController extends Controller
         if($subject = Subject::where('name', $request->subject)->exists()){
             $subject = Subject::where('name', $request->subject)->first();
             foreach($request->day_list as $day) {
-                UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id, 'day' => $day]));
+                UserSchedule::create(array_merge($request->toArray(), ['tutor_id' => $user->id, 'location_id' => $user->location_id, 'subject_id' => $subject->id, 'day' => $day, 'status' => 'draft']));
             }
             return redirect('/tutorschedule')->with('mesg', 'Saved Successfully!');
         }
@@ -265,6 +265,20 @@ class TutorController extends Controller
    
         return response()->json($data);
     }
+
+    // START OF PUBLISH SCHEDULE 
+    public function publish(Request $request, UserSchedule $userschedule)
+    {
+        $userschedule->update($request->toArray());
+        return redirect('/tutorschedule')->with('umsg', 'Schedule has been published');
+    }
+
+    public function destroy(UserSchedule $userschedule)
+    {
+        $userschedule->delete();
+        return redirect('/tutorschedule')->with('delmsg', 'Schedule has been removed');
+    }
+    // END OF PUBLISH SCHEDULE
 
     // public function destroy(UserSchedule $UserSchedule)
     // {
