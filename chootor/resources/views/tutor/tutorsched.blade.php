@@ -319,16 +319,71 @@
               @if ($schedule->status == 'draft')
                   
               <div class="d-flex flex-row">
-              <form method="post" action="/publish/{{$schedule->id}}" >
-                {{ csrf_field() }}
-              <button id="homebtn" type="submit" class="btn btn-primary btn-sm m-0" name="status" value="published"> Publish </button>
-            </form>
+
+              <button type="button" class="btn btn-primary btn-sm m-0" data-toggle="modal" id="homebtn" data-target="#exampleModal{{$schedule->id}}">
+                Publish 
+            </button>
+              
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal{{$schedule->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Publish Schedule</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body text-center justify-content-center">
+                        <p>Are you sure you want to publish this schedule?</p>
+                        <br/>
+                        {{-- <div class="modal-footer "> --}}
+                          <form method="post" action="/publish/{{$schedule->id}}" >
+                            {{ csrf_field() }}
+                            <button id="homebtn" type="submit" class="btn btn-secondary" name="status" value="published"> YES </button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                          </form>
+                        </div>
+                          {{-- </div> --}}
+                        </div>
+                      </div>
+                    </div>
             <span style="width:1em;"> </span>
-            <form method="post" action="/destroy/{{$schedule->id}}" >
+
+            <button type="button" class="btn btn-danger btn-sm m-0" data-toggle="modal" id="btn" data-target="#destroy{{$schedule->id}}">
+              Remove 
+          </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="destroy{{$schedule->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Remove Schedule</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body text-center justify-content-center">
+                      <p>Are you sure you want to remove this schedule?</p>
+                      {{-- <div class="modal-footer justify-content-center"> --}}
+                        <br/>
+                        <form method="post" action="/destroy/{{$schedule->id}}" >
+                          {{ csrf_field() }}
+                          <button id="homebtn" type="submit" class="btn btn-danger"> YES </button>
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">NO</button>
+                        </form>
+                      </div>
+                        {{-- </div> --}}
+                      </div>
+                    </div>
+                  </div>
+
+            {{-- <form method="post" action="/destroy/{{$schedule->id}}" >
               {{ csrf_field() }}
                 <button id="btn" type="submit" class="btn btn-danger btn-sm m-0"> Remove </button>
             </form>
-              </div>
+              </div> --}}
               
               @endif
             </td>
