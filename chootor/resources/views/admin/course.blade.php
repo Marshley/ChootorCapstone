@@ -3,8 +3,8 @@
 @section('content')
 <style>
   .thead {
-      background-color: #ffffff;
-      color: #d35400;
+    background-color: #ffffff;
+    color: #d35400;
   }
   #cbtn {
     background-color: #e27235;
@@ -54,9 +54,9 @@
                     </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id="cbtnn" data-dismiss="modal">Close</button>
+              <button type="button" class="btn" id="cbtnn" data-dismiss="modal">Close</button>
               
-                <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
+                <button style="cursor:pointer" id="cbtn" type="submit" class="btn">Submit</button>
                 </form>
             </div>
           </div>
@@ -78,7 +78,7 @@
             <td>{{$course->course_name}}</td>
             <td>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" id="cbtn" class="btn btn-sm m-0" data-target="#exampleModal{{$course->id}}">
+              <button type="button" data-toggle="modal" id="cbtn" class="btn btn-sm m-0" data-target="#exampleModal{{$course->id}}">
                 Edit 
               </button>
                 
@@ -101,9 +101,9 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" id="cbtnn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="cbtnn" class="btn " data-dismiss="modal">Close</button>
                       
-                        <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
+                        <button style="cursor:pointer" id="cbtn" type="submit" class="btn">Submit</button>
                         </form>
                       </div>
                     </div>

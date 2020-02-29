@@ -57,8 +57,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" id="cbtnn" data-dismiss="modal">Close</button>              
-              <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" class="btn" id="cbtnn" data-dismiss="modal">Close</button>              
+              <button style="cursor:pointer" id="cbtn" type="submit" class="btn">Submit</button>
               </form>
             </div>
           </div>
@@ -80,7 +80,7 @@
             <td>{{$subjects->name}}</td>
             <td>
               <!-- Button trigger modal -->
-              <button type="button" class="btn btn-primary" data-toggle="modal" id="cbtn" class="btn btn-sm m-0" data-target="#exampleModal{{$subjects->id}}">
+              <button type="button" data-toggle="modal" id="cbtn" class="btn btn-sm m-0" data-target="#exampleModal{{$subjects->id}}">
                 Edit 
               </button>
                 
@@ -103,9 +103,9 @@
                             </div>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" id="cbtnn" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="cbtnn" class="btn" data-dismiss="modal">Close</button>
                       
-                        <button style="cursor:pointer" id="cbtn" type="submit" class="btn btn-primary">Submit</button>
+                        <button style="cursor:pointer" id="cbtn" type="submit" class="btn">Submit</button>
                         </form>
                       </div>
                     </div>
