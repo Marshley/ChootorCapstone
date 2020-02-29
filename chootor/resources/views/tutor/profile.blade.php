@@ -53,6 +53,7 @@
 
  <h2 class="text-center" style="margin-top:50px;margin-bottom:50px">PROFILE CONFIGURATION</h2>
     <form method="POST" action="/updatetutorprofile" enctype="multipart/form-data">
+        {{ csrf_field() }}
     <div class="card text-center shadow p-2 mb-3" id="ccard">
         <div class="form-group " style="margin-top:50px">
             <div class="container text-center">
