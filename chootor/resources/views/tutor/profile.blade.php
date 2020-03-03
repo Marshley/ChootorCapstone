@@ -55,7 +55,7 @@
     <form method="POST" action="/updatetutorprofile" enctype="multipart/form-data">
         {{ csrf_field() }}
     <div class="card text-center shadow p-2 mb-3" id="ccard">
-        <div class="form-group " style="margin-top:50px">
+        <div class="form-group " style="margin-top: 50px;">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-lg-5 justify-content-center">
@@ -74,7 +74,27 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="col-lg-7">
+
+                        <div class="row" id="marg">
+                            <div class="col-lg-3">
+                            <label for="school_id" class="text-right col-form-label">School Number</label> </br>
+                            </div>
+                            <div class="col-lg-8">
+                                <input disabled type="input" class="form-control font-italic" id="school_id" name="school_id" value="{{$user->school_id}}">
+                            </div>
+                        </div>
+                        
+                        <div class="row" id="marg">
+                            <div class="col-lg-3">
+                                <label for="email" class="text-right col-form-label">Email</label> </br>
+                            </div>
+                            <div class="col-lg-8">
+                                <input disabled type="email" class="form-control font-italic" id="email" placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" value="{{$user->email}}">
+                            </div>
+                        </div>
+
                         <div class="row" id="marg">                           
                             <div class="col-lg-3">
                                 <label for="lastname" class="col-form-label">Last Name: </label>
@@ -98,17 +118,7 @@
                                 <label for="middleinitial" class="col-form-label">Middle Initial: </label> </br>
                             </div>
                             <div class="col-lg-8">
-                            <input type="text" class="form-control font-italic" id="middleinitial" name="middleinitial" 
-                                    placeholder="M.I" value="{{$user->middleinitial}}" maxlength="2">
-                            </div>
-                        </div>
-
-                        <div class="row" id="marg">
-                            <div class="col-lg-3">
-                            <label for="school_id" class="text-right col-form-label">School Number</label> </br>
-                            </div>
-                            <div class="col-lg-8">
-                                <input disabled type="input" class="form-control font-italic" id="school_id" name="school_id" value="{{$user->school_id}}">
+                                <input type="text" class="form-control font-italic" id="middleinitial" name="middleinitial" placeholder="M.I" value="{{$user->middleinitial}}" maxlength="2">
                             </div>
                         </div>
 
@@ -126,15 +136,6 @@
                                         @endif
                                     @endforeach                                
                                 </select>
-                            </div>
-                        </div>
-                        
-                        <div class="row" id="marg">
-                            <div class="col-lg-3">
-                                <label for="email" class="text-right col-form-label">Email</label> </br>
-                            </div>
-                            <div class="col-lg-8">
-                                <input type="email" class="form-control font-italic" id="email" placeholder="Email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" value="{{$user->email}}">
                             </div>
                         </div>
 
@@ -164,6 +165,7 @@
                 </div>
             </div>
         </div>
+        
         <!-- SAVE BUTTON -->
         <br/>
         <div class="row">
@@ -191,12 +193,6 @@
                 </div>
             </div>
         </div> -->    
-
-        
-                    
-      
-    
-    
 
     <script>
         $(".js-example-tags").select2({
