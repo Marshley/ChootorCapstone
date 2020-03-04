@@ -44,6 +44,11 @@
   {{ session('vmsg') }}
 </div>
 @endif
+@if(session('emesg'))
+<div class="alert alert-danger" role="alert" > 
+  {{ session('emesg') }}
+</div>
+@endif
  <h1 class="text-center" style="margin-top:50px;margin-bottom:50px">APPOINTMENTS</h1> 
 <!-- <hr> -->
 

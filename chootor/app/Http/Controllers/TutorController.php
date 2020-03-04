@@ -37,7 +37,7 @@ class TutorController extends Controller
             }
             else 
             {
-                return back()->with('mesg', 'You have already reported this incident');;
+                return back()->with('emesg', 'You have already reported this incident');;
             }
         }
         
